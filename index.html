@@ -313,14 +313,12 @@
         width: 100%;
         margin-bottom: 15px;
       }
-.lista {
-  grid-template-columns: repeat(2, 1fr);
-}
-.card img {
-  height: 240px;
-}
-
-
+      .lista {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .card img {
+        height: 240px;
+      }
       #busca {
         padding-left: 35px;
       }
@@ -332,7 +330,18 @@
         border-radius: 8px;
         margin-top: 5px;
       }
+      .titulo-centralizado h1 {
+      font-size: 22px;
+      line-height: 1.2;
+      margin-top: 10px;
     }
+
+    .perfil-container {
+      top: 10px;
+      left: 10px;
+    }
+    }
+
     .perfil-container {
       position: absolute;
       top: 15px;
@@ -972,17 +981,22 @@
         if (item.tipo === "movie") abrirModalPlayer(item.video);
         else abrirModalEpisodios(item);
       });
-      cardBody.appendChild(btnAssistir);
+      const botoesContainer = document.createElement("div");
+      botoesContainer.style.display = "flex";
+      botoesContainer.style.flexWrap = "wrap";
+      botoesContainer.style.gap = "10px";
+      botoesContainer.style.marginTop = "10px";
+      botoesContainer.appendChild(btnAssistir);
 
       if (item.trailer) {
         const btnTrailer = document.createElement("button");
         btnTrailer.className = "assistir-btn trailer";
         btnTrailer.textContent = "▶️ Trailer";
-        btnTrailer.setAttribute("aria-label", `Assistir trailer de ${item.titulo}`);
         btnTrailer.addEventListener("click", () => abrirModalPlayer(item.trailer));
-        cardBody.appendChild(btnTrailer);
+        botoesContainer.appendChild(btnTrailer);
       }
-      
+
+      cardBody.appendChild(botoesContainer);
       card.appendChild(img);
       card.appendChild(cardBody);
       lista.appendChild(card);
@@ -1128,6 +1142,3 @@
   </script>
 </body>
 </html>
-
-
-
