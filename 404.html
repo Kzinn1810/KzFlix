@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KzFlix Filmes & Séries</title>
+  <link rel="icon" href="imagens/Kz Logo.jpeg" type="image/png" />
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #121212;
+      color: #eee;
+      margin: 0;
+      padding: 15px 20px 20px 20px;
+    }
+
+    header {
+      position: relative;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+    }
+
+    .titulo-centralizado {
+      text-align: center;
+    }
+
+    .campo-busca {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 280px;
+    }
+
+    #busca {
+      width: 100%;
+      padding: 12px 40px 12px 40px;
+      font-size: 16px;
+      border-radius: 30px;
+      border: none;
+      background-color: #333;
+      color: #fff;
+      transition: all 0.3s;
+      outline: none;
+      position: relative;
+      z-index: 21000;
+    }
+
+    #busca::placeholder {
+      color: #aaa;
+    }
+
+    .campo-busca::before {
+      content: "🔍";
+      position: absolute;
+      top: 14px;
+      left: 15px;
+      font-size: 18px;
+      color: #aaa;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .lista-generos {
+      position: absolute;
+      top: 42px;
+      right: 0;
+      background: #222;
+      border-radius: 0 0 8px 8px;
+      width: 100%;
+      max-height: 160px;
+      overflow-y: auto;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      z-index: 21000;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+      display: none;
+    }
+
+    .lista-generos li {
+      padding: 10px 15px;
+      cursor: pointer;
+      color: #eee;
+      border-bottom: 1px solid #444;
+      transition: background 0.2s;
+    }
+
+    .lista-generos li:hover,
+    .lista-generos li:focus {
+      background: #1db954;
+      color: #fff;
+      outline: none;
+    }
+
+    .filtros {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+    }
+
+    .filtros button {
+      background: #282828;
+      border: none;
+      color: #eee;
+      padding: 10px 20px;
+      margin: 0 5px 5px 0;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+
+    .filtros button:hover,
+    .filtros button.active {
+      background: #1db954;
+      color: #fff;
+    }
+
+    .lista {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #222;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-body {
+      padding: 15px;
+    }
+
+    .card-title {
+      font-size: 18px;
+      margin: 0 0 10px;
+      font-weight: bold;
+    }
+
+    .card-desc {
+      font-size: 14px;
+      color: #ccc;
+      line-height: 1.4;
+      height: 60px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .assistir-btn {
+      margin-top: 10px;
+      background: #1db954;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .assistir-btn.trailer {
+      background: #555;
+      margin-left: 10px;
+    }
+
+    .assistir-btn:hover {
+      background: #17a944;
+    }
+
+    .assistir-btn.trailer:hover {
+      background: #444;
+    }
+
+    /* Modal Episódios */
+    #modal-episodios {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.95);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 10000;
+      padding: 20px;
+      overflow: auto;
+    }
+
+    #modal-episodios .modal-conteudo {
+      background: #222;
+      border-radius: 10px;
+      padding: 20px;
+      width: 100%;
+      max-width: 600px;
+      color: #eee;
+    }
+
+    #modal-episodios h2 {
+      margin-top: 0;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    #modal-episodios select,
+    #modal-episodios button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #modal-episodios select {
+      background: #121212;
+      color: #eee;
+    }
+
+    #modal-episodios button {
+      background: #1db954;
+      color: white;
+    }
+
+    #modal-episodios button:hover {
+      background: #17a944;
+    }
+
+    #modal-episodios button#btn-fechar-modal {
+      background: #e50914;
+      margin-top: 10px;
+    }
+
+    /* Modal Player */
+    #modal-player {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(6px);
+      justify-content: center;
+      align-items: center;
+      z-index: 10001;
+      transition: opacity 0.3s ease;
+      padding: 20px;
+      overflow: auto;
+    }
+
+    #modal-player.show {
+      display: flex;
+      opacity: 1;
+    }
+
+    #modal-player > div {
+      position: relative;
+      width: 100%;
+      max-width: 960px;
+      aspect-ratio: 16 / 9;
+      background: #000;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    }
+
+    #modal-player .fechar-player {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(229, 9, 20, 0.9);
+      border: none;
+      color: #fff;
+      font-size: 20px;
+      padding: 8px 12px;
+      border-radius: 50px;
+      cursor: pointer;
+      z-index: 10;
+      transition: background 0.3s ease;
+    }
+
+    #modal-player .fechar-player:hover {
+      background: rgba(229, 9, 20, 1);
+    }
+
+    #iframe-player {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+
+    @media (max-width: 600px) {
+      .campo-busca {
+        position: static;
+        width: 100%;
+        margin-bottom: 15px;
+      }
+
+      #busca {
+        padding-left: 35px;
+      }
+
+      .lista-generos {
+        position: static;
+        max-height: none;
+        width: 100%;
+        border-radius: 8px;
+        margin-top: 5px;
+      }
+    }
+    .perfil-container {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      z-index: 100;
+    }
+
+    #btn-perfil {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .menu-perfil {
+      display: none;
+      position: absolute;
+      top: 40px;
+      left: 0;
+      background: #222;
+      border-radius: 8px;
+      list-style: none;
+      margin: 0;
+      padding: 10px 0;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+      min-width: 160px;
+    }
+
+    .menu-perfil li {
+      padding: 10px 15px;
+      color: #eee;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .menu-perfil li:hover,
+    .menu-perfil li:focus {
+      background: #1db954;
+      color: #fff;
+    }
+    body.modo-claro {
+      background: #f2f2f2;
+      color: #111;
+    }
+
+    body.modo-claro .card {
+      background: #fff;
+    }
+
+    body.modo-claro .card-desc {
+      color: #444;
+    }
+
+    body.modo-claro .assistir-btn {
+      background: #1db954;
+      color: white;
+    }
+
+    body.modo-claro .assistir-btn.trailer {
+      background: #ccc;
+      color: #000;
+    }
+
+    body.modo-claro .filtros button {
+      background: #ddd;
+      color: #111;
+    }
+
+    body.modo-claro .filtros button.active {
+      background: #1db954;
+      color: #fff;
+    }
+
+    body.modo-claro #busca {
+      background: #ddd;
+      color: #000;
+    }
+
+    body.modo-claro .lista-generos {
+      background: #f2f2f2;
+      color: #111;
+    }
+
+    body.modo-claro .menu-perfil {
+      background: #fff;
+      color: #000;
+    }
+    .kz-vermelho {
+      color: #e50914;
+    }
+
+    .kz-texto {
+      color: #fff;
+    }
+
+    body.modo-claro .kz-texto {
+      color: #111;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="perfil-container">
+      <button id="btn-perfil" aria-label="Abrir menu de perfil">⚙️</button>
+      <ul id="menu-perfil" class="menu-perfil" role="menu" aria-label="Menu de Perfil">
+        <li role="menuitem" tabindex="0" id="toggle-dark">🌙 Alternar Dark Mode</li>
+      </ul>
+    </div>
+
+    <div class="titulo-centralizado">
+      <h1>
+        <span class="kz-vermelho">Kz</span>
+        <span class="kz-texto">Flix Filmes & Séries</span>
+      </h1>
+      <p>Desfrute das melhores produções!</p>
+    </div>
+
+    <div class="campo-busca">
+      <input type="text" id="busca" placeholder="🔎 Buscar por título ou gênero..." autocomplete="off" aria-label="Buscar por título ou gênero" />
+      <ul id="lista-generos" class="lista-generos" role="listbox" tabindex="-1" aria-label="Lista de gêneros">
+        <li data-genero="all" tabindex="0" role="option">Todos</li>
+        <li data-genero="ação" tabindex="0" role="option">Ação</li>
+        <li data-genero="aventura" tabindex="0" role="option">Aventura</li>
+        <li data-genero="comédia" tabindex="0" role="option">Comédia</li>
+        <li data-genero="drama" tabindex="0" role="option">Drama</li>
+        <li data-genero="terror" tabindex="0" role="option">Terror</li>
+        <li data-genero="ficção científica" tabindex="0" role="option">Ficção Científica</li>
+        <li data-genero="fantasia" tabindex="0" role="option">Fantasia</li>
+        <li data-genero="documentário" tabindex="0" role="option">Documentário</li>
+        <li data-genero="animação" tabindex="0" role="option">Animação</li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="filtros" role="group" aria-label="Filtros de tipo">
+    <button class="active" data-type="all" aria-pressed="true">Todos</button>
+    <button data-type="movie" aria-pressed="false">Filmes</button>
+    <button data-type="series" aria-pressed="false">Séries</button>
+    <button
+      id="btn-home"
+      style="margin-left: 10px; padding: 10px 20px; border: none; background: #e50914; color: white; border-radius: 5px; cursor: pointer; display: none;"
+    >
+      Sair da pesquisa
+    </button>
+  </div>
+
+  <main>
+    <div class="lista" id="lista" aria-live="polite" aria-label="Lista de filmes e séries"></div>
+  </main>
+
+  <!-- Modal Episódios -->
+  <div id="modal-episodios" role="dialog" aria-modal="true" aria-labelledby="modal-titulo" tabindex="-1">
+    <div class="modal-conteudo">
+      <h2 id="modal-titulo"></h2>
+      <label for="select-temporada">Selecione a temporada:</label>
+      <select id="select-temporada" aria-label="Selecione a temporada"></select>
+      <label for="select-episodio">Selecione o episódio:</label>
+      <select id="select-episodio" aria-label="Selecione o episódio"></select>
+      <button id="btn-assistir-episodio" aria-label="Assistir episódio selecionado">▶️ Assistir Episódio</button>
+      <button id="btn-fechar-modal" style="background:#e50914; margin-top:10px;">❌ Fechar</button>
+    </div>
+  </div>
+
+  <!-- Modal Player -->
+  <div id="modal-player" role="dialog" aria-modal="true" tabindex="-1">
+    <div>
+      <button class="fechar-player" aria-label="Fechar player">❌</button>
+      <iframe
+        id="iframe-player"
+        src=""
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        title="Player de vídeo"
+      ></iframe>
+    </div>
+  </div>
+
+  <script>
+    const dados = [
+      {
+        id: 1,
+        tipo: "movie",
+        titulo: "Pecadores",
+        descricao:
+          "Um terror gótico e musical ambientado no sul dos EUA nos anos 1930, onde vampiros racistas enfrentam músicos negros em uma batalha por alma, cultura e sobrevivência.",
+        imagem: "imagens/pecadores.jpg",
+        video:
+          "https://drive.google.com/file/d/1-VvLUBMOAhIjrcJiB2_ileQxgTKKbZvM/preview",
+        trailer: "https://www.youtube.com/embed/V3spHR5x5QY",
+        generos: ["Terror sobrenatural", "suspense", "drama"],
+      },
+      {
+        id: 2,
+        tipo: "series",
+        titulo: "Stranger Things",
+        descricao: "Um grupo de amigos enfrenta eventos sobrenaturais em sua cidade.",
+        imagem: "imagens/stranger-things.jpg",
+        temporadas: [
+          {
+            numero: 1,
+            episodios: [
+              {
+                numero: 1,
+                titulo: "O Desaparecimento de Will Byers",
+                video:
+                  "https://drive.google.com/file/d/10_1wujyB8LFZ7ssQbN3QJub2bGfwagAU/preview",
+              },
+              {
+                numero: 2,
+                titulo: "A Estranha da Maple Street",
+                video:
+                  "https://drive.google.com/file/d/10_WLJCixI5bjOUsM0YPXlCwr_Uv2DlFI/preview",
+              },
+              {
+                numero: 3,
+                titulo: "Caramba",
+                video:
+                  "https://drive.google.com/file/d/1246KSteW2dm7Zd4eTNNiLU4GkS0GtlQx/preview",
+              },
+              {
+                numero: 4,
+                titulo: "O Corpo",
+                video:
+                  "https://drive.google.com/file/d/124mATi0t5ToEo1A_cGObKmkJ1cxLOyi6/preview",
+              },
+              {
+                numero: 5,
+                titulo: "A Pulga e o Acrobata",
+                video:
+                  "https://drive.google.com/file/d/10-6UqEj83aG9wcIeJwJRU_Fyd8KANiZn/preview",
+              },
+              {
+                numero: 6,
+                titulo: "O Monstro",
+                video:
+                  "https://drive.google.com/file/d/12Ot2VL_0xVTsoGppz-zt2GgAF7cRpAFj/preview",
+              },
+              {
+                numero: 7,
+                titulo: "A Banheira",
+                video:
+                  "https://drive.google.com/file/d/12QzD7n6oouZyR6qXGR6VbaNMKh75fTGR/preview",
+              },
+              {
+                numero: 8,
+                titulo: "O Mundo Invertido",
+                video:
+                  "https://drive.google.com/file/d/109XCvlL9k5oTWrbK_79LrFh0cNzWBkNd/preview",
+              },
+            ],
+          },
+          {
+            numero: 2,
+            episodios: [
+              {
+                numero: 1,
+                titulo: "MADMAX",
+                video:
+                  "https://drive.google.com/file/d/10eScNqZgMQPnMRecFgsFaKZeogd1zqve/preview",
+              },
+              {
+                numero: 2,
+                titulo: "Gostosuras ou Travessuras, Esquisitão",
+                video:
+                  "https://drive.google.com/file/d/10eis8dY32cPg9bWkXx0A0KnMK9tBdrNn/preview",
+              },
+            ],
+          },
+        ],
+        trailer: "https://www.youtube.com/embed/mnd7sFt5c3A",
+        generos: ["drama", "ficção científica", "terror"],
+      },
+      {
+        id: 3,
+        tipo: "movie",
+        titulo: "Vingadores: Ultimato",
+        descricao:
+          "Os Vingadores restantes se unem para desfazer as ações de Thanos e restaurar o universo.",
+        imagem: "imagens/vingadores-ultimato.jpg",
+        video:
+          "https://drive.google.com/file/d/1-WpCJYdLf1P5qSM4eHbiv5PRxY7NMZ-3/preview",
+        trailer: "https://www.youtube.com/embed/TcMBFSGVi1c",
+        generos: ["ação", "aventura", "ficção científica"],
+      },
+      {
+        id: 4,
+        tipo: "series",
+        titulo: "Cobra Kai",
+        descricao:
+          "Continuando a rivalidade do Karate Kid, jovens reativam o dojo Cobra Kai.",
+        imagem: "imagens/cobra-kai.jpg",
+        temporadas: [
+          {
+            numero: 1,
+            episodios: [
+              {
+                numero: 1,
+                titulo: "O Degenerado Número Um",
+                video:
+                  "https://drive.google.com/file/d/1eKIx5dwkAvsxcEA3J5KX7O-xQlAZnJ_U/preview",
+              },
+              {
+                numero: 2,
+                titulo: "Ataque Primeiro",
+                video:
+                  "https://drive.google.com/file/d/1ciQMq-QOwQMeWR79bF2-Upf5LgzPnqQ3/preview",
+              },
+              {
+                numero: 3,
+                titulo: "Esqueleto",
+                video:
+                  "https://drive.google.com/file/d/12wpo9-WSp1ZnHpNVQIGqwZXgQ0FzPs4F/preview",
+              },
+              {
+                numero: 4,
+                titulo: "O Cobra Kai nunca morre",
+                video:
+                  "https://drive.google.com/file/d/12zzCm_pzr68L84q5FkifilcNTjtvA0d1/preview",
+              },
+              {
+                numero: 5,
+                titulo: "Contrapeso",
+                video:
+                  "https://drive.google.com/file/d/10H0a1Lg4DFR5W9enRVDpHfbJuC6Q2gvV/preview",
+              },
+              {
+                numero: 6,
+                titulo: "Grupo de cobras",
+                video:
+                  "https://drive.google.com/file/d/13BFYksJDpnTfS9H4v7y6fJGS0T7bR2dY/preview",
+              },
+              {
+                numero: 7,
+                titulo: "All Valley",
+                video:
+                  "https://drive.google.com/file/d/13KzpxjUfiveereT_QUKK86yhG8XSx-2N/preview",
+              },
+              {
+                numero: 8,
+                titulo: "Mudança de pele",
+                video:
+                  "https://drive.google.com/file/d/10wm8n0Q1_H-erKDbMz7BVC2j55k8sBOR/preview",
+              },
+              {
+                numero: 9,
+                titulo: "Diferentes mas iguais",
+                video:
+                  "https://drive.google.com/file/d/114Rtts9-MXi_Tx1wot4RxA67Pg0eLQWQ/preview",
+              },
+              {
+                numero: 10,
+                titulo: "Compaixão",
+                video:
+                  "https://drive.google.com/file/d/113ouzfKcE44wejHsNK3yXH_JefpF-_Ft/preview",
+              },
+            ],
+          },
+        ],
+        trailer: "https://www.youtube.com/embed/xCwwxNbtK6Y",
+        generos: ["ação", "drama"],
+      },
+      {
+        id: 5,
+        tipo: "movie",
+        titulo: "Sorria",
+        descricao:
+          "Após presenciar um evento traumático, uma terapeuta começa a vivenciar eventos assustadores.",
+        imagem: "imagens/sorria.jpg",
+        video:
+          "https://drive.google.com/file/d/1-YpwEhiJZBieq3DZom2PZFvLVW2LJd6N/preview",
+        trailer: "https://www.youtube.com/embed/BcDK7lkzzsU",
+        generos: ["terror", "drama"],
+      },
+      {
+        id: 6,
+        tipo: "series",
+        titulo: "Round 6",
+        descricao:
+          "Centenas de pessoas com dificuldades financeiras aceitam um convite para participar de jogos mortais valendo um grande prêmio em dinheiro.",
+        imagem: "imagens/round-6.jpg",
+        temporadas: [
+          {
+            numero: 1,
+            episodios: [
+              {
+                numero: 1,
+                titulo: "Luz Vermelha, Luz Verde",
+                video:
+                  "https://drive.google.com/file/d/1plAblGZJOYvfpaUkiOvZRS965JuDATPt/preview",
+              },
+            ],
+          },
+        ],
+        trailer: "https://www.youtube.com/embed/oqxAJKy0ii4",
+        generos: ["drama", "suspense", "ação"],
+      },
+      {
+        id: 7,
+        tipo: "movie",
+        titulo: "Bird Box",
+        descricao:
+          "Bird Box mostra uma mãe e seus filhos tentando sobreviver vendados a criaturas que enlouquecem quem as vê.",
+        imagem: "imagens/bird-box.jpg",
+        video:
+          "https://drive.google.com/file/d/1-66Xx8Gdp9vHl8yko0SGivucY92dnL2o/preview",
+        trailer: "https://www.youtube.com/embed/o2AsIXSh2xo",
+        generos: ["terror", "drama"],
+      },
+      {
+        id: 8,
+        tipo: "series",
+        titulo: "Naruto",
+        descricao:
+          "Centenas de pessoas com dificuldades financeiras aceitam um convite para participar de jogos mortais valendo um grande prêmio em dinheiro.",
+        imagem: "imagens/naruto.jpg",
+        temporadas: [
+          {
+            numero: 1,
+            episodios: [
+              {
+                numero: 1,
+                titulo: "Uzumaki Naruto Chega!",
+                video:
+                  "https://drive.google.com/file/d/11rk7hZ-_ojYspVZNBSvV30sKKsk0WzO1/preview",
+              },
+            ],
+          },
+        ],
+        trailer: "https://www.youtube.com/embed/QczGoCmX-pI",
+        generos: ["Ação", "Aventura", "Fantasia", "Drama"],
+      },
+      {
+        id: 9,
+        tipo: "movie",
+        titulo: "Tropa de Elite",
+        descricao:
+          "Um capitão do BOPE enfrenta a violência do tráfico e os dilemas morais da guerra urbana no Rio de Janeiro.",
+        imagem: "imagens/tropa-de-elite.jpg",
+        video:
+          "https://drive.google.com/file/d/118bEax43b4FWj5MZ38zZbXF_1zozmLaF/preview",
+        trailer: "https://www.youtube.com/embed/uZBiNJQxtGw?si=-fO313EZbdesbqYG",
+        generos: ["ação", "drama"],
+      },
+      {
+        id: 9,
+        tipo: "movie",
+        titulo: "Tropa de Elite 2",
+        descricao:
+          "Agora como subsecretário de segurança, Nascimento enfrenta a corrupção sistêmica do Estado enquanto lida com conflitos pessoais e políticos.",
+        imagem: "imagens/tropa-de-elite-2.jpg",
+        video:
+          "https://drive.google.com/file/d/15xR0cVYbGhlvYrKsfqKBI0X9BwSvNT6G/preview",
+        trailer: "http://www.youtube.com/embed/O8YrtINB5oI",
+        generos: ["ação", "drama"],
+      },
+    ];
+
+    const lista = document.getElementById("lista");
+    const botoes = document.querySelectorAll(".filtros button");
+    const campoBusca = document.getElementById("busca");
+    const listaGeneros = document.getElementById("lista-generos");
+
+    const modalEpisodios = document.getElementById("modal-episodios");
+    const modalTitulo = document.getElementById("modal-titulo");
+    const selectTemporada = document.getElementById("select-temporada");
+    const selectEpisodio = document.getElementById("select-episodio");
+    const btnAssistirEpisodio = document.getElementById("btn-assistir-episodio");
+    const btnFecharModal = document.getElementById("btn-fechar-modal");
+
+    const modalPlayer = document.getElementById("modal-player");
+    const iframePlayer = document.getElementById("iframe-player");
+    const btnFecharPlayer = modalPlayer.querySelector(".fechar-player");
+
+    let tipoFiltro = "all";
+    let filtroGenero = "all";
+    let serieAtual = null; // <-- Adiciona variável global para guardar a série aberta
+
+    // Exibir lista inicial
+    exibirLista(dados);
+
+    // Filtrar por tipo (Filme, Série, Todos)
+    botoes.forEach((botao) => {
+      botao.addEventListener("click", () => {
+        botoes.forEach((b) => {
+          b.classList.remove("active");
+          b.setAttribute("aria-pressed", "false");
+        });
+        botao.classList.add("active");
+        botao.setAttribute("aria-pressed", "true");
+        tipoFiltro = botao.getAttribute("data-type");
+        campoBusca.value = "";
+        filtroGenero = "all";
+        listaGeneros.style.display = "none";
+        exibirLista(filtrarDados());
+        document.getElementById("btn-home").style.display = tipoFiltro === "all" ? "none" : "inline-block";
+      });
+    });
+
+    // Botão sair da pesquisa
+    document.getElementById("btn-home").addEventListener("click", () => {
+      tipoFiltro = "all";
+      filtroGenero = "all";
+      campoBusca.value = "";
+      listaGeneros.style.display = "none";
+      botoes.forEach((b) => {
+        b.classList.remove("active");
+        b.setAttribute("aria-pressed", "false");
+      });
+      botoes[0].classList.add("active");
+      botoes[0].setAttribute("aria-pressed", "true");
+      exibirLista(dados);
+      document.getElementById("btn-home").style.display = "none";
+    });
+
+    // Mostrar/ocultar lista de gêneros
+    campoBusca.addEventListener("focus", () => {
+      listaGeneros.style.display = "block";
+    });
+
+    campoBusca.addEventListener("blur", () => {
+      setTimeout(() => {
+        listaGeneros.style.display = "none";
+      }, 150);
+    });
+
+    // Seleção de gênero da lista
+    listaGeneros.querySelectorAll("li").forEach((item) => {
+      item.addEventListener("click", () => {
+        filtroGenero = item.getAttribute("data-genero");
+        campoBusca.value = filtroGenero === "all" ? "" : filtroGenero;
+        exibirLista(filtrarDados());
+        listaGeneros.style.display = "none";
+      });
+      item.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          item.click();
+        }
+      });
+    });
+
+    // Busca por título ou gênero no campo de busca
+    campoBusca.addEventListener("input", () => {
+      filtroGenero = campoBusca.value.toLowerCase();
+      exibirLista(filtrarDados());
+    });
+
+    // Função que filtra os dados de acordo com os filtros
+    function filtrarDados() {
+      return dados.filter((item) => {
+        const tipoOk = tipoFiltro === "all" || item.tipo === tipoFiltro;
+        const buscaTexto = campoBusca.value.trim().toLowerCase();
+
+        // Verificar busca no título
+        const buscaTitulo = item.titulo.toLowerCase().includes(buscaTexto);
+
+        // Verificar busca no gênero
+        const buscaGenero =
+          filtroGenero === "all" ||
+          item.generos.some((g) => g.toLowerCase().includes(filtroGenero));
+
+        return tipoOk && (buscaTitulo || buscaGenero);
+      });
+    }
+
+    // Função para exibir lista de filmes e séries
+    function exibirLista(listaDados) {
+      lista.innerHTML = "";
+
+      if (listaDados.length === 0) {
+        lista.innerHTML = "<p style='text-align:center;'>Nenhum resultado encontrado.</p>";
+        return;
+      }
+
+      listaDados.forEach((item) => {
+        const card = document.createElement("article");
+        card.className = "card";
+        card.setAttribute("tabindex", "0");
+        card.setAttribute("role", "region");
+        card.setAttribute("aria-label", item.titulo);
+
+        const img = document.createElement("img");
+        img.src = item.imagem;
+        img.alt = `Imagem do ${item.tipo === "movie" ? "filme" : "série"} ${item.titulo}`;
+
+        const cardBody = document.createElement("div");
+        cardBody.className = "card-body";
+
+        const titulo = document.createElement("h3");
+        titulo.className = "card-title";
+        titulo.textContent = item.titulo;
+
+        const desc = document.createElement("p");
+        desc.className = "card-desc";
+        desc.textContent = item.descricao;
+
+        cardBody.appendChild(titulo);
+        cardBody.appendChild(desc);
+
+        // Botão assistir principal (filme ou série)
+        const btnAssistir = document.createElement("button");
+        btnAssistir.className = "assistir-btn";
+        btnAssistir.textContent = item.tipo === "movie" ? "▶️ Assistir" : "▶️ Assistir Série";
+        btnAssistir.setAttribute("aria-label", `Assistir ${item.tipo === "movie" ? "filme" : "série"} ${item.titulo}`);
+
+        btnAssistir.addEventListener("click", () => {
+          if (item.tipo === "movie") {
+            // Filme: abrir player com vídeo principal
+            abrirModalPlayer(item.video);
+          } else if (item.tipo === "series") {
+            // Série: abrir modal episódios
+            abrirModalEpisodios(item);
+          }
+        });
+
+        // Botão assistir trailer (se tiver)
+        let btnTrailer = null;
+        if (item.trailer) {
+          btnTrailer = document.createElement("button");
+          btnTrailer.className = "assistir-btn trailer";
+          btnTrailer.textContent = "▶️ Trailer";
+          btnTrailer.setAttribute("aria-label", `Assistir trailer de ${item.titulo}`);
+
+          btnTrailer.addEventListener("click", () => {
+            abrirModalPlayer(item.trailer);
+          });
+        }
+
+        cardBody.appendChild(btnAssistir);
+        if (btnTrailer) cardBody.appendChild(btnTrailer);
+
+        card.appendChild(img);
+        card.appendChild(cardBody);
+        lista.appendChild(card);
+      });
+    }
+
+    // Modal Episódios
+    function abrirModalEpisodios(serie) {
+      serieAtual = serie; // <-- Guarda a série atualmente aberta
+      modalTitulo.textContent = `Temporadas de ${serie.titulo}`;
+      selectTemporada.innerHTML = "";
+      selectEpisodio.innerHTML = "";
+      btnAssistirEpisodio.disabled = true;
+
+      serie.temporadas.forEach((temp) => {
+        const option = document.createElement("option");
+        option.value = temp.numero;
+        option.textContent = `Temporada ${temp.numero}`;
+        selectTemporada.appendChild(option);
+      });
+
+      // Quando mudar a temporada, carregar os episódios
+      selectTemporada.onchange = () => {
+        carregarEpisodios(serie, Number(selectTemporada.value));
+      };
+
+      // Inicializa com a primeira temporada
+      if (serie.temporadas.length > 0) {
+        selectTemporada.value = serie.temporadas[0].numero;
+        carregarEpisodios(serie, serie.temporadas[0].numero);
+      }
+
+      modalEpisodios.style.display = "flex";
+      modalEpisodios.focus();
+
+      btnFecharModal.onclick = fecharModalEpisodios;
+    }
+
+    function carregarEpisodios(serie, numTemporada) {
+      selectEpisodio.innerHTML = "";
+      const temporada = serie.temporadas.find((t) => t.numero === numTemporada);
+      if (!temporada) return;
+
+      temporada.episodios.forEach((epi) => {
+        const option = document.createElement("option");
+        option.value = epi.numero;
+        option.textContent = `Episódio ${epi.numero} - ${epi.titulo}`;
+        selectEpisodio.appendChild(option);
+      });
+
+      selectEpisodio.value = temporada.episodios[0].numero;
+      btnAssistirEpisodio.disabled = false;
+    }
+
+    btnAssistirEpisodio.onclick = () => {
+      const numTemp = Number(selectTemporada.value);
+      const numEpi = Number(selectEpisodio.value);
+      if (!serieAtual) return; // <-- Usa a série correta
+      const temporada = serieAtual.temporadas.find((t) => t.numero === numTemp);
+      if (!temporada) return;
+      const episodio = temporada.episodios.find((e) => e.numero === numEpi);
+      if (!episodio) return;
+      abrirModalPlayer(episodio.video);
+      fecharModalEpisodios();
+    };
+
+    function fecharModalEpisodios() {
+      modalEpisodios.style.display = "none";
+    }
+
+    // Modal Player
+    function abrirModalPlayer(link) {
+      iframePlayer.src = link;
+      modalPlayer.classList.add("show");
+      modalPlayer.focus();
+    }
+
+    function fecharModalPlayer() {
+      iframePlayer.src = "";
+      modalPlayer.classList.remove("show");
+    }
+
+
+    btnFecharPlayer.onclick = fecharModalPlayer;
+
+    // Fechar modal player ao clicar fora do iframe
+    modalPlayer.addEventListener("click", (e) => {
+      if (e.target === modalPlayer) {
+        fecharModalPlayer();
+      }
+    });
+
+    // Fechar modal episódios ao clicar fora
+    modalEpisodios.addEventListener("click", (e) => {
+      if (e.target === modalEpisodios) {
+        fecharModalEpisodios();
+      }
+    });
+
+    // Para fechar modais com ESC
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        if (modalPlayer.style.display === "flex") {
+          fecharModalPlayer();
+        }
+        if (modalEpisodios.style.display === "flex") {
+          fecharModalEpisodios();
+        }
+      }
+    });
+    const btnPerfil = document.getElementById("btn-perfil");
+    const menuPerfil = document.getElementById("menu-perfil");
+    const toggleDark = document.getElementById("toggle-dark");
+
+    btnPerfil.addEventListener("click", () => {
+      menuPerfil.style.display = menuPerfil.style.display === "block" ? "none" : "block";
+    });
+
+    // Fechar menu clicando fora
+    document.addEventListener("click", (e) => {
+      if (!menuPerfil.contains(e.target) && e.target !== btnPerfil) {
+        menuPerfil.style.display = "none";
+      }
+    });
+
+    // Alternar modo escuro
+    toggleDark.addEventListener("click", () => {
+      document.body.classList.toggle("modo-claro");
+      localStorage.setItem("modo", document.body.classList.contains("modo-claro") ? "claro" : "escuro");
+    });
+
+    // Carregar tema salvo
+    if (localStorage.getItem("modo") === "claro") {
+      document.body.classList.add("modo-claro");
+    }
+  </script>
+</body>
+</html>
+
+
+
