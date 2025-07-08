@@ -313,6 +313,13 @@
         width: 100%;
         margin-bottom: 15px;
       }
+.lista {
+  grid-template-columns: repeat(2, 1fr);
+}
+.card img {
+  height: 240px;
+}
+
 
       #busca {
         padding-left: 35px;
@@ -718,57 +725,9 @@
             episodios: [
               {
                 numero: 1,
-                titulo: "Batatinha frita 1, 2, 3",
+                titulo: "Luz Vermelha, Luz Verde",
                 video:
                   "https://drive.google.com/file/d/1plAblGZJOYvfpaUkiOvZRS965JuDATPt/preview",
-              },
-              {
-                numero: 2,
-                titulo: "Inferno",
-                video:
-                  "https://drive.google.com/file/d/165hBLBc7qJetgp3d7NFquYSrdFKE4OL1/preview",
-              },
-              {
-                numero: 3,
-                titulo: "O homem do guarda-chuva",
-                video:
-                  "https://drive.google.com/file/d/168-iztih5KB9JZzFyld_IWRe3iRmKqko/preview",
-              },
-              {
-                numero: 4,
-                titulo: "Fiquem juntos",
-                video:
-                  "https://drive.google.com/file/d/168Be9u375lh8o3d7BzHpbIBIxOIG0jnB/preview",
-              },
-              {
-                numero: 5,
-                titulo: "Um mundo justo",
-                video:
-                  "https://drive.google.com/file/d/16CT1-nbETzJOVLP-DeaMb34I_aG3Twwm/preview",
-              },
-              {
-                numero: 6,
-                titulo: "Gganbu",
-                video:
-                  "https://drive.google.com/file/d/16GIMa-7v50JOtvtwwdzYrVeUh0WFHjcG/preview",
-              },
-              {
-                numero: 7,
-                titulo: "VIPs",
-                video:
-                  "https://drive.google.com/file/d/16LQCb7Xi71vHFMAy0M8XV3AkaH95vhL4/preview",
-              },
-              {
-                numero: 8,
-                titulo: "O líder",
-                video:
-                  "https://drive.google.com/file/d/16XTerbnW_3CfiGx-26wHHjc_iBnzTV5x/preview",
-              },
-              {
-                numero: 9,
-                titulo: "Um dia de sorte",
-                video:
-                  "https://drive.google.com/file/d/16_m0OF95EcGnL0d7f2lTPuJoNZe8VYaj/preview",
               },
             ],
           },
@@ -1013,14 +972,7 @@
         if (item.tipo === "movie") abrirModalPlayer(item.video);
         else abrirModalEpisodios(item);
       });
-
-      const botoesContainer = document.createElement("div");
-      botoesContainer.style.display = "flex";
-      botoesContainer.style.flexWrap = "wrap";
-      botoesContainer.style.gap = "4px";
-      botoesContainer.style.marginTop = "4px";
-
-      botoesContainer.appendChild(btnAssistir);
+      cardBody.appendChild(btnAssistir);
 
       if (item.trailer) {
         const btnTrailer = document.createElement("button");
@@ -1028,10 +980,9 @@
         btnTrailer.textContent = "▶️ Trailer";
         btnTrailer.setAttribute("aria-label", `Assistir trailer de ${item.titulo}`);
         btnTrailer.addEventListener("click", () => abrirModalPlayer(item.trailer));
-        botoesContainer.appendChild(btnTrailer);
+        cardBody.appendChild(btnTrailer);
       }
-
-      cardBody.appendChild(botoesContainer);
+      
       card.appendChild(img);
       card.appendChild(cardBody);
       lista.appendChild(card);
