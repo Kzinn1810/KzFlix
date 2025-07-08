@@ -325,59 +325,7 @@
         border-radius: 8px;
         margin-top: 5px;
       }
-      .lista {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
     }
-
-    .card {
-      background: #1e1e1e;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.5);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .card img {
-      width: 100%;
-      height: 120px;
-      object-fit: cover;
-    }
-
-    .card-body {
-      padding: 8px 6px;
-      text-align: center;
-    }
-
-    .card-title {
-      font-size: 15px;
-      margin: 4px 0;
-    }
-
-    .card-desc {
-      font-size: 12px;
-      color: #ccc;
-      line-height: 1.3;
-      height: 40px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .assistir-btn,
-    .assistir-btn.trailer {
-      font-size: 13px;
-      padding: 6px 10px;
-      margin: 4px 2px 0 2px;
-      width: auto;
-    }
-
-    .assistir-btn.trailer {
-      background: #444;
-    }
-    }
-
     .perfil-container {
       position: absolute;
       top: 15px;
@@ -527,6 +475,10 @@
 
   <main>
     <div class="lista" id="lista" aria-live="polite" aria-label="Lista de filmes e séries"></div>
+    <button id="btn-carregar-mais" style="display:none; margin: 20px auto; padding: 12px 24px; font-size: 16px; border-radius: 6px; background: #1db954; color: white; border: none; cursor: pointer; display: block;">
+    Carregar mais
+    </button>
+
   </main>
 
   <!-- Modal Episódios -->
@@ -569,7 +521,7 @@
         video:
           "https://drive.google.com/file/d/1-VvLUBMOAhIjrcJiB2_ileQxgTKKbZvM/preview",
         trailer: "https://www.youtube.com/embed/V3spHR5x5QY",
-        generos: ["Terror sobrenatural", "suspense", "drama"],
+        generos: ["terror", "suspense", "drama"],
       },
       {
         id: 2,
@@ -766,10 +718,58 @@
             episodios: [
               {
                 numero: 1,
-                titulo: "Luz Vermelha, Luz Verde",
+                titulo: "Batatinha frita 1, 2, 3",
                 video:
                   "https://drive.google.com/file/d/1plAblGZJOYvfpaUkiOvZRS965JuDATPt/preview",
-              },             
+              },
+              {
+                numero: 2,
+                titulo: "Inferno",
+                video:
+                  "https://drive.google.com/file/d/165hBLBc7qJetgp3d7NFquYSrdFKE4OL1/preview",
+              },
+              {
+                numero: 3,
+                titulo: "O homem do guarda-chuva",
+                video:
+                  "https://drive.google.com/file/d/168-iztih5KB9JZzFyld_IWRe3iRmKqko/preview",
+              },
+              {
+                numero: 4,
+                titulo: "Fiquem juntos",
+                video:
+                  "https://drive.google.com/file/d/168Be9u375lh8o3d7BzHpbIBIxOIG0jnB/preview",
+              },
+              {
+                numero: 5,
+                titulo: "Um mundo justo",
+                video:
+                  "https://drive.google.com/file/d/16CT1-nbETzJOVLP-DeaMb34I_aG3Twwm/preview",
+              },
+              {
+                numero: 6,
+                titulo: "Gganbu",
+                video:
+                  "https://drive.google.com/file/d/16GIMa-7v50JOtvtwwdzYrVeUh0WFHjcG/preview",
+              },
+              {
+                numero: 7,
+                titulo: "VIPs",
+                video:
+                  "https://drive.google.com/file/d/16LQCb7Xi71vHFMAy0M8XV3AkaH95vhL4/preview",
+              },
+              {
+                numero: 8,
+                titulo: "O líder",
+                video:
+                  "https://drive.google.com/file/d/16XTerbnW_3CfiGx-26wHHjc_iBnzTV5x/preview",
+              },
+              {
+                numero: 9,
+                titulo: "Um dia de sorte",
+                video:
+                  "https://drive.google.com/file/d/16_m0OF95EcGnL0d7f2lTPuJoNZe8VYaj/preview",
+              },
             ],
           },
         ],
@@ -805,68 +805,26 @@
                 video:
                   "https://drive.google.com/file/d/11rk7hZ-_ojYspVZNBSvV30sKKsk0WzO1/preview",
               },
-              {
-                numero: 2,
-                titulo: "Meu nome é Konohamaru!",
-                video:
-                  "https://drive.google.com/file/d/11sdNfqjVtoUz8-VPJp3SxQx2nwBOJC7w/preview",
-              },
-              {
-                numero: 3,
-                titulo: "Sasuke e Sakura: Amigos ou inimigos?",
-                video:
-                  "https://drive.google.com/file/d/11xQUrRiU7i2fB9bOXpctnHtMFjqadcLA/preview",
-              },
-              {
-                numero: 4,
-                titulo: "Passe ou falhe: A sobrevivência no campo de batalha",
-                video:
-                  "https://drive.google.com/file/d/11tNk1OcyTs9FsIQxx8ETEA8Y_LvjMAB_/preview",
-              },
-              {
-                numero: 5,
-                titulo: "O teste dos sinos",
-                video:
-                  "https://drive.google.com/file/d/120jKvYbSSy3KBrp_WO02PaRni5Arr785/preview",
-              },
-              {
-                numero: 6,
-                titulo: "Continue firme! Esforce-se, Naruto!",
-                video:
-                  "https://drive.google.com/file/d/12-5yqaXdEVfXjfjt-QhjLLOubcY8-Exf/preview",
-              },
-              {
-                numero: 7,
-                titulo: "O inimigo dentro",
-                video:
-                  "https://drive.google.com/file/d/122y9rEeuC-hXyG1Bjdc0v9hkvcN0ENeC/preview",
-              },
-              {
-                numero: 8,
-                titulo: "A promessa de sangue",
-                video:
-                  "https://drive.google.com/file/d/125FawxQZqUo1nW8ov7z2M7jFgSi1XBxK/preview",
-              },
-              {
-                numero: 9,
-                titulo: "Kakashi, o ninja copiador",
-                video:
-                  "https://drive.google.com/file/d/124kHtDEI_x2zQXbdrxh_h2Gu4zlt71XE/preview",
-              },
-              {
-                numero: 10,
-                titulo: "O florecer do Sharingan",
-                video:
-                  "https://drive.google.com/file/d/12Boap-89AvJ8__ODTK0KJlC0zQleen45/preview",
-              },
             ],
           },
         ],
         trailer: "https://www.youtube.com/embed/QczGoCmX-pI",
-        generos: ["Ação", "Aventura", "Fantasia", "Drama"],
+        generos: ["ação", "aventura", "fantasia", "drama"],
       },
       {
         id: 9,
+        tipo: "movie",
+        titulo: "Ainda estou aqui",
+        descricao:
+          "Ainda Estou Aqui é um drama emocionante que retrata o luto, o amor e a luta de uma jovem para manter viva a memória do namorado após sua morte.",
+        imagem: "imagens/ainda-estou-aqui.jpg",
+        video:
+          "https://drive.google.com/file/d/16g0QWKerQvxBJtnOTFppz9nA_3moLbDh/preview",
+        trailer: "http://www.youtube.com/embed/Inl8WuKkQfQ",
+        generos: ["drama", "romance"],
+      },
+      {
+        id: 10,
         tipo: "movie",
         titulo: "Tropa de Elite",
         descricao:
@@ -878,7 +836,7 @@
         generos: ["ação", "drama"],
       },
       {
-        id: 9,
+        id: 11,
         tipo: "movie",
         titulo: "Tropa de Elite 2",
         descricao:
@@ -892,6 +850,9 @@
     ];
 
     const lista = document.getElementById("lista");
+    let dadosFiltrados = [];
+    let limiteInicial = 0;
+    const QUANTIDADE_POR_PAGINA = 10;
     const botoes = document.querySelectorAll(".filtros button");
     const campoBusca = document.getElementById("busca");
     const listaGeneros = document.getElementById("lista-generos");
@@ -907,12 +868,13 @@
     const iframePlayer = document.getElementById("iframe-player");
     const btnFecharPlayer = modalPlayer.querySelector(".fechar-player");
 
+
     let tipoFiltro = "all";
     let filtroGenero = "all";
     let serieAtual = null; // <-- Adiciona variável global para guardar a série aberta
 
     // Exibir lista inicial
-    exibirLista(dados);
+    exibirLista(dados, true);
 
     // Filtrar por tipo (Filme, Série, Todos)
     botoes.forEach((botao) => {
@@ -927,7 +889,7 @@
         campoBusca.value = "";
         filtroGenero = "all";
         listaGeneros.style.display = "none";
-        exibirLista(filtrarDados());
+        exibirLista(filtrarDados(), true);
         document.getElementById("btn-home").style.display = tipoFiltro === "all" ? "none" : "inline-block";
       });
     });
@@ -944,7 +906,7 @@
       });
       botoes[0].classList.add("active");
       botoes[0].setAttribute("aria-pressed", "true");
-      exibirLista(dados);
+      exibirLista(dados, true);
       document.getElementById("btn-home").style.display = "none";
     });
 
@@ -964,7 +926,7 @@
       item.addEventListener("click", () => {
         filtroGenero = item.getAttribute("data-genero");
         campoBusca.value = filtroGenero === "all" ? "" : filtroGenero;
-        exibirLista(filtrarDados());
+        exibirLista(filtrarDados(), true);
         listaGeneros.style.display = "none";
       });
       item.addEventListener("keydown", (e) => {
@@ -978,7 +940,7 @@
     // Busca por título ou gênero no campo de busca
     campoBusca.addEventListener("input", () => {
       filtroGenero = campoBusca.value.toLowerCase();
-      exibirLista(filtrarDados());
+      exibirLista(filtrarDados(), true);
     });
 
     // Função que filtra os dados de acordo com os filtros
@@ -1000,76 +962,85 @@
     }
 
     // Função para exibir lista de filmes e séries
-    function exibirLista(listaDados) {
-      lista.innerHTML = "";
+    function exibirLista(listaDados, reset = true) {
+    const btnMais = document.getElementById("btn-carregar-mais");
 
-      if (listaDados.length === 0) {
-        lista.innerHTML = "<p style='text-align:center;'>Nenhum resultado encontrado.</p>";
-        return;
+    if (reset) {
+      lista.innerHTML = "";
+      limiteInicial = 0;
+      dadosFiltrados = listaDados;
+    }
+
+    const proximoLote = dadosFiltrados.slice(limiteInicial, limiteInicial + QUANTIDADE_POR_PAGINA);
+
+    if (proximoLote.length === 0 && limiteInicial === 0) {
+      lista.innerHTML = "<p style='text-align:center;'>Nenhum resultado encontrado.</p>";
+      btnMais.style.display = "none";
+      return;
+    }
+
+    proximoLote.forEach((item) => {
+      const card = document.createElement("article");
+      card.className = "card";
+      card.setAttribute("tabindex", "0");
+      card.setAttribute("role", "region");
+      card.setAttribute("aria-label", item.titulo);
+
+      const img = document.createElement("img");
+      img.src = item.imagem;
+      img.alt = `Imagem do ${item.tipo === "movie" ? "filme" : "série"} ${item.titulo}`;
+
+      const cardBody = document.createElement("div");
+      cardBody.className = "card-body";
+
+      const titulo = document.createElement("h3");
+      titulo.className = "card-title";
+      titulo.textContent = item.titulo;
+
+      const desc = document.createElement("p");
+      desc.className = "card-desc";
+      desc.textContent = item.descricao;
+
+      cardBody.appendChild(titulo);
+      cardBody.appendChild(desc);
+
+      const btnAssistir = document.createElement("button");
+      btnAssistir.className = "assistir-btn";
+      btnAssistir.textContent = item.tipo === "movie" ? "▶️ Assistir" : "▶️ Assistir Série";
+      btnAssistir.setAttribute("aria-label", `Assistir ${item.tipo === "movie" ? "filme" : "série"} ${item.titulo}`);
+
+      btnAssistir.addEventListener("click", () => {
+        if (item.tipo === "movie") abrirModalPlayer(item.video);
+        else abrirModalEpisodios(item);
+      });
+
+      const botoesContainer = document.createElement("div");
+      botoesContainer.style.display = "flex";
+      botoesContainer.style.flexWrap = "wrap";
+      botoesContainer.style.gap = "4px";
+      botoesContainer.style.marginTop = "4px";
+
+      botoesContainer.appendChild(btnAssistir);
+
+      if (item.trailer) {
+        const btnTrailer = document.createElement("button");
+        btnTrailer.className = "assistir-btn trailer";
+        btnTrailer.textContent = "▶️ Trailer";
+        btnTrailer.setAttribute("aria-label", `Assistir trailer de ${item.titulo}`);
+        btnTrailer.addEventListener("click", () => abrirModalPlayer(item.trailer));
+        botoesContainer.appendChild(btnTrailer);
       }
 
-      listaDados.forEach((item) => {
-        const card = document.createElement("article");
-        card.className = "card";
-        card.setAttribute("tabindex", "0");
-        card.setAttribute("role", "region");
-        card.setAttribute("aria-label", item.titulo);
+      cardBody.appendChild(botoesContainer);
+      card.appendChild(img);
+      card.appendChild(cardBody);
+      lista.appendChild(card);
+    });
 
-        const img = document.createElement("img");
-        img.src = item.imagem;
-        img.alt = `Imagem do ${item.tipo === "movie" ? "filme" : "série"} ${item.titulo}`;
+    limiteInicial += QUANTIDADE_POR_PAGINA;
+    btnMais.style.display = limiteInicial < dadosFiltrados.length ? "block" : "none";
+}
 
-        const cardBody = document.createElement("div");
-        cardBody.className = "card-body";
-
-        const titulo = document.createElement("h3");
-        titulo.className = "card-title";
-        titulo.textContent = item.titulo;
-
-        const desc = document.createElement("p");
-        desc.className = "card-desc";
-        desc.textContent = item.descricao;
-
-        cardBody.appendChild(titulo);
-        cardBody.appendChild(desc);
-
-        // Botão assistir principal (filme ou série)
-        const btnAssistir = document.createElement("button");
-        btnAssistir.className = "assistir-btn";
-        btnAssistir.textContent = item.tipo === "movie" ? "▶️ Assistir" : "▶️ Assistir Série";
-        btnAssistir.setAttribute("aria-label", `Assistir ${item.tipo === "movie" ? "filme" : "série"} ${item.titulo}`);
-
-        btnAssistir.addEventListener("click", () => {
-          if (item.tipo === "movie") {
-            // Filme: abrir player com vídeo principal
-            abrirModalPlayer(item.video);
-          } else if (item.tipo === "series") {
-            // Série: abrir modal episódios
-            abrirModalEpisodios(item);
-          }
-        });
-
-        // Botão assistir trailer (se tiver)
-        let btnTrailer = null;
-        if (item.trailer) {
-          btnTrailer = document.createElement("button");
-          btnTrailer.className = "assistir-btn trailer";
-          btnTrailer.textContent = "▶️ Trailer";
-          btnTrailer.setAttribute("aria-label", `Assistir trailer de ${item.titulo}`);
-
-          btnTrailer.addEventListener("click", () => {
-            abrirModalPlayer(item.trailer);
-          });
-        }
-
-        cardBody.appendChild(btnAssistir);
-        if (btnTrailer) cardBody.appendChild(btnTrailer);
-
-        card.appendChild(img);
-        card.appendChild(cardBody);
-        lista.appendChild(card);
-      });
-    }
 
     // Modal Episódios
     function abrirModalEpisodios(serie) {
@@ -1200,6 +1171,12 @@
     if (localStorage.getItem("modo") === "claro") {
       document.body.classList.add("modo-claro");
     }
+    document.getElementById("btn-carregar-mais").addEventListener("click", () => {
+    exibirLista(dadosFiltrados, false);
+    });
   </script>
 </body>
 </html>
+
+
+
