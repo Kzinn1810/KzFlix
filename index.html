@@ -334,10 +334,12 @@
       line-height: 1.2;
       margin-top: 10px;
     }
-
     .perfil-container {
       top: 10px;
       left: 10px;
+    }
+    .vitrine-card {
+     width: 160px;
     }
     }
 
@@ -368,6 +370,7 @@
       padding: 10px 0;
       box-shadow: 0 4px 8px rgba(0,0,0,0.6);
       min-width: 160px;
+      z-index: 30000;
     }
 
     .menu-perfil li {
@@ -440,6 +443,163 @@
     body.modo-claro .kz-texto {
       color: #111;
     }
+    .vitrine {
+      display: flex;
+      overflow-x: auto;
+      gap: 15px;
+      padding-bottom: 10px;
+    }
+
+    .vitrine::-webkit-scrollbar {
+      height: 8px;
+    }
+    .vitrine::-webkit-scrollbar-thumb {
+      background: #333;
+      border-radius: 4px;
+    }
+
+    .vitrine-card {
+      flex: 0 0 auto;
+      width: 200px;
+      background: #222;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+    }
+
+    .vitrine-card img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+    }
+
+    .vitrine-card h3 {
+      font-size: 16px;
+      margin: 10px;
+      color: #fff;
+    }
+    body.modo-claro .vitrine-card {
+      background: #fff;
+    }
+    body.modo-claro .vitrine-card h3 {
+      color: #000;
+    }
+    .secao-titulo {
+      font-size: 24px;
+      color: #fff;
+      margin-bottom: 15px;
+    }
+
+    body.modo-claro .secao-titulo {
+      color: #111;
+    }
+
+    .vitrine-scroll {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      gap: 20px;
+      padding-bottom: 10px;
+      scroll-behavior: smooth;
+      padding-left: 10px;
+    }
+
+    .vitrine-scroll::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .vitrine-scroll::-webkit-scrollbar-thumb {
+      background: #444;
+      border-radius: 4px;
+    }
+
+    .vitrine-card {
+      flex: 0 0 auto;
+      width: 200px;
+      scroll-snap-align: start;
+      position: relative;
+      background: #222;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .vitrine-card:hover {
+      transform: scale(1.05);
+    }
+
+    .vitrine-card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .vitrine-info {
+      position: absolute;
+      bottom: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      width: 100%;
+      padding: 10px;
+      color: #fff;
+      text-shadow: 1px 1px 2px #000;
+      transition: opacity 0.3s;
+    }
+
+    .vitrine-card:hover .vitrine-info {
+      opacity: 1;
+    }
+
+    .vitrine-info h3 {
+      font-size: 16px;
+      margin: 0 0 5px;
+    }
+
+    .vitrine-botoes {
+      display: flex;
+      gap: 5px;
+      margin-top: 5px;
+    }
+
+    .vitrine-botoes button {
+      flex: 1;
+      font-size: 12px;
+      background: #1db954;
+      border: none;
+      color: white;
+      border-radius: 4px;
+      padding: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .vitrine-botoes button.trailer {
+      background: #555;
+    }
+
+    .vitrine-botoes button:hover {
+      background: #17a944;
+    }
+
+    .vitrine-botoes button.trailer:hover {
+      background: #444;
+    }
+
+    body.modo-claro .vitrine-card {
+      background: #fff;
+    }
+
+    body.modo-claro .vitrine-info {
+      color: #111;
+      background: linear-gradient(to top, rgba(255,255,255,0.9), transparent);
+    }
+
+    body.modo-claro .vitrine-botoes button.trailer {
+      background: #ccc;
+      color: #000;
+    }
   </style>
 </head>
 <body>
@@ -475,7 +635,6 @@
       </ul>
     </div>
   </header>
-
   <div class="filtros" role="group" aria-label="Filtros de tipo">
     <button class="active" data-type="all" aria-pressed="true">Todos</button>
     <button data-type="movie" aria-pressed="false">Filmes</button>
@@ -487,6 +646,13 @@
       Sair da pesquisa
     </button>
   </div>
+  <section id="lancamentos" style="margin: 40px 0;">
+    <h2 class="secao-titulo">🔥 Lançamentos Recentes</h2>
+    <div class="vitrine-scroll" id="vitrine-lancamentos">
+      <!-- Os lançamentos serão inseridos aqui -->
+    </div>
+  </section>
+
 
   <main>
     <div class="lista" id="lista" aria-live="polite" aria-label="Lista de filmes e séries"></div>
@@ -656,6 +822,59 @@
               },
             ],
           },
+          {
+            numero: 3,
+            episodios: [
+              {
+                numero: 1,
+                titulo: "Está me ouvindo, Suzie?",
+                video:
+                  "https://drive.google.com/file/d/1-pjTGDGnB3bIM_Q2YWBMnBEPhKs8QfMr/preview",
+              },
+              {
+                numero: 2,
+                titulo: "O caso dos ratos",
+                video:
+                  "https://drive.google.com/file/d/1-wk42grROqnHekZlISTehWyFwHc3H90O/preview",
+              },
+              {
+                numero: 3,
+                titulo: "A salva‑vidas desaparecida",
+                video:
+                  "https://drive.google.com/file/d/10-6Hs0iAkFLX9gBhFyKEkCrYsbII3sa5/preview",
+              },
+              {
+                numero: 4,
+                titulo: "A prova da sauna",
+                video:
+                  "https://drive.google.com/file/d/1-xic4jherQedP1oLLokl83O56wcwwY5C/preview",
+              },
+              {
+                numero: 5,
+                titulo: "Os devorados",
+                video:
+                  "https://drive.google.com/file/d/104zxQzMrmRjphMjN_aw8H1hJVyAYcuAo/preview",
+              },
+              {
+                numero: 6,
+                titulo: "mantido como E Pluribus Unum",
+                video:
+                  "https://drive.google.com/file/d/1064IMqsw6NYzTpz7d3MhILWTfELDegyT/preview",
+              },
+              {
+                numero: 7,
+                titulo: "A mordida",
+                video:
+                  "https://drive.google.com/file/d/10-yZZKOewJrTUEX6QuMYOSh4ys1m9laM/preview",
+              },
+              {
+                numero: 8,
+                titulo: "A batalha de Starcourt",
+                video:
+                  "https://drive.google.com/file/d/10-prdN69rpI8tHHAZ79QwEfmn9UBDlm0/preview",
+              },
+            ],
+          },                  
         ],
         trailer: "https://www.youtube.com/embed/mnd7sFt5c3A",
         generos: ["drama", "ficção científica", "terror"],
@@ -1317,6 +1536,65 @@
     document.getElementById("btn-carregar-mais").addEventListener("click", () => {
     exibirLista(dadosFiltrados, false);
     });
+    // Exibir lançamentos recentes (com base em alguns títulos)
+    const ordemDesejada = [
+      "Homem-Aranha: Através do Aranhaverso",
+      "Divertidamente 2",
+      "Ainda estou aqui",
+      "Sorria",
+      "Gente grande",
+      "Tropa de Elite 2"
+    ];
+    const lancamentosRecentes = ordemDesejada
+    .map(titulo => dados.find(item => item.titulo === titulo))
+    .filter(Boolean); // Remove itens não encontrados
+
+
+    const vitrineContainer = document.getElementById("vitrine-lancamentos");
+    lancamentosRecentes.forEach((item, index) => {
+    const card = document.createElement("div");
+    card.className = "vitrine-card";
+
+    const img = document.createElement("img");
+    img.src = item.imagem;
+    img.alt = `Imagem do lançamento ${item.titulo}`;
+
+    const info = document.createElement("div");
+    info.className = "vitrine-info";
+
+    const h3 = document.createElement("h3");
+    h3.textContent = `${index + 1}. ${item.titulo}`;
+
+    const botoes = document.createElement("div");
+    botoes.className = "vitrine-botoes";
+
+    const btnAssistir = document.createElement("button");
+    btnAssistir.textContent = "▶️ Assistir";
+    btnAssistir.onclick = () => {
+      if (item.tipo === "movie") abrirModalPlayer(item.video);
+      else abrirModalEpisodios(item);
+    };
+
+    botoes.appendChild(btnAssistir);
+
+    if (item.trailer) {
+      const btnTrailer = document.createElement("button");
+      btnTrailer.textContent = "▶️ Trailer";
+      btnTrailer.classList.add("trailer");
+      btnTrailer.onclick = () => abrirModalPlayer(item.trailer);
+      botoes.appendChild(btnTrailer);
+    }
+
+    info.appendChild(h3);
+    info.appendChild(botoes);
+    card.appendChild(img);
+    card.appendChild(info);
+    vitrineContainer.appendChild(card);
+  });
+
 </script>
 </body>
 </html>
+
+
+
