@@ -1109,6 +1109,94 @@
               },
             ],
           },
+          {
+            numero: 2,
+            episodios: [
+              {
+                numero: 1,
+                titulo: "Pão e loteria",
+                video:
+                  "https://drive.google.com/file/d/1-DEqWPiCH3Fa5huZ16NJkyImXIKn0mn3/preview",
+              },
+              {
+                numero: 2,
+                titulo: "Festa de Halloween",
+                video:
+                  "https://drive.google.com/file/d/1-DMqFIOWMjJ7clzxX9GIeh2bM6Ye5b_h/preview",
+              },
+              {
+                numero: 3,
+                titulo: "001",
+                video:
+                  "https://drive.google.com/file/d/1-EjrF5YGVmS-Zpf6cHALTaX0CfdfTX7Z/preview",
+              },
+              {
+                numero: 4,
+                titulo: "Seis pernas",
+                video:
+                  "https://drive.google.com/file/d/1-GAx5WoRSLbrRsWiinGQqsQX5EaZB4Gq/preview",
+              },
+              {
+                numero: 5,
+                titulo: "Mais um jogo",
+                video:
+                  "https://drive.google.com/file/d/1-HB2yLA2bLHVi4Xm2Gkg47o7Rxw3SlVj/preview",
+              },
+              {
+                numero: 6,
+                titulo: "0 X",
+                video:
+                  "https://drive.google.com/file/d/1-HSSIvXIpUCgRAHROjuevSwkur66OH0t/preview",
+              },
+              {
+                numero: 7,
+                titulo: "Amigos ou inimigos?",
+                video:
+                  "https://drive.google.com/file/d/1-JolDVAyIfwVmg3BJEgosKImdu8ByIi-/preview",
+              },
+            ],
+          },
+          {
+            numero: 3,
+            episodios: [
+              {
+                numero: 1,
+                titulo: "Chaves e facas",
+                video:
+                  "https://drive.google.com/file/d/1-MCw1KdTiRNvO8KB5n9-L7doK5WqWKCE/preview",
+              },
+              {
+                numero: 2,
+                titulo: "Noite estrelada",
+                video:
+                  "https://drive.google.com/file/d/1-N9vW1aFWCzFuOY5FQ7IeNCTAEhhNTwB/preview",
+              },
+              {
+                numero: 3,
+                titulo: "Não é culpa sua",
+                video:
+                  "https://drive.google.com/file/d/1-QF6s40AIBTBzt0AoQfoypii8bPw39Mp/preview",
+              },
+              {
+                numero: 4,
+                titulo: "222",
+                video:
+                  "https://drive.google.com/file/d/1-TJ3aoQt6OTHSpoUmTX_b0Nyc7gC3Sse/preview",
+              },
+              {
+                numero: 5,
+                titulo: "○△□",
+                video:
+                  "https://drive.google.com/file/d/1-TU3MzisTGl7C54Pr_iY0OSvlkZBDSyh/preview",
+              },
+              {
+                numero: 6,
+                titulo: "Humanos",
+                video:
+                  "https://drive.google.com/file/d/1-ajNJxcGW27vaOlSzSwnahqVo42fCIBK/preview",
+              },
+            ],
+          },
         ],
         trailer: "https://www.youtube.com/embed/oqxAJKy0ii4",
         generos: ["drama", "suspense", "ação"],
@@ -1590,7 +1678,6 @@
       document.body.classList.toggle("modo-claro");
       localStorage.setItem("modo", document.body.classList.contains("modo-claro") ? "claro" : "escuro");
     });
-
     // Carregar tema salvo
     if (localStorage.getItem("modo") === "claro") {
       document.body.classList.add("modo-claro");
@@ -1600,13 +1687,13 @@
     });
     // Exibir lançamentos recentes (com base em alguns títulos)
     const ordemDesejada = [
+      "Round 6",
       "Homem-Aranha: Através do Aranhaverso",
-      "Stranger Things",
       "Divertidamente 2",
+      "Stranger Things",
       "Ainda estou aqui",
       "Sorria",
       "Gente grande",
-      "Tropa de Elite 2"
     ];
     const lancamentosRecentes = ordemDesejada
     .map(titulo => dados.find(item => item.titulo === titulo))
@@ -1655,5 +1742,6 @@
     vitrineContainer.appendChild(card);
   });
 </script>
+</div>
 </body>
 </html>
