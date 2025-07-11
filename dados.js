@@ -10,6 +10,7 @@ const dados = [
           "https://drive.google.com/file/d/1-VvLUBMOAhIjrcJiB2_ileQxgTKKbZvM/preview",
         trailer: "https://www.youtube.com/embed/V3spHR5x5QY",
         generos: ["terror", "suspense", "drama"],
+        //ano: 2025
       },
       {
         id: 2,
@@ -245,6 +246,7 @@ const dados = [
         ],
         trailer: "https://www.youtube.com/embed/mnd7sFt5c3A",
         generos: ["drama", "ficção científica", "terror"],
+        //ano: 2016
       },
       {
         id: 3,
@@ -257,6 +259,7 @@ const dados = [
           "https://drive.google.com/file/d/12ZGCSys7_TfVhnrIRkwG12IuryvIfdav/preview",
         trailer: "https://www.youtube.com/embed/uhkDkurK0Zg",
         generos: ["ação", "animação", "ficção científica"],
+        //ano: 2023
       },
       {
         id: 4,
@@ -399,6 +402,7 @@ const dados = [
         ],
         trailer: "https://www.youtube.com/embed/xCwwxNbtK6Y",
         generos: ["ação", "drama"],
+        ano: 2018
       },
       {
         id: 5,
@@ -411,6 +415,7 @@ const dados = [
           "https://drive.google.com/file/d/11D9uDj3Scnc7vIYl1-gxsDHy1149-iUP/preview",
         trailer: "https://www.youtube.com/embed/EPf9rNjbBpw",
         generos: ["ação", "suspense"],
+        //ano: 2025
       },
       {
         id: 6,
@@ -570,6 +575,7 @@ const dados = [
         ],
         trailer: "https://www.youtube.com/embed/oqxAJKy0ii4",
         generos: ["drama", "suspense", "ação"],
+        //ano: 2021
       },
       {
         id: 7,
@@ -582,6 +588,7 @@ const dados = [
           "https://drive.google.com/file/d/1-WpCJYdLf1P5qSM4eHbiv5PRxY7NMZ-3/preview",
         trailer: "https://www.youtube.com/embed/TcMBFSGVi1c",
         generos: ["ação", "aventura", "ficção científica"],
+        //ano: 2019
       },
       {
         id: 8,
@@ -659,6 +666,7 @@ const dados = [
         ],
         trailer: "https://www.youtube.com/embed/xCwwxNbtK6Y",
         generos: ["ficção científica", "mistério", "drama", "suspense"],
+        //ano: 2017
       },
       {
         id: 9,
@@ -671,6 +679,7 @@ const dados = [
           "https://drive.google.com/file/d/16g0QWKerQvxBJtnOTFppz9nA_3moLbDh/preview",
         trailer: "http://www.youtube.com/embed/Inl8WuKkQfQ",
         generos: ["drama", "romance"],
+        //ano: 2024
       },
       {
         id: 10,
@@ -683,6 +692,7 @@ const dados = [
           "https://drive.google.com/file/d/12N8oGT62UlTothlQ7KKx1qm1heUaFAt0/preview",
         trailer: "https://www.youtube.com/embed/yAZxx8t9zig",
         generos: ["animação", "comédia", "aventura"],
+        //ano: 2024
       },
       {
         id: 11,
@@ -695,6 +705,7 @@ const dados = [
           "https://drive.google.com/file/d/11AhnRsCSjnfxL1t0RuUiwDs1ES9rPl5Y/preview",
         trailer: "https://www.youtube.com/embed/seSIJf5mhPE",
         generos: ["aventura", "animação", "comédia"],
+        //ano: 2024
       },
       {
         id: 12,
@@ -707,9 +718,10 @@ const dados = [
           "https://drive.google.com/file/d/1-YpwEhiJZBieq3DZom2PZFvLVW2LJd6N/preview",
         trailer: "https://www.youtube.com/embed/BcDK7lkzzsU",
         generos: ["terror", "drama"],
+        //ano: 2022
       },
     {
-        id: 6,
+        id: 13,
         tipo: "series",
         titulo: "Arcanjo Renegado",
         descricao:
@@ -914,6 +926,7 @@ const dados = [
         ],
         trailer: "https://www.youtube.com/embed/FaEX2c6VW-E",
         generos: ["drama", "suspense", "ação"],
+        //ano: 2020
       },
       {
       id: 14,
@@ -926,6 +939,7 @@ const dados = [
           "https://drive.google.com/file/d/12_JTNRo6Su0Q1V2VOMKnaMM1pkDIpHT8/preview",
         trailer: "https://www.youtube.com/embed/HKVve_VSz58",
         generos: ["comédia", "familia"],
+        //ano: 2010
       },
       {
         id: 15,
@@ -1033,6 +1047,7 @@ const dados = [
         ],
         trailer: "https://www.youtube.com/embed/QczGoCmX-pI",
         generos: ["ação", "aventura", "fantasia", "drama"],
+        //ano: 2002
       },
       {
         id: 16,
@@ -1045,6 +1060,7 @@ const dados = [
           "https://drive.google.com/file/d/11U-Zph27pOvblj5teKZy9hXYKbjMlRCV/preview",
         trailer: "https://www.youtube.com/embed/LcC-jBJRzXg",
         generos: ["animação", "aventura", "comédia"],
+        //ano: 2020
       },
       {
         id: 17,
@@ -1057,6 +1073,7 @@ const dados = [
           "https://drive.google.com/file/d/1-66Xx8Gdp9vHl8yko0SGivucY92dnL2o/preview",
         trailer: "https://www.youtube.com/embed/o2AsIXSh2xo",
         generos: ["terror", "drama"],
+        //ano: 2018
       },
       {
         id: 18,
@@ -1069,6 +1086,7 @@ const dados = [
           "https://drive.google.com/file/d/118bEax43b4FWj5MZ38zZbXF_1zozmLaF/preview",
         trailer: "https://www.youtube.com/embed/uZBiNJQxtGw?si=-fO313EZbdesbqYG",
         generos: ["ação", "drama"],
+        //ano: 2007
       },
       {
         id: 19,
@@ -1081,5 +1099,19 @@ const dados = [
           "https://drive.google.com/file/d/15xR0cVYbGhlvYrKsfqKBI0X9BwSvNT6G/preview",
         trailer: "http://www.youtube.com/embed/O8YrtINB5oI",
         generos: ["ação", "drama"],
+        //ano: 2012
+      },
+      {
+        id: 19,
+        tipo: "movie",
+        titulo: "Django Livre",
+        descricao:
+          "Um ex-escravo se une a um caçador de recompensas para resgatar sua esposa das mãos de um cruel fazendeiro no sul dos EUA.",
+        imagem: "imagens/django-livre.png",
+        video:
+          "",
+        trailer: "http://www.youtube.com/embed/tivv135aGbc",
+        generos: ["drama"],
+        //ano: 2012
       },
     ];
