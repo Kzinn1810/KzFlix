@@ -133,6 +133,7 @@
       overflow: hidden;
       box-shadow: 0 2px 8px rgba(0,0,0,0.7);
       transition: transform 0.2s;
+      position: relative;
     }
 
     .card:hover {
@@ -603,6 +604,18 @@
         background: #ccc;
         color: #000;
       }
+    .ano-overlay {
+      position: absolute;
+      bottom: 6px;
+      left: 8px;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      padding: 1px 8px;
+      font-size: 10px;
+      border-radius: 4px;
+      font-weight: bold;
+      z-index: 1;
+    }
   </style>
 </head>
 <body>
@@ -835,6 +848,10 @@
       img.src = item.imagem;
       img.alt = `Imagem do ${item.tipo === "movie" ? "filme" : "série"} ${item.titulo}`;
 
+      const anoOverlay = document.createElement("div");
+      anoOverlay.className = "card-ano-overlay";
+      anoOverlay.textContent = item.ano || "";
+
       const cardBody = document.createElement("div");
       cardBody.className = "card-body";
 
@@ -842,11 +859,16 @@
       titulo.className = "card-title";
       titulo.textContent = item.titulo;
 
+      const ano = document.createElement("p");
+      ano.className = "card-ano";
+      ano.textContent = item.ano || "";
+
       const desc = document.createElement("p");
       desc.className = "card-desc";
       desc.textContent = item.descricao;
 
       cardBody.appendChild(titulo);
+      cardBody.appendChild(ano);
       cardBody.appendChild(desc);
 
       const btnAssistir = document.createElement("button");
