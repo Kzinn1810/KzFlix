@@ -399,10 +399,27 @@ const dados = [
               },
             ],
           },
+        {
+            numero: 3,
+            episodios: [
+              {
+                numero: 1,
+                titulo: "Depois da Tempestade",
+                video:
+                  "https://drive.google.com/file/d/1-t5GkKwrhfB6_LhhiA6uQXf1EfdinUDZ/preview",
+              },
+              {
+                numero: 2,
+                titulo: "Natureza em Repouso",
+                video:
+                  "https://drive.google.com/file/d/1-oG8MNyZm5pDacA8LblzeEG7TzJYdzyg/preview",
+              },
+            ],
+          },
         ],
         trailer: "https://www.youtube.com/embed/xCwwxNbtK6Y",
         generos: ["ação", "drama"],
-        ano: 2018
+        //ano: 2018
       },
       {
         id: 5,
@@ -1126,5 +1143,18 @@ const dados = [
         trailer: "http://www.youtube.com/embed/seoJIPLLWp0",
         generos: ["comédia"],
         //ano: 2000
+      },
+      {
+        id: 20,
+        tipo: "movie",
+        titulo: "Minha mãe é uma peça",
+        descricao:
+          "Minha Mãe é uma Peça é uma comédia brasileira que retrata, de forma engraçada e carinhosa, o dia a dia e as confusões da mãe dona de casa Dona Hermínia.",
+        imagem: "imagens/minha_mae_e_uma_peca.png",
+        video:
+          "https://drive.google.com/file/d/1-blRUvTBLWueam__7R7dr1XlZ_PKMQMZ/preview",
+        trailer: "http://www.youtube.com/embed/HrST-4WLlbA",
+        generos: ["comédia"],
+        //ano: 2013
       },
     ];
