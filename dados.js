@@ -725,7 +725,60 @@ const dados = [
                 titulo: "Alfa e Ômega",
                 video:
                   "https://drive.google.com/file/d/116XWWWdSb0E7YiWtqXGyJPWFIFf10R74/preview",
+              },  
+            ],
+          },
+          {
+            numero: 1,
+            episodios: [
+              {
+                numero: 1,
+                titulo: "Inícios e Finais",
+                video:
+                  "https://drive.google.com/file/d/12GjEt9WnO_-EElEEUsNxOHh_jKMGzCw9/preview",
               },
+              {
+                numero: 2,
+                titulo: "Matéria Escura",
+                video:
+                  "https://drive.google.com/file/d/12HKYJuLo5n_-yd6Fg1Za3wEoU8DZe2b7/preview",
+              },
+              {
+                numero: 3,
+                titulo: "Fantasmas",
+                video:
+                  "https://drive.google.com/file/d/12NDcmKioXYfZXiRkHNCIvZqEmbz9UbFR/preview",
+              },
+              {
+                numero: 4,
+                titulo: "Os Viajantes",
+                video:
+                  "https://drive.google.com/file/d/12RSAcGC5uevwS6ikbP3nEgRC9blvOBpf/previewk",
+              },
+              {
+                numero: 5,
+                titulo: "Achados e Perdidos",
+                video:
+                  "https://drive.google.com/file/d/12QBmx839BUZstX2iVDP_WNThA4j8_Kfw/preview",
+              },
+              {
+                numero: 6,
+                titulo: "Um Ciclo Sem Fim",
+                video:
+                  "https://drive.google.com/file/d/12ckZ65-wSsxLPFu_LPC-bs2km6WdeOgF/preview",
+              },
+              {
+                numero: 7,
+                titulo: "O Diabo Branco",
+                video:
+                  "https://drive.google.com/file/d/12a3xVaT2iJea0PZAFezebFK92RGuPaXI/preview",
+              },
+              {
+                numero: 8,
+                titulo: "Finais e Inícios",
+                video:
+                  "https://drive.google.com/file/d/12ccFTaTIQAI5g0YAi3gHgFAkhjyICpcD/preview",
+              },             
             ],
           },
         ],
@@ -1217,5 +1270,18 @@ const dados = [
         trailer: "http://www.youtube.com/embed/aKkud2sqd1o",
         generos: ["ação", "ficção científica", "aventura"],
         //ano: 2008
+      },
+      {
+        id: 21,
+        tipo: "movie",
+        titulo: "Carros",
+        descricao:
+          "Carros é uma animação que mostra um carro de corrida aprendendo sobre amizade e humildade em uma cidade do interior.",
+        imagem: "imagens/carros.png",
+        video:
+          "https://drive.google.com/file/d/12jtCo0mzpa7GyxnvnziMJCqQC3Q5Q4Y6/preview",
+        trailer: "http://www.youtube.com/embed/0I1x9ew1OZU",
+        generos: ["animação", "família", "aventura"],
+        //ano: 2006
       },
     ];
