@@ -414,6 +414,54 @@ const dados = [
                 video:
                   "https://drive.google.com/file/d/1-oG8MNyZm5pDacA8LblzeEG7TzJYdzyg/preview",
               },
+              {
+                numero: 3,
+                titulo: "Agora Você Vai Pagar",
+                video:
+                  "https://drive.google.com/file/d/11563iHDWxsxV5u9yxaLBP21Rl4ybvDWI/preview",
+              },
+              {
+                numero: 4,
+                titulo: "O Direito do Rei",
+                video:
+                  "https://drive.google.com/file/d/11KMNpCtEFl2Xc32A6hLf2G7cyOY47fDl/preview",
+              },
+              {
+                numero: 5,
+                titulo: "Miyagi-Do",
+                video:
+                  "https://drive.google.com/file/d/11UmzntbTEIZAzwq3XgPNJO44ntlGTvh1/preview",
+              },
+              {
+                numero: 6,
+                titulo: "Rei Cobra",
+                video:
+                  "https://drive.google.com/file/d/11Ojor9xxBOCSogwxyDrF79Cby_nPIYJe/preview",
+              },
+              {
+                numero: 7,
+                titulo: "Obstáculos",
+                video:
+                  "https://drive.google.com/file/d/11UssQ3ASoaFIl8jgMNuJHnga5uPLm_yj/preview",
+              },
+              {
+                numero: 8,
+                titulo: "A Vítima",
+                video:
+                  "https://drive.google.com/file/d/11VmUHrIuigf-zuFM5wXD2qPgCRCsK-t3/preview",
+              },
+              {
+                numero: 9,
+                titulo: "Sentido",
+                video:
+                  "https://drive.google.com/file/d/11Vd8lSG_D2Ijun342cGPJW1-Cox8LjWH/preview",
+              },
+              {
+                numero: 10,
+                titulo: "19 de Dezembro",
+                video:
+                  "https://drive.google.com/file/d/11EzSxsBF4yXkonBPsQz0Z1llJJmQ6BX7/preview",
+              },
             ],
           },
         ],
@@ -1156,5 +1204,18 @@ const dados = [
         trailer: "http://www.youtube.com/embed/HrST-4WLlbA",
         generos: ["comédia"],
         //ano: 2013
+      },
+      {
+        id: 21,
+        tipo: "movie",
+        titulo: "Homem de Ferro",
+        descricao:
+          "Um bilionário genial constrói uma armadura tecnológica para combater o crime e se torna o super-herói Homem de Ferro.",
+        imagem: "imagens/homem-de-ferro.png",
+        video:
+          "https://drive.google.com/file/d/114PKPFMzO3b60z5GYmP4gxFCpJEuBZU6/preview",
+        trailer: "http://www.youtube.com/embed/aKkud2sqd1o",
+        generos: ["ação", "ficção científica", "aventura"],
+        //ano: 2008
       },
     ];
