@@ -1412,5 +1412,17 @@ const dados = [
         generos: ["documentário"],
         //ano: 2022
       },
+      {
+        id: 29,
+        tipo: "movie",
+        titulo: "Travis Scott: Voando Alto - Legendado",
+        descricao:
+          "O documentário Travis Scott: Look Mom I Can Fly mostra os bastidores da ascensão meteórica do rapper enquanto ele lança o álbum Astroworld e conecta sua arte com a vida pessoal e fãs.",
+        imagem: "imagens/travis.png",
+        video:
+          "https://drive.google.com/file/d/10-oFWROvaB7Wpq4DvnzrLHaMEZ_cfx46/preview",
+        trailer: "http://www.youtube.com/embed/CpR3rI_rjtg",
+        generos: ["documentário"],
+        //ano: 2019
+      },
     ];
-    
