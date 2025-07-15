@@ -706,7 +706,7 @@ const dados = [
                 numero: 7,
                 titulo: "Entre o Tempo",
                 video:
-                  "https://drive.google.com/file/d/10pDzGPRNOCb-uT53gYExJCRTUsFUXBrZ/preview",
+                  "https://drive.google.com/file/d/11EJjCC-iMSRValSQssQas4dqXVEBgree/preview",
               },
               {
                 numero: 8,
