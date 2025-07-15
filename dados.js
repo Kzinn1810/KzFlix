@@ -706,7 +706,7 @@ const dados = [
                 numero: 7,
                 titulo: "Entre o Tempo",
                 video:
-                  "https://drive.google.com/file/d/11EJjCC-iMSRValSQssQas4dqXVEBgree/preview",
+                  "https://drive.google.com/file/d/10pDzGPRNOCb-uT53gYExJCRTUsFUXBrZ/preview",
               },
               {
                 numero: 8,
@@ -824,7 +824,7 @@ const dados = [
                 numero: 7,
                 titulo: "Entre o Tempo",
                 video:
-                  "https://drive.google.com/file/d/1-Sj3w1StBnxnChO6hEciLBRuLZm7GnVv/preiew",
+                  "https://drive.google.com/file/d/11EJjCC-iMSRValSQssQas4dqXVEBgree/preview",
               },
               {
                 numero: 8,
@@ -1504,6 +1504,36 @@ const dados = [
       },
       {
         id: 29,
+        tipo: "series",
+        titulo: "Apenas um Show",
+        descricao:
+          "Mordecai e Rigby, um gaio-azul e um guaxinim, trabalham em um parque e vivem situações absurdas e hilárias ao tentar evitar o tédio.",
+        imagem: "imagens/apenas-um-show.png",
+        temporadas: [
+          {
+            numero: 1,
+            episodios: [
+              { numero: 1, titulo: "A força", video: "https://drive.google.com/file/d/12AClvjU6MTHkRgmiXSYr5Klibk-M59Sm/preview" },
+              { numero: 2, titulo: "Apenas arrume as cadeiras", video: "https://drive.google.com/file/d/12Dk5IaZ1FHHMUOxBiISewUT1SoXwXDsb/preview" },
+              { numero: 3, titulo: "Ingressos para um show cafeinado", video: "https://drive.google.com/file/d/12LTl21UtE851cYdK2oFGUa15Z_bDv36F/preview" },
+              { numero: 4, titulo: "Socos mortais", video: "https://drive.google.com/file/d/12JXD3L9NFkKt0q0gKoUkYrZeb08lMjmg/preview" },
+              { numero: 5, titulo: "Bolos de graça", video: "https://drive.google.com/file/d/12UGgWf_e_f-FJtPJlJnC8-9A0RYPr95U/preview" },
+              { numero: 6, titulo: "O churrasco", video: "https://drive.google.com/file/d/12P-0g3cp8JhhSxG5ORqKJC7g2II7PDWd/preview" },
+              { numero: 7, titulo: "Quiejo quente de luxos", video: "https://drive.google.com/file/d/12cHebeglw0NKjF5xol1n8N-tiB8BD1sy/preview" },
+              { numero: 8, titulo: "Vão embora unicórnios", video: "https://drive.google.com/file/d/12_dh69Tpido5OP_IyyphxwOeoB_5qICc/preview" },
+              { numero: 9, titulo: "Passando um trote", video: "https://drive.google.com/file/d/12fcIyQhuwLmmznZ4Muxseoc6zwQSrlnm/preview" },
+              { numero: 10, titulo: "Dom", video: "https://drive.google.com/file/d/123asiwsfalqFA68bTr0Tf12qMB6_8EQT/preview" },
+              { numero: 11, titulo: "O corpo de Rigby", video: "https://drive.google.com/file/d/124PzIEm85kknBkX-1-CwkWUMMJBzO8pL/preview" },
+              { numero: 12, titulo: "Mordecai e os Rigbys", video: "https://drive.google.com/file/d/12FjoVu1cBVjoh1RCNnUAW8FlE5LLD14R/preview" },
+            ],
+          },
+        ],
+        trailer: "https://www.youtube.com/embed/FhKIg8O4AWI",
+        generos: ["animação", "comédia"],
+        //ano: 2010
+      },
+      {
+        id: 30,
         tipo: "movie",
         titulo: "Travis Scott: Voando Alto - Legendado",
         descricao:
