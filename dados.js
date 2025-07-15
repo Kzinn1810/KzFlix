@@ -1339,7 +1339,7 @@ const dados = [
       {
         id: 18,
         tipo: "movie",
-        titulo: "bob esponja: o invrivel resgate",
+        titulo: "bob esponja: o incrivel resgate",
         descricao:
           "Bob Esponja embarca em uma missão épica com Patrick para resgatar Gary, seu caracol de estimação, que foi raptado.",
         imagem: "imagens/bob-esponja-o-incrivel-resgate.png",
