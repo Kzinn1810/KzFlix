@@ -1205,19 +1205,19 @@ const dados = [
               },
               {
                 numero: 10,
-                titulo: "O Exame Chuunin Começa",
+                titulo: "Naruto Vê o Seu Futuro!",
                 video:
                   "https://drive.google.com/file/d/12Boap-89AvJ8__ODTK0KJlC0zQleen45/preview",
               },
               {
                 numero: 11,
-                titulo: "A Floresta da Morte",
+                titulo: "A Terra Onde um Herói Nunca Morrerá",
                 video:
                   "https://drive.google.com/file/d/11kvBtYU97B9ihdkx8_0NLCkdSnI__Ls4/preview",
               },
               {
                 numero: 12,
-                titulo: "Encare ou Fuja na Floresta da Morte",
+                titulo: "A Batalha Começa: Naruto x Sasuke",
                 video:
                   "https://drive.google.com/file/d/11s293M3FMuLGExizxxfAuqHgeqZZ_3s2/preview",
               },
@@ -1235,9 +1235,99 @@ const dados = [
               },
               {
                 numero: 15,
-                titulo: "Surpreendente Técnica Secreta de Kakashi",
+                titulo: "A Batalha Final: Zabuza vs Kakashi!",
                 video:
                   "https://drive.google.com/file/d/123OUlCWbfuYTe5P71TzW3t-LNCl8Il5R/preview",
+              },
+              {
+                numero: 16,
+                titulo: "O Selo se Rompe: Naruto Perdendo o Controle!",
+                video:
+                  "https://drive.google.com/file/d/10KcBffAdOhN-EJrsU5g6MoiIhtrv1rCg/preview",
+              },
+              {
+                numero: 17,
+                titulo: "Passado Branco, Ambição Escondida",
+                video:
+                  "https://drive.google.com/file/d/10OvneMFVKVc13JKsySzyg-M1-5ZVCaXv/preview",
+              },
+              {
+                numero: 18,
+                titulo: "Uma Ferramenta Conhecida como Shinobi",
+                video:
+                  "https://drive.google.com/file/d/10Ll5T2gHR05ouZx7X2qFH14JvRJCW-RA/preview",
+              },
+              {
+                numero: 19,
+                titulo: "O Demônio na Neve",
+                video:
+                  "https://drive.google.com/file/d/10SVH2UGcfus6UQElsjlUPQJqlZRHNcwB/preview",
+              },
+              {
+                numero: 20,
+                titulo: "Um Novo Capítulo Começa: A Prova Chūnin",
+                video:
+                  "https://drive.google.com/file/d/10PwNoAKLJ45jmi753IF9BDStCOa4oYdF/preview",
+              },
+              {
+                numero: 21,
+                titulo: "Identifiquem-se: Rivais Novos e Poderosos",
+                video:
+                  "https://drive.google.com/file/d/10WgjAY8278fyNZvBDvMq0mkzoOn3AdkR/preview",
+              },
+              {
+                numero: 22,
+                titulo: "Rock Lee Contra Sasuke!",
+                video:
+                  "https://drive.google.com/file/d/10VrKR7QW9I3Bj-QlQYYIEGDx7MBfqoEK/preview",
+              },
+              {
+                numero: 23,
+                titulo: "A Batalha de Pré-Seleção: Todos Contra Todos!",
+                video:
+                  "https://drive.google.com/file/d/10gYXDdPxBcFKE32HZuwBIBBgJzp3qkst/preview",
+              },
+              {
+                numero: 24,
+                titulo: " Liguem os Motores: A Prova Chunin Começa! ",
+                video:
+                  "https://drive.google.com/file/d/10aQ6qEQhOEm32dofAncqDnW8kRP2yHiZ/preview",
+              },
+              {
+                numero: 25,
+                titulo: "A Décima Pergunta: Tudo ou Nada!",
+                video:
+                  "https://drive.google.com/file/d/10jRRpE0ZGOlUHjfjztagGpOecd1SCJXa/preview",
+              },
+              {
+                numero: 26,
+                titulo: "Reportagem Especial: Ao Vivo da Floresta...",
+                video:
+                  "https://drive.google.com/file/d/10h1Ml5awRHaj5_eH7LWV05FE-OI7c_dZ/preview",
+              },
+              {
+                numero: 27,
+                titulo: "Encare ou Fuja na Floresta da Morte",
+                video:
+                  "https://drive.google.com/file/d/10rGNCV8xcDNxCVlMmzcMj2EyZUrL_F-F/preview",
+              },
+              {
+                numero: 28,
+                titulo: "Comer ou Ser Comido: Pânico na Floresta",
+                video:
+                  "https://drive.google.com/file/d/10nTWrmy2VXA6EAfKwbizsGsxPpaN35Hp/preview",
+              },
+              {
+                numero: 29,
+                titulo: "Os Cinco de Konoha: Um Novo Time",
+                video:
+                  "https://drive.google.com/file/d/115MDiH4mwyZY-nykdw5H4RTUJ44zeHzN/preview",
+              },
+              {
+                numero: 30,
+                titulo: "A Técnica Proibida: O Selo do Ódio",
+                video:
+                  "https://drive.google.com/file/d/110pDUy-iuCirkKiWiQBrQKF1CrX1BmBU/preview",
               },
             ],
           },
