@@ -694,6 +694,7 @@
   <div id="modal-player" role="dialog" aria-modal="true" tabindex="-1">
     <div>
       <button class="fechar-player" aria-label="Fechar player">❌</button>
+      <button class="fullscreen-player" aria-label="Tela cheia" style="position:absolute;top:10px;right:50px;background:rgba(30,30,30,0.9);border:none;color:#fff;font-size:20px;padding:8px 12px;border-radius:50px;cursor:pointer;z-index:10;transition:background 0.3s;">⛶</button>
       <iframe
         id="iframe-player"
         src=""
@@ -724,7 +725,9 @@
 
     const modalPlayer = document.getElementById("modal-player");
     const iframePlayer = document.getElementById("iframe-player");
+
     const btnFecharPlayer = modalPlayer.querySelector(".fechar-player");
+    const btnFullscreenPlayer = modalPlayer.querySelector(".fullscreen-player");
 
 
     let tipoFiltro = "all";
@@ -970,6 +973,7 @@
       modalEpisodios.style.display = "none";
     }
 
+
     // Modal Player
     function abrirModalPlayer(link) {
       iframePlayer.src = link;
@@ -977,13 +981,42 @@
       modalPlayer.focus();
     }
 
+    // Fullscreen e orientação paisagem
+    btnFullscreenPlayer.onclick = async function() {
+      const modalDiv = modalPlayer.querySelector('div');
+      if (modalDiv.requestFullscreen) {
+        await modalDiv.requestFullscreen();
+      } else if (modalDiv.webkitRequestFullscreen) {
+        await modalDiv.webkitRequestFullscreen();
+      } else if (modalDiv.msRequestFullscreen) {
+        await modalDiv.msRequestFullscreen();
+      }
+      // Tenta travar orientação para landscape em mobile
+      if (screen.orientation && screen.orientation.lock) {
+        try {
+          await screen.orientation.lock('landscape');
+        } catch (e) {}
+      }
+    };
+
     function fecharModalPlayer() {
       iframePlayer.src = "";
       modalPlayer.classList.remove("show");
     }
 
 
-    btnFecharPlayer.onclick = fecharModalPlayer;
+
+    btnFecharPlayer.onclick = function() {
+      // Sai do fullscreen se estiver
+      if (document.fullscreenElement) {
+        document.exitFullscreen();
+      }
+      // Desbloqueia orientação
+      if (screen.orientation && screen.orientation.unlock) {
+        try { screen.orientation.unlock(); } catch (e) {}
+      }
+      fecharModalPlayer();
+    };
 
     // Fechar modal player ao clicar fora do iframe
     modalPlayer.addEventListener("click", (e) => {
