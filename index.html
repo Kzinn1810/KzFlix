@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>KzFlix Filmes & Séries</title>
-  <link rel="icon" href="imagens/Kz Logo.png" type="image/png" />
+  <link rel="icon" href="imagens/Kz Logo.webp" type="image/png" />
   <style>
     * { box-sizing: border-box; }
 
@@ -295,6 +295,27 @@
 
     #modal-player .fechar-player:hover {
       background: rgba(229, 9, 20, 1);
+    }
+
+    #modal-player .pular-capitulo-player {
+      position: absolute;
+      bottom: 18px;
+      right: 18px;
+      background: #1db954;
+      border: none;
+      color: #fff;
+      font-size: 16px;
+      padding: 10px 22px;
+      border-radius: 30px;
+      cursor: pointer;
+      z-index: 12;
+      transition: background 0.3s;
+      display: none;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+
+    #modal-player .pular-capitulo-player:hover {
+      background: #17a944;
     }
 
     #iframe-player {
@@ -693,8 +714,9 @@
   <!-- Modal Player -->
   <div id="modal-player" role="dialog" aria-modal="true" tabindex="-1">
     <div>
-      <button class="fechar-player" aria-label="Fechar player">❌</button>
-      <button class="fullscreen-player" aria-label="Tela cheia" style="position:absolute;top:10px;right:50px;background:rgba(30,30,30,0.9);border:none;color:#fff;font-size:20px;padding:8px 12px;border-radius:50px;cursor:pointer;z-index:10;transition:background 0.3s;">⛶</button>
+      <button class="fullscreen-player" aria-label="Tela cheia" style="position:absolute;top:10px;right:10px;background:rgba(30,30,30,0.9);border:none;color:#fff;font-size:20px;padding:8px 12px;border-radius:50px;cursor:pointer;z-index:11;transition:background 0.3s;">⛶</button>
+      <button class="fechar-player" aria-label="Fechar player" style="position:absolute;top:10px;right:60px;">❌</button>
+      <!-- Botão pular capítulo agora fora do modal -->
       <iframe
         id="iframe-player"
         src=""
@@ -705,6 +727,8 @@
       ></iframe>
     </div>
   </div>
+  <!-- Botão Pular Capítulo fixo na parte inferior -->
+  <button class="pular-capitulo-player-global" aria-label="Pular capítulo" style="position:fixed;bottom:32px;left:50%;transform:translateX(-50%);background:#1db954;border:none;color:#fff;font-size:18px;padding:14px 32px;border-radius:30px;cursor:pointer;z-index:20000;transition:background 0.3s;display:none;box-shadow:0 2px 12px rgba(0,0,0,0.4);">⏭️ Pular Capítulo</button>
 <script src="dados.js"></script>
 <script>
 
@@ -728,6 +752,10 @@
 
     const btnFecharPlayer = modalPlayer.querySelector(".fechar-player");
     const btnFullscreenPlayer = modalPlayer.querySelector(".fullscreen-player");
+    const btnPularCapitulo = document.querySelector('.pular-capitulo-player-global');
+
+    // Variáveis para controle do episódio atual
+    let episodioAtualInfo = null;
 
 
     let tipoFiltro = "all";
@@ -960,12 +988,17 @@
     btnAssistirEpisodio.onclick = () => {
       const numTemp = Number(selectTemporada.value);
       const numEpi = Number(selectEpisodio.value);
-      if (!serieAtual) return; // <-- Usa a série correta
+      if (!serieAtual) return;
       const temporada = serieAtual.temporadas.find((t) => t.numero === numTemp);
       if (!temporada) return;
       const episodio = temporada.episodios.find((e) => e.numero === numEpi);
       if (!episodio) return;
-      abrirModalPlayer(episodio.video);
+      abrirModalPlayer(episodio.video, {
+        tipo: 'serie',
+        serie: serieAtual,
+        temporada: numTemp,
+        episodio: numEpi
+      });
       fecharModalEpisodios();
     };
 
@@ -975,47 +1008,109 @@
 
 
     // Modal Player
-    function abrirModalPlayer(link) {
+    function abrirModalPlayer(link, infoEpisodio = null) {
       iframePlayer.src = link;
       modalPlayer.classList.add("show");
       modalPlayer.focus();
+      episodioAtualInfo = infoEpisodio;
+      // Exibe botão pular capítulo global só se for episódio de série
+      if (infoEpisodio && infoEpisodio.tipo === 'serie') {
+        btnPularCapitulo.style.display = 'inline-block';
+        btnPularCapitulo.disabled = false;
+      } else {
+        btnPularCapitulo.style.display = 'none';
+      }
     }
 
     // Fullscreen e orientação paisagem
     btnFullscreenPlayer.onclick = async function() {
       const modalDiv = modalPlayer.querySelector('div');
-      if (modalDiv.requestFullscreen) {
-        await modalDiv.requestFullscreen();
-      } else if (modalDiv.webkitRequestFullscreen) {
-        await modalDiv.webkitRequestFullscreen();
-      } else if (modalDiv.msRequestFullscreen) {
-        await modalDiv.msRequestFullscreen();
-      }
-      // Tenta travar orientação para landscape em mobile
-      if (screen.orientation && screen.orientation.lock) {
-        try {
-          await screen.orientation.lock('landscape');
-        } catch (e) {}
+      if (!document.fullscreenElement) {
+        if (modalDiv.requestFullscreen) {
+          await modalDiv.requestFullscreen();
+        } else if (modalDiv.webkitRequestFullscreen) {
+          await modalDiv.webkitRequestFullscreen();
+        } else if (modalDiv.msRequestFullscreen) {
+          await modalDiv.msRequestFullscreen();
+        }
+        // Tenta travar orientação para landscape em mobile
+        if (screen.orientation && screen.orientation.lock) {
+          try {
+            await screen.orientation.lock('landscape');
+          } catch (e) {}
+        }
+      } else {
+        if (document.exitFullscreen) {
+          await document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+          await document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) {
+          await document.msExitFullscreen();
+        }
+        // Desbloqueia orientação
+        if (screen.orientation && screen.orientation.unlock) {
+          try { screen.orientation.unlock(); } catch (e) {}
+        }
       }
     };
 
-    function fecharModalPlayer() {
-      iframePlayer.src = "";
-      modalPlayer.classList.remove("show");
-    }
-
-
-
-    btnFecharPlayer.onclick = function() {
+    btnFecharPlayer.onclick = async function() {
       // Sai do fullscreen se estiver
       if (document.fullscreenElement) {
-        document.exitFullscreen();
-      }
-      // Desbloqueia orientação
-      if (screen.orientation && screen.orientation.unlock) {
-        try { screen.orientation.unlock(); } catch (e) {}
+        try {
+          if (document.exitFullscreen) {
+            await document.exitFullscreen();
+          } else if (document.webkitExitFullscreen) {
+            await document.webkitExitFullscreen();
+          } else if (document.msExitFullscreen) {
+            await document.msExitFullscreen();
+          }
+        } catch (e) {}
+        // Desbloqueia orientação
+        if (screen.orientation && screen.orientation.unlock) {
+          try { screen.orientation.unlock(); } catch (e) {}
+        }
+        // Aguarda o fullscreen sair antes de fechar o modal
+        setTimeout(fecharModalPlayer, 200);
+        return;
       }
       fecharModalPlayer();
+    }
+
+    // Função para pular capítulo
+    btnPularCapitulo.onclick = function() {
+      if (!episodioAtualInfo || episodioAtualInfo.tipo !== 'serie') return;
+      const serie = episodioAtualInfo.serie;
+      let numTemp = episodioAtualInfo.temporada;
+      let numEpi = episodioAtualInfo.episodio;
+      const temporada = serie.temporadas.find(t => t.numero === numTemp);
+      if (!temporada) return;
+      // Próximo episódio na mesma temporada
+      if (numEpi < temporada.episodios.length) {
+        const proximoEpi = temporada.episodios.find(e => e.numero === numEpi + 1);
+        if (proximoEpi) {
+          abrirModalPlayer(proximoEpi.video, {
+            tipo: 'serie',
+            serie: serie,
+            temporada: numTemp,
+            episodio: numEpi + 1
+          });
+          return;
+        }
+      }
+      // Se não há próximo episódio, tenta próxima temporada
+      const proxTemp = serie.temporadas.find(t => t.numero === numTemp + 1);
+      if (proxTemp && proxTemp.episodios.length > 0) {
+        abrirModalPlayer(proxTemp.episodios[0].video, {
+          tipo: 'serie',
+          serie: serie,
+          temporada: numTemp + 1,
+          episodio: 1
+        });
+        return;
+      }
+      // Se não há mais episódios, desabilita botão
+      btnPularCapitulo.disabled = true;
     };
 
     // Fechar modal player ao clicar fora do iframe
