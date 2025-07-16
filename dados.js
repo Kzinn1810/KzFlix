@@ -22,65 +22,20 @@ const dados = [
           {
             numero: 1,
             episodios: [
-              {
-                numero: 1,
-                titulo: "O Desaparecimento de Will Byers",
-                video:
-                  "https://drive.google.com/file/d/10_1wujyB8LFZ7ssQbN3QJub2bGfwagAU/preview",
-              },
-              {
-                numero: 2,
-                titulo: "A Estranha da Maple Street",
-                video:
-                  "https://drive.google.com/file/d/10_WLJCixI5bjOUsM0YPXlCwr_Uv2DlFI/preview",
-              },
-              {
-                numero: 3,
-                titulo: "Caramba",
-                video:
-                  "https://drive.google.com/file/d/1246KSteW2dm7Zd4eTNNiLU4GkS0GtlQx/preview",
-              },
-              {
-                numero: 4,
-                titulo: "O Corpo",
-                video:
-                  "https://drive.google.com/file/d/124mATi0t5ToEo1A_cGObKmkJ1cxLOyi6/preview",
-              },
-              {
-                numero: 5,
-                titulo: "A Pulga e o Acrobata",
-                video:
-                  "https://drive.google.com/file/d/10-6UqEj83aG9wcIeJwJRU_Fyd8KANiZn/preview",
-              },
-              {
-                numero: 6,
-                titulo: "O Monstro",
-                video:
-                  "https://drive.google.com/file/d/12Ot2VL_0xVTsoGppz-zt2GgAF7cRpAFj/preview",
-              },
-              {
-                numero: 7,
-                titulo: "A Banheira",
-                video:
-                  "https://drive.google.com/file/d/12QzD7n6oouZyR6qXGR6VbaNMKh75fTGR/preview",
-              },
-              {
-                numero: 8,
-                titulo: "O Mundo Invertido",
-                video:
-                  "https://drive.google.com/file/d/109XCvlL9k5oTWrbK_79LrFh0cNzWBkNd/preview",
-              },
+              { numero: 1, titulo: "O Desaparecimento de Will Byers", video: "https://drive.google.com/file/d/10_1wujyB8LFZ7ssQbN3QJub2bGfwagAU/preview" },
+              { numero: 2, titulo: "A Estranha da Maple Street", video: "https://drive.google.com/file/d/10_WLJCixI5bjOUsM0YPXlCwr_Uv2DlFI/preview" },
+              { numero: 3, titulo: "Caramba", video: "https://drive.google.com/file/d/1246KSteW2dm7Zd4eTNNiLU4GkS0GtlQx/preview" },
+              { numero: 4, titulo: "O Corpo", video: "https://drive.google.com/file/d/124mATi0t5ToEo1A_cGObKmkJ1cxLOyi6/preview" },
+              { numero: 5, titulo: "A Pulga e o Acrobata", video: "https://drive.google.com/file/d/10-6UqEj83aG9wcIeJwJRU_Fyd8KANiZn/preview" },
+              { numero: 6, titulo: "O Monstro", video: "https://drive.google.com/file/d/12Ot2VL_0xVTsoGppz-zt2GgAF7cRpAFj/preview" },
+              { numero: 7, titulo: "A Banheira", video: "https://drive.google.com/file/d/12QzD7n6oouZyR6qXGR6VbaNMKh75fTGR/preview" },
+              { numero: 8, titulo: "O Mundo Invertido", video: "https://drive.google.com/file/d/109XCvlL9k5oTWrbK_79LrFh0cNzWBkNd/preview" },
             ],
           },
           {
             numero: 2,
             episodios: [
-              {
-                numero: 1,
-                titulo: "MADMAX",
-                video:
-                  "https://drive.google.com/file/d/10eScNqZgMQPnMRecFgsFaKZeogd1zqve/preview",
-              },
+              { numero: 1, titulo: "MADMAX", video: "https://drive.google.com/file/d/10eScNqZgMQPnMRecFgsFaKZeogd1zqve/preview" },
               {
                 numero: 2,
                 titulo: "Gostosuras ou Travessuras, Esquisitão",
@@ -464,6 +419,21 @@ const dados = [
               },
             ],
           },
+          {
+            numero: 1,
+            episodios: [
+              { numero: 1, titulo: "Vamos Começar", video: "https://drive.google.com/file/d/10FZvvEpW_hVvlyxOiC_4cEt8k6fKrgrv/preview" },
+              { numero: 2, titulo: "Primeiro Aprenda a Ficar de Pé", video: "https://drive.google.com/file/d/10MF_CUGQ_bflKW9roQ2nFPtVa7JkmBG5/preview" },
+              { numero: 3, titulo: "Depois Aprenda a Voar", video: "https://drive.google.com/file/d/10NIbCPIEplzVcaJZ4tOQ4R1oowGS1Vmy/preview" },
+              { numero: 4, titulo: "Bicefalia", video: "https://drive.google.com/file/d/10P0orfDJFmxQjGMYShnjKD2IQqzhLNKs/preview" },
+              { numero: 5, titulo: "Ponto de Partida", video: "https://drive.google.com/file/d/10e1a3T2FAMwoPGpfwfGrmEC00TYlviEt/preview" },
+              { numero: 6, titulo: "Chutes Conseguem Garotas", video: "https://drive.google.com/file/d/10epssPY84pzbAJ9nLv1sn8E5Mnw1i11R/preview" },
+              { numero: 7, titulo: "Campos Minados", video: "https://drive.google.com/file/d/10jfoZ-MVEuNiqNf9j5uAtNH0o0wFADQ_/preview" },
+              { numero: 8, titulo: "Hora da Festa", video: "https://drive.google.com/file/d/10lRn2gBmGa8J6R-jl5wgzp-Xs6v9wgdZ/preview" },
+              { numero: 9, titulo: "A Queda", video: "https://drive.google.com/file/d/10pBTcGRz4QaiLkMFcQKADXnGSYf6ctKo/preview" },
+              { numero: 10, titulo: "A Ascensão", video: "https://drive.google.com/file/d/10KNiVznUoRgKnV0fdSX0z6auX0MD7UX3/preview" },
+            ],
+          }
         ],
         trailer: "https://www.youtube.com/embed/xCwwxNbtK6Y",
         generos: ["ação", "drama"],
@@ -1477,24 +1447,9 @@ const dados = [
           {
             numero: 1,
             episodios: [
-              {
-                numero: 1,
-                titulo: "Juninho",
-                video:
-                  "https://drive.google.com/file/d/1-iQeU9AiHZbZJgNYBHKPGWXIXEvLo7lX/preview",
-              },
-              {
-                numero: 2,
-                titulo: "Neymar do Brasil",
-                video:
-                  "https://drive.google.com/file/d/1-g_9STHkrOaVLSQa2YQwHSd0D_wYXNt3/preview",
-              },
-              {
-                numero: 3,
-                titulo: "O Pai tá on",
-                video:
-                  "https://drive.google.com/file/d/1-fYrk85GUFDxucnZi6bEVpY39GfeIDIm/preview",
-              },
+              { numero: 1, titulo: "Juninho", video: "https://drive.google.com/file/d/1-iQeU9AiHZbZJgNYBHKPGWXIXEvLo7lX/preview",},
+              { numero: 2, titulo: "Neymar do Brasil", video:"https://drive.google.com/file/d/1-g_9STHkrOaVLSQa2YQwHSd0D_wYXNt3/preview"},
+              { numero: 3, titulo: "O Pai tá on", video: "https://drive.google.com/file/d/1-fYrk85GUFDxucnZi6bEVpY39GfeIDIm/preview"},     
             ],
           },
         ],
@@ -1534,6 +1489,19 @@ const dados = [
       },
       {
         id: 30,
+        tipo: "movie",
+        titulo: "Karatê Kid: Lendas",
+        descricao:
+          "*Karatê Kid: Lendas* é uma animação de ação e aventura onde jovens lutadores viajam pelo mundo para proteger relíquias místicas do karatê.",
+        imagem: "imagens/karate.webp",
+        video:
+          "https://drive.google.com/file/d/105fzRrBUR4xgp3VT2ijOLDM-FHZm0flz/preview",
+        trailer: "http://www.youtube.com/embed/jdZPKED0Dqg",
+        generos: ["ação", "drama"],
+        //ano: 2025
+      },
+      {
+        id: 31,
         tipo: "movie",
         titulo: "Travis Scott: Voando Alto - Legendado",
         descricao:
