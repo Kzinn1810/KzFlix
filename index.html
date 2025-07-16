@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" id="meta-viewport" />
   <title>KzFlix Filmes & Séries</title>
   <link rel="icon" href="imagens/Kz Logo.webp" type="image/png" />
   <style>
@@ -15,6 +15,14 @@
       margin: 0;
       padding: 15px 20px 20px 20px;
     }
+
+    body.modal-aberto {
+  overflow: hidden !important;
+  touch-action: none !important;
+  overscroll-behavior: contain !important;
+  position: fixed;
+  width: 100vw;
+}
 
     header {
       position: relative;
@@ -270,7 +278,8 @@
     #modal-player > div {
       position: relative;
       width: 100%;
-      max-width: 960px;
+      max-width: 720px;
+      max-height: 60vh;
       aspect-ratio: 16 / 9;
       background: #000;
       border-radius: 12px;
@@ -713,10 +722,9 @@
 
   <!-- Modal Player -->
   <div id="modal-player" role="dialog" aria-modal="true" tabindex="-1">
-    <div>
+    <div style="position:relative; height:100%;">
       <button class="fullscreen-player" aria-label="Tela cheia" style="position:absolute;top:10px;right:10px;background:rgba(30,30,30,0.9);border:none;color:#fff;font-size:20px;padding:8px 12px;border-radius:50px;cursor:pointer;z-index:11;transition:background 0.3s;">⛶</button>
       <button class="fechar-player" aria-label="Fechar player" style="position:absolute;top:10px;right:60px;">❌</button>
-      <!-- Botão pular capítulo agora fora do modal -->
       <iframe
         id="iframe-player"
         src=""
@@ -727,8 +735,10 @@
       ></iframe>
     </div>
   </div>
-  <!-- Botão Pular Capítulo fixo na parte inferior -->
-  <button class="pular-capitulo-player-global" aria-label="Pular capítulo" style="position:fixed;bottom:32px;left:50%;transform:translateX(-50%);background:#1db954;border:none;color:#fff;font-size:18px;padding:14px 32px;border-radius:30px;cursor:pointer;z-index:20000;transition:background 0.3s;display:none;box-shadow:0 2px 12px rgba(0,0,0,0.4);">⏭️ Pular Capítulo</button>
+  <!-- Botão Pular Capítulo abaixo do modal player, alinhado à direita -->
+  <button class="pular-capitulo-player-global" aria-label="Pular capítulo" style="position:absolute;right:0;left:auto;bottom:-48px;background:#1db954;border:none;color:#fff;font-size:14px;padding:8px 18px;border-radius:24px;cursor:pointer;z-index:20000;transition:background 0.3s;display:none;box-shadow:0 2px 8px rgba(0,0,0,0.3);">⏭️ Pular Capítulo</button>
+    </div>
+  </div>
 <script src="dados.js"></script>
 <script>
 
@@ -753,6 +763,29 @@
     const btnFecharPlayer = modalPlayer.querySelector(".fechar-player");
     const btnFullscreenPlayer = modalPlayer.querySelector(".fullscreen-player");
     const btnPularCapitulo = document.querySelector('.pular-capitulo-player-global');
+
+    // Reposiciona o botão abaixo do modal player ao abrir
+    function posicionarPularCapitulo() {
+      const modalDiv = modalPlayer.querySelector('div');
+      if (!modalPlayer.classList.contains('show')) {
+        btnPularCapitulo.style.display = 'none';
+        return;
+      }
+      // Pega a posição do modal na tela
+      const rect = modalDiv.getBoundingClientRect();
+      btnPularCapitulo.style.position = 'absolute';
+      btnPularCapitulo.style.left = (rect.right - btnPularCapitulo.offsetWidth) + 'px';
+      btnPularCapitulo.style.top = (rect.bottom + 12 + window.scrollY) + 'px';
+      btnPularCapitulo.style.right = '';
+      btnPularCapitulo.style.bottom = '';
+    }
+
+    // Chama ao abrir modal player e ao redimensionar
+    window.addEventListener('resize', () => {
+      if (btnPularCapitulo.style.display !== 'none') {
+        posicionarPularCapitulo();
+      }
+    });
 
     // Variáveis para controle do episódio atual
     let episodioAtualInfo = null;
@@ -1013,10 +1046,18 @@
       modalPlayer.classList.add("show");
       modalPlayer.focus();
       episodioAtualInfo = infoEpisodio;
+      // Bloqueia rolagem e zoom
+      document.body.classList.add('modal-aberto');
+      // Impede zoom via meta viewport
+      const metaViewport = document.getElementById('meta-viewport');
+      if (metaViewport) {
+        metaViewport.setAttribute('content', 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no');
+      }
       // Exibe botão pular capítulo global só se for episódio de série
       if (infoEpisodio && infoEpisodio.tipo === 'serie') {
         btnPularCapitulo.style.display = 'inline-block';
         btnPularCapitulo.disabled = false;
+        setTimeout(posicionarPularCapitulo, 50);
       } else {
         btnPularCapitulo.style.display = 'none';
       }
@@ -1026,6 +1067,9 @@
     btnFullscreenPlayer.onclick = async function() {
       const modalDiv = modalPlayer.querySelector('div');
       if (!document.fullscreenElement) {
+        // Oculta botões ao entrar em fullscreen
+        btnFecharPlayer.style.display = 'none';
+        btnPularCapitulo.style.display = 'none';
         if (modalDiv.requestFullscreen) {
           await modalDiv.requestFullscreen();
         } else if (modalDiv.webkitRequestFullscreen) {
@@ -1053,6 +1097,16 @@
         }
       }
     };
+
+    // Reexibe botões ao sair do fullscreen
+    document.addEventListener('fullscreenchange', () => {
+      if (!document.fullscreenElement) {
+        btnFecharPlayer.style.display = '';
+        if (episodioAtualInfo && episodioAtualInfo.tipo === 'serie') {
+          btnPularCapitulo.style.display = 'inline-block';
+        }
+      }
+    });
 
     btnFecharPlayer.onclick = async function() {
       let saiuDoFullscreen = false;
@@ -1131,6 +1185,12 @@
       iframePlayer.src = "";
       btnPularCapitulo.style.display = "none";
       episodioAtualInfo = null;
+      // Libera rolagem e zoom
+      document.body.classList.remove('modal-aberto');
+      const metaViewport = document.getElementById('meta-viewport');
+      if (metaViewport) {
+        metaViewport.setAttribute('content', 'width=device-width, initial-scale=1');
+      }
     }
 
     // Fechar modal episódios ao clicar fora
