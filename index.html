@@ -1092,35 +1092,60 @@
       const modalDiv = modalPlayer.querySelector('div');
       const isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|Mobile/i.test(navigator.userAgent);
       if (isMobile) {
-    // Simula fullscreen no mobile
-    modalPlayer.classList.add('simulacao-fullscreen-mobile');
-    btnFecharPlayer.style.display = 'none';
-    btnPularCapitulo.style.display = 'none';
-    // Adiciona botão para sair do "fullscreen" simulado
-    if (!document.getElementById('btn-sair-fullscreen-mobile')) {
-      const btnSair = document.createElement('button');
-      btnSair.id = 'btn-sair-fullscreen-mobile';
-      btnSair.innerText = '⏏️';
-      btnSair.style.position = 'fixed';
-      btnSair.style.top = '12px';
-      btnSair.style.right = '12px';
-      btnSair.style.zIndex = '100000';
-      btnSair.style.background = 'rgba(30,30,30,0.9)';
-      btnSair.style.color = '#fff';
-      btnSair.style.fontSize = '22px';
-      btnSair.style.padding = '10px 16px';
-      btnSair.style.border = 'none';
-      btnSair.style.borderRadius = '50px';
-      btnSair.style.cursor = 'pointer';
-      btnSair.onclick = function() {
-        modalPlayer.classList.remove('simulacao-fullscreen-mobile');
-        btnSair.remove();
-        btnFecharPlayer.style.display = '';
-        if (episodioAtualInfo && episodioAtualInfo.tipo === 'serie') {
-          btnPularCapitulo.style.display = 'inline-block';
+    // Alterna modo simulado fullscreen mobile
+    const jaFullscreen = modalPlayer.classList.contains('simulacao-fullscreen-mobile');
+    let aviso = document.getElementById('aviso-orientacao');
+    if (!jaFullscreen) {
+      modalPlayer.classList.add('simulacao-fullscreen-mobile');
+      btnFecharPlayer.style.display = 'block';
+      btnFecharPlayer.style.position = 'fixed';
+      btnFecharPlayer.style.top = '12px';
+      btnFecharPlayer.style.right = '12px';
+      btnFecharPlayer.style.zIndex = '100000';
+      btnPularCapitulo.style.display = 'none';
+      // Tenta travar orientação
+      let orientationLocked = false;
+      if (screen.orientation && screen.orientation.lock) {
+        try {
+          await screen.orientation.lock('landscape');
+          orientationLocked = true;
+        } catch (e) {
+          orientationLocked = false;
         }
-      };
-      document.body.appendChild(btnSair);
+      }
+      // Mensagem para girar o aparelho se não travou
+      if (!orientationLocked) {
+        if (!aviso) {
+          aviso = document.createElement('div');
+          aviso.id = 'aviso-orientacao';
+          aviso.innerText = 'Gire o aparelho para paisagem para melhor experiência.';
+          aviso.style.position = 'fixed';
+          aviso.style.bottom = '24px';
+          aviso.style.left = '50%';
+          aviso.style.transform = 'translateX(-50%)';
+          aviso.style.background = 'rgba(0,0,0,0.8)';
+          aviso.style.color = '#fff';
+          aviso.style.padding = '10px 18px';
+          aviso.style.borderRadius = '20px';
+          aviso.style.fontSize = '16px';
+          aviso.style.zIndex = '100001';
+          document.body.appendChild(aviso);
+        }
+      } else if (aviso) {
+        aviso.remove();
+      }
+    } else {
+      modalPlayer.classList.remove('simulacao-fullscreen-mobile');
+      btnFecharPlayer.style = '';
+      if (aviso) aviso.remove();
+      if (screen.orientation && screen.orientation.unlock) {
+        try { screen.orientation.unlock(); } catch (e) {}
+      }
+      // Reexibe botões se necessário
+      btnFecharPlayer.style.display = '';
+      if (episodioAtualInfo && episodioAtualInfo.tipo === 'serie') {
+        btnPularCapitulo.style.display = 'inline-block';
+      }
     }
     return;
   }
