@@ -1002,7 +1002,10 @@ formLogin.onsubmit = (e) => {
   msgBemVindo.innerHTML = `<span style='font-size:1.5rem;vertical-align:middle;margin-right:6px;'>🎬</span>Bem-vindo, <b style='color:#1db954;'>${nome}</b>!`;
   msgBemVindo.style.display = 'block';
   msgBemVindo.style.opacity = '1';
-  // Delay de 3 segundos antes de liberar acesso
+  // Remove any body rotation
+  document.body.style.transform = '';
+  document.body.style.transition = '';
+  // Delay de 4 segundos antes de liberar acesso
   setTimeout(() => {
     msgBemVindo.style.opacity = '0';
     setTimeout(() => { msgBemVindo.style.display = 'none'; }, 700);
