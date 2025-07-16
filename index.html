@@ -1437,6 +1437,15 @@ function ajustarFullscreenMobilePorOrientacao() {
     }
     btnFecharPlayer.style.display = '';
     btnFullscreenPlayer.style.display = 'block';
+    // Posiciona o botão fechar ao lado do fullscreen
+    btnFecharPlayer.style.position = 'absolute';
+    btnFecharPlayer.style.top = '10px';
+    btnFecharPlayer.style.right = '60px';
+    btnFecharPlayer.style.zIndex = '10';
+    btnFullscreenPlayer.style.position = 'absolute';
+    btnFullscreenPlayer.style.top = '10px';
+    btnFullscreenPlayer.style.right = '10px';
+    btnFullscreenPlayer.style.zIndex = '11';
     if (episodioAtualInfo && episodioAtualInfo.tipo === 'serie') {
       btnPularCapitulo.style.display = 'inline-block';
     } else {
