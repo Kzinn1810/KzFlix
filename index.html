@@ -1378,6 +1378,37 @@
     card.appendChild(info);
     vitrineContainer.appendChild(card);
   });
+
+  // Detecta rotação da tela e ajusta o modal player em mobile
+window.addEventListener('orientationchange', ajustarFullscreenMobilePorOrientacao);
+window.addEventListener('resize', ajustarFullscreenMobilePorOrientacao);
+
+function ajustarFullscreenMobilePorOrientacao() {
+  const isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|Mobile/i.test(navigator.userAgent);
+  if (!isMobile) return;
+  if (!modalPlayer.classList.contains('show')) return;
+  // Landscape: ocupa toda a tela
+  if (window.innerWidth > window.innerHeight) {
+    if (!modalPlayer.classList.contains('simulacao-fullscreen-mobile')) {
+      modalPlayer.classList.add('simulacao-fullscreen-mobile');
+      btnFecharPlayer.style.display = 'block';
+      btnFecharPlayer.style.position = 'fixed';
+      btnFecharPlayer.style.top = '12px';
+      btnFecharPlayer.style.right = '12px';
+      btnFecharPlayer.style.zIndex = '100000';
+      btnPularCapitulo.style.display = 'none';
+    }
+  } else {
+    // Portrait: volta ao normal
+    if (modalPlayer.classList.contains('simulacao-fullscreen-mobile')) {
+      modalPlayer.classList.remove('simulacao-fullscreen-mobile');
+      btnFecharPlayer.style = '';
+      if (episodioAtualInfo && episodioAtualInfo.tipo === 'serie') {
+        btnPularCapitulo.style.display = 'inline-block';
+      }
+    }
+  }
+}
 </script>
 </div>
 </body>
