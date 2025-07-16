@@ -786,10 +786,7 @@
         allowfullscreen
         title="Player de vídeo"
       ></iframe>
-    </div>
-  </div>
-  <!-- Botão Pular Capítulo abaixo do modal player, alinhado à direita -->
-  <button class="pular-capitulo-player-global" aria-label="Pular capítulo" style="position:absolute;right:0;left:auto;bottom:-48px;background:#1db954;border:none;color:#fff;font-size:14px;padding:8px 18px;border-radius:24px;cursor:pointer;z-index:20000;transition:background 0.3s;display:none;box-shadow:0 2px 8px rgba(0,0,0,0.3);">⏭️ Pular Capítulo</button>
+      <button class="pular-capitulo-player-global" aria-label="Pular capítulo" style="position:absolute;right:18px;bottom:18px;background:#1db954;border:none;color:#fff;font-size:14px;padding:8px 18px;border-radius:24px;cursor:pointer;z-index:20000;transition:background 0.3s;display:none;box-shadow:0 2px 8px rgba(0,0,0,0.3);">⏭️ Pular Capítulo</button>
     </div>
   </div>
 <script src="dados.js"></script>
@@ -1110,7 +1107,15 @@
       if (infoEpisodio && infoEpisodio.tipo === 'serie') {
         btnPularCapitulo.style.display = 'inline-block';
         btnPularCapitulo.disabled = false;
-        setTimeout(posicionarPularCapitulo, 50);
+        // Posiciona abaixo do modal, alinhado à direita
+        btnPularCapitulo.style.position = 'absolute';
+        btnPularCapitulo.style.bottom = '18px';
+        btnPularCapitulo.style.right = '18px';
+        btnPularCapitulo.style.left = 'auto';
+        btnPularCapitulo.style.top = '';
+        btnPularCapitulo.style.zIndex = '20000';
+        btnPularCapitulo.style.visibility = 'visible';
+        btnPularCapitulo.style.opacity = '1';
       } else {
         btnPularCapitulo.style.display = 'none';
       }
@@ -1437,7 +1442,7 @@ function ajustarFullscreenMobilePorOrientacao() {
     }
     btnFecharPlayer.style.display = '';
     btnFullscreenPlayer.style.display = 'block';
-    // Posiciona os botões no topo direito, lado a lado
+    // Posiciona os botões fullscreen e fechar no topo direito
     btnFullscreenPlayer.style.position = 'absolute';
     btnFullscreenPlayer.style.top = '10px';
     btnFullscreenPlayer.style.right = '10px';
@@ -1446,18 +1451,21 @@ function ajustarFullscreenMobilePorOrientacao() {
     btnFecharPlayer.style.top = '10px';
     btnFecharPlayer.style.right = '60px';
     btnFecharPlayer.style.zIndex = '12';
+    // Botão pular capítulo volta para baixo à direita do modal
     if (episodioAtualInfo && episodioAtualInfo.tipo === 'serie') {
       btnPularCapitulo.style.display = 'inline-block';
       btnPularCapitulo.style.position = 'absolute';
-      btnPularCapitulo.style.top = '10px';
-      btnPularCapitulo.style.right = '140px';
-      btnPularCapitulo.style.zIndex = '11';
+      btnPularCapitulo.style.bottom = '18px';
+      btnPularCapitulo.style.right = '18px';
+      btnPularCapitulo.style.left = 'auto';
+      btnPularCapitulo.style.top = '';
+      btnPularCapitulo.style.zIndex = '20000';
       btnPularCapitulo.style.visibility = 'visible';
       btnPularCapitulo.style.opacity = '1';
+      btnPularCapitulo.disabled = false;
     } else {
       btnPularCapitulo.style.display = 'none';
-      btnPularCapitulo.style.visibility = 'hidden';
-      btnPularCapitulo.style.opacity = '0';
+      btnPularCapitulo.disabled = true;
     }
   }
 }
