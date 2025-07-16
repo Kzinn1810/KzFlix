@@ -646,6 +646,30 @@
       font-weight: bold;
       z-index: 1;
     }
+
+    @media (max-width: 900px) {
+  #modal-player.simulacao-fullscreen-mobile {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    padding: 0 !important;
+    background: #000 !important;
+    z-index: 99999 !important;
+    align-items: stretch !important;
+    justify-content: center !important;
+  }
+  #modal-player.simulacao-fullscreen-mobile > div {
+    max-width: 100vw !important;
+    max-height: 100vh !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    aspect-ratio: unset !important;
+  }
+}
   </style>
 </head>
 <body>
@@ -1066,6 +1090,40 @@
     // Fullscreen e orientação paisagem
     btnFullscreenPlayer.onclick = async function() {
       const modalDiv = modalPlayer.querySelector('div');
+      const isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|Mobile/i.test(navigator.userAgent);
+      if (isMobile) {
+    // Simula fullscreen no mobile
+    modalPlayer.classList.add('simulacao-fullscreen-mobile');
+    btnFecharPlayer.style.display = 'none';
+    btnPularCapitulo.style.display = 'none';
+    // Adiciona botão para sair do "fullscreen" simulado
+    if (!document.getElementById('btn-sair-fullscreen-mobile')) {
+      const btnSair = document.createElement('button');
+      btnSair.id = 'btn-sair-fullscreen-mobile';
+      btnSair.innerText = '⏏️';
+      btnSair.style.position = 'fixed';
+      btnSair.style.top = '12px';
+      btnSair.style.right = '12px';
+      btnSair.style.zIndex = '100000';
+      btnSair.style.background = 'rgba(30,30,30,0.9)';
+      btnSair.style.color = '#fff';
+      btnSair.style.fontSize = '22px';
+      btnSair.style.padding = '10px 16px';
+      btnSair.style.border = 'none';
+      btnSair.style.borderRadius = '50px';
+      btnSair.style.cursor = 'pointer';
+      btnSair.onclick = function() {
+        modalPlayer.classList.remove('simulacao-fullscreen-mobile');
+        btnSair.remove();
+        btnFecharPlayer.style.display = '';
+        if (episodioAtualInfo && episodioAtualInfo.tipo === 'serie') {
+          btnPularCapitulo.style.display = 'inline-block';
+        }
+      };
+      document.body.appendChild(btnSair);
+    }
+    return;
+  }
       if (!document.fullscreenElement) {
         // Oculta botões ao entrar em fullscreen
         btnFecharPlayer.style.display = 'none';
