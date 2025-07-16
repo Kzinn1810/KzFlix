@@ -819,7 +819,7 @@
 
     // Reposiciona o botão abaixo do modal player ao abrir
     function posicionarPularCapitulo() {
-      const modalDiv = modalPlayer.querySelector('div');
+      // modalDiv já foi declarado acima
       if (!modalPlayer.classList.contains('show')) {
         btnPularCapitulo.style.display = 'none';
         return;
@@ -1120,92 +1120,94 @@
     btnFullscreenPlayer.onclick = async function() {
       const modalDiv = modalPlayer.querySelector('div');
       const isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|Mobile/i.test(navigator.userAgent);
-      if (isMobile) {
-    // Alterna modo simulado fullscreen mobile
-    const jaFullscreen = modalPlayer.classList.contains('simulacao-fullscreen-mobile');
-    let aviso = document.getElementById('aviso-orientacao');
-    if (!jaFullscreen) {
-      modalPlayer.classList.add('simulacao-fullscreen-mobile');
-      btnFecharPlayer.style.display = 'block';
-      btnFecharPlayer.style.position = 'fixed';
-      btnFecharPlayer.style.top = '12px';
-      btnFecharPlayer.style.right = '12px';
-      btnFecharPlayer.style.zIndex = '100000';
-      btnPularCapitulo.style.display = 'none';
-      // Tenta travar orientação
-      let orientationLocked = false;
-      if (screen.orientation && screen.orientation.lock) {
-        try {
-          await screen.orientation.lock('landscape');
-          orientationLocked = true;
-        } catch (e) {
-          orientationLocked = false;
-        }
-      }
-      // Mensagem para girar o aparelho se não travou
-      if (!orientationLocked) {
-        if (!aviso) {
-          aviso = document.createElement('div');
-          aviso.id = 'aviso-orientacao';
-          aviso.innerText = 'Gire o aparelho para paisagem para melhor experiência.';
-          aviso.style.position = 'fixed';
-          aviso.style.bottom = '24px';
-          aviso.style.left = '50%';
-          aviso.style.transform = 'translateX(-50%)';
-          aviso.style.background = 'rgba(0,0,0,0.8)';
-          aviso.style.color = '#fff';
-          aviso.style.padding = '10px 18px';
-          aviso.style.borderRadius = '20px';
-          aviso.style.fontSize = '16px';
-          aviso.style.zIndex = '100001';
-          document.body.appendChild(aviso);
-        }
-      } else if (aviso) {
-        aviso.remove();
-      }
-    } else {
-      modalPlayer.classList.remove('simulacao-fullscreen-mobile');
-      btnFecharPlayer.style = '';
-      if (aviso) aviso.remove();
-      if (screen.orientation && screen.orientation.unlock) {
-        try { screen.orientation.unlock(); } catch (e) {}
-      }
-      // Reexibe botões se necessário
-      btnFecharPlayer.style.display = '';
-      if (episodioAtualInfo && episodioAtualInfo.tipo === 'serie') {
-        btnPularCapitulo.style.display = 'inline-block';
-      }
-    }
-    return;
-  }
+      const modalDiv = modalPlayer.querySelector('div');
+      // Sempre tenta fullscreen nativo primeiro
       if (!document.fullscreenElement) {
-        // Oculta botões ao entrar em fullscreen
+        // Oculta todos os botões, exceto o fullscreen
         btnFecharPlayer.style.display = 'none';
         btnPularCapitulo.style.display = 'none';
+        btnFullscreenPlayer.style.display = 'block';
+        let entrouFullscreen = false;
+        // Tenta API nativa
         if (modalDiv.requestFullscreen) {
-          await modalDiv.requestFullscreen();
+          try {
+            await modalDiv.requestFullscreen();
+            entrouFullscreen = true;
+          } catch (e) {}
         } else if (modalDiv.webkitRequestFullscreen) {
-          await modalDiv.webkitRequestFullscreen();
+          try {
+            await modalDiv.webkitRequestFullscreen();
+            entrouFullscreen = true;
+          } catch (e) {}
         } else if (modalDiv.msRequestFullscreen) {
-          await modalDiv.msRequestFullscreen();
+          try {
+            await modalDiv.msRequestFullscreen();
+            entrouFullscreen = true;
+          } catch (e) {}
         }
-        // Tenta travar orientação para landscape em mobile
+        // Tenta travar orientação para landscape
         if (screen.orientation && screen.orientation.lock) {
           try {
             await screen.orientation.lock('landscape');
           } catch (e) {}
         }
-      } else {
-        if (document.exitFullscreen) {
-          await document.exitFullscreen();
-        } else if (document.webkitExitFullscreen) {
-          await document.webkitExitFullscreen();
-        } else if (document.msExitFullscreen) {
-          await document.msExitFullscreen();
+        // Se não entrou em fullscreen nativo, simula no mobile
+        if (!entrouFullscreen && isMobile) {
+          const jaFullscreen = modalPlayer.classList.contains('simulacao-fullscreen-mobile');
+          let aviso = document.getElementById('aviso-orientacao');
+          if (!jaFullscreen) {
+            modalPlayer.classList.add('simulacao-fullscreen-mobile');
+            btnFecharPlayer.style.display = 'none';
+            btnPularCapitulo.style.display = 'none';
+            btnFullscreenPlayer.style.display = 'block';
+            // Mensagem para girar o aparelho se não travou
+            if (!aviso) {
+              aviso = document.createElement('div');
+              aviso.id = 'aviso-orientacao';
+              aviso.innerText = 'Gire o aparelho para paisagem para melhor experiência.';
+              aviso.style.position = 'fixed';
+              aviso.style.bottom = '24px';
+              aviso.style.left = '50%';
+              aviso.style.transform = 'translateX(-50%)';
+              aviso.style.background = 'rgba(0,0,0,0.8)';
+              aviso.style.color = '#fff';
+              aviso.style.padding = '10px 18px';
+              aviso.style.borderRadius = '20px';
+              aviso.style.fontSize = '16px';
+              aviso.style.zIndex = '100001';
+              document.body.appendChild(aviso);
+            }
+          }
         }
-        // Desbloqueia orientação
+      } else {
+        // Sai do fullscreen nativo ou simulado
+        if (document.exitFullscreen) {
+          try {
+            await document.exitFullscreen();
+          } catch (e) {}
+        } else if (document.webkitExitFullscreen) {
+          try {
+            await document.webkitExitFullscreen();
+          } catch (e) {}
+        } else if (document.msExitFullscreen) {
+          try {
+            await document.msExitFullscreen();
+          } catch (e) {}
+        }
         if (screen.orientation && screen.orientation.unlock) {
           try { screen.orientation.unlock(); } catch (e) {}
+        }
+        // Remove simulação se estiver ativa
+        if (modalPlayer.classList.contains('simulacao-fullscreen-mobile')) {
+          modalPlayer.classList.remove('simulacao-fullscreen-mobile');
+          btnFecharPlayer.style = '';
+          let aviso = document.getElementById('aviso-orientacao');
+          if (aviso) aviso.remove();
+        }
+        // Reexibe botões se necessário
+        btnFecharPlayer.style.display = '';
+        if (episodioAtualInfo && episodioAtualInfo.tipo === 'serie') {
+          btnPularCapitulo.style.display = 'inline-block';
         }
       }
     };
@@ -1213,9 +1215,13 @@
     // Reexibe botões ao sair do fullscreen
     document.addEventListener('fullscreenchange', () => {
       if (!document.fullscreenElement) {
+        // Reexibe botões ao sair do fullscreen
         btnFecharPlayer.style.display = '';
+        btnFullscreenPlayer.style.display = 'block';
         if (episodioAtualInfo && episodioAtualInfo.tipo === 'serie') {
           btnPularCapitulo.style.display = 'inline-block';
+        } else {
+          btnPularCapitulo.style.display = 'none';
         }
       }
     });
