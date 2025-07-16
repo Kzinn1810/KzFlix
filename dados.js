@@ -5,7 +5,7 @@ const dados = [
         titulo: "Pecadores",
         descricao:
           "Um terror gótico e musical ambientado no sul dos EUA nos anos 1930, onde vampiros racistas enfrentam músicos negros em uma batalha por alma, cultura e sobrevivência.",
-        imagem: "imagens/pecadores.png",
+        imagem: "imagens/pecadores.webp",
         video:
           "https://drive.google.com/file/d/1-VvLUBMOAhIjrcJiB2_ileQxgTKKbZvM/preview",
         trailer: "https://www.youtube.com/embed/V3spHR5x5QY",
@@ -17,7 +17,7 @@ const dados = [
         tipo: "series",
         titulo: "Stranger Things",
         descricao: "Um grupo de amigos enfrenta eventos sobrenaturais em sua cidade.",
-        imagem: "imagens/stranger-things.png",
+        imagem: "imagens/stranger-things.webp",
         temporadas: [
           {
             numero: 1,
@@ -254,7 +254,7 @@ const dados = [
         titulo: "Homem-Aranha: Através do Aranhaverso",
         descricao:
           "Miles Morales viaja por universos paralelos e enfrenta um multiverso de Homens-Aranha.",
-        imagem: "imagens/homem-aranha-atraves-do-aranhaverso.png",
+        imagem: "imagens/homem-aranha-atraves-do-aranhaverso.webp",
         video:
           "https://drive.google.com/file/d/12ZGCSys7_TfVhnrIRkwG12IuryvIfdav/preview",
         trailer: "https://www.youtube.com/embed/uhkDkurK0Zg",
@@ -267,7 +267,7 @@ const dados = [
         titulo: "Cobra Kai",
         descricao:
           "Continuando a rivalidade do Karate Kid, jovens reativam o dojo Cobra Kai.",
-        imagem: "imagens/cobra-kai.png",
+        imagem: "imagens/cobra-kai.webp",
         temporadas: [
           {
             numero: 1,
@@ -475,7 +475,7 @@ const dados = [
         titulo: "Um Filme Minecraft",
         descricao:
           "live-action baseado no famoso jogo da Mojang, que acompanha uma adolescente e seu grupo improvável de heróis tentando salvar o mundo do Ender Dragon.",
-        imagem: "imagens/minecraft.png",
+        imagem: "imagens/minecraft.webp",
         video:
           "https://drive.google.com/file/d/1-e4f4uwm1mQVOy-XpLZRiov1Un-sfevT/preview",
         trailer: "https://www.youtube.com/embed/SZMub74Xd-Q",
@@ -488,7 +488,7 @@ const dados = [
         titulo: "Round 6",
         descricao:
           "Centenas de pessoas com dificuldades financeiras aceitam um convite para participar de jogos mortais valendo um grande prêmio em dinheiro.",
-        imagem: "imagens/round-6.png",
+        imagem: "imagens/round-6.webp",
         temporadas: [
           {
             numero: 1,
@@ -648,7 +648,7 @@ const dados = [
         titulo: "Vingadores: Ultimato",
         descricao:
           "Os Vingadores restantes se unem para desfazer as ações de Thanos e restaurar o universo.",
-        imagem: "imagens/vingadores-ultimato.png",
+        imagem: "imagens/vingadores-ultimato.webp",
         video:
           "https://drive.google.com/file/d/1-WpCJYdLf1P5qSM4eHbiv5PRxY7NMZ-3/preview",
         trailer: "https://www.youtube.com/embed/TcMBFSGVi1c",
@@ -661,7 +661,7 @@ const dados = [
         titulo: "Dark",
         descricao:
           "Dark é uma série alemã de ficção científica e suspense que explora viagens no tempo e os segredos sombrios de quatro famílias interligadas.",
-        imagem: "imagens/dark.png",
+        imagem: "imagens/dark.webp",
         temporadas: [
           {
             numero: 1,
@@ -845,7 +845,7 @@ const dados = [
         titulo: "Ainda estou aqui",
         descricao:
           "Ainda Estou Aqui é um drama emocionante que retrata o luto, o amor e a luta de uma jovem para manter viva a memória do namorado após sua morte.",
-        imagem: "imagens/ainda-estou-aqui.png",
+        imagem: "imagens/ainda-estou-aqui.webp",
         video:
           "https://drive.google.com/file/d/16g0QWKerQvxBJtnOTFppz9nA_3moLbDh/preview",
         trailer: "http://www.youtube.com/embed/Inl8WuKkQfQ",
@@ -858,7 +858,7 @@ const dados = [
         titulo: "Divertidamente 2",
         descricao:
           "Riley enfrenta novas emoções na adolescência, incluindo Ansiedade, Inveja e Vergonha.",
-        imagem: "imagens/divertidamente-2.png",
+        imagem: "imagens/divertidamente-2.webp",
         video:
           "https://drive.google.com/file/d/12N8oGT62UlTothlQ7KKx1qm1heUaFAt0/preview",
         trailer: "https://www.youtube.com/embed/yAZxx8t9zig",
@@ -871,7 +871,7 @@ const dados = [
         titulo: "Meu Malvado Favorito 4",
         descricao:
           "O vilão mais amado do planeta, que virou agente da Liga Antivilões, retorna para mais uma aventura em Meu Malvado Favorito 4.",
-        imagem: "imagens/meu-malvado-favorito-4.png",
+        imagem: "imagens/meu-malvado-favorito-4.webp",
         video:
           "https://drive.google.com/file/d/11AhnRsCSjnfxL1t0RuUiwDs1ES9rPl5Y/preview",
         trailer: "https://www.youtube.com/embed/seSIJf5mhPE",
@@ -884,7 +884,7 @@ const dados = [
         titulo: "Sorria",
         descricao:
           "Após presenciar um evento traumático, uma terapeuta começa a vivenciar eventos assustadores.",
-        imagem: "imagens/sorria.png",
+        imagem: "imagens/sorria.webp",
         video:
           "https://drive.google.com/file/d/1-YpwEhiJZBieq3DZom2PZFvLVW2LJd6N/preview",
         trailer: "https://www.youtube.com/embed/BcDK7lkzzsU",
@@ -897,7 +897,7 @@ const dados = [
         titulo: "Arcanjo Renegado",
         descricao:
           "Arcanjo Renegado é uma série policial brasileira que acompanha um justiceiro do Bope dividido entre a lei e a violência para combater o crime no Rio de Janeiro.",
-        imagem: "imagens/arcanjo-renegado.png",
+        imagem: "imagens/arcanjo-renegado.webp",
         temporadas: [
           {
             numero: 1,
@@ -1105,7 +1105,7 @@ const dados = [
         titulo: "Ballerina - Do Universo de John Wick",
         descricao:
           "A trama segue uma assassina habilidosa, interpretada por Ana de Armas, que foi treinada nas tradições da organização Ruska Roma.",
-        imagem: "imagens/ballerina.png",
+        imagem: "imagens/ballerina.webp",
         video:
           "https://drive.google.com/file/d/11D9uDj3Scnc7vIYl1-gxsDHy1149-iUP/preview",
         trailer: "https://www.youtube.com/embed/EPf9rNjbBpw",
@@ -1118,7 +1118,7 @@ const dados = [
         titulo: "Deadpool & Wolverine",
         descricao:
           "Filme do universo Marvel que reúne o irreverente mercenário Deadpool e o mutante Wolverine em uma aventura cheia de humor ácido, ação intensa e viagens pelo multiverso.",
-        imagem: "imagens/deadpool-wolverine.png",
+        imagem: "imagens/deadpool-wolverine.webp",
         video:
           "https://drive.google.com/file/d/1-Zypj93QGX_PJW9TjTqfurdhvgfvdhVu/preview",
         trailer: "https://www.youtube.com/embed/dEbe0rS4Z2A",
@@ -1131,7 +1131,7 @@ const dados = [
         titulo: "Gente grande",
         descricao:
           "Um grupo de amigos de infância se reencontra após muitos anos para reviver momentos divertidos e caóticos em um fim de semana juntos.",
-        imagem: "imagens/gente-grande.png",
+        imagem: "imagens/gente-grande.webp",
         video:
           "https://drive.google.com/file/d/12_JTNRo6Su0Q1V2VOMKnaMM1pkDIpHT8/preview",
         trailer: "https://www.youtube.com/embed/HKVve_VSz58",
@@ -1144,7 +1144,7 @@ const dados = [
         titulo: "Naruto",
         descricao:
           "Naruto é um anime que acompanha a jornada de um jovem ninja determinado a conquistar o reconhecimento de sua vila e se tornar Hokage.",
-        imagem: "imagens/naruto.png",
+        imagem: "imagens/naruto.webp",
         temporadas: [
           {
             numero: 1,
@@ -1342,7 +1342,7 @@ const dados = [
         titulo: "bob esponja: o incrivel resgate",
         descricao:
           "Bob Esponja embarca em uma missão épica com Patrick para resgatar Gary, seu caracol de estimação, que foi raptado.",
-        imagem: "imagens/bob-esponja-o-incrivel-resgate.png",
+        imagem: "imagens/bob-esponja-o-incrivel-resgate.webp",
         video:
           "https://drive.google.com/file/d/11U-Zph27pOvblj5teKZy9hXYKbjMlRCV/preview",
         trailer: "https://www.youtube.com/embed/LcC-jBJRzXg",
@@ -1355,7 +1355,7 @@ const dados = [
         titulo: "Bird Box",
         descricao:
           "Bird Box mostra uma mãe e seus filhos tentando sobreviver vendados a criaturas que enlouquecem quem as vê.",
-        imagem: "imagens/bird-box.png",
+        imagem: "imagens/bird-box.webp",
         video:
           "https://drive.google.com/file/d/1-66Xx8Gdp9vHl8yko0SGivucY92dnL2o/preview",
         trailer: "https://www.youtube.com/embed/o2AsIXSh2xo",
@@ -1368,7 +1368,7 @@ const dados = [
         titulo: "Tropa de Elite",
         descricao:
           "Um capitão do BOPE enfrenta a violência do tráfico e os dilemas morais da guerra urbana no Rio de Janeiro.",
-        imagem: "imagens/tropa-de-elite.png",
+        imagem: "imagens/tropa-de-elite.webp",
         video:
           "https://drive.google.com/file/d/118bEax43b4FWj5MZ38zZbXF_1zozmLaF/preview",
         trailer: "https://www.youtube.com/embed/uZBiNJQxtGw?si=-fO313EZbdesbqYG",
@@ -1381,7 +1381,7 @@ const dados = [
         titulo: "Tropa de Elite 2",
         descricao:
           "Agora como subsecretário de segurança, Nascimento enfrenta a corrupção sistêmica do Estado enquanto lida com conflitos pessoais e políticos.",
-        imagem: "imagens/tropa-de-elite-2.png",
+        imagem: "imagens/tropa-de-elite-2.webp",
         video:
           "https://drive.google.com/file/d/15xR0cVYbGhlvYrKsfqKBI0X9BwSvNT6G/preview",
         trailer: "http://www.youtube.com/embed/O8YrtINB5oI",
@@ -1394,7 +1394,7 @@ const dados = [
         titulo: "Django Livre",
         descricao:
           "Um ex-escravo se une a um caçador de recompensas para resgatar sua esposa das mãos de um cruel fazendeiro no sul dos EUA.",
-        imagem: "imagens/django-livre.png",
+        imagem: "imagens/django-livre.webp",
         video:
           "https://drive.google.com/file/d/1-3qCPO74VTnIKp6lVNmsiAo6kz3a_2Ye/preview",
         trailer: "http://www.youtube.com/embed/tivv135aGbc",
@@ -1407,7 +1407,7 @@ const dados = [
         titulo: "As Branquelas",
         descricao:
           "Dois agentes do FBI se disfarçam de socialites brancas para investigar um plano de sequestro na alta sociedade.",
-        imagem: "imagens/as-branquelas.png",
+        imagem: "imagens/as-branquelas.webp",
         video:
           "https://drive.google.com/file/d/1-TBykD6eh9XpOSyGgA2HkhpefkbFHeQh/preview",
         trailer: "http://www.youtube.com/embed/seoJIPLLWp0",
@@ -1420,7 +1420,7 @@ const dados = [
         titulo: "Minha mãe é uma peça",
         descricao:
           "Minha Mãe é uma Peça é uma comédia brasileira que retrata, de forma engraçada e carinhosa, o dia a dia e as confusões da mãe dona de casa Dona Hermínia.",
-        imagem: "imagens/minha_mae_e_uma_peca.png",
+        imagem: "imagens/minha_mae_e_uma_peca.webp",
         video:
           "https://drive.google.com/file/d/1-blRUvTBLWueam__7R7dr1XlZ_PKMQMZ/preview",
         trailer: "http://www.youtube.com/embed/HrST-4WLlbA",
@@ -1433,7 +1433,7 @@ const dados = [
         titulo: "Homem de Ferro",
         descricao:
           "Um bilionário genial constrói uma armadura tecnológica para combater o crime e se torna o super-herói Homem de Ferro.",
-        imagem: "imagens/homem-de-ferro.png",
+        imagem: "imagens/homem-de-ferro.webp",
         video:
           "https://drive.google.com/file/d/114PKPFMzO3b60z5GYmP4gxFCpJEuBZU6/preview",
         trailer: "http://www.youtube.com/embed/aKkud2sqd1o",
@@ -1446,7 +1446,7 @@ const dados = [
         titulo: "Velozes e Furiosos 7",
         descricao:
           "Dominic Toretto e sua equipe enfrentam um assassino implacável enquanto tentam proteger sua família e manter sua liberdade.",
-        imagem: "imagens/velozes-e-furiosos-7.png",
+        imagem: "imagens/velozes-e-furiosos-7.webp",
         video:
           "https://drive.google.com/file/d/12rb55ROxXXRUOFRZWqTszoRmVZh12EnU/preview",
         trailer: "http://www.youtube.com/embed//hujU0dw6Erk",
@@ -1459,7 +1459,7 @@ const dados = [
         titulo: "Carros",
         descricao:
           "Carros é uma animação que mostra um carro de corrida aprendendo sobre amizade e humildade em uma cidade do interior.",
-        imagem: "imagens/carros.png",
+        imagem: "imagens/carros.webp",
         video:
           "https://drive.google.com/file/d/12jtCo0mzpa7GyxnvnziMJCqQC3Q5Q4Y6/preview",
         trailer: "http://www.youtube.com/embed/0I1x9ew1OZU",
@@ -1472,7 +1472,7 @@ const dados = [
         titulo: "Neymar: O Caos Perfeito",
         descricao:
           "Neymar: O Caos Perfeito é uma minissérie documental da Netflix que explora a vida, carreira e controvérsias do astro do futebol Neymar Jr., revelando os bastidores de sua fama e as pressões dentro e fora de campo.",
-        imagem: "imagens/neymar.png",
+        imagem: "imagens/neymar.webp",
         temporadas: [
           {
             numero: 1,
@@ -1508,7 +1508,7 @@ const dados = [
         titulo: "Apenas um Show",
         descricao:
           "Mordecai e Rigby, um gaio-azul e um guaxinim, trabalham em um parque e vivem situações absurdas e hilárias ao tentar evitar o tédio.",
-        imagem: "imagens/apenas-um-show.png",
+        imagem: "imagens/apenas-um-show.webp",
         temporadas: [
           {
             numero: 1,
@@ -1538,7 +1538,7 @@ const dados = [
         titulo: "Travis Scott: Voando Alto - Legendado",
         descricao:
           "O documentário Travis Scott: Look Mom I Can Fly mostra os bastidores da ascensão meteórica do rapper enquanto ele lança o álbum Astroworld e conecta sua arte com a vida pessoal e fãs.",
-        imagem: "imagens/travis.png",
+        imagem: "imagens/travis.webp",
         video:
           "https://drive.google.com/file/d/10-oFWROvaB7Wpq4DvnzrLHaMEZ_cfx46/preview",
         trailer: "http://www.youtube.com/embed/CpR3rI_rjtg",
