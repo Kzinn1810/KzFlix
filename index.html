@@ -1055,7 +1055,7 @@
     };
 
     btnFecharPlayer.onclick = async function() {
-      // Sai do fullscreen se estiver
+      let saiuDoFullscreen = false;
       if (document.fullscreenElement) {
         try {
           if (document.exitFullscreen) {
@@ -1065,16 +1065,21 @@
           } else if (document.msExitFullscreen) {
             await document.msExitFullscreen();
           }
+          saiuDoFullscreen = true;
         } catch (e) {}
         // Desbloqueia orientação
         if (screen.orientation && screen.orientation.unlock) {
           try { screen.orientation.unlock(); } catch (e) {}
         }
-        // Aguarda o fullscreen sair antes de fechar o modal
-        setTimeout(fecharModalPlayer, 200);
-        return;
       }
-      fecharModalPlayer();
+      // Sempre fecha o modal, aguarda se saiu do fullscreen
+      if (saiuDoFullscreen) {
+        setTimeout(() => {
+          fecharModalPlayer();
+        }, 200);
+      } else {
+        fecharModalPlayer();
+      }
     }
 
     // Função para pular capítulo
@@ -1119,6 +1124,14 @@
         fecharModalPlayer();
       }
     });
+
+    // Função robusta para fechar o modal player
+    function fecharModalPlayer() {
+      modalPlayer.classList.remove("show");
+      iframePlayer.src = "";
+      btnPularCapitulo.style.display = "none";
+      episodioAtualInfo = null;
+    }
 
     // Fechar modal episódios ao clicar fora
     modalEpisodios.addEventListener("click", (e) => {
