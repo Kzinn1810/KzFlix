@@ -420,7 +420,7 @@ const dados = [
             ],
           },
           {
-            numero: 1,
+            numero: 4,
             episodios: [
               { numero: 1, titulo: "Vamos Começar", video: "https://drive.google.com/file/d/10FZvvEpW_hVvlyxOiC_4cEt8k6fKrgrv/preview" },
               { numero: 2, titulo: "Primeiro Aprenda a Ficar de Pé", video: "https://drive.google.com/file/d/10MF_CUGQ_bflKW9roQ2nFPtVa7JkmBG5/preview" },
