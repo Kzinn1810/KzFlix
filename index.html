@@ -1452,8 +1452,12 @@ function ajustarFullscreenMobilePorOrientacao() {
       btnPularCapitulo.style.top = '10px';
       btnPularCapitulo.style.right = '140px';
       btnPularCapitulo.style.zIndex = '11';
+      btnPularCapitulo.style.visibility = 'visible';
+      btnPularCapitulo.style.opacity = '1';
     } else {
       btnPularCapitulo.style.display = 'none';
+      btnPularCapitulo.style.visibility = 'hidden';
+      btnPularCapitulo.style.opacity = '0';
     }
   }
 }
