@@ -792,7 +792,7 @@
         </button>
       </div>
       <div id="login-erro" class="login-erro" style="margin-bottom:8px;"></div>
-      <div id="msg-bem-vindo" style="display:none;text-align:center;font-size:1.1rem;color:#1db954;font-weight:bold;margin-top:8px;transition:opacity 0.7s;will-change:transform;"></div>
+      <div id="msg-bem-vindo" style="display:none;text-align:center;font-size:1.1rem;color:#1db954;font-weight:bold;margin-top:8px;transition:opacity 0.7s;"></div>
       <button type="submit" class="login-btn">Entrar</button>
     </form>
   </div>
@@ -801,14 +801,6 @@
       from { opacity: 0; transform: scale(1.08); }
       to { opacity: 1; transform: scale(1); }
     }
-    @keyframes rotateMessage {
-  0% { transform: rotate(0deg); }
-  20% { transform: rotate(10deg); }
-  40% { transform: rotate(-10deg); }
-  60% { transform: rotate(10deg); }
-  80% { transform: rotate(-10deg); }
-  100% { transform: rotate(0deg); }
-}
     .login-card {
       backdrop-filter: blur(14px);
       background: rgba(24,24,24,0.97);
@@ -1010,25 +1002,13 @@ formLogin.onsubmit = (e) => {
   msgBemVindo.innerHTML = `<span style='font-size:1.5rem;vertical-align:middle;margin-right:6px;'>🎬</span>Bem-vindo, <b style='color:#1db954;'>${nome}</b>!`;
   msgBemVindo.style.display = 'block';
   msgBemVindo.style.opacity = '1';
-  msgBemVindo.style.animation = 'rotateMessage 1.2s ease-in-out 0s 2';
-  // Gira a tela (body) junto com a mensagem
-  document.body.style.transition = 'transform 0.7s';
-  document.body.style.transform = 'rotate(10deg)';
-  setTimeout(() => {
-    document.body.style.transform = 'rotate(-10deg)';
-  }, 600);
-  setTimeout(() => {
-    document.body.style.transform = 'rotate(0deg)';
-  }, 1200);
-  // Delay de 4 segundos antes de liberar acesso
+  // Delay de 3 segundos antes de liberar acesso
   setTimeout(() => {
     msgBemVindo.style.opacity = '0';
     setTimeout(() => { msgBemVindo.style.display = 'none'; }, 700);
     modalLogin.style.display = "none";
     document.body.classList.remove('modal-aberto');
-    document.body.style.transform = '';
-    document.body.style.transition = '';
-  }, 4000);
+  }, 3000);
 };
 
 // Mostrar/ocultar senha com SVG
@@ -1436,6 +1416,9 @@ toggleSenha.addEventListener('click', () => {
               aviso.style.fontSize = '16px';
               aviso.style.zIndex = '100001';
               document.body.appendChild(aviso);
+              setTimeout(() => {
+                if (aviso) aviso.remove();
+              }, 4000);
             }
           }
         }
@@ -1691,12 +1674,15 @@ function ajustarFullscreenMobilePorOrientacao() {
     btnFecharPlayer.style.display = 'none';
     btnPularCapitulo.style.display = 'none';
     btnFullscreenPlayer.style.display = 'block';
+    // Remove mensagem de orientação se existir
+    let aviso = document.getElementById('aviso-orientacao');
+    if (aviso) aviso.remove();
   } else {
     // Portrait: volta ao normal
     if (modalPlayer.classList.contains('simulacao-fullscreen-mobile')) {
       modalPlayer.classList.remove('simulacao-fullscreen-mobile');
     }
-    btnFecharPlayer.style.display = 'block';
+    btnFecharPlayer.style.display = '';
     btnFullscreenPlayer.style.display = 'block';
     // Posiciona os botões fullscreen e fechar no topo direito
     btnFullscreenPlayer.style.position = 'absolute';
@@ -1722,6 +1708,27 @@ function ajustarFullscreenMobilePorOrientacao() {
     } else {
       btnPularCapitulo.style.display = 'none';
       btnPularCapitulo.disabled = true;
+    }
+    // Exibe mensagem para girar a tela e faz ela sumir após 4 segundos
+    let aviso = document.getElementById('aviso-orientacao');
+    if (!aviso) {
+      aviso = document.createElement('div');
+      aviso.id = 'aviso-orientacao';
+      aviso.innerText = 'Gire o aparelho para melhor experiência.';
+      aviso.style.position = 'fixed';
+      aviso.style.bottom = '24px';
+      aviso.style.left = '50%';
+      aviso.style.transform = 'translateX(-50%)';
+      aviso.style.background = 'rgba(0,0,0,0.8)';
+      aviso.style.color = '#fff';
+      aviso.style.padding = '10px 18px';
+      aviso.style.borderRadius = '20px';
+      aviso.style.fontSize = '16px';
+      aviso.style.zIndex = '100001';
+      document.body.appendChild(aviso);
+      setTimeout(() => {
+        if (aviso) aviso.remove();
+      }, 4000);
     }
   }
 }
