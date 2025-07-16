@@ -17,12 +17,12 @@
     }
 
     body.modal-aberto {
-  overflow: hidden !important;
-  touch-action: none !important;
-  overscroll-behavior: contain !important;
-  position: fixed;
-  width: 100vw;
-}
+      overflow: hidden !important;
+      touch-action: none !important;
+      overscroll-behavior: contain !important;
+      position: fixed;
+      width: 100vw;
+    }
 
     header {
       position: relative;
@@ -703,6 +703,7 @@
 </head>
 <body>
   <header>
+    <!-- Botão de login removido, login obrigatório -->
     <div class="perfil-container">
       <button id="btn-perfil" aria-label="Abrir menu de perfil">⚙️</button>
       <ul id="menu-perfil" class="menu-perfil" role="menu" aria-label="Menu de Perfil">
@@ -773,6 +774,142 @@
     </div>
   </div>
 
+  <!-- Modal Login moderno -->
+  <div id="modal-login" style="display:flex;position:fixed;top:0;left:0;width:100vw;height:100vh;background:linear-gradient(135deg,#111 0%,#444 100%);z-index:20001;justify-content:center;align-items:center;animation:fadeInLogin 0.7s;">
+    <form id="form-login" class="login-card">
+      <img src="imagens/Kz Logo.png" alt="Logo KzFlix" style="width:80px;height:80px;object-fit:cover;border-radius:18px;box-shadow:0 0 18px #4448,0 2px 12px #0008;margin-bottom:18px;">
+      <h2 class="login-title">Bem-vindo ao KzFlix</h2>
+      <div class="login-field">
+        <span class="login-icon">👤</span>
+        <input type="text" id="login-nome" placeholder="Seu nome" required>
+      </div>
+      <div class="login-field" style="position:relative;">
+        <span class="login-icon">🔒</span>
+        <input type="password" id="login-senha" placeholder="Sua senha" required style="padding-right:38px;">
+        <button type="button" id="toggle-senha" aria-label="Mostrar senha" style="position:absolute;right:8px;background:none;border:none;color:#aaa;font-size:1.5rem;cursor:pointer;outline:none;top:50%;transform:translateY(-50%);padding:0;display:flex;align-items:center;">
+          <svg id="eye-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+          <svg id="eye-closed" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><path d="M17.94 17.94A10.94 10.94 0 0 1 12 19c-7 0-11-7-11-7a21.07 21.07 0 0 1 5.06-7.06"></path><path d="M1 1l22 22"></path></svg>
+        </button>
+      </div>
+      <div id="login-erro" class="login-erro" style="margin-bottom:8px;"></div>
+      <div id="msg-bem-vindo" style="display:none;text-align:center;font-size:1.1rem;color:#1db954;font-weight:bold;margin-top:8px;transition:opacity 0.7s;"></div>
+      <button type="submit" class="login-btn">Entrar</button>
+    </form>
+  </div>
+  <style>
+    @keyframes fadeInLogin {
+      from { opacity: 0; transform: scale(1.08); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .login-card {
+      backdrop-filter: blur(14px);
+      background: rgba(24,24,24,0.97);
+      padding: 38px 32px 32px 32px;
+      border-radius: 28px;
+      box-shadow: 0 8px 32px #2228,0 0 0 2px #4448;
+      width: 100%;
+      max-width: 370px;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      align-items: center;
+      position: relative;
+      border: 1.5px solid #4448;
+      animation: fadeInLogin 0.7s;
+    }
+    .login-title {
+      color: #f2f2f2;
+      margin-bottom: 0;
+      font-size: 2rem;
+      font-family: 'Arial Black', 'Impact', Arial, sans-serif;
+      letter-spacing: 2px;
+      text-shadow: 0 2px 12px #222,0 2px 8px #0008;
+      text-align: center;
+    }
+    .login-field {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      background: rgba(44,44,44,0.92);
+      border-radius: 12px;
+      box-shadow: 0 2px 8px #2224;
+      border: 1.5px solid #4448;
+      margin-bottom: 2px;
+      padding: 0 10px;
+      transition: box-shadow 0.2s, border 0.2s;
+    }
+    .login-field:focus-within {
+      box-shadow: 0 0 0 2px #444,0 2px 8px #2228;
+      border: 1.5px solid #444;
+    }
+    .login-icon {
+      font-size: 1.3rem;
+      color: #888;
+      margin-right: 8px;
+      text-shadow: 0 0 8px #2228;
+    }
+    .login-field input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      color: #f2f2f2;
+      font-size: 1.1rem;
+      padding: 14px 0;
+      outline: none;
+      letter-spacing: 1px;
+      font-family: inherit;
+      transition: color 0.2s;
+    }
+    .login-field input::placeholder {
+      color: #888;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      font-family: inherit;
+    }
+    .login-btn {
+      width: 100%;
+      background: linear-gradient(90deg,#222 0%,#444 100%);
+      color: #f2f2f2;
+      font-size: 1.3rem;
+      padding: 15px 0;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 0 18px #2228,0 2px 12px #4444;
+      transition: background 0.3s,transform 0.2s,box-shadow 0.2s;
+      letter-spacing: 2px;
+      text-shadow: 0 2px 8px #222;
+      margin-top: 10px;
+    }
+    .login-btn:hover {
+      background: linear-gradient(90deg,#444 0%,#222 100%);
+      transform: scale(1.04);
+      box-shadow: 0 0 24px #444a,0 2px 12px #2224;
+    }
+    .login-erro {
+      display: none;
+      color: #888;
+      font-size: 1rem;
+      margin-top: 6px;
+      text-align: center;
+      text-shadow: 0 2px 8px #222;
+      letter-spacing: 1px;
+    }
+    @media (max-width: 500px) {
+      .login-card {
+        max-width: 98vw;
+        padding: 18px 6vw 18px 6vw;
+      }
+      .login-title {
+        font-size: 1.2rem;
+      }
+      .login-btn {
+        font-size: 1rem;
+        padding: 12px 0;
+      }
+    }
+  </style>
   <!-- Modal Player -->
   <div id="modal-player" role="dialog" aria-modal="true" tabindex="-1">
     <div style="position:relative; height:100%;">
@@ -791,7 +928,99 @@
   </div>
 <script src="dados.js"></script>
 <script>
+// Login modal aprimorado
+const modalLogin = document.getElementById("modal-login");
+const formLogin = document.getElementById("form-login");
+const loginErro = document.getElementById("login-erro");
+const loginNome = document.getElementById('login-nome');
+const loginSenha = document.getElementById('login-senha');
+const loginUserBtns = document.querySelectorAll('.login-user-btn');
 
+// Bloqueia rolagem ao abrir
+document.body.classList.add('modal-aberto');
+
+// Foca no campo nome ao abrir
+window.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    loginNome.focus();
+  }, 200);
+});
+
+// Impede fechar modal por clique ou ESC
+modalLogin.addEventListener("click", (e) => {
+  e.stopPropagation();
+});
+document.addEventListener("keydown", (e) => {
+  if (modalLogin.style.display === "flex") {
+    if (e.key === "Escape") {
+      e.preventDefault();
+    }
+  }
+});
+
+// Botões de usuário
+loginUserBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    loginNome.value = btn.getAttribute('data-nome');
+    loginSenha.value = btn.getAttribute('data-senha');
+    loginNome.focus();
+    loginErro.style.display = 'none';
+  });
+});
+
+formLogin.onsubmit = (e) => {
+  e.preventDefault();
+  const nome = loginNome.value.trim();
+  const senha = loginSenha.value.trim();
+  const msgBemVindo = document.getElementById('msg-bem-vindo');
+  if (!nome || !senha) {
+    loginErro.textContent = "Preencha todos os campos.";
+    loginErro.style.display = "block";
+    msgBemVindo.style.display = "none";
+    return;
+  }
+  // Só permite os logins específicos
+  const loginsValidos = [
+    { nome: "Kzinn", senha: "renatamachado" },
+    { nome: "Maxz", senha: "132607" }
+  ];
+  const valido = loginsValidos.some(l => l.nome === nome && l.senha === senha);
+  if (!valido) {
+    loginErro.textContent = "Login ou senha inválidos. Use um dos logins permitidos.";
+    loginErro.style.display = "block";
+    msgBemVindo.style.display = "none";
+    return;
+  }
+  loginErro.style.display = "none";
+  msgBemVindo.innerHTML = `<span style='font-size:1.5rem;vertical-align:middle;margin-right:6px;'>🎬</span>Bem-vindo, <b style='color:#1db954;'>${nome}</b>!`;
+  msgBemVindo.style.display = 'block';
+  msgBemVindo.style.opacity = '1';
+  // Delay de 3 segundos antes de liberar acesso
+  setTimeout(() => {
+    msgBemVindo.style.opacity = '0';
+    setTimeout(() => { msgBemVindo.style.display = 'none'; }, 700);
+    modalLogin.style.display = "none";
+    document.body.classList.remove('modal-aberto');
+  }, 3000);
+};
+
+// Mostrar/ocultar senha com SVG
+const toggleSenha = document.getElementById('toggle-senha');
+const eyeOpen = document.getElementById('eye-open');
+const eyeClosed = document.getElementById('eye-closed');
+toggleSenha.addEventListener('click', () => {
+  if (loginSenha.type === 'password') {
+    loginSenha.type = 'text';
+    eyeOpen.style.display = 'none';
+    eyeClosed.style.display = 'inline';
+    toggleSenha.setAttribute('aria-label', 'Ocultar senha');
+  } else {
+    loginSenha.type = 'password';
+    eyeOpen.style.display = 'inline';
+    eyeClosed.style.display = 'none';
+    toggleSenha.setAttribute('aria-label', 'Mostrar senha');
+  }
+});
     const lista = document.getElementById("lista");
     let dadosFiltrados = [];
     let limiteInicial = 0;
@@ -1362,13 +1591,13 @@
     });
     // Exibir lançamentos recentes (com base em alguns títulos)
     const ordemDesejada = [
+      "Karatê Kid: Lendas",
       "Ballerina - Do Universo de John Wick",
       "Round 6",
       "Pecadores",
       "Um Filme Minecraft",
       "Arcanjo Renegado",
       "Homem-Aranha: Através do Aranhaverso",
-      "Meu Malvado Favorito 4",
       "Dark",
     ];
     const lancamentosRecentes = ordemDesejada
