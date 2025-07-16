@@ -792,7 +792,7 @@
         </button>
       </div>
       <div id="login-erro" class="login-erro" style="margin-bottom:8px;"></div>
-      <div id="msg-bem-vindo" style="display:none;text-align:center;font-size:1.1rem;color:#1db954;font-weight:bold;margin-top:8px;transition:opacity 0.7s;"></div>
+      <div id="msg-bem-vindo" style="display:none;text-align:center;font-size:1.1rem;color:#1db954;font-weight:bold;margin-top:8px;transition:opacity 0.7s;will-change:transform;"></div>
       <button type="submit" class="login-btn">Entrar</button>
     </form>
   </div>
@@ -801,6 +801,14 @@
       from { opacity: 0; transform: scale(1.08); }
       to { opacity: 1; transform: scale(1); }
     }
+    @keyframes rotateMessage {
+  0% { transform: rotate(0deg); }
+  20% { transform: rotate(10deg); }
+  40% { transform: rotate(-10deg); }
+  60% { transform: rotate(10deg); }
+  80% { transform: rotate(-10deg); }
+  100% { transform: rotate(0deg); }
+}
     .login-card {
       backdrop-filter: blur(14px);
       background: rgba(24,24,24,0.97);
@@ -1002,13 +1010,25 @@ formLogin.onsubmit = (e) => {
   msgBemVindo.innerHTML = `<span style='font-size:1.5rem;vertical-align:middle;margin-right:6px;'>🎬</span>Bem-vindo, <b style='color:#1db954;'>${nome}</b>!`;
   msgBemVindo.style.display = 'block';
   msgBemVindo.style.opacity = '1';
-  // Delay de 3 segundos antes de liberar acesso
+  msgBemVindo.style.animation = 'rotateMessage 1.2s ease-in-out 0s 2';
+  // Gira a tela (body) junto com a mensagem
+  document.body.style.transition = 'transform 0.7s';
+  document.body.style.transform = 'rotate(10deg)';
+  setTimeout(() => {
+    document.body.style.transform = 'rotate(-10deg)';
+  }, 600);
+  setTimeout(() => {
+    document.body.style.transform = 'rotate(0deg)';
+  }, 1200);
+  // Delay de 4 segundos antes de liberar acesso
   setTimeout(() => {
     msgBemVindo.style.opacity = '0';
     setTimeout(() => { msgBemVindo.style.display = 'none'; }, 700);
     modalLogin.style.display = "none";
     document.body.classList.remove('modal-aberto');
-  }, 3000);
+    document.body.style.transform = '';
+    document.body.style.transition = '';
+  }, 4000);
 };
 
 // Mostrar/ocultar senha com SVG
@@ -1676,7 +1696,7 @@ function ajustarFullscreenMobilePorOrientacao() {
     if (modalPlayer.classList.contains('simulacao-fullscreen-mobile')) {
       modalPlayer.classList.remove('simulacao-fullscreen-mobile');
     }
-    btnFecharPlayer.style.display = '';
+    btnFecharPlayer.style.display = 'block';
     btnFullscreenPlayer.style.display = 'block';
     // Posiciona os botões fullscreen e fechar no topo direito
     btnFullscreenPlayer.style.position = 'absolute';
