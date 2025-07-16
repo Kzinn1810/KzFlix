@@ -989,6 +989,7 @@ formLogin.onsubmit = (e) => {
     { nome: "gtcbarbosa", senha: "081518" },
     { nome: "cardoso", senha: "gozarindo" },
     { nome: "Alan", senha: "12345" },
+    { nome: "Julia", senha: "2702" },
     { nome: "jottameterebolando", senha: "peledosexo" }
   ];
   const valido = loginsValidos.some(l => l.nome === nome && l.senha === senha);
@@ -1002,16 +1003,14 @@ formLogin.onsubmit = (e) => {
   msgBemVindo.innerHTML = `<span style='font-size:1.5rem;vertical-align:middle;margin-right:6px;'>🎬</span>Bem-vindo, <b style='color:#1db954;'>${nome}</b>!`;
   msgBemVindo.style.display = 'block';
   msgBemVindo.style.opacity = '1';
-  // Remove any body rotation
-  document.body.style.transform = '';
-  document.body.style.transition = '';
+  msgBemVindo.style.animation = '';
   // Delay de 4 segundos antes de liberar acesso
   setTimeout(() => {
     msgBemVindo.style.opacity = '0';
     setTimeout(() => { msgBemVindo.style.display = 'none'; }, 700);
     modalLogin.style.display = "none";
     document.body.classList.remove('modal-aberto');
-  }, 3000);
+  }, 4000);
 };
 
 // Mostrar/ocultar senha com SVG
