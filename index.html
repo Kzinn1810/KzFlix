@@ -1425,21 +1425,22 @@ function ajustarFullscreenMobilePorOrientacao() {
   if (window.innerWidth > window.innerHeight) {
     if (!modalPlayer.classList.contains('simulacao-fullscreen-mobile')) {
       modalPlayer.classList.add('simulacao-fullscreen-mobile');
-      btnFecharPlayer.style.display = 'block';
-      btnFecharPlayer.style.position = 'fixed';
-      btnFecharPlayer.style.top = '12px';
-      btnFecharPlayer.style.right = '12px';
-      btnFecharPlayer.style.zIndex = '100000';
-      btnPularCapitulo.style.display = 'none';
     }
+    // Em fullscreen simulado mobile, só mostra o botão fullscreen
+    btnFecharPlayer.style.display = 'none';
+    btnPularCapitulo.style.display = 'none';
+    btnFullscreenPlayer.style.display = 'block';
   } else {
     // Portrait: volta ao normal
     if (modalPlayer.classList.contains('simulacao-fullscreen-mobile')) {
       modalPlayer.classList.remove('simulacao-fullscreen-mobile');
-      btnFecharPlayer.style = '';
-      if (episodioAtualInfo && episodioAtualInfo.tipo === 'serie') {
-        btnPularCapitulo.style.display = 'inline-block';
-      }
+    }
+    btnFecharPlayer.style.display = '';
+    btnFullscreenPlayer.style.display = 'block';
+    if (episodioAtualInfo && episodioAtualInfo.tipo === 'serie') {
+      btnPularCapitulo.style.display = 'inline-block';
+    } else {
+      btnPularCapitulo.style.display = 'none';
     }
   }
 }
