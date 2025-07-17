@@ -841,8 +841,36 @@ const dados = [
               { numero: 6, titulo: "A Porta Negra", video: "https://drive.google.com/file/d/12E-R3e5UTHr8_-EUBrq9T7J2w0lZiJgA/preview" },
               { numero: 7, titulo: "Dissecação", video: "https://drive.google.com/file/d/12K2NvXrWuWo0F80s_QZ-57q8T7t81U7Y/preview" },
               { numero: 8, titulo: "Um Raio de P*ta de Sol", video: "https://drive.google.com/file/d/12FVOAkTstJiSP2pvnSFVDHFCguMcIFwz/preview" },
-              { numero: 9, titulo: "Eco", video: "https://drive.google.com/file/d/12WYIJ-wxoMjspAabzDYUEyTg89hRZHAN/preview" },
+              { numero: 9, titulo: "Ecos", video: "https://drive.google.com/file/d/12WYIJ-wxoMjspAabzDYUEyTg89hRZHAN/preview" },
               { numero: 10, titulo: "Coroa das Sombras", video: "https://drive.google.com/file/d/123mWm_v6d6iK4nnEsUDj7hnuMM1U7yy7/preview" },
+            ],
+          },
+          {
+            numero: 2,
+            episodios: [
+              { numero: 1, titulo: "O Cofre de Demônios", video: "https://drive.google.com/file/d/137VZvW0wejoVzKiOwB4xhVn9X31BD1h7/preview" },
+              { numero: 2, titulo: "A Cabeça e o Coração", video: "https://drive.google.com/file/d/13GAfMYr9gynBnlA2oBNIWn4D7RK6xsd9/preview" },
+              { numero: 3, titulo: "Esquecido", video: "https://drive.google.com/file/d/13IwltUTGPRELJAA-htrIZ_Wa-vpKjodE/preview" },
+              { numero: 4, titulo: "Mais Rápido do que a Luz", video: "https://drive.google.com/file/d/13Kk-MYQ2ZafOL7WUS-fWd83M6PnOhBAO/preview" },
+              { numero: 5, titulo: "Jogada Dupla", video: "https://drive.google.com/file/d/13Vtl4kD3-wrcFnGFGDTIpNLJt459UVxF/preview" },
+              { numero: 6, titulo: "A Chave da Mímica", video: "https://drive.google.com/file/d/13b5Yg8_lU-c0rRrKfm2jIZRXFk2ZPQz0/preview" },
+              { numero: 7, titulo: "Perfuração", video: "https://drive.google.com/file/d/13cFRYXPlqxsSwamqQ6UXOXmUAqlpMiO9/preview" },
+              { numero: 8, titulo: "Irmãos", video: "https://drive.google.com/file/d/1-ZcWQ9Q6yhWbOU04Mufa-OVTcvDxu1Zd/preview" },
+              { numero: 9, titulo: "Alfa e Ômega", video: "https://drive.google.com/file/d/13ubWdVVnI4vfcUfVUjqDVaNf6dbqJJ7T/preview" },
+              { numero: 10, titulo: "O Relicário", video: "https://drive.google.com/file/d/13DF6yYlHiM9x0uwusdeGLEQDjJsvmlHD/preview" },
+            ],
+          },
+          {
+            numero: 3,
+            episodios: [
+              { numero: 1, titulo: "A Invasão", video: "https://drive.google.com/file/d/10-MB-ddUpFC9KG6PQdq0DeL-CJvGg7wR/preview" },
+              { numero: 2, titulo: "As Cortes do Céu", video: "https://drive.google.com/file/d/1-eRPUV9rij4drBsuk9DPNbpAby95IPWa/preview" },
+              { numero: 3, titulo: "O Fim do Mundo", video: "https://drive.google.com/file/d/10DXK4JsuYV1CrH_pSgJDpN0W7jC75gOC/preview" },
+              { numero: 4, titulo: "A Chave da Memória", video: "https://drive.google.com/file/d/10H7BboiVMPwaOoEQz9gSVX1oldkT7JZL/preview" },
+              { numero: 5, titulo: "Corrente do Mal", video: "https://drive.google.com/file/d/10KVOT0FH1TRteGMcOw6hM2s7jC6APcQX/preview" },
+              { numero: 6, titulo: "Dança da Chave", video: "https://drive.google.com/file/d/10NBWEF_eT404tUQZRfWjGnlcoyR23TmA/preview" },
+              { numero: 7, titulo: "Eco", video: "https://drive.google.com/file/d/10QmQ9yEkoQydvZ_o5HBHYvbGkUuLDmxd/preview" },
+              { numero: 8, titulo: "A Chave do Abismo", video: "https://drive.google.com/file/d/10_9YfGy2Q_K0_oqtdwy_xD-10voR4UKo/preview" },
             ],
           },
         ],
@@ -1447,12 +1475,25 @@ const dados = [
         imagem: "imagens/velozes-e-furiosos-7.webp",
         video:
           "https://drive.google.com/file/d/12rb55ROxXXRUOFRZWqTszoRmVZh12EnU/preview",
-        trailer: "http://www.youtube.com/embed//hujU0dw6Erk",
+        trailer: "http://www.youtube.com/embed/hujU0dw6Erk",
         generos: ["ação", "crime", "suspense"],
         //ano: 2015
       },
       {
         id: 28,
+        tipo: "movie",
+        titulo: "A barraca do beijo",
+        descricao:
+          "Um romance adolescente cheio de confusões, paixões e desafios entre amizade e amor.",
+        imagem: "imagens/barraca do beijo.webp",
+        video:
+          "https://drive.google.com/file/d/10eof651eVsyyVcfEFQArNYG9wHwTTFqg/preview",
+        trailer: "http://www.youtube.com/embed/QIalE8-E990",
+        generos: ["romance", "comédia", "drama"],
+        //ano: 2018
+      },
+      {
+        id: 29,
         tipo: "movie",
         titulo: "Carros",
         descricao:
@@ -1465,7 +1506,7 @@ const dados = [
         //ano: 2006
       },
       {
-        id: 29,
+        id: 30,
         tipo: "series",
         titulo: "Neymar: O Caos Perfeito",
         descricao:
@@ -1486,7 +1527,7 @@ const dados = [
         //ano: 2022
       },
       {
-        id: 30,
+        id: 31,
         tipo: "series",
         titulo: "Apenas um Show",
         descricao:
@@ -1516,7 +1557,7 @@ const dados = [
         //ano: 2010
       },
       {
-        id: 31,
+        id: 32,
         tipo: "movie",
         titulo: "Venom",
         descricao:
@@ -1529,7 +1570,7 @@ const dados = [
         //ano: 2018
       },
       {
-        id: 32,
+        id: 33,
         tipo: "movie",
         titulo: "bob esponja: o incrivel resgate",
         descricao:
@@ -1542,7 +1583,7 @@ const dados = [
         //ano: 2020
       },
       {
-        id: 33,
+        id: 34,
         tipo: "movie",
         titulo: "Travis Scott: Voando Alto - Legendado",
         descricao:
