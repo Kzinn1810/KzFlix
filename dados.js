@@ -231,13 +231,13 @@ const dados = [
                 numero: 1,
                 titulo: "O Degenerado Número Um",
                 video:
-                  "https://drive.google.com/file/d/1eKIx5dwkAvsxcEA3J5KX7O-xQlAZnJ_U/preview",
+                  "https://drive.google.com/file/d/11ejjutRFtMhwi-92GmPzp0e4eWA3NN5o/preview",
               },
               {
                 numero: 2,
                 titulo: "Ataque Primeiro",
                 video:
-                  "https://drive.google.com/file/d/1ciQMq-QOwQMeWR79bF2-Upf5LgzPnqQ3/preview",
+                  "https://drive.google.com/file/d/11faAVg_jVJ2BgENFUrHIfwYiGJTn2qjm/preview",
               },
               {
                 numero: 3,
@@ -824,16 +824,31 @@ const dados = [
       },
       {
         id: 10,
-        tipo: "movie",
-        titulo: "Divertidamente 2",
+        tipo: "series",
+        titulo: "Locke & Key",
         descricao:
-          "Riley enfrenta novas emoções na adolescência, incluindo Ansiedade, Inveja e Vergonha.",
-        imagem: "imagens/divertidamente-2.webp",
-        video:
-          "https://drive.google.com/file/d/12N8oGT62UlTothlQ7KKx1qm1heUaFAt0/preview",
-        trailer: "https://www.youtube.com/embed/yAZxx8t9zig",
-        generos: ["animação", "comédia", "aventura"],
-        //ano: 2024
+          "Locke & Key é uma série de fantasia e mistério que segue os irmãos Locke, que descobrem chaves mágicas em sua casa ancestral, cada uma com poderes únicos, enquanto enfrentam forças sombrias.",
+        imagem: "imagens/locke-e-key.webp",
+        temporadas: [
+          {
+            numero: 1,
+            episodios: [
+              { numero: 1, titulo: "Bem-vindos a Matheson", video: "https://drive.google.com/file/d/11pbwc8AO69R_zbH1-zmlQEHjal5IsIme/preview" },
+              { numero: 2, titulo: "Caçador", video: "https://drive.google.com/file/d/12WafZsQjK99sIkU5W64hXwyWP_JQzvQU/preview" },
+              { numero: 3, titulo: "Jogos Mentais", video: "https://drive.google.com/file/d/11zy11G7Et-uzZvFD4snKzfiLbC5KSvHs/preview" },
+              { numero: 4, titulo: "Os Guardiões das Chaves", video: "https://drive.google.com/file/d/122_OhnM5SyvElRvafiB7n5GHmJiMjXn0/preview" },
+              { numero: 5, titulo: "Árvore Genealógica", video: "https://drive.google.com/file/d/12FAweHn_ZJq3GjR8oUmOfeVD0jIONdTB/preview" },
+              { numero: 6, titulo: "A Porta Negra", video: "https://drive.google.com/file/d/12E-R3e5UTHr8_-EUBrq9T7J2w0lZiJgA/preview" },
+              { numero: 7, titulo: "Dissecação", video: "https://drive.google.com/file/d/12K2NvXrWuWo0F80s_QZ-57q8T7t81U7Y/preview" },
+              { numero: 8, titulo: "Um Raio de P*ta de Sol", video: "https://drive.google.com/file/d/12FVOAkTstJiSP2pvnSFVDHFCguMcIFwz/preview" },
+              { numero: 9, titulo: "Eco", video: "https://drive.google.com/file/d/12WYIJ-wxoMjspAabzDYUEyTg89hRZHAN/preview" },
+              { numero: 10, titulo: "Coroa das Sombras", video: "https://drive.google.com/file/d/123mWm_v6d6iK4nnEsUDj7hnuMM1U7yy7/preview" },
+            ],
+          },
+        ],
+        trailer: "https://www.youtube.com/embed/U6mCkzv7WPM",
+        generos: ["fantasia", "mistério", "terror"],
+        //ano: 2021
       },
       {
         id: 11,
@@ -1110,6 +1125,19 @@ const dados = [
       },
       {
         id: 17,
+        tipo: "movie",
+        titulo: "Divertidamente 2",
+        descricao:
+          "Riley enfrenta novas emoções na adolescência, incluindo Ansiedade, Inveja e Vergonha.",
+        imagem: "imagens/divertidamente-2.webp",
+        video:
+          "https://drive.google.com/file/d/12N8oGT62UlTothlQ7KKx1qm1heUaFAt0/preview",
+        trailer: "https://www.youtube.com/embed/yAZxx8t9zig",
+        generos: ["animação", "comédia", "aventura"],
+        //ano: 2024
+      },
+      {
+        id: 18,
         tipo: "series",
         titulo: "Naruto",
         descricao:
@@ -1307,20 +1335,20 @@ const dados = [
         //ano: 2002
       },
       {
-        id: 18,
+        id: 19,
         tipo: "movie",
-        titulo: "bob esponja: o incrivel resgate",
+        titulo: "Karatê Kid: Lendas",
         descricao:
-          "Bob Esponja embarca em uma missão épica com Patrick para resgatar Gary, seu caracol de estimação, que foi raptado.",
-        imagem: "imagens/bob-esponja-o-incrivel-resgate.webp",
+          "Karatê Kid: Lendas é uma animação de ação e aventura onde jovens lutadores viajam pelo mundo para proteger relíquias místicas do karatê.",
+        imagem: "imagens/karate.webp",
         video:
-          "https://drive.google.com/file/d/11U-Zph27pOvblj5teKZy9hXYKbjMlRCV/preview",
-        trailer: "https://www.youtube.com/embed/LcC-jBJRzXg",
-        generos: ["animação", "aventura", "comédia"],
-        //ano: 2020
+          "https://drive.google.com/file/d/105fzRrBUR4xgp3VT2ijOLDM-FHZm0flz/preview",
+        trailer: "http://www.youtube.com/embed/jdZPKED0Dqg",
+        generos: ["ação", "drama"],
+        //ano: 2025
       },
       {
-        id: 19,
+        id: 20,
         tipo: "movie",
         titulo: "Bird Box",
         descricao:
@@ -1333,7 +1361,7 @@ const dados = [
         //ano: 2018
       },
       {
-        id: 20,
+        id: 21,
         tipo: "movie",
         titulo: "Tropa de Elite",
         descricao:
@@ -1346,7 +1374,7 @@ const dados = [
         //ano: 2007
       },
       {
-        id: 21,
+        id: 22,
         tipo: "movie",
         titulo: "Tropa de Elite 2",
         descricao:
@@ -1359,7 +1387,7 @@ const dados = [
         //ano: 2012
       },
       {
-        id: 22,
+        id: 23,
         tipo: "movie",
         titulo: "Django Livre",
         descricao:
@@ -1372,7 +1400,7 @@ const dados = [
         //ano: 2012
       },
       {
-        id: 23,
+        id: 24,
         tipo: "movie",
         titulo: "As Branquelas",
         descricao:
@@ -1385,7 +1413,7 @@ const dados = [
         //ano: 2000
       },
       {
-        id: 24,
+        id: 25,
         tipo: "movie",
         titulo: "Minha mãe é uma peça",
         descricao:
@@ -1398,7 +1426,7 @@ const dados = [
         //ano: 2013
       },
       {
-        id: 25,
+        id: 26,
         tipo: "movie",
         titulo: "Homem de Ferro",
         descricao:
@@ -1411,7 +1439,7 @@ const dados = [
         //ano: 2008
       },
       {
-        id: 26,
+        id: 27,
         tipo: "movie",
         titulo: "Velozes e Furiosos 7",
         descricao:
@@ -1424,7 +1452,7 @@ const dados = [
         //ano: 2015
       },
       {
-        id: 27,
+        id: 28,
         tipo: "movie",
         titulo: "Carros",
         descricao:
@@ -1437,7 +1465,7 @@ const dados = [
         //ano: 2006
       },
       {
-        id: 28,
+        id: 29,
         tipo: "series",
         titulo: "Neymar: O Caos Perfeito",
         descricao:
@@ -1458,7 +1486,7 @@ const dados = [
         //ano: 2022
       },
       {
-        id: 29,
+        id: 30,
         tipo: "series",
         titulo: "Apenas um Show",
         descricao:
@@ -1488,20 +1516,33 @@ const dados = [
         //ano: 2010
       },
       {
-        id: 30,
+        id: 31,
         tipo: "movie",
-        titulo: "Karatê Kid: Lendas",
+        titulo: "Venom",
         descricao:
-          "*Karatê Kid: Lendas* é uma animação de ação e aventura onde jovens lutadores viajam pelo mundo para proteger relíquias místicas do karatê.",
-        imagem: "imagens/karate.webp",
+          "Venom é um filme de super-herói baseado no personagem da Marvel, onde um jornalista se torna hospedeiro de uma entidade alienígena que lhe concede habilidades sobre-humanas.",
+        imagem: "imagens/venom.webp",
         video:
-          "https://drive.google.com/file/d/105fzRrBUR4xgp3VT2ijOLDM-FHZm0flz/preview",
-        trailer: "http://www.youtube.com/embed/jdZPKED0Dqg",
-        generos: ["ação", "drama"],
-        //ano: 2025
+          "https://drive.google.com/file/d/12_FvHrwNab6aGst9ZJhe0FfdXZYg3sj3/preview",
+        trailer: "http://www.youtube.com/embed/EQxCycVTfcU",
+        generos: ["ação", "aventura", "ficção científica"],
+        //ano: 2018
       },
       {
-        id: 31,
+        id: 32,
+        tipo: "movie",
+        titulo: "bob esponja: o incrivel resgate",
+        descricao:
+          "Bob Esponja embarca em uma missão épica com Patrick para resgatar Gary, seu caracol de estimação, que foi raptado.",
+        imagem: "imagens/bob-esponja-o-incrivel-resgate.webp",
+        video:
+          "https://drive.google.com/file/d/11U-Zph27pOvblj5teKZy9hXYKbjMlRCV/preview",
+        trailer: "https://www.youtube.com/embed/LcC-jBJRzXg",
+        generos: ["animação", "aventura", "comédia"],
+        //ano: 2020
+      },
+      {
+        id: 33,
         tipo: "movie",
         titulo: "Travis Scott: Voando Alto - Legendado",
         descricao:
