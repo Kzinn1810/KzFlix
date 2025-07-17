@@ -990,7 +990,9 @@ formLogin.onsubmit = (e) => {
     { nome: "cardoso", senha: "gozarindo" },
     { nome: "Alan", senha: "12345" },
     { nome: "Julia", senha: "2702" },
-    { nome: "jottameterebolando", senha: "peledosexo" }
+    { nome: "jottameterebolando", senha: "peledosexo" },
+    { nome: "jotaorugas", senha: "terrordoestado" },
+    { nome: "Caroline Mendonça", senha: "carolLinda2007" }
   ];
   const valido = loginsValidos.some(l => l.nome === nome && l.senha === senha);
   if (!valido) {
@@ -1004,13 +1006,13 @@ formLogin.onsubmit = (e) => {
   msgBemVindo.style.display = 'block';
   msgBemVindo.style.opacity = '1';
   msgBemVindo.style.animation = '';
-  // Delay de 4 segundos antes de liberar acesso
+  // Delay de 3 segundos antes de liberar acesso
   setTimeout(() => {
     msgBemVindo.style.opacity = '0';
     setTimeout(() => { msgBemVindo.style.display = 'none'; }, 700);
     modalLogin.style.display = "none";
     document.body.classList.remove('modal-aberto');
-  }, 4000);
+  }, 3000);
 };
 
 // Mostrar/ocultar senha com SVG
