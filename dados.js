@@ -916,6 +916,19 @@ const dados = [
       {
         id: 11,
         tipo: "movie",
+        titulo: "Como treinar seu dragão",
+        descricao:
+          "Como Treinar o Seu Dragão é uma animação que conta a história de um jovem viking chamado Soluço, que se torna amigo de um dragão chamado Banguela, desafiando as tradições de sua tribo.",
+        imagem: "imagens/como-treinar-seu-dragao.webp",
+        video:
+          "https://drive.google.com/file/d/12L_3Y_Pi7j-j5-xtXAQJqtbVVigPFxDb/preview",
+        trailer: "https://www.youtube.com/embed/CWTy1ukPoYY",
+        generos: ["aventura", "animação", "fantasia"],
+        //ano: 2025
+      },
+      {
+        id: 12,
+        tipo: "movie",
         titulo: "Meu Malvado Favorito 4",
         descricao:
           "O vilão mais amado do planeta, que virou agente da Liga Antivilões, retorna para mais uma aventura em Meu Malvado Favorito 4.",
@@ -927,7 +940,7 @@ const dados = [
         //ano: 2024
       },
       {
-        id: 12,
+        id: 13,
         tipo: "movie",
         titulo: "Sorria",
         descricao:
@@ -940,7 +953,7 @@ const dados = [
         //ano: 2022
       },
     {
-        id: 13,
+        id: 14,
         tipo: "series",
         titulo: "Arcanjo Renegado",
         descricao:
@@ -1148,7 +1161,7 @@ const dados = [
         //ano: 2020
       },
       {
-        id: 14,
+        id: 15,
         tipo: "movie",
         titulo: "Ballerina - Do Universo de John Wick",
         descricao:
@@ -1174,7 +1187,7 @@ const dados = [
         //ano: 2024
       },
       {
-      id: 16,
+      id: 17,
         tipo: "movie",
         titulo: "Gente grande",
         descricao:
@@ -1187,7 +1200,7 @@ const dados = [
         //ano: 2010
       },
       {
-        id: 17,
+        id: 18,
         tipo: "movie",
         titulo: "Divertidamente 2",
         descricao:
@@ -1200,7 +1213,7 @@ const dados = [
         //ano: 2024
       },
       {
-        id: 18,
+        id: 19,
         tipo: "series",
         titulo: "Naruto",
         descricao:
@@ -1398,7 +1411,7 @@ const dados = [
         //ano: 2002
       },
       {
-        id: 19,
+        id: 20,
         tipo: "movie",
         titulo: "Karatê Kid: Lendas",
         descricao:
@@ -1411,7 +1424,7 @@ const dados = [
         //ano: 2025
       },
       {
-        id: 20,
+        id: 21,
         tipo: "movie",
         titulo: "Bird Box",
         descricao:
@@ -1424,7 +1437,7 @@ const dados = [
         //ano: 2018
       },
       {
-        id: 21,
+        id: 22,
         tipo: "movie",
         titulo: "Tropa de Elite",
         descricao:
@@ -1437,7 +1450,7 @@ const dados = [
         //ano: 2007
       },
       {
-        id: 22,
+        id: 23,
         tipo: "movie",
         titulo: "Tropa de Elite 2",
         descricao:
@@ -1450,7 +1463,7 @@ const dados = [
         //ano: 2012
       },
       {
-        id: 23,
+        id: 24,
         tipo: "movie",
         titulo: "Django Livre",
         descricao:
@@ -1463,7 +1476,7 @@ const dados = [
         //ano: 2012
       },
       {
-        id: 24,
+        id: 25,
         tipo: "movie",
         titulo: "As Branquelas",
         descricao:
@@ -1476,7 +1489,7 @@ const dados = [
         //ano: 2000
       },
       {
-        id: 25,
+        id: 26,
         tipo: "movie",
         titulo: "Minha mãe é uma peça",
         descricao:
@@ -1489,7 +1502,7 @@ const dados = [
         //ano: 2013
       },
       {
-        id: 26,
+        id: 27,
         tipo: "movie",
         titulo: "Homem de Ferro",
         descricao:
@@ -1502,7 +1515,7 @@ const dados = [
         //ano: 2008
       },
       {
-        id: 27,
+        id: 28,
         tipo: "movie",
         titulo: "Velozes e Furiosos 7",
         descricao:
@@ -1515,7 +1528,7 @@ const dados = [
         //ano: 2015
       },
       {
-        id: 28,
+        id: 29,
         tipo: "movie",
         titulo: "A barraca do beijo",
         descricao:
@@ -1528,7 +1541,7 @@ const dados = [
         //ano: 2018
       },
       {
-        id: 29,
+        id: 30,
         tipo: "movie",
         titulo: "Carros",
         descricao:
@@ -1541,7 +1554,7 @@ const dados = [
         //ano: 2006
       },
       {
-        id: 30,
+        id: 31,
         tipo: "series",
         titulo: "Neymar: O Caos Perfeito",
         descricao:
@@ -1562,7 +1575,7 @@ const dados = [
         //ano: 2022
       },
       {
-        id: 31,
+        id: 32,
         tipo: "series",
         titulo: "Apenas um Show",
         descricao:
@@ -1586,13 +1599,46 @@ const dados = [
               { numero: 12, titulo: "Mordecai e os Rigbys", video: "https://drive.google.com/file/d/12FjoVu1cBVjoh1RCNnUAW8FlE5LLD14R/preview" },
             ],
           },
+          {
+            numero: 2,
+            episodios: [
+              { numero: 1, titulo: "Olá Senhor", video: "https://drive.google.com/file/d/10D_e62xcMy6SUvlWaj6PuQbMxhCA-DAS/preview" },
+              { numero: 2, titulo: "Tá na hora", video: "https://drive.google.com/file/d/10doPKJbLNRUS7wJFQl25nNH5Jtj3BeaZ/preview" },
+              { numero: 3, titulo: "Dia de reconhecimento", video: "https://drive.google.com/file/d/11XIZmOis-9tB0oOQ35dRJqO0K99TdaBR/preview" },
+              { numero: 4, titulo: "Espiada", video: "https://drive.google.com/file/d/11THujaRXTGzGO0vXBW7cb64tVydnwzcf/preview" },
+              { numero: 5, titulo: "Tonto", video: "https://drive.google.com/file/d/11mzGonu6R1QYdaukkM1MtQUL2YBr0naj/preview" },
+              { numero: 6, titulo: "Minha mãe", video: "https://drive.google.com/file/d/11mKHdQwd7qsS22lPu0z_Mfb2PEw2yN5s/preview?" },
+              { numero: 7, titulo: "Pontuação máxima", video: "https://drive.google.com/file/d/124OoGl7pYAeavYpUMneYtqUsc9WZ4sb7/preview" },
+              { numero: 8, titulo: "Ódio contra a televisão", video: "https://drive.google.com/file/d/11qot3xPIWAkEEGyO_f65q4dnrxK1m9gG/preview" },
+              { numero: 9, titulo: "Pete festeiro", video: "https://drive.google.com/file/d/128HA1DUERr8_IYsFSSM-FpuKZdAqFS6s/preview" },
+              { numero: 10, titulo: "Lavagem cerebral", video: "https://drive.google.com/file/d/10A_Vfgdn2lBRwlJWYa-xV4baWafPMfYr/preview" },
+              { numero: 11, titulo: "Benson se foi", video: "https://drive.google.com/file/d/10CyYaZ4JyFVsJR-4cK2N0l1Zf0D1HHVW/preview" },
+              { numero: 12, titulo: "Mas eu tenho um recibo", video: "https://drive.google.com/file/d/10OlomSQsu1xz3xCFDYpS8nMYB4i4NcJm/preview" },
+              { numero: 13, titulo: "Está é minha música", video: "https://drive.google.com/file/d/10V2ZDsDODs79GEqakxMChM_2SEZC16bj/preview" },
+              { numero: 14, titulo: "Musculosa", video: "https://drive.google.com/file/d/10MPJ4E8nkoVYbPj7RjIFjzJuib2qKIBD/preview" },
+              { numero: 15, titulo: "Trabalhador temporário", video: "https://drive.google.com/file/d/10QJrL2U8ZkGb2CG-yTnvge3lkzzjfZXq/preview" },
+              { numero: 16, titulo: "Sorte minha", video: "https://drive.google.com/file/d/10cNMqlHaxui6ESPBnP1k4zEVCrZnxZbX/preview" },
+              { numero: 17, titulo: "A gente se vê lá", video: "https://drive.google.com/file/d/10klotGtc_Ve1AgQ3C2DaAK5lpVDrv_9c/preview" },
+              { numero: 18, titulo: "Me faça um favor", video: "https://drive.google.com/file/d/10Zyf6Vp19pvmBvhMHlug5ScOgnSOtkeH/preview" },
+              { numero: 19, titulo: "No cemitério", video: "https://drive.google.com/file/d/10nZ_05ibm3OlXuqP3-58KJaBcb6UQ1Km/preview" },
+              { numero: 20, titulo: "Luta de verdade mesmo", video: "https://drive.google.com/file/d/11-1nXiaIDZRPl_8mAL5Y0ukVVYri0QUC/preview" },
+              { numero: 21, titulo: "Lá no topo", video: "https://drive.google.com/file/d/10qMDfntT5NPK7ARV8pkysWNefL7CY0It/preview" },
+              { numero: 22, titulo: "A coruja noturna", video: "https://drive.google.com/file/d/117Fzlnpn0ihlvdGDrgV422hnE3D4sqER/preview" },
+              { numero: 23, titulo: "Um monte de patinhos", video: "https://drive.google.com/file/d/11368jfwHwxaf8Wh18tDvG9NkQRogEPqj/preview" },
+              { numero: 24, titulo: "Maior esperto", video: "https://drive.google.com/file/d/11P6zRfaoVLMtkj2MKsbEUejGijibRxXH/preview" },
+              { numero: 25, titulo: "Primeiro dia", video: "https://drive.google.com/file/d/11Utl2JvcW--uoxlr4LgQu7u0DHgWdGm3/preview" },
+              { numero: 26, titulo: "Olha o vírus", video: "https://drive.google.com/file/d/11FQfWCUcqjgFSesKBYzjcFqJ2UmQini0/preview" },
+              { numero: 27, titulo: "Fedorento", video: "https://drive.google.com/file/d/11h8sKVM2ssqosqZy8ZX1E25Og1DQGNzt/preview" },
+              { numero: 28, titulo: "Vídeo de karaokê", video: "https://drive.google.com/file/d/10mSMZxlkihlWyrX6BHK5v9D_-DaqQBxg/preview" },
+            ],
+          },
         ],
         trailer: "https://www.youtube.com/embed/FhKIg8O4AWI",
         generos: ["animação", "comédia"],
         //ano: 2010
       },
       {
-        id: 32,
+        id: 33,
         tipo: "movie",
         titulo: "Venom",
         descricao:
@@ -1605,7 +1651,7 @@ const dados = [
         //ano: 2018
       },
       {
-        id: 33,
+        id: 34,
         tipo: "movie",
         titulo: "bob esponja: o incrivel resgate",
         descricao:
@@ -1618,7 +1664,7 @@ const dados = [
         //ano: 2020
       },
       {
-        id: 34,
+        id: 35,
         tipo: "movie",
         titulo: "Travis Scott: Voando Alto - Legendado",
         descricao:
