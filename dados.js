@@ -1504,15 +1504,15 @@ const dados = [
       {
         id: 27,
         tipo: "movie",
-        titulo: "Homem de Ferro",
+        titulo: "Invocação do mal",
         descricao:
-          "Um bilionário genial constrói uma armadura tecnológica para combater o crime e se torna o super-herói Homem de Ferro.",
-        imagem: "imagens/homem-de-ferro.webp",
+          "Invocação do Mal é um filme de terror baseado em eventos reais, onde investigadores paranormais ajudam uma família a enfrentar uma entidade maligna em sua casa.",
+        imagem: "imagens/invocacao-do-mal.webp",
         video:
-          "https://drive.google.com/file/d/114PKPFMzO3b60z5GYmP4gxFCpJEuBZU6/preview",
-        trailer: "http://www.youtube.com/embed/aKkud2sqd1o",
-        generos: ["ação", "ficção científica", "aventura"],
-        //ano: 2008
+          "https://drive.google.com/file/d/12WbOj-0LIox8JSSmp9-e552FSKTGvfEn/preview",
+        trailer: "http://www.youtube.com/embed/GQrrXceHn2E",
+        generos: ["terror", "suspense", "drama"],
+        //ano: 2013
       },
       {
         id: 28,
@@ -1653,6 +1653,32 @@ const dados = [
       {
         id: 34,
         tipo: "movie",
+        titulo: "Homem de Ferro",
+        descricao:
+          "Um bilionário genial constrói uma armadura tecnológica para combater o crime e se torna o super-herói Homem de Ferro.",
+        imagem: "imagens/homem-de-ferro.webp",
+        video:
+          "https://drive.google.com/file/d/114PKPFMzO3b60z5GYmP4gxFCpJEuBZU6/preview",
+        trailer: "http://www.youtube.com/embed/aKkud2sqd1o",
+        generos: ["ação", "ficção científica", "aventura"],
+        //ano: 2008
+      },
+      {
+        id: 35,
+        tipo: "movie",
+        titulo: "Homem de Ferro 2",
+        descricao:
+          "Tony Stark enfrenta novos desafios enquanto lida com a revelação de sua identidade como Homem de Ferro e a ameaça de novos vilões.",
+        imagem: "imagens/homem-de-ferro2.webp",
+        video:
+          "https://drive.google.com/file/d/12OTkCl2voTyR2QlX8ahLEIX1JJWQu0B-/preview",
+        trailer: "http://www.youtube.com/embed/msxQMX9Nczk",
+        generos: ["ação", "ficção científica", "aventura"],
+        //ano: 2010
+      },
+      {
+        id: 36,
+        tipo: "movie",
         titulo: "bob esponja: o incrivel resgate",
         descricao:
           "Bob Esponja embarca em uma missão épica com Patrick para resgatar Gary, seu caracol de estimação, que foi raptado.",
@@ -1664,7 +1690,7 @@ const dados = [
         //ano: 2020
       },
       {
-        id: 35,
+        id: 37,
         tipo: "movie",
         titulo: "Travis Scott: Voando Alto - Legendado",
         descricao:
