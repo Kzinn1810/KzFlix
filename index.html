@@ -1155,6 +1155,12 @@ toggleSenha.addEventListener('click', () => {
       exibirLista(filtrarDados(), true);
     });
 
+    function getCardsLimit() {
+  // Se for desktop grande, mostra 14 cards por vez
+  if (window.innerWidth >= 1800 && window.innerHeight >= 900) return 14;
+  return 10;
+}
+
     // Função que filtra os dados de acordo com os filtros
     function filtrarDados() {
       return dados.filter((item) => {
@@ -1173,90 +1179,92 @@ toggleSenha.addEventListener('click', () => {
       });
     }
 
-    // Função para exibir lista de filmes e séries
+    // Atualize o uso do limite em todas as telas:
+    // Exibir lista principal
     function exibirLista(listaDados, reset = true) {
-    const btnMais = document.getElementById("btn-carregar-mais");
+      const btnMais = document.getElementById("btn-carregar-mais");
+      const QUANTIDADE_POR_PAGINA = getCardsLimit();
 
-    if (reset) {
-      lista.innerHTML = "";
-      limiteInicial = 0;
-      dadosFiltrados = listaDados;
-    }
-
-    const proximoLote = dadosFiltrados.slice(limiteInicial, limiteInicial + QUANTIDADE_POR_PAGINA);
-
-    if (proximoLote.length === 0 && limiteInicial === 0) {
-      lista.innerHTML = "<p style='text-align:center;'>Nenhum resultado encontrado.</p>";
-      btnMais.style.display = "none";
-      return;
-    }
-
-    proximoLote.forEach((item) => {
-      const card = document.createElement("article");
-      card.className = "card";
-      card.setAttribute("tabindex", "0");
-      card.setAttribute("role", "region");
-      card.setAttribute("aria-label", item.titulo);
-
-      const img = document.createElement("img");
-      img.src = item.imagem;
-      img.alt = `Imagem do ${item.tipo === "movie" ? "filme" : "série"} ${item.titulo}`;
-
-      const anoOverlay = document.createElement("div");
-      anoOverlay.className = "card-ano-overlay";
-      anoOverlay.textContent = item.ano || "";
-
-      const cardBody = document.createElement("div");
-      cardBody.className = "card-body";
-
-      const titulo = document.createElement("h3");
-      titulo.className = "card-title";
-      titulo.textContent = item.titulo;
-
-      const ano = document.createElement("p");
-      ano.className = "card-ano";
-      ano.textContent = item.ano || "";
-
-      const desc = document.createElement("p");
-      desc.className = "card-desc";
-      desc.textContent = item.descricao;
-
-      cardBody.appendChild(titulo);
-      cardBody.appendChild(ano);
-      cardBody.appendChild(desc);
-
-      const btnAssistir = document.createElement("button");
-      btnAssistir.className = "assistir-btn";
-      btnAssistir.textContent = item.tipo === "movie" ? "▶️ Assistir" : "▶️ Assistir Série";
-      btnAssistir.setAttribute("aria-label", `Assistir ${item.tipo === "movie" ? "filme" : "série"} ${item.titulo}`);
-
-      btnAssistir.addEventListener("click", () => {
-        if (item.tipo === "movie") abrirModalPlayer(item.video);
-        else abrirModalEpisodios(item);
-      });
-      const botoesContainer = document.createElement("div");
-      botoesContainer.style.display = "flex";
-      botoesContainer.style.flexWrap = "wrap";
-      botoesContainer.style.gap = "10px";
-      botoesContainer.style.marginTop = "10px";
-      botoesContainer.appendChild(btnAssistir);
-
-      if (item.trailer) {
-        const btnTrailer = document.createElement("button");
-        btnTrailer.className = "assistir-btn trailer";
-        btnTrailer.textContent = "▶️ Trailer";
-        btnTrailer.addEventListener("click", () => abrirModalPlayer(item.trailer));
-        botoesContainer.appendChild(btnTrailer);
+      if (reset) {
+        lista.innerHTML = "";
+        limiteInicial = 0;
+        dadosFiltrados = listaDados;
       }
 
-      cardBody.appendChild(botoesContainer);
-      card.appendChild(img);
-      card.appendChild(cardBody);
-      lista.appendChild(card);
-    });
+      const proximoLote = dadosFiltrados.slice(limiteInicial, limiteInicial + QUANTIDADE_POR_PAGINA);
 
-    limiteInicial += QUANTIDADE_POR_PAGINA;
-    btnMais.style.display = limiteInicial < dadosFiltrados.length ? "block" : "none";
+      if (proximoLote.length === 0 && limiteInicial === 0) {
+        lista.innerHTML = "<p style='text-align:center;'>Nenhum resultado encontrado.</p>";
+        btnMais.style.display = "none";
+        return;
+      }
+
+      proximoLote.forEach((item) => {
+        const card = document.createElement("article");
+        card.className = "card";
+        card.setAttribute("tabindex", "0");
+        card.setAttribute("role", "region");
+        card.setAttribute("aria-label", item.titulo);
+
+        const img = document.createElement("img");
+        img.src = item.imagem;
+        img.alt = `Imagem do ${item.tipo === "movie" ? "filme" : "série"} ${item.titulo}`;
+
+        const anoOverlay = document.createElement("div");
+        anoOverlay.className = "card-ano-overlay";
+        anoOverlay.textContent = item.ano || "";
+
+        const cardBody = document.createElement("div");
+        cardBody.className = "card-body";
+
+        const titulo = document.createElement("h3");
+        titulo.className = "card-title";
+        titulo.textContent = item.titulo;
+
+        const ano = document.createElement("p");
+        ano.className = "card-ano";
+        ano.textContent = item.ano || "";
+
+        const desc = document.createElement("p");
+        desc.className = "card-desc";
+        desc.textContent = item.descricao;
+
+        cardBody.appendChild(titulo);
+        cardBody.appendChild(ano);
+        cardBody.appendChild(desc);
+
+        const btnAssistir = document.createElement("button");
+        btnAssistir.className = "assistir-btn";
+        btnAssistir.textContent = item.tipo === "movie" ? "▶️ Assistir" : "▶️ Assistir Série";
+        btnAssistir.setAttribute("aria-label", `Assistir ${item.tipo === "movie" ? "filme" : "série"} ${item.titulo}`);
+
+        btnAssistir.addEventListener("click", () => {
+          if (item.tipo === "movie") abrirModalPlayer(item.video);
+          else abrirModalEpisodios(item);
+        });
+        const botoesContainer = document.createElement("div");
+        botoesContainer.style.display = "flex";
+        botoesContainer.style.flexWrap = "wrap";
+        botoesContainer.style.gap = "10px";
+        botoesContainer.style.marginTop = "10px";
+        botoesContainer.appendChild(btnAssistir);
+
+        if (item.trailer) {
+          const btnTrailer = document.createElement("button");
+          btnTrailer.className = "assistir-btn trailer";
+          btnTrailer.textContent = "▶️ Trailer";
+          btnTrailer.addEventListener("click", () => abrirModalPlayer(item.trailer));
+          botoesContainer.appendChild(btnTrailer);
+        }
+
+        cardBody.appendChild(botoesContainer);
+        card.appendChild(img);
+        card.appendChild(cardBody);
+        lista.appendChild(card);
+      });
+
+      limiteInicial += QUANTIDADE_POR_PAGINA;
+      btnMais.style.display = limiteInicial < dadosFiltrados.length ? "block" : "none";
 }
 
 
@@ -1604,23 +1612,25 @@ toggleSenha.addEventListener('click', () => {
     exibirLista(dadosFiltrados, false);
     });
     // Exibir lançamentos recentes (com base em alguns títulos)
-    const ordemDesejada = [
-      "Karatê Kid: Lendas",
-      "Ballerina - Do Universo de John Wick",
-      "Round 6",
-      "Pecadores",
-      "Um Filme Minecraft",
-      "Arcanjo Renegado",
-      "Homem-Aranha: Através do Aranhaverso",
-      "Dark",
-    ];
-    const lancamentosRecentes = ordemDesejada
+    function exibirLancamentosRecentes() {
+  const ordemDesejada = [
+    "Karatê Kid: Lendas",
+    "Ballerina - Do Universo de John Wick",
+    "Round 6",
+    "Pecadores",
+    "Um Filme Minecraft",
+    "Arcanjo Renegado",
+    "Homem-Aranha: Através do Aranhaverso",
+    "Dark",
+  ];
+  const lancamentosRecentes = ordemDesejada
     .map(titulo => dados.find(item => item.titulo === titulo))
-    .filter(Boolean); // Remove itens não encontrados
+    .filter(Boolean)
+    .slice(0, getCardsLimit());
+  const vitrineContainer = document.getElementById("vitrine-lancamentos");
+  vitrineContainer.innerHTML = ""; // Limpa vitrine antes de adicionar
 
-
-    const vitrineContainer = document.getElementById("vitrine-lancamentos");
-    lancamentosRecentes.forEach((item, index) => {
+  lancamentosRecentes.forEach((item, index) => {
     const card = document.createElement("div");
     card.className = "vitrine-card";
 
@@ -1660,8 +1670,91 @@ toggleSenha.addEventListener('click', () => {
     card.appendChild(info);
     vitrineContainer.appendChild(card);
   });
+}
 
-  // Detecta rotação da tela e ajusta o modal player em mobile
+// Chama ao carregar a página
+exibirLancamentosRecentes();
+
+    // Exibir visto por último
+    function mostrarVistoPorUltimo(nomeUsuario) {
+      const vistos = obterVistoPorUltimo(nomeUsuario).slice(0, getCardsLimit());
+      const listaVistos = document.getElementById("lista-vistos");
+      listaVistos.innerHTML = ""; // Limpa a lista atual
+
+      if (vistos.length === 0) {
+        listaVistos.innerHTML = "<p style='text-align:center;'>Nenhum item encontrado.</p>";
+        return;
+      }
+
+      vistos.forEach((item) => {
+        const card = document.createElement("article");
+        card.className = "card";
+        card.setAttribute("tabindex", "0");
+        card.setAttribute("role", "region");
+        card.setAttribute("aria-label", item.titulo);
+
+        const img = document.createElement("img");
+        img.src = item.imagem;
+        img.alt = `Imagem do ${item.tipo === "movie" ? "filme" : "série"} ${item.titulo}`;
+
+        const anoOverlay = document.createElement("div");
+        anoOverlay.className = "card-ano-overlay";
+        anoOverlay.textContent = item.ano || "";
+
+        const cardBody = document.createElement("div");
+        cardBody.className = "card-body";
+
+        const titulo = document.createElement("h3");
+        titulo.className = "card-title";
+        titulo.textContent = item.titulo;
+
+        const ano = document.createElement("p");
+        ano.className = "card-ano";
+        ano.textContent = item.ano || "";
+
+        const desc = document.createElement("p");
+        desc.className = "card-desc";
+        desc.textContent = item.descricao;
+
+        cardBody.appendChild(titulo);
+        cardBody.appendChild(ano);
+        cardBody.appendChild(desc);
+
+        const btnAssistir = document.createElement("button");
+        btnAssistir.className = "assistir-btn";
+        btnAssistir.textContent = item.tipo === "movie" ? "▶️ Assistir" : "▶️ Assistir Série";
+        btnAssistir.setAttribute("aria-label", `Assistir ${item.tipo === "movie" ? "filme" : "série"} ${item.titulo}`);
+
+        btnAssistir.addEventListener("click", () => {
+          if (item.tipo === "movie") abrirModalPlayer(item.video);
+          else abrirModalEpisodios(item);
+        });
+        const botoesContainer = document.createElement("div");
+        botoesContainer.style.display = "flex";
+        botoesContainer.style.flexWrap = "wrap";
+        botoesContainer.style.gap = "10px";
+        botoesContainer.style.marginTop = "10px";
+        botoesContainer.appendChild(btnAssistir);
+
+        if (item.trailer) {
+          const btnTrailer = document.createElement("button");
+          btnTrailer.className = "assistir-btn trailer";
+          btnTrailer.textContent = "▶️ Trailer";
+          btnTrailer.addEventListener("click", () => abrirModalPlayer(item.trailer));
+          botoesContainer.appendChild(btnTrailer);
+        }
+
+        cardBody.appendChild(botoesContainer);
+        card.appendChild(img);
+        card.appendChild(cardBody);
+        listaVistos.appendChild(card);
+      });
+    }
+
+    // Chama ao carregar a página
+    mostrarVistoPorUltimo("Kzinn"); // <-- Troque pelo nome do usuário logado
+
+    // Detecta rotação da tela e ajusta o modal player em mobile
 window.addEventListener('orientationchange', ajustarFullscreenMobilePorOrientacao);
 window.addEventListener('resize', ajustarFullscreenMobilePorOrientacao);
 
