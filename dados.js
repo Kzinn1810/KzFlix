@@ -1653,6 +1653,19 @@ const dados = [
       {
         id: 34,
         tipo: "movie",
+        titulo: "Homem-Aranha",
+        descricao:
+          "Homem-Aranha é um filme de super-herói baseado no personagem da Marvel, onde um jovem ganha poderes aracnídeos e luta contra o crime em Nova York.",
+        imagem: "imagens/homem-aranha.webp",
+        video:
+          "https://drive.google.com/file/d/12fVQTTsBcLfzD9sSfYwLt4K0637Kv_yQ/preview",
+        trailer: "http://www.youtube.com/embed/t06RUxPbp_c",
+        generos: ["ação", "aventura", "ficção científica"],
+        //ano: 2002
+      },
+      {
+        id: 35,
+        tipo: "movie",
         titulo: "Homem de Ferro",
         descricao:
           "Um bilionário genial constrói uma armadura tecnológica para combater o crime e se torna o super-herói Homem de Ferro.",
@@ -1664,7 +1677,7 @@ const dados = [
         //ano: 2008
       },
       {
-        id: 35,
+        id: 36,
         tipo: "movie",
         titulo: "Homem de Ferro 2",
         descricao:
@@ -1677,7 +1690,20 @@ const dados = [
         //ano: 2010
       },
       {
-        id: 36,
+        id: 37,
+        tipo: "movie",
+        titulo: "Homem de Ferro 3",
+        descricao:
+          "Tony Stark enfrenta um novo inimigo que ameaça sua vida e seu legado como Homem de Ferro.",
+        imagem: "imagens/homem-de-ferro3.webp",
+        video:
+          "https://drive.google.com/file/d/12qkBmYa7iSeQTOSLSKb01olr37Kho_rA/preview",
+        trailer: "http://www.youtube.com/embed/igfXmU1r_mc",
+        generos: ["ação", "ficção científica", "aventura"],
+        //ano: 2013
+      },
+      {
+        id: 38,
         tipo: "movie",
         titulo: "bob esponja: o incrivel resgate",
         descricao:
@@ -1690,7 +1716,7 @@ const dados = [
         //ano: 2020
       },
       {
-        id: 37,
+        id: 39,
         tipo: "movie",
         titulo: "Travis Scott: Voando Alto - Legendado",
         descricao:
