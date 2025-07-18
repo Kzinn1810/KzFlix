@@ -916,7 +916,7 @@ const dados = [
       {
         id: 11,
         tipo: "movie",
-        titulo: "Como treinar seu dragão",
+        titulo: "Como Treinar o Seu Dragão",
         descricao:
           "Como Treinar o Seu Dragão é uma animação que conta a história de um jovem viking chamado Soluço, que se torna amigo de um dragão chamado Banguela, desafiando as tradições de sua tribo.",
         imagem: "imagens/como-treinar-seu-dragao.webp",
