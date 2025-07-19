@@ -1628,6 +1628,12 @@ toggleSenha.addEventListener('click', () => {
         liDonate.textContent = '💸 Donate';
         liDonate.className = 'menu-btn';
         liDonate.onclick = () => { mostrarPopupPix(); };
+        liDonate.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        mostrarPopupPix();
+      }
+    });
         menuPerfil.appendChild(liDonate);
         // Download APK
         const liDownloadApk = document.createElement('li');
@@ -1895,6 +1901,33 @@ function ajustarFullscreenMobilePorOrientacao() {
       }, 4000);
     }
   }
+}
+
+// Função para exibir o pop-up do PIX
+function mostrarPopupPix() {
+  let popup = document.getElementById('popup-pix');
+  if (popup) {
+    popup.remove(); // Remove popup antigo se existir
+  }
+  popup = document.createElement('div');
+  popup.id = 'popup-pix';
+  popup.style.position = 'fixed';
+  popup.style.top = '50%';
+  popup.style.left = '50%';
+  popup.style.transform = 'translate(-50%, -50%)';
+  popup.style.background = '#222';
+  popup.style.color = '#1db954';
+  popup.style.padding = '28px 32px';
+  popup.style.borderRadius = '18px';
+  popup.style.boxShadow = '0 4px 24px #000a';
+  popup.style.zIndex = '99999';
+  popup.style.fontSize = '1.2rem';
+  popup.style.textAlign = 'center';
+  popup.innerHTML = `<h3 style='margin-bottom:12px;'>Chave PIX</h3><div style='font-size:1.1rem;margin-bottom:18px;'>pixkzinn@gmail.com</div><button id='fechar-pix' style='background:#1db954;color:#fff;border:none;padding:8px 18px;border-radius:8px;cursor:pointer;font-size:1rem;'>Fechar</button>`;
+  document.body.appendChild(popup);
+  document.getElementById('fechar-pix').onclick = () => {
+    popup.remove();
+  };
 }
 </script>
 </div>
