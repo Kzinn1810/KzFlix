@@ -1588,6 +1588,71 @@ toggleSenha.addEventListener('click', () => {
     const menuPerfil = document.getElementById("menu-perfil");
     const toggleDark = document.getElementById("toggle-dark");
 
+    // Corrige o menu lateral para abrir e fechar corretamente ao clicar no botão de perfil
+    if (btnPerfil) {
+      btnPerfil.addEventListener("click", (e) => {
+        e.stopPropagation(); // Evita fechar ao clicar no próprio botão
+        atualizarMenuPerfil();
+        if (menuPerfil) {
+          menuPerfil.style.display = menuPerfil.style.display === "block" ? "none" : "block";
+        }
+      });
+    }
+    // Fecha o menu ao clicar fora dele
+    if (menuPerfil) {
+      document.addEventListener("click", (e) => {
+        if (menuPerfil.style.display === "block" && !menuPerfil.contains(e.target) && e.target !== btnPerfil) {
+          menuPerfil.style.display = "none";
+        }
+      });
+    }
+
+    // Garante que o menu lateral seja sempre reconstruído ao abrir, incluindo Donate
+    if (btnPerfil) {
+      btnPerfil.addEventListener("click", () => {
+        atualizarMenuPerfil(); // Reconstrói o menu toda vez que abrir
+        if (menuPerfil) {
+          menuPerfil.style.display = menuPerfil.style.display === "block" ? "none" : "block";
+        }
+      });
+    }
+
+    // Garante que o menu começa vazio e é sempre reconstruído
+    function atualizarMenuPerfil() {
+      if (menuPerfil) {
+        menuPerfil.innerHTML = '';
+        // Donate
+        const liDonate = document.createElement('li');
+        liDonate.role = 'menuitem';
+        liDonate.tabIndex = 0;
+        liDonate.textContent = '💸 Donate';
+        liDonate.className = 'menu-btn';
+        liDonate.onclick = () => { mostrarPopupPix(); };
+        menuPerfil.appendChild(liDonate);
+        // Download APK
+        const liDownloadApk = document.createElement('li');
+        liDownloadApk.role = 'menuitem';
+        liDownloadApk.tabIndex = 0;
+        liDownloadApk.textContent = '📲 Download APK';
+        liDownloadApk.className = 'menu-btn';
+        liDownloadApk.onclick = () => {
+          window.open('https://www.mediafire.com/file/ts62shgl7t4wfm6/KzFlix.apk/file', '_blank');
+        };
+        menuPerfil.appendChild(liDownloadApk);
+        // Dark mode
+        const liDark = document.createElement('li');
+        liDark.role = 'menuitem';
+        liDark.tabIndex = 0;
+        liDark.textContent = '🌙 Alterar Dark Mode';
+        liDark.className = 'menu-btn';
+        liDark.onclick = () => {
+          document.body.classList.toggle('modo-claro');
+          localStorage.setItem('modo', document.body.classList.contains('modo-claro') ? 'claro' : 'escuro');
+        };
+        menuPerfil.appendChild(liDark);
+      }
+    }
+
     btnPerfil.addEventListener("click", () => {
       menuPerfil.style.display = menuPerfil.style.display === "block" ? "none" : "block";
     });
