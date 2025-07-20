@@ -1223,186 +1223,56 @@ const dados = [
           {
             numero: 1,
             episodios: [
-              {
-                numero: 1,
-                titulo: "Uzumaki Naruto Chega!",
-                video:
-                  "https://drive.google.com/file/d/11rk7hZ-_ojYspVZNBSvV30sKKsk0WzO1/preview",
-              },
-              {
-                numero: 2,
-                titulo: "Meu Nome é Konohamaru!",
-                video:
-                  "https://drive.google.com/file/d/11sdNfqjVtoUz8-VPJp3SxQx2nwBOJC7w/preview",
-              },
-              {
-                numero: 3,
-                titulo: "Sasuke e Sakura: Amigos ou Inimigos?",
-                video:
-                  "https://drive.google.com/file/d/11xQUrRiU7i2fB9bOXpctnHtMFjqadcLA/preview",
-              },
-              {
-                numero: 4,
-                titulo: "Passar ou Falhar — Um Teste de Sobrevivência!",
-                video:
-                  "https://drive.google.com/file/d/11tNk1OcyTs9FsIQxx8ETEA8Y_LvjMAB_/preview",
-              },
-              {
-                numero: 5,
-                titulo: "Você Fracassou! A Decisão Final de Kakashi",
-                video:
-                  "https://drive.google.com/file/d/120jKvYbSSy3KBrp_WO02PaRni5Arr785/preview",
-              },
-              {
-                numero: 6,
-                titulo: "Uma Missão Perigosa! Aventura ao País das Ondas!",
-                video:
-                  "https://drive.google.com/file/d/12-5yqaXdEVfXjfjt-QhjLLOubcY8-Exf/preview",
-              },
-              {
-                numero: 7,
-                titulo: "O Assassino da Névoa",
-                video:
-                  "https://drive.google.com/file/d/122y9rEeuC-hXyG1Bjdc0v9hkvcN0ENeC/preview",
-              },
-              {
-                numero: 8,
-                titulo: "O Juramento de sangue",
-                video:
-                  "https://drive.google.com/file/d/125FawxQZqUo1nW8ov7z2M7jFgSi1XBxK/preview",
-              },
-              {
-                numero: 9,
-                titulo: "Kakashi: O ninja que copia",
-                video:
-                  "https://drive.google.com/file/d/124kHtDEI_x2zQXbdrxh_h2Gu4zlt71XE/preview",
-              },
-              {
-                numero: 10,
-                titulo: "Naruto Vê o Seu Futuro!",
-                video:
-                  "https://drive.google.com/file/d/12Boap-89AvJ8__ODTK0KJlC0zQleen45/preview",
-              },
-              {
-                numero: 11,
-                titulo: "A Terra Onde um Herói Nunca Morrerá",
-                video:
-                  "https://drive.google.com/file/d/11kvBtYU97B9ihdkx8_0NLCkdSnI__Ls4/preview",
-              },
-              {
-                numero: 12,
-                titulo: "A Batalha Começa: Naruto x Sasuke",
-                video:
-                  "https://drive.google.com/file/d/11s293M3FMuLGExizxxfAuqHgeqZZ_3s2/preview",
-              },
-              {
-                numero: 13,
-                titulo: "O Segredo do Sharingan",
-                video:
-                  "https://drive.google.com/file/d/11rP6gp-Ftf7BW4qK9yit3q5U2jnj-3Ef/preview",
-              },
-              {
-                numero: 14,
-                titulo: "Eu Não Vou Fugir!",
-                video:
-                  "https://drive.google.com/file/d/11sVwQhmxXP7YkcJS9OCVMZMpTfSkSewp/preview",
-              },
-              {
-                numero: 15,
-                titulo: "A Batalha Final: Zabuza vs Kakashi!",
-                video:
-                  "https://drive.google.com/file/d/123OUlCWbfuYTe5P71TzW3t-LNCl8Il5R/preview",
-              },
-              {
-                numero: 16,
-                titulo: "O Selo se Rompe: Naruto Perdendo o Controle!",
-                video:
-                  "https://drive.google.com/file/d/10KcBffAdOhN-EJrsU5g6MoiIhtrv1rCg/preview",
-              },
-              {
-                numero: 17,
-                titulo: "Passado Branco, Ambição Escondida",
-                video:
-                  "https://drive.google.com/file/d/10OvneMFVKVc13JKsySzyg-M1-5ZVCaXv/preview",
-              },
-              {
-                numero: 18,
-                titulo: "Uma Ferramenta Conhecida como Shinobi",
-                video:
-                  "https://drive.google.com/file/d/10Ll5T2gHR05ouZx7X2qFH14JvRJCW-RA/preview",
-              },
-              {
-                numero: 19,
-                titulo: "O Demônio na Neve",
-                video:
-                  "https://drive.google.com/file/d/10SVH2UGcfus6UQElsjlUPQJqlZRHNcwB/preview",
-              },
-              {
-                numero: 20,
-                titulo: "Um Novo Capítulo Começa: A Prova Chūnin",
-                video:
-                  "https://drive.google.com/file/d/10PwNoAKLJ45jmi753IF9BDStCOa4oYdF/preview",
-              },
-              {
-                numero: 21,
-                titulo: "Identifiquem-se: Rivais Novos e Poderosos",
-                video:
-                  "https://drive.google.com/file/d/10WgjAY8278fyNZvBDvMq0mkzoOn3AdkR/preview",
-              },
-              {
-                numero: 22,
-                titulo: "Rock Lee Contra Sasuke!",
-                video:
-                  "https://drive.google.com/file/d/10VrKR7QW9I3Bj-QlQYYIEGDx7MBfqoEK/preview",
-              },
-              {
-                numero: 23,
-                titulo: "A Batalha de Pré-Seleção: Todos Contra Todos!",
-                video:
-                  "https://drive.google.com/file/d/10gYXDdPxBcFKE32HZuwBIBBgJzp3qkst/preview",
-              },
-              {
-                numero: 24,
-                titulo: " Liguem os Motores: A Prova Chunin Começa! ",
-                video:
-                  "https://drive.google.com/file/d/10aQ6qEQhOEm32dofAncqDnW8kRP2yHiZ/preview",
-              },
-              {
-                numero: 25,
-                titulo: "A Décima Pergunta: Tudo ou Nada!",
-                video:
-                  "https://drive.google.com/file/d/10jRRpE0ZGOlUHjfjztagGpOecd1SCJXa/preview",
-              },
-              {
-                numero: 26,
-                titulo: "Reportagem Especial: Ao Vivo da Floresta...",
-                video:
-                  "https://drive.google.com/file/d/10h1Ml5awRHaj5_eH7LWV05FE-OI7c_dZ/preview",
-              },
-              {
-                numero: 27,
-                titulo: "Encare ou Fuja na Floresta da Morte",
-                video:
-                  "https://drive.google.com/file/d/10rGNCV8xcDNxCVlMmzcMj2EyZUrL_F-F/preview",
-              },
-              {
-                numero: 28,
-                titulo: "Comer ou Ser Comido: Pânico na Floresta",
-                video:
-                  "https://drive.google.com/file/d/10nTWrmy2VXA6EAfKwbizsGsxPpaN35Hp/preview",
-              },
-              {
-                numero: 29,
-                titulo: "Os Cinco de Konoha: Um Novo Time",
-                video:
-                  "https://drive.google.com/file/d/115MDiH4mwyZY-nykdw5H4RTUJ44zeHzN/preview",
-              },
-              {
-                numero: 30,
-                titulo: "A Técnica Proibida: O Selo do Ódio",
-                video:
-                  "https://drive.google.com/file/d/110pDUy-iuCirkKiWiQBrQKF1CrX1BmBU/preview",
-              },
+              { numero: 1, titulo: "Uzumaki Naruto Chega!", video: "https://drive.google.com/file/d/11rk7hZ-_ojYspVZNBSvV30sKKsk0WzO1/preview" },
+              { numero: 2, titulo: "Meu Nome é Konohamaru!", video: "https://drive.google.com/file/d/11sdNfqjVtoUz8-VPJp3SxQx2nwBOJC7w/preview" },
+              { numero: 3, titulo: "Sasuke e Sakura: Amigos ou Inimigos?", video: "https://drive.google.com/file/d/11xQUrRiU7i2fB9bOXpctnHtMFjqadcLA/preview" },
+              { numero: 4, titulo: "Passar ou Falhar — Um Teste de Sobrevivência!", video: "https://drive.google.com/file/d/11tNk1OcyTs9FsIQxx8ETEA8Y_LvjMAB_/preview" },
+              { numero: 5, titulo: "Você Fracassou! A Decisão Final de Kakashi", video: "https://drive.google.com/file/d/120jKvYbSSy3KBrp_WO02PaRni5Arr785/preview" },
+              { numero: 6, titulo: "Uma Missão Perigosa! Aventura ao País das Ondas!", video: "https://drive.google.com/file/d/12-5yqaXdEVfXjfjt-QhjLLOubcY8-Exf/preview" },
+              { numero: 7, titulo: "O Assassino da Névoa", video: "https://drive.google.com/file/d/122y9rEeuC-hXyG1Bjdc0v9hkvcN0ENeC/preview" },
+              { numero: 8, titulo: "O Juramento de sangue", video: "https://drive.google.com/file/d/125FawxQZqUo1nW8ov7z2M7jFgSi1XBxK/preview" },
+              { numero: 9, titulo: "Kakashi: O ninja que copia", video: "https://drive.google.com/file/d/124kHtDEI_x2zQXbdrxh_h2Gu4zlt71XE/preview" },
+              { numero: 10, titulo: "Naruto Vê o Seu Futuro!", video: "https://drive.google.com/file/d/12Boap-89AvJ8__ODTK0KJlC0zQleen45/preview" },
+              { numero: 11, titulo: "A Terra Onde um Herói Nunca Morrerá", video: "https://drive.google.com/file/d/11kvBtYU97B9ihdkx8_0NLCkdSnI__Ls4/preview" },
+              { numero: 12, titulo: "A Batalha Começa: Naruto x Sasuke", video: "https://drive.google.com/file/d/11s293M3FMuLGExizxxfAuqHgeqZZ_3s2/preview" },
+              { numero: 13, titulo: "O Segredo do Sharingan", video: "https://drive.google.com/file/d/11rP6gp-Ftf7BW4qK9yit3q5U2jnj-3Ef/preview" },
+              { numero: 14, titulo: "Eu Não Vou Fugir!", video: "https://drive.google.com/file/d/11sVwQhmxXP7YkcJS9OCVMZMpTfSkSewp/preview" },
+              { numero: 15, titulo: "A Batalha Final: Zabuza vs Kakashi!", video: "https://drive.google.com/file/d/123OUlCWbfuYTe5P71TzW3t-LNCl8Il5R/preview" },
+              { numero: 16, titulo: "O Selo se Rompe: Naruto Perdendo o Controle!", video: "https://drive.google.com/file/d/10KcBffAdOhN-EJrsU5g6MoiIhtrv1rCg/preview" },
+              { numero: 17, titulo: "Passado Branco, Ambição Escondida", video: "https://drive.google.com/file/d/10OvneMFVKVc13JKsySzyg-M1-5ZVCaXv/preview" },
+              { numero: 18, titulo: "Uma Ferramenta Conhecida como Shinobi", video: "https://drive.google.com/file/d/10Ll5T2gHR05ouZx7X2qFH14JvRJCW-RA/preview" },
+              { numero: 19, titulo: "O Demônio na Neve", video: "https://drive.google.com/file/d/10SVH2UGcfus6UQElsjlUPQJqlZRHNcwB/preview" },
+              { numero: 20, titulo: "Um Novo Capítulo Começa: A Prova Chūnin", video: "https://drive.google.com/file/d/10PwNoAKLJ45jmi753IF9BDStCOa4oYdF/preview" },
+              { numero: 21, titulo: "Identifiquem-se: Rivais Novos e Poderosos", video: "https://drive.google.com/file/d/10WgjAY8278fyNZvBDvMq0mkzoOn3AdkR/preview" },
+              { numero: 22, titulo: "Rock Lee Contra Sasuke!", video: "https://drive.google.com/file/d/10VrKR7QW9I3Bj-QlQYYIEGDx7MBfqoEK/preview" },
+              { numero: 23, titulo: "A Batalha de Pré-Seleção: Todos Contra Todos!", video: "https://drive.google.com/file/d/10gYXDdPxBcFKE32HZuwBIBBgJzp3qkst/preview" },
+              { numero: 24, titulo: "Liguem os Motores: A Prova Chunin Começa!", video: "https://drive.google.com/file/d/10aQ6qEQhOEm32dofAncqDnW8kRP2yHiZ/preview" },
+              { numero: 25, titulo: "A Décima Pergunta: Tudo ou Nada!", video: "https://drive.google.com/file/d/10jRRpE0ZGOlUHjfjztagGpOecd1SCJXa/preview" },
+              { numero: 26, titulo: "Reportagem Especial: Ao Vivo da Floresta...", video: "https://drive.google.com/file/d/10h1Ml5awRHaj5_eH7LWV05FE-OI7c_dZ/preview" },
+              { numero: 27, titulo: "Encare ou Fuja na Floresta da Morte", video: "https://drive.google.com/file/d/10rGNCV8xcDNxCVlMmzcMj2EyZUrL_F-F/preview" },
+              { numero: 28, titulo: "Comer ou Ser Comido: Pânico na Floresta", video: "https://drive.google.com/file/d/10nTWrmy2VXA6EAfKwbizsGsxPpaN35Hp/preview" },
+              { numero: 29, titulo: "Os Cinco de Konoha: Um Novo Time", video: "https://drive.google.com/file/d/115MDiH4mwyZY-nykdw5H4RTUJ44zeHzN/preview" },
+              { numero: 30, titulo: "A Técnica Proibida: O Selo do Ódio", video: "https://drive.google.com/file/d/110pDUy-iuCirkKiWiQBrQKF1CrX1BmBU/preview" },             
+              { numero: 31, titulo: "A Promessa do Sobrancelhudo: Amor Eterno e Proteção!!", video: "https://drive.google.com/file/d/13T5nasr14BDaMZYMqpJMLsWzdldfoK84/preview" },
+              { numero: 32, titulo: "Sakura Floresce!", video: "https://drive.google.com/file/d/13W8Q3tW2OXigFRuTyQMjl63ySSSJY4Du/preview" },
+              { numero: 33, titulo: "Formação de Batalha: Ino-Shika-Cho!", video: "https://drive.google.com/file/d/13Um_X1JzbrtG0MUmdJC2CptKOAEylctn/preview" },
+              { numero: 34, titulo: "Akamaru Treme: A Força Cruel de Gaara", video: "https://drive.google.com/file/d/13d-2fxzsMjn2QuOwS1l5NeMatCCW_vrR/preview" },
+              { numero: 35, titulo: "O Segredo do Pergaminho: Não é Permitido Olhar", video: "https://drive.google.com/file/d/13cKABJCzUJw5mYLJqg3zYhEm8qfsiCnl/preview" },
+              { numero: 36, titulo: "Clone Contra Clone: Os Meus São Melhores do que os Seus!", video: "https://drive.google.com/file/d/13h5nypxJXIIJJnn6vsYzRB5mia_GPKnb/preview" },
+              { numero: 37, titulo: "Sobrevivendo ao Corte: Os Nove Novatos Juntos Outra Vez!", video: "https://drive.google.com/file/d/13eboCFqHGHfVTzBOGQxeHXTIcq_wjUYZ/preview" },
+              { numero: 38, titulo: "Estreitando o Campo, Morte Súbita, Eliminação!", video: "https://drive.google.com/file/d/13nqfb6-M3stcgremrbnjUzyxkcQvJNYs/preview" },
+              { numero: 39, titulo: "O Ciúme do Sobrancelhudo: A Rajada de Leões se Solta!", video: "https://drive.google.com/file/d/13mk219Cjq75bpjz3zfiETlgPJSWvhjmP/preview" },
+              { numero: 40, titulo: "Kakashi e Orochimaru Cara a Cara", video: "https://drive.google.com/file/d/13rxbcmj_hTPD3jKhM6q6fMxmf6eW35LU/preview" },
+              { numero: 41, titulo: "Explosão Kunoichi, As Rivais se Enfrentam!", video: "https://drive.google.com/file/d/13pGLNUPoMkKQUsr3YEZpeMf5nHO9dZ5N/preview" },
+              { numero: 42, titulo: "A Batalha Final: Cha!", video: "https://drive.google.com/file/d/13wJrqjrxuzoTn2esbaxvPokBExmCjKRm/preview" },
+              { numero: 43, titulo: "A Kunoichi Assassina e o Tremulo Shikamaru", video: "https://drive.google.com/file/d/13tLiZ3m7_JFP9dELZd6MJqXzQz-2BS7K/preview" },
+              { numero: 44, titulo: "Akamaru se Revela: Quem é o Melhor Cachorro?", video: "https://drive.google.com/file/d/13x0sMwkckitRyATovUNBWbCNzcFVhq3F/preview" },
+              { numero: 45, titulo: "Ataque Surpresa: A Arma Secreta de Naruto!", video: "https://drive.google.com/file/d/13x0Y-crbtD1f67r34UjWSXmlwf_6dyk1/preview" },
+              { numero: 46, titulo: "Batalha Byakugan: Hinata Ganha Coragem!", video: "https://drive.google.com/file/d/144XJX-iG994YMgNYR-DDpw7qb-LMZw6y/preview" },
+              { numero: 47, titulo: "Uma Derrota Digna!!", video: "https://drive.google.com/file/d/13ywwJkgvCXT_P5dgDeLIRnq6sxZWEATq/preview" },
+              { numero: 48, titulo: "Gaara Contra Rock Lee: O Poder da Juventude Explode!", video: "https://drive.google.com/file/d/14Mff-gQQi8lToUzxOIZbvJ0ud2obnM6r/preview" },
+              { numero: 49, titulo: "A Força Oculta de Lee: Um Jutsu Secreto Proibido!", video: "https://drive.google.com/file/d/14OrpHXIQVEi0R1xyPo1AWerOLtBXj_Nt/preview" },
+              { numero: 50, titulo: "O Quinto Portão: Um Ninja Esplêndido Nasce!!", video: "https://drive.google.com/file/d/14RHJhgWLO6aZd3itvaPGJ6jOBE4w3x3h/preview" },
             ],
           },
         ],
