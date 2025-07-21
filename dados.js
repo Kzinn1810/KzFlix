@@ -1174,7 +1174,33 @@ const dados = [
         //ano: 2025
       },
       {
-      id: 16,
+        id: 16,
+        tipo: "series",
+        titulo: "Wandinha",
+        descricao:
+          "Wandinha é uma série de comédia sombria que segue a vida de Wandinha Addams, filha do icônico casal Mortícia e Gomez Addams, enquanto ela navega por sua adolescência peculiar em Nevermore Academy.",
+        imagem: "imagens/wandinha.webp",
+        temporadas: [
+          {
+            numero: 1,
+            episodios: [
+              { numero: 1, titulo: "Wandinha Chega em Casa", video: "https://drive.google.com/file/d/14nS0HWXHo42yVEYnLKhZ_DOYfeEi72As/preview" },
+              { numero: 2, titulo: "Uma Triste Solidão é uma Triste Solidão", video: "https://drive.google.com/file/d/14s17da7yDYl-pSZTzFO2m8dT0dC6WQLC/preview" },
+              { numero: 3, titulo: "Amigos São Coisas Raras e Preciosas", video: "https://drive.google.com/file/d/14uOr_A7W7g-PmPykr_APzUmgTuw8qjlG/preview" },
+              { numero: 4, titulo: "Uma Dor Compartilhada é uma Dor Reduzida", video: "https://drive.google.com/file/d/150vAe6HSJDi1antFz6_hT3Ito2bPVVKs/preview" },
+              { numero: 5, titulo: "Você Reaparece Quando Menos Espero", video: "https://drive.google.com/file/d/156KiBTtpKMM1lVhBd3AU_y9YFY7p3jPu/preview" },
+              { numero: 6, titulo: "Quase Não Reconheci Você", video: "https://drive.google.com/file/d/15I7ho2_l8jComInd3mnE6R8fGc0nfNb4/preview" },
+              { numero: 7, titulo: "Se Você Não Estiver em Agonia, Está Errado", video: "https://drive.google.com/file/d/15PeVIjo9fBcfiLNRqvqbrt3aaIHRFVxt/preview" },
+              { numero: 8, titulo: "Um Assassinato de Incrível Proporção", video: "https://drive.google.com/file/d/15eBzQQ6yDoQnOa53eCOecpkaZw29wpnC/preview" },
+            ],
+          },
+        ],
+        trailer: "https://www.youtube.com/embed/4vi6ZWe_3Yc",
+        generos: ["comédia", "fantasia", "mistério"],
+        //ano: 2022
+      },
+      {
+      id: 17,
         tipo: "movie",
         titulo: "Deadpool & Wolverine",
         descricao:
@@ -1187,7 +1213,7 @@ const dados = [
         //ano: 2024
       },
       {
-      id: 17,
+      id: 18,
         tipo: "movie",
         titulo: "Gente grande",
         descricao:
@@ -1200,7 +1226,7 @@ const dados = [
         //ano: 2010
       },
       {
-        id: 18,
+        id: 19,
         tipo: "movie",
         titulo: "Divertidamente 2",
         descricao:
@@ -1213,7 +1239,7 @@ const dados = [
         //ano: 2024
       },
       {
-        id: 19,
+        id: 20,
         tipo: "series",
         titulo: "Naruto",
         descricao:
@@ -1281,7 +1307,7 @@ const dados = [
         //ano: 2002
       },
       {
-        id: 20,
+        id: 21,
         tipo: "movie",
         titulo: "Karatê Kid: Lendas",
         descricao:
@@ -1294,7 +1320,7 @@ const dados = [
         //ano: 2025
       },
       {
-        id: 21,
+        id: 22,
         tipo: "movie",
         titulo: "Bird Box",
         descricao:
@@ -1307,7 +1333,7 @@ const dados = [
         //ano: 2018
       },
       {
-        id: 22,
+        id: 23,
         tipo: "movie",
         titulo: "Tropa de Elite",
         descricao:
@@ -1320,7 +1346,7 @@ const dados = [
         //ano: 2007
       },
       {
-        id: 23,
+        id: 24,
         tipo: "movie",
         titulo: "Tropa de Elite 2",
         descricao:
@@ -1333,7 +1359,7 @@ const dados = [
         //ano: 2012
       },
       {
-        id: 24,
+        id: 25,
         tipo: "movie",
         titulo: "Django Livre",
         descricao:
@@ -1346,7 +1372,7 @@ const dados = [
         //ano: 2012
       },
       {
-        id: 25,
+        id: 26,
         tipo: "movie",
         titulo: "As Branquelas",
         descricao:
@@ -1359,7 +1385,7 @@ const dados = [
         //ano: 2000
       },
       {
-        id: 26,
+        id: 27,
         tipo: "movie",
         titulo: "Minha mãe é uma peça",
         descricao:
@@ -1372,7 +1398,7 @@ const dados = [
         //ano: 2013
       },
       {
-        id: 27,
+        id: 28,
         tipo: "movie",
         titulo: "Invocação do mal",
         descricao:
@@ -1385,7 +1411,7 @@ const dados = [
         //ano: 2013
       },
       {
-        id: 28,
+        id: 29,
         tipo: "movie",
         titulo: "Velozes e Furiosos 7",
         descricao:
@@ -1398,7 +1424,7 @@ const dados = [
         //ano: 2015
       },
       {
-        id: 29,
+        id: 30,
         tipo: "movie",
         titulo: "A barraca do beijo",
         descricao:
@@ -1411,7 +1437,7 @@ const dados = [
         //ano: 2018
       },
       {
-        id: 30,
+        id: 31,
         tipo: "movie",
         titulo: "Carros",
         descricao:
@@ -1424,7 +1450,7 @@ const dados = [
         //ano: 2006
       },
       {
-        id: 31,
+        id: 32,
         tipo: "series",
         titulo: "Neymar: O Caos Perfeito",
         descricao:
@@ -1445,7 +1471,7 @@ const dados = [
         //ano: 2022
       },
       {
-        id: 32,
+        id: 33,
         tipo: "series",
         titulo: "Apenas um Show",
         descricao:
@@ -1508,7 +1534,7 @@ const dados = [
         //ano: 2010
       },
       {
-        id: 33,
+        id: 34,
         tipo: "movie",
         titulo: "Venom",
         descricao:
@@ -1521,7 +1547,7 @@ const dados = [
         //ano: 2018
       },
       {
-        id: 34,
+        id: 35,
         tipo: "movie",
         titulo: "Homem-Aranha",
         descricao:
@@ -1534,7 +1560,7 @@ const dados = [
         //ano: 2002
       },
       {
-        id: 35,
+        id: 36,
         tipo: "movie",
         titulo: "Homem de Ferro",
         descricao:
@@ -1547,7 +1573,7 @@ const dados = [
         //ano: 2008
       },
       {
-        id: 36,
+        id: 37,
         tipo: "movie",
         titulo: "Homem de Ferro 2",
         descricao:
@@ -1560,7 +1586,7 @@ const dados = [
         //ano: 2010
       },
       {
-        id: 37,
+        id: 38,
         tipo: "movie",
         titulo: "Homem de Ferro 3",
         descricao:
@@ -1573,7 +1599,7 @@ const dados = [
         //ano: 2013
       },
       {
-        id: 38,
+        id: 39,
         tipo: "movie",
         titulo: "bob esponja: o incrivel resgate",
         descricao:
@@ -1586,7 +1612,7 @@ const dados = [
         //ano: 2020
       },
       {
-        id: 39,
+        id: 40,
         tipo: "movie",
         titulo: "Travis Scott: Voando Alto - Legendado",
         descricao:
