@@ -1344,18 +1344,33 @@ toggleSenha.addEventListener('click', () => {
       modalPlayer.classList.add("show");
       modalPlayer.focus();
       episodioAtualInfo = infoEpisodio;
-      // Bloqueia rolagem e zoom
       document.body.classList.add('modal-aberto');
-      // Impede zoom via meta viewport
       const metaViewport = document.getElementById('meta-viewport');
       if (metaViewport) {
         metaViewport.setAttribute('content', 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no');
       }
-      // Exibe botão pular capítulo global só se for episódio de série
+      // Exibe botão pular capítulo ou próxima temporada
       if (infoEpisodio && infoEpisodio.tipo === 'serie') {
-        btnPularCapitulo.style.display = 'inline-block';
-        btnPularCapitulo.disabled = false;
-        // Posiciona abaixo do modal, alinhado à direita
+        const serie = infoEpisodio.serie;
+        const numTemp = infoEpisodio.temporada;
+        const numEpi = infoEpisodio.episodio;
+        const temporada = serie.temporadas.find(t => t.numero === numTemp);
+        const proxTemp = serie.temporadas.find(t => t.numero === numTemp + 1);
+        const ehUltimoEpi = numEpi === temporada.episodios.length;
+        const temProximoEpi = numEpi < temporada.episodios.length;
+        const temProximaTemporada = proxTemp && proxTemp.episodios.length > 0;
+
+        if (temProximoEpi) {
+          btnPularCapitulo.textContent = '⏭️ Pular Capítulo';
+          btnPularCapitulo.style.display = 'inline-block';
+          btnPularCapitulo.disabled = false;
+        } else if (ehUltimoEpi && temProximaTemporada) {
+          btnPularCapitulo.textContent = '⏭️ Próxima Temporada';
+          btnPularCapitulo.style.display = 'inline-block';
+          btnPularCapitulo.disabled = false;
+        } else {
+          btnPularCapitulo.style.display = 'none';
+        }
         btnPularCapitulo.style.position = 'absolute';
         btnPularCapitulo.style.bottom = '18px';
         btnPularCapitulo.style.right = '18px';
@@ -1517,6 +1532,8 @@ toggleSenha.addEventListener('click', () => {
       let numEpi = episodioAtualInfo.episodio;
       const temporada = serie.temporadas.find(t => t.numero === numTemp);
       if (!temporada) return;
+      const proxTemp = serie.temporadas.find(t => t.numero === numTemp + 1);
+
       // Próximo episódio na mesma temporada
       if (numEpi < temporada.episodios.length) {
         const proximoEpi = temporada.episodios.find(e => e.numero === numEpi + 1);
@@ -1530,9 +1547,8 @@ toggleSenha.addEventListener('click', () => {
           return;
         }
       }
-      // Se não há próximo episódio, tenta próxima temporada
-      const proxTemp = serie.temporadas.find(t => t.numero === numTemp + 1);
-      if (proxTemp && proxTemp.episodios.length > 0) {
+      // Se for último episódio e tem próxima temporada, vai para o primeiro episódio da próxima temporada
+      if (numEpi === temporada.episodios.length && proxTemp && proxTemp.episodios.length > 0) {
         abrirModalPlayer(proxTemp.episodios[0].video, {
           tipo: 'serie',
           serie: serie,
@@ -1541,8 +1557,8 @@ toggleSenha.addEventListener('click', () => {
         });
         return;
       }
-      // Se não há mais episódios, desabilita botão
-      btnPularCapitulo.disabled = true;
+      // Se não há mais episódios, oculta o botão
+      btnPularCapitulo.style.display = 'none';
     };
 
     // Fechar modal player ao clicar fora do iframe
