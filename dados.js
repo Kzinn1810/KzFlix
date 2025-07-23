@@ -1631,6 +1631,58 @@ const dados = [
       {
         id: 39,
         tipo: "movie",
+        titulo: "Thor",
+        descricao:
+          "Thor é um deus nórdico banido para a Terra, onde aprende lições de humildade e heroísmo enquanto enfrenta inimigos poderosos.",
+        imagem: "imagens/thor.webp",
+        video:
+          "https://drive.google.com/file/d/12UxZ3nJbnZjfz0_U8oXIvIhNC97Bnw9W/preview",
+        trailer: "http://www.youtube.com/embed/GI-NJq82kH8",
+        generos: ["ação", "ficção científica", "aventura"],
+        //ano: 2011
+      },
+      {
+        id: 40,
+        tipo: "movie",
+        titulo: "Thor 2: O Mundo das Trevas",
+        descricao:
+          "Thor 2: O Mundo das Trevas é uma sequência onde Thor enfrenta um antigo inimigo que ameaça o universo, enquanto lida com questões familiares e alianças inesperadas.",
+        imagem: "imagens/thor-o-mundo-sombrio.webp",
+        video:
+          "https://drive.google.com/file/d/12UiR_cio8SxT6a0wRA-1GYUq-Jk5T2up/preview",
+        trailer: "http://www.youtube.com/embed/BmCT2nQu90A",
+        generos: ["ação", "ficção científica", "aventura"],
+        //ano: 2013
+      },
+      {
+        id: 41,
+        tipo: "movie",
+        titulo: "Thor: Ragnarok",
+        descricao:
+          "Thor: Ragnarok é um filme de ação e aventura onde Thor deve enfrentar Hela, a deusa da morte, e salvar Asgard de sua destruição iminente.",
+        imagem: "imagens/thor-ragnarok.webp",
+        video:
+          "https://drive.google.com/file/d/12QzzBDFnDzyiHf9exSe2enHvuT-s_nqz/preview",
+        trailer: "http://www.youtube.com/embed/UvNnqWLruXA",
+        generos: ["ação", "ficção científica", "aventura"],
+        //ano: 2017
+      },
+      {
+        id: 42,
+        tipo: "movie",
+        titulo: "Thor: Amor e Trovão",
+        descricao:
+          "Thor: Amor e Trovão é um filme de ação e aventura onde Thor enfrenta novos desafios enquanto busca por amor e redenção, lidando com a ameaça de Gorr, o Deus Carniceiro.",
+        imagem: "imagens/thor-amor-e-trovao.webp",
+        video:
+          "https://drive.google.com/file/d/12OhFNtC6zNKswVpnW_xrVlyWWNOEz-CA/preview",
+        trailer: "http://www.youtube.com/embed/1c_W_4cNLn0",
+        generos: ["ação", "ficção científica", "aventura"],
+        //ano: 2022
+      },
+      {
+        id: 43,
+        tipo: "movie",
         titulo: "bob esponja: o incrivel resgate",
         descricao:
           "Bob Esponja embarca em uma missão épica com Patrick para resgatar Gary, seu caracol de estimação, que foi raptado.",
@@ -1642,7 +1694,7 @@ const dados = [
         //ano: 2020
       },
       {
-        id: 40,
+        id: 44,
         tipo: "movie",
         titulo: "Travis Scott: Voando Alto - Legendado",
         descricao:
