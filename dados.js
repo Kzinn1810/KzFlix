@@ -3,11 +3,9 @@ const dados = [
         id: 1,
         tipo: "movie",
         titulo: "Pecadores",
-        descricao:
-          "Um terror gótico e musical ambientado no sul dos EUA nos anos 1930, onde vampiros racistas enfrentam músicos negros em uma batalha por alma, cultura e sobrevivência.",
+        descricao:  "Um terror gótico e musical ambientado no sul dos EUA nos anos 1930, onde vampiros racistas enfrentam músicos negros em uma batalha por alma, cultura e sobrevivência.",
         imagem: "imagens/pecadores.webp",
-        video:
-          "https://drive.google.com/file/d/1-VvLUBMOAhIjrcJiB2_ileQxgTKKbZvM/preview",
+        video: "https://drive.google.com/file/d/1-VvLUBMOAhIjrcJiB2_ileQxgTKKbZvM/preview",
         trailer: "https://www.youtube.com/embed/V3spHR5x5QY",
         generos: ["terror", "suspense", "drama"],
         //ano: 2025
@@ -1443,6 +1441,19 @@ const dados = [
       {
         id: 29,
         tipo: "movie",
+        titulo: "Invocação do mal 3: A Ordem do Demônio",
+        descricao:
+          "Invocação do Mal 3 é um filme de terror que segue os investigadores paranormais Ed e Lorraine Warren enquanto enfrentam um caso sobrenatural envolvendo um jovem acusado de assassinato.",
+        imagem: "imagens/invocacao-do-mal3.webp",
+        video:
+          "https://drive.google.com/file/d/13eHfdZiaUnodeACE6ZclMU_f0BpRFwsJ/preview",
+        trailer: "http://www.youtube.com/embed/anDtrp34xig",
+        generos: ["terror", "suspense", "drama"],
+        //ano: 2021
+      },
+      {
+        id: 30,
+        tipo: "movie",
         titulo: "Velozes e Furiosos 7",
         descricao:
           "Dominic Toretto e sua equipe enfrentam um assassino implacável enquanto tentam proteger sua família e manter sua liberdade.",
@@ -1454,7 +1465,7 @@ const dados = [
         //ano: 2015
       },
       {
-        id: 30,
+        id: 31,
         tipo: "movie",
         titulo: "A barraca do beijo",
         descricao:
@@ -1467,7 +1478,46 @@ const dados = [
         //ano: 2018
       },
       {
-        id: 31,
+        id: 32,
+        tipo: "movie",
+        titulo: "Creed: Nascido para Lutar",
+        descricao:
+          "Creed: Nascido para Lutar é um filme de boxe que segue Adonis Creed, filho de Apollo Creed, enquanto ele busca se tornar um campeão sob a tutela de Rocky Balboa.",
+        imagem: "imagens/creed.webp",
+        video:
+          "https://drive.google.com/file/d/13cxIQ6Cpx9UbJSiU9ohnbZW7k6HOTSEq/preview",
+        trailer: "http://www.youtube.com/embed/661sQScpXJc",
+        generos: ["ação", "drama", "esporte"],
+        //ano: 2015
+      },
+      {
+        id: 33,
+        tipo: "movie",
+        titulo: "Creed II",
+        descricao:
+          "Creed II é um filme de boxe que segue Adonis Creed enquanto ele enfrenta Viktor Drago, filho de Ivan Drago, e lida com o legado de seu pai Apollo Creed.",
+        imagem: "imagens/creed-2.webp",
+        video:
+          "https://drive.google.com/file/d/13fiD5WagjTvvBTE9KTuGoEXbL3tLyOGK/preview",
+        trailer: "http://www.youtube.com/embed/HKXoW8FISj4",
+        generos: ["ação", "drama", "esporte"],
+        //ano: 2018
+      },
+      {
+        id: 34,
+        tipo: "movie",
+        titulo: "Creed III",
+        descricao:
+          "Creed III é um filme de boxe que segue Adonis Creed enquanto ele enfrenta novos desafios e rivais, buscando provar seu legado no ringue.",
+        imagem: "imagens/creed3.webp",
+        video:
+          "https://drive.google.com/file/d/13elyBjRlYergHCNQpuGocJCAh3sVmPi1/preview",
+        trailer: "http://www.youtube.com/embed/vENtKgrHUUU",
+        generos: ["ação", "drama", "esporte"],
+        //ano: 2023
+      },
+      {
+        id: 35,
         tipo: "movie",
         titulo: "Carros",
         descricao:
@@ -1480,7 +1530,7 @@ const dados = [
         //ano: 2006
       },
       {
-        id: 32,
+        id: 36,
         tipo: "series",
         titulo: "Neymar: O Caos Perfeito",
         descricao:
@@ -1501,7 +1551,7 @@ const dados = [
         //ano: 2022
       },
       {
-        id: 33,
+        id: 37,
         tipo: "series",
         titulo: "Apenas um Show",
         descricao:
@@ -1564,7 +1614,7 @@ const dados = [
         //ano: 2010
       },
       {
-        id: 34,
+        id: 38,
         tipo: "movie",
         titulo: "Venom",
         descricao:
@@ -1577,7 +1627,7 @@ const dados = [
         //ano: 2018
       },
       {
-        id: 35,
+        id: 39,
         tipo: "movie",
         titulo: "Homem-Aranha",
         descricao:
@@ -1590,7 +1640,7 @@ const dados = [
         //ano: 2002
       },
       {
-        id: 36,
+        id: 40,
         tipo: "movie",
         titulo: "Homem de Ferro",
         descricao:
@@ -1603,7 +1653,7 @@ const dados = [
         //ano: 2008
       },
       {
-        id: 37,
+        id: 41,
         tipo: "movie",
         titulo: "Homem de Ferro 2",
         descricao:
@@ -1616,7 +1666,7 @@ const dados = [
         //ano: 2010
       },
       {
-        id: 38,
+        id: 42,
         tipo: "movie",
         titulo: "Homem de Ferro 3",
         descricao:
@@ -1629,7 +1679,7 @@ const dados = [
         //ano: 2013
       },
       {
-        id: 39,
+        id: 43,
         tipo: "movie",
         titulo: "Thor",
         descricao:
@@ -1642,7 +1692,7 @@ const dados = [
         //ano: 2011
       },
       {
-        id: 40,
+        id: 44,
         tipo: "movie",
         titulo: "Thor 2: O Mundo das Trevas",
         descricao:
@@ -1655,7 +1705,7 @@ const dados = [
         //ano: 2013
       },
       {
-        id: 41,
+        id: 45,
         tipo: "movie",
         titulo: "Thor: Ragnarok",
         descricao:
@@ -1668,7 +1718,7 @@ const dados = [
         //ano: 2017
       },
       {
-        id: 42,
+        id: 46,
         tipo: "movie",
         titulo: "Thor: Amor e Trovão",
         descricao:
@@ -1681,7 +1731,7 @@ const dados = [
         //ano: 2022
       },
       {
-        id: 43,
+        id: 47,
         tipo: "movie",
         titulo: "bob esponja: o incrivel resgate",
         descricao:
@@ -1694,7 +1744,7 @@ const dados = [
         //ano: 2020
       },
       {
-        id: 44,
+        id: 48,
         tipo: "movie",
         titulo: "Travis Scott: Voando Alto - Legendado",
         descricao:
