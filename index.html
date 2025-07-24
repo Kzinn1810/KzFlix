@@ -1702,6 +1702,8 @@ toggleSenha.addEventListener('click', () => {
     // Exibir lançamentos recentes (com base em alguns títulos)
     function exibirLancamentosRecentes() {
   const ordemDesejada = [
+    "Creed III",
+    "Invocação do mal 3: A Ordem do Demônio",
     "Como Treinar o Seu Dragão",
     "Karatê Kid: Lendas",
     "Ballerina - Do Universo de John Wick",
@@ -1709,9 +1711,7 @@ toggleSenha.addEventListener('click', () => {
     "Pecadores",
     "Um Filme Minecraft",
     "Arcanjo Renegado",
-    "Homem-Aranha: Através do Aranhaverso",
-    "Locke & Key",
-    "Dark",
+    "Homem-Aranha: Através do Aranhaverso",  
   ];
   const lancamentosRecentes = ordemDesejada
     .map(titulo => dados.find(item => item.titulo === titulo))
