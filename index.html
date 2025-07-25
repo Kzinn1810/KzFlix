@@ -753,6 +753,19 @@
     </div>
   </section>
 
+  <!-- Cria a seção "Continuar Assistindo" abaixo dos lançamentos -->
+  <section id="continuar-assistindo" style="margin: 40px 0; position: relative;">
+    <h2 class="secao-titulo" style="display: flex; align-items: center; justify-content: space-between;">
+      <span>⏳ Continuar Assistindo</span>
+      <button id="btn-limpar-historico"
+        style="display:none; background:#e50914; color:#fff; border:none; border-radius:7px; padding:8px 18px; font-size:14px; font-weight:bold; cursor:pointer; margin-left:16px;"
+        title="Limpar histórico de continuar assistindo">
+        🗑️ Limpar Histórico
+      </button>
+    </h2>
+    <div class="vitrine-scroll" id="vitrine-continuar"></div>
+  </section>
+
   <main>
     <div class="lista" id="lista" aria-live="polite" aria-label="Lista de filmes e séries"></div>
     <button id="btn-carregar-mais" style="display:none; margin: 20px auto; padding: 12px 24px; font-size: 16px; border-radius: 6px; background: #1db954; color: white; border: none; cursor: pointer; display: block;">
@@ -1340,8 +1353,17 @@ toggleSenha.addEventListener('click', () => {
 
 
     // Modal Player
-    function abrirModalPlayer(link, infoEpisodio = null) {
-      iframePlayer.src = link;
+    function abrirModalPlayer(link, infoEpisodio = null, tempoInicial = null) {
+      let usuario = localStorage.getItem('usuarioLogado');
+      let idVideo = link.split('?')[0];
+      let tempoSalvo = tempoInicial != null ? tempoInicial : (usuario ? obterTempoAssistido(usuario, idVideo) : 0);
+
+      // Adiciona ?start=tempo na URL do Google Drive se houver tempo salvo
+      let url = link;
+      if (tempoSalvo > 0) {
+        url += (url.includes('?') ? '&' : '?') + 'start=' + Math.floor(tempoSalvo);
+      }
+      iframePlayer.src = url;
       modalPlayer.classList.add("show");
       modalPlayer.focus();
       episodioAtualInfo = infoEpisodio;
@@ -1383,6 +1405,49 @@ toggleSenha.addEventListener('click', () => {
       } else {
         btnPularCapitulo.style.display = 'none';
       }
+
+      // Exibe botão salvar ponto
+      btnSalvarPonto.style.display = 'inline-block';
+      btnSalvarPonto.onclick = function() {
+        // Pergunta minutos e segundos
+        let min = prompt('Minutos:');
+        if (min === null) return;
+        let seg = prompt('Segundos:');
+        if (seg === null) return;
+        min = parseInt(min, 10);
+        seg = parseInt(seg, 10);
+        if (isNaN(min)) min = 0;
+        if (isNaN(seg)) seg = 0;
+        const tempoTotal = min * 60 + seg;
+        // info para card
+        let info = {};
+        if (infoEpisodio && infoEpisodio.tipo === 'serie') {
+          info = {
+            titulo: infoEpisodio.serie.titulo + ` - T${infoEpisodio.temporada}E${infoEpisodio.episodio}`,
+            imagem: infoEpisodio.serie.imagem,
+            video: link,
+            tipo: 'serie',
+            ano: infoEpisodio.serie.ano,
+            descricao: infoEpisodio.serie.descricao
+          };
+        } else {
+          // Busca o filme nos dados para garantir a imagem correta
+          let filme = (typeof dados !== "undefined" ? dados : []).find(f => 
+  (f.video && (f.video === link || f.video.split('?')[0] === link.split('?')[0]))
+);
+          info = filme ? {
+            titulo: filme.titulo,
+            imagem: filme.imagem,
+            video: filme.video,
+            tipo: 'movie',
+            ano: filme.ano,
+            descricao: filme.descricao
+          } : { titulo: link, imagem: 'imagens/placeholder.webp', video: link, tipo: 'movie', ano: '', descricao: '' };
+        }
+        salvarTempoAssistido(usuario, idVideo, tempoTotal, info);
+        renderizarContinuarAssistindo();
+        alert('Ponto salvo!');
+      };
     }
 
     // Fullscreen e orientação paisagem
@@ -1394,6 +1459,7 @@ toggleSenha.addEventListener('click', () => {
         // Oculta todos os botões, exceto o fullscreen
         btnFecharPlayer.style.display = 'none';
         btnPularCapitulo.style.display = 'none';
+        btnSalvarPonto.style.display = 'none';
         btnFullscreenPlayer.style.display = 'block';
         let entrouFullscreen = false;
         // Tenta API nativa
@@ -1574,6 +1640,7 @@ toggleSenha.addEventListener('click', () => {
       modalPlayer.classList.remove("show");
       iframePlayer.src = "";
       btnPularCapitulo.style.display = "none";
+      btnSalvarPonto.style.display = "none";
       episodioAtualInfo = null;
       // Libera rolagem e zoom
       document.body.classList.remove('modal-aberto');
@@ -1711,7 +1778,7 @@ toggleSenha.addEventListener('click', () => {
     "Pecadores",
     "Um Filme Minecraft",
     "Arcanjo Renegado",
-    "Homem-Aranha: Através do Aranhaverso",  
+    "Homem-Aranha: Através do Aranhaverso",   
   ];
   const lancamentosRecentes = ordemDesejada
     .map(titulo => dados.find(item => item.titulo === titulo))
@@ -1765,185 +1832,401 @@ toggleSenha.addEventListener('click', () => {
 // Chama ao carregar a página
 exibirLancamentosRecentes();
 
-    // Exibir visto por último
-    function mostrarVistoPorUltimo(nomeUsuario) {
-      const vistos = obterVistoPorUltimo(nomeUsuario).slice(0, getCardsLimit());
-      const listaVistos = document.getElementById("lista-vistos");
-      listaVistos.innerHTML = ""; // Limpa a lista atual
 
-      if (vistos.length === 0) {
-        listaVistos.innerHTML = "<p style='text-align:center;'>Nenhum item encontrado.</p>";
-        return;
+
+// Funções utilitárias para salvar e obter tempo
+function salvarTempoAssistido(usuario, idVideo, tempoSegundos, info) {
+  if (!usuario || !idVideo) return;
+  const chave = `visto_${usuario}_${idVideo}`;
+  localStorage.setItem(chave, JSON.stringify({
+    tempo: tempoSegundos,
+    titulo: info.titulo,
+    imagem: info.imagem,
+    video: info.video,
+    tipo: info.tipo,
+    ano: info.ano || "",
+    descricao: info.descricao || ""
+  }));
+}
+
+function obterContinuarAssistindo(usuario) {
+  if (!usuario) return [];
+  const prefix = `visto_${usuario}_`;
+  const vistos = [];
+  for (let i = 0; i < localStorage.length; i++) {
+    const k = localStorage.key(i);
+    if (k.startsWith(prefix)) {
+      const obj = JSON.parse(localStorage.getItem(k));
+      if (obj && obj.titulo && obj.video) {
+        obj.idVideo = k.replace(prefix, "");
+        vistos.push(obj);
       }
-
-      vistos.forEach((item) => {
-        const card = document.createElement("article");
-        card.className = "card";
-        card.setAttribute("tabindex", "0");
-        card.setAttribute("role", "region");
-        card.setAttribute("aria-label", item.titulo);
-
-        const img = document.createElement("img");
-        img.src = item.imagem;
-        img.alt = `Imagem do ${item.tipo === "movie" ? "filme" : "série"} ${item.titulo}`;
-
-        const anoOverlay = document.createElement("div");
-        anoOverlay.className = "card-ano-overlay";
-        anoOverlay.textContent = item.ano || "";
-
-        const cardBody = document.createElement("div");
-        cardBody.className = "card-body";
-
-        const titulo = document.createElement("h3");
-        titulo.className = "card-title";
-        titulo.textContent = item.titulo;
-
-        const ano = document.createElement("p");
-        ano.className = "card-ano";
-        ano.textContent = item.ano || "";
-
-        const desc = document.createElement("p");
-        desc.className = "card-desc";
-        desc.textContent = item.descricao;
-
-        cardBody.appendChild(titulo);
-        cardBody.appendChild(ano);
-        cardBody.appendChild(desc);
-
-        const btnAssistir = document.createElement("button");
-        btnAssistir.className = "assistir-btn";
-        btnAssistir.textContent = item.tipo === "movie" ? "▶️ Assistir" : "▶️ Assistir Série";
-        btnAssistir.setAttribute("aria-label", `Assistir ${item.tipo === "movie" ? "filme" : "série"} ${item.titulo}`);
-
-        btnAssistir.addEventListener("click", () => {
-          if (item.tipo === "movie") abrirModalPlayer(item.video);
-          else abrirModalEpisodios(item);
-        });
-        const botoesContainer = document.createElement("div");
-        botoesContainer.style.display = "flex";
-        botoesContainer.style.flexWrap = "wrap";
-        botoesContainer.style.gap = "10px";
-        botoesContainer.style.marginTop = "10px";
-        botoesContainer.appendChild(btnAssistir);
-
-        if (item.trailer) {
-          const btnTrailer = document.createElement("button");
-          btnTrailer.className = "assistir-btn trailer";
-          btnTrailer.textContent = "▶️ Trailer";
-          btnTrailer.addEventListener("click", () => abrirModalPlayer(item.trailer));
-          botoesContainer.appendChild(btnTrailer);
-        }
-
-        cardBody.appendChild(botoesContainer);
-        card.appendChild(img);
-        card.appendChild(cardBody);
-        listaVistos.appendChild(card);
-      });
     }
+  }
+  // Mais recentes primeiro
+  return vistos.reverse();
+}
 
-    // Chama ao carregar a página
-    mostrarVistoPorUltimo("Kzinn"); // <-- Troque pelo nome do usuário logado
-
-    // Detecta rotação da tela e ajusta o modal player em mobile
-window.addEventListener('orientationchange', ajustarFullscreenMobilePorOrientacao);
-window.addEventListener('resize', ajustarFullscreenMobilePorOrientacao);
-
-function ajustarFullscreenMobilePorOrientacao() {
-  const isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|Mobile/i.test(navigator.userAgent);
-  if (!isMobile) return;
-  if (!modalPlayer.classList.contains('show')) return;
-  // Landscape: ocupa toda a tela
-  if (window.innerWidth > window.innerHeight) {
-    if (!modalPlayer.classList.contains('simulacao-fullscreen-mobile')) {
-      modalPlayer.classList.add('simulacao-fullscreen-mobile');
-    }
-    // Em fullscreen simulado mobile, só mostra o botão fullscreen
-    btnFecharPlayer.style.display = 'none';
-    btnPularCapitulo.style.display = 'none';
-    btnFullscreenPlayer.style.display = 'block';
-    // Remove mensagem de orientação se existir
-    let aviso = document.getElementById('aviso-orientacao');
-    if (aviso) aviso.remove();
-  } else {
-    // Portrait: volta ao normal
-    if (modalPlayer.classList.contains('simulacao-fullscreen-mobile')) {
-      modalPlayer.classList.remove('simulacao-fullscreen-mobile');
-    }
-    btnFecharPlayer.style.display = '';
-    btnFullscreenPlayer.style.display = 'block';
-    // Posiciona os botões fullscreen e fechar no topo direito
-    btnFullscreenPlayer.style.position = 'absolute';
-    btnFullscreenPlayer.style.top = '10px';
-    btnFullscreenPlayer.style.right = '10px';
-    btnFullscreenPlayer.style.zIndex = '13';
-    btnFecharPlayer.style.position = 'absolute';
-    btnFecharPlayer.style.top = '10px';
-    btnFecharPlayer.style.right = '60px';
-    btnFecharPlayer.style.zIndex = '12';
-    // Botão pular capítulo volta para baixo à direita do modal
-    if (episodioAtualInfo && episodioAtualInfo.tipo === 'serie') {
-      btnPularCapitulo.style.display = 'inline-block';
-      btnPularCapitulo.style.position = 'absolute';
-      btnPularCapitulo.style.bottom = '18px';
-      btnPularCapitulo.style.right = '18px';
-      btnPularCapitulo.style.left = 'auto';
-      btnPularCapitulo.style.top = '';
-      btnPularCapitulo.style.zIndex = '20000';
-      btnPularCapitulo.style.visibility = 'visible';
-      btnPularCapitulo.style.opacity = '1';
-      btnPularCapitulo.disabled = false;
-    } else {
-      btnPularCapitulo.style.display = 'none';
-      btnPularCapitulo.disabled = true;
-    }
-    // Exibe mensagem para girar a tela e faz ela sumir após 4 segundos
-    let aviso = document.getElementById('aviso-orientacao');
-    if (!aviso) {
-      aviso = document.createElement('div');
-      aviso.id = 'aviso-orientacao';
-      aviso.innerText = 'Gire o aparelho para melhor experiência.';
-      aviso.style.position = 'fixed';
-      aviso.style.bottom = '24px';
-      aviso.style.left = '50%';
-      aviso.style.transform = 'translateX(-50%)';
-      aviso.style.background = 'rgba(0,0,0,0.8)';
-      aviso.style.color = '#fff';
-      aviso.style.padding = '10px 18px';
-      aviso.style.borderRadius = '20px';
-      aviso.style.fontSize = '16px';
-      aviso.style.zIndex = '100001';
-      document.body.appendChild(aviso);
-      setTimeout(() => {
-        if (aviso) aviso.remove();
-      }, 4000);
-    }
+function obterTempoAssistido(usuario, idVideo) {
+  if (!usuario || !idVideo) return 0;
+  const chave = `visto_${usuario}_${idVideo}`;
+  const obj = localStorage.getItem(chave);
+  if (!obj) return 0;
+  try {
+    return JSON.parse(obj).tempo || 0;
+  } catch {
+    return 0;
   }
 }
 
-// Função para exibir o pop-up do PIX
-function mostrarPopupPix() {
-  let popup = document.getElementById('popup-pix');
-  if (popup) {
-    popup.remove(); // Remove popup antigo se existir
+// Renderiza os cards de continuar assistindo
+function renderizarContinuarAssistindo() {
+  const usuario = localStorage.getItem('usuarioLogado');
+  const container = document.getElementById('vitrine-continuar');
+  const btnLimpar = document.getElementById('btn-limpar-historico');
+  const secao = document.getElementById('continuar-assistindo'); // <-- Adicione esta linha
+  if (!container) return;
+  container.innerHTML = '';
+  const vistos = obterContinuarAssistindo(usuario);
+
+  // Mostra ou esconde o botão de limpar histórico
+  if (btnLimpar) btnLimpar.style.display = vistos.length ? 'inline-block' : 'none';
+
+  // Mostra ou esconde toda a seção "Continuar Assistindo"
+  if (secao) secao.style.display = vistos.length ? 'block' : 'none'; // <-- Adicione esta linha
+
+  if (!vistos.length) {
+    container.innerHTML = "<p style='text-align:center;width:100%;color:#aaa;'>Nenhum conteúdo assistido.</p>";
+    return;
   }
-  popup = document.createElement('div');
-  popup.id = 'popup-pix';
-  popup.style.position = 'fixed';
-  popup.style.top = '50%';
-  popup.style.left = '50%';
-  popup.style.transform = 'translate(-50%, -50%)';
-  popup.style.background = '#222';
-  popup.style.color = '#1db954';
-  popup.style.padding = '28px 32px';
-  popup.style.borderRadius = '18px';
-  popup.style.boxShadow = '0 4px 24px #000a';
-  popup.style.zIndex = '99999';
-  popup.style.fontSize = '1.2rem';
-  popup.style.textAlign = 'center';
-  popup.innerHTML = `<h3 style='margin-bottom:12px;'>Chave PIX</h3><div style='font-size:1.1rem;margin-bottom:18px;'>pixkzinn@gmail.com</div><button id='fechar-pix' style='background:#1db954;color:#fff;border:none;padding:8px 18px;border-radius:8px;cursor:pointer;font-size:1rem;'>Fechar</button>`;
-  document.body.appendChild(popup);
-  document.getElementById('fechar-pix').onclick = () => {
-    popup.remove();
+  vistos.forEach(obj => {
+    // Card para filmes e séries
+    const card = document.createElement('div');
+    card.className = 'vitrine-card';
+    card.style.cursor = 'pointer';
+    card.innerHTML = `
+      <img src="${obj.imagem}" alt="Imagem de ${obj.titulo}">
+      <div class="vitrine-info">
+        <h3>${obj.titulo}</h3>
+        <div style="font-size:13px;color:#1db954;margin-bottom:4px;">
+          ⏱️ Último ponto: ${formatarTempo(obj.tempo)}
+        </div>
+        <button style="background:#1db954;color:#fff;border:none;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:13px;">Continuar</button>
+      </div>
+    `;
+    card.querySelector('button').onclick = (e) => {
+      e.stopPropagation();
+      abrirModalPlayer(obj.video, null, obj.tempo);
+    };
+    card.onclick = () => {
+      abrirModalPlayer(obj.video, null, obj.tempo);
+    };
+    container.appendChild(card);
+  });
+}
+
+// Formata tempo em segundos para mm:ss
+function formatarTempo(segundos) {
+  const m = Math.floor(segundos / 60);
+  const s = Math.floor(segundos % 60);
+  return `${m}m${s.toString().padStart(2, '0')}s`;
+}
+
+// Adiciona botão "Salvar ponto" no player
+(function criarBtnSalvarPonto() {
+  const modalDiv = modalPlayer.querySelector('div');
+  let btn = document.getElementById('btn-salvar-ponto');
+  if (!btn) {
+    btn = document.createElement('button');
+    btn.id = "btn-salvar-ponto";
+    btn.textContent = "💾 Salvar ponto";
+    btn.style.position = "absolute";
+    btn.style.left = "18px";
+    btn.style.bottom = "18px";
+    btn.style.background = "#1db954";
+    btn.style.color = "#fff";
+    btn.style.border = "none";
+    btn.style.padding = "8px 18px";
+    btn.style.borderRadius = "24px";
+    btn.style.cursor = "pointer";
+    btn.style.zIndex = "20000";
+    btn.style.display = "none";
+    modalDiv.appendChild(btn);
+  }
+})();
+
+const btnSalvarPonto = document.getElementById('btn-salvar-ponto');
+
+// Modifique abrirModalPlayer para aceitar tempo inicial
+function abrirModalPlayer(link, infoEpisodio = null, tempoInicial = null) {
+  let usuario = localStorage.getItem('usuarioLogado');
+  let idVideo = link.split('?')[0];
+  let tempoSalvo = tempoInicial != null ? tempoInicial : (usuario ? obterTempoAssistido(usuario, idVideo) : 0);
+
+  // Adiciona ?start=tempo na URL do Google Drive se houver tempo salvo
+  let url = link;
+  if (tempoSalvo > 0) {
+    url += (url.includes('?') ? '&' : '?') + 'start=' + Math.floor(tempoSalvo);
+  }
+  iframePlayer.src = url;
+  modalPlayer.classList.add("show");
+  modalPlayer.focus();
+  episodioAtualInfo = infoEpisodio;
+  document.body.classList.add('modal-aberto');
+  const metaViewport = document.getElementById('meta-viewport');
+  if (metaViewport) {
+    metaViewport.setAttribute('content', 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no');
+  }
+  // Exibe botão pular capítulo ou próxima temporada
+  if (infoEpisodio && infoEpisodio.tipo === 'serie') {
+    const serie = infoEpisodio.serie;
+    const numTemp = infoEpisodio.temporada;
+    const numEpi = infoEpisodio.episodio;
+    const temporada = serie.temporadas.find(t => t.numero === numTemp);
+    const proxTemp = serie.temporadas.find(t => t.numero === numTemp + 1);
+    const ehUltimoEpi = numEpi === temporada.episodios.length;
+    const temProximoEpi = numEpi < temporada.episodios.length;
+    const temProximaTemporada = proxTemp && proxTemp.episodios.length > 0;
+
+    if (temProximoEpi) {
+      btnPularCapitulo.textContent = '⏭️ Pular Capítulo';
+      btnPularCapitulo.style.display = 'inline-block';
+      btnPularCapitulo.disabled = false;
+    } else if (ehUltimoEpi && temProximaTemporada) {
+      btnPularCapitulo.textContent = '⏭️ Próxima Temporada';
+      btnPularCapitulo.style.display = 'inline-block';
+      btnPularCapitulo.disabled = false;
+    } else {
+      btnPularCapitulo.style.display = 'none';
+    }
+    btnPularCapitulo.style.position = 'absolute';
+    btnPularCapitulo.style.bottom = '18px';
+    btnPularCapitulo.style.right = '18px';
+    btnPularCapitulo.style.left = 'auto';
+    btnPularCapitulo.style.top = '';
+    btnPularCapitulo.style.zIndex = '20000';
+    btnPularCapitulo.style.visibility = 'visible';
+    btnPularCapitulo.style.opacity = '1';
+  } else {
+    btnPularCapitulo.style.display = 'none';
+  }
+
+  // Exibe botão salvar ponto
+    btnSalvarPonto.style.display = 'inline-block';
+    btnSalvarPonto.onclick = function() {
+      // Agora pergunta horas, minutos e segundos
+      let horas = prompt('Horas:');
+      if (horas === null) return;
+      let min = prompt('Minutos:');
+      if (min === null) return;
+      let seg = prompt('Segundos:');
+      if (seg === null) return;
+      horas = parseInt(horas, 10);
+      min = parseInt(min, 10);
+      seg = parseInt(seg, 10);
+      if (isNaN(horas)) horas = 0;
+      if (isNaN(min)) min = 0;
+      if (isNaN(seg)) seg = 0;
+      const tempoTotal = horas * 3600 + min * 60 + seg;
+      // info para card
+      let info = {};
+      // Detecta se é trailer
+      let isTrailer = false;
+      let filmeOuSerie = null;
+      if (link && link.includes("youtube.com")) {
+        // Procura o filme ou série correspondente ao trailer
+        filmeOuSerie = (typeof dados !== "undefined" ? dados : []).find(f =>
+          f.trailer && (f.trailer === link || f.trailer.split('?')[0] === link.split('?')[0])
+        );
+        isTrailer = true;
+      } else if (infoEpisodio && infoEpisodio.tipo === 'serie') {
+        filmeOuSerie = infoEpisodio.serie;
+      } else {
+        filmeOuSerie = (typeof dados !== "undefined" ? dados : []).find(f =>
+          f.video && (f.video === link || f.video.split('?')[0] === link.split('?')[0])
+        );
+      }
+
+      if (isTrailer && filmeOuSerie) {
+        info = {
+          titulo: `Trailer: ${filmeOuSerie.titulo}`,
+          imagem: filmeOuSerie.imagem,
+          video: link,
+          tipo: 'trailer',
+          ano: filmeOuSerie.ano || "",
+          descricao: filmeOuSerie.descricao || ""
+        };
+      } else if (infoEpisodio && infoEpisodio.tipo === 'serie') {
+        info = {
+          titulo: infoEpisodio.serie.titulo + ` - T${infoEpisodio.temporada}E${infoEpisodio.episodio}`,
+          imagem: infoEpisodio.serie.imagem,
+          video: link,
+          tipo: 'serie',
+          ano: infoEpisodio.serie.ano,
+          descricao: infoEpisodio.serie.descricao
+        };
+      } else if (filmeOuSerie) {
+        info = {
+          titulo: filmeOuSerie.titulo,
+          imagem: filmeOuSerie.imagem,
+          video: filmeOuSerie.video,
+          tipo: 'movie',
+          ano: filmeOuSerie.ano,
+          descricao: filmeOuSerie.descricao
+        };
+      } else {
+        info = { titulo: link, imagem: 'imagens/placeholder.webp', video: link, tipo: 'movie', ano: '', descricao: '' };
+      }
+      salvarTempoAssistido(usuario, idVideo, tempoTotal, info);
+      renderizarContinuarAssistindo();
+      alert('Ponto salvo!');
+    };
+  }
+
+// Ao fechar o player, esconde o botão salvar ponto
+function fecharModalPlayer() {
+  modalPlayer.classList.remove("show");
+  iframePlayer.src = "";
+  btnPularCapitulo.style.display = "none";
+  btnSalvarPonto.style.display = "none";
+  episodioAtualInfo = null;
+  // Libera rolagem e zoom
+  document.body.classList.remove('modal-aberto');
+  const metaViewport = document.getElementById('meta-viewport');
+  if (metaViewport) {
+    metaViewport.setAttribute('content', 'width=device-width, initial-scale=1');
+  }
+}
+
+// Ao logar, renderiza a lista de continuar assistindo do usuário
+formLogin.onsubmit = (e) => {
+  e.preventDefault();
+  const nome = loginNome.value.trim();
+  const senha = loginSenha.value.trim();
+  const msgBemVindo = document.getElementById('msg-bem-vindo');
+  if (!nome || !senha) {
+    loginErro.textContent = "Preencha todos os campos.";
+    loginErro.style.display = "block";
+    msgBemVindo.style.display = "none";
+    return;
+  }
+  // Só permite os logins específicos
+  const loginsValidos = [
+    { nome: "Kzinn", senha: "renatamachado" },
+    { nome: "Maxz", senha: "132607" },
+    { nome: "pedro lisboa", senha: "2008pll#" },
+    { nome: "simasturbo", senha: "01eles00nos" },
+    { nome: "nunes", senha: "30104422" },
+    { nome: "gtcbarbosa", senha: "081518" },
+    { nome: "cardoso", senha: "gozarindo" },
+    { nome: "Alan", senha: "12345" },
+    { nome: "Julia", senha: "2702" },
+    { nome: "jottameterebolando", senha: "peledosexo" },
+    { nome: "jotaorugas", senha: "terrordoestado" },
+    { nome: "Isabelly", senha: "1234" },
+    { nome: "Caroline Mendonça", senha: "carolLinda2007" }
+  ];
+  const valido = loginsValidos.some(l => l.nome === nome && l.senha === senha);
+  if (!valido) {
+    loginErro.textContent = "Login ou senha inválidos. Use um dos logins permitidos.";
+    loginErro.style.display = "block";
+    msgBemVindo.style.display = "none";
+    return;
+  }
+  loginErro.style.display = "none";
+  msgBemVindo.innerHTML = `<span style='font-size:1.5rem;vertical-align:middle;margin-right:6px;'>🎬</span>Bem-vindo, <b style='color:#1db954;'>${nome}</b>!`;
+  msgBemVindo.style.display = 'block';
+  msgBemVindo.style.opacity = '1';
+  msgBemVindo.style.animation = '';
+  // Delay de 3 segundos antes de liberar acesso
+  setTimeout(() => {
+    msgBemVindo.style.opacity = '0';
+    setTimeout(() => { msgBemVindo.style.display = 'none'; }, 700);
+    modalLogin.style.display = "none";
+    document.body.classList.remove('modal-aberto');
+  }, 3000);
+  localStorage.setItem('usuarioLogado', nome);
+  renderizarContinuarAssistindo();
+};
+
+// Também renderiza ao carregar a página (se já estiver logado)
+window.addEventListener('DOMContentLoaded', renderizarContinuarAssistindo);
+
+document.getElementById('btn-limpar-historico').onclick = function() {
+  if (!confirm('Tem certeza que deseja limpar todo o histórico de continuar assistindo?')) return;
+  const usuario = localStorage.getItem('usuarioLogado');
+  if (!usuario) return;
+  const prefix = `visto_${usuario}_`;
+  const chaves = [];
+  for (let i = 0; i < localStorage.length; i++) {
+    const k = localStorage.key(i);
+    if (k.startsWith(prefix)) chaves.push(k);
+  }
+  chaves.forEach(k => localStorage.removeItem(k));
+  renderizarContinuarAssistindo();
+};
+function mostrarPopupPix() {
+  // Remove popup antigo se existir
+  let antigo = document.getElementById('popup-pix-kz');
+  if (antigo) antigo.remove();
+
+  // Cria o overlay
+  const overlay = document.createElement('div');
+  overlay.id = 'popup-pix-kz';
+  overlay.style.position = 'fixed';
+  overlay.style.top = 0;
+  overlay.style.left = 0;
+  overlay.style.width = '100vw';
+  overlay.style.height = '100vh';
+  overlay.style.background = 'rgba(0,0,0,0.65)';
+  overlay.style.display = 'flex';
+  overlay.style.alignItems = 'center';
+  overlay.style.justifyContent = 'center';
+  overlay.style.zIndex = 999999;
+
+  // Cria o conteúdo do popup
+  const box = document.createElement('div');
+  box.style.background = '#222';
+  box.style.color = '#fff';
+  box.style.padding = '32px 24px 24px 24px';
+  box.style.borderRadius = '18px';
+  box.style.boxShadow = '0 8px 32px #000a';
+  box.style.textAlign = 'center';
+  box.style.position = 'relative';
+  box.style.maxWidth = '90vw';
+  box.style.minWidth = '280px';
+
+  box.innerHTML = `
+    <h2 style="margin-top:0;font-size:1.5rem;">💸 Apoie o KzFlix!</h2>
+    <p style="font-size:1.1rem;margin-bottom:18px;">Chave PIX:</p>
+    <div style="background:#111;padding:12px 10px;border-radius:8px;font-size:1.1rem;letter-spacing:1px;user-select:all;word-break:break-all;margin-bottom:12px;">
+      <b id="pix-chave" style="font-size:1.15rem;">pixkzinn@gmail.com</b>
+      <button id="btn-copiar-pix" style="margin-left:10px;padding:4px 10px;font-size:1rem;border:none;border-radius:6px;background:#1db954;color:#fff;cursor:pointer;">Copiar</button>
+    </div>
+    <div style="font-size:1rem;color:#1db954;margin-bottom:10px;">Muito obrigado pelo apoio! 🙏</div>
+    <button id="btn-fechar-pix" style="margin-top:10px;padding:8px 22px;font-size:1rem;border:none;border-radius:8px;background:#e50914;color:#fff;cursor:pointer;">Fechar</button>
+  `;
+
+  overlay.appendChild(box);
+  document.body.appendChild(overlay);
+
+  // Copiar chave PIX ao clicar
+  document.getElementById('btn-copiar-pix').onclick = function() {
+    const chave = document.getElementById('pix-chave').innerText;
+    navigator.clipboard.writeText(chave).then(() => {
+      this.textContent = 'Copiado!';
+      setTimeout(() => { this.textContent = 'Copiar'; }, 1500);
+    });
+  };
+
+  // Fechar popup
+  document.getElementById('btn-fechar-pix').onclick = function() {
+    overlay.remove();
+  };
+
+  // Fechar ao clicar fora do box
+  overlay.onclick = function(e) {
+    if (e.target === overlay) overlay.remove();
   };
 }
 </script>
