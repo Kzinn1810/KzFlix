@@ -1927,9 +1927,14 @@ function renderizarContinuarAssistindo() {
 
 // Formata tempo em segundos para mm:ss
 function formatarTempo(segundos) {
-  const m = Math.floor(segundos / 60);
+  const h = Math.floor(segundos / 3600);
+  const m = Math.floor((segundos % 3600) / 60);
   const s = Math.floor(segundos % 60);
-  return `${m}m${s.toString().padStart(2, '0')}s`;
+  let str = '';
+  if (h > 0) str += `${h}h`;
+  if (m > 0 || h > 0) str += `${m.toString().padStart(2, '0')}m`;
+  str += `${s.toString().padStart(2, '0')}s`;
+  return str;
 }
 
 // Adiciona botão "Salvar ponto" no player
