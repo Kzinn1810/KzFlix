@@ -1370,14 +1370,14 @@ const dados = [
       {
         id: 22,
         tipo: "movie",
-        titulo: "Bird Box",
+        titulo: "Vingadores guerra infinita",
         descricao:
-          "Bird Box mostra uma mãe e seus filhos tentando sobreviver vendados a criaturas que enlouquecem quem as vê.",
-        imagem: "imagens/bird-box.webp",
+          "Os Vingadores e seus aliados tentam impedir Thanos de coletar as Joias do Infinito, que lhe concederiam poder absoluto para destruir metade do universo.",
+        imagem: "imagens/guerra-infinita.webp",
         video:
-          "https://drive.google.com/file/d/1-66Xx8Gdp9vHl8yko0SGivucY92dnL2o/preview",
-        trailer: "https://www.youtube.com/embed/o2AsIXSh2xo",
-        generos: ["terror", "drama"],
+          "https://drive.google.com/file/d/15OEU9fuH5hjawjaExVnN1kaQBOgVexS8/preview",
+        trailer: "https://www.youtube.com/embed/t_ULBP6V9bg",
+        generos: ["ação", "aventura", "ficção científica"],
         //ano: 2018
       },
       {
@@ -1603,7 +1603,7 @@ const dados = [
               { numero: 3, titulo: "Dia de reconhecimento", video: "https://drive.google.com/file/d/11XIZmOis-9tB0oOQ35dRJqO0K99TdaBR/preview" },
               { numero: 4, titulo: "Espiada", video: "https://drive.google.com/file/d/11THujaRXTGzGO0vXBW7cb64tVydnwzcf/preview" },
               { numero: 5, titulo: "Tonto", video: "https://drive.google.com/file/d/11mzGonu6R1QYdaukkM1MtQUL2YBr0naj/preview" },
-              { numero: 6, titulo: "Minha mãe", video: "https://drive.google.com/file/d/11mKHdQwd7qsS22lPu0z_Mfb2PEw2yN5s/preview?" },
+              { numero: 6, titulo: "Minha mãe", video: "https://drive.google.com/file/d/11mKHdQwd7qsS22lPu0z_Mfb2PEw2yN5s/preview" },
               { numero: 7, titulo: "Pontuação máxima", video: "https://drive.google.com/file/d/124OoGl7pYAeavYpUMneYtqUsc9WZ4sb7/preview" },
               { numero: 8, titulo: "Ódio contra a televisão", video: "https://drive.google.com/file/d/11qot3xPIWAkEEGyO_f65q4dnrxK1m9gG/preview" },
               { numero: 9, titulo: "Pete festeiro", video: "https://drive.google.com/file/d/128HA1DUERr8_IYsFSSM-FpuKZdAqFS6s/preview" },
@@ -1626,6 +1626,51 @@ const dados = [
               { numero: 26, titulo: "Olha o vírus", video: "https://drive.google.com/file/d/11FQfWCUcqjgFSesKBYzjcFqJ2UmQini0/preview" },
               { numero: 27, titulo: "Fedorento", video: "https://drive.google.com/file/d/11h8sKVM2ssqosqZy8ZX1E25Og1DQGNzt/preview" },
               { numero: 28, titulo: "Vídeo de karaokê", video: "https://drive.google.com/file/d/10mSMZxlkihlWyrX6BHK5v9D_-DaqQBxg/preview" },
+            ],
+          },
+          {
+            numero: 3,
+            episodios: [
+              { numero: 1, titulo: "Hóquei de Mesa", video: "https://drive.google.com/file/d/1-S3TI3ACXvId3iLh1oRyDWpy_hAsroNO/preview" },
+              { numero: 2, titulo: "Aposta Radical", video: "https://drive.google.com/file/d/1-UzxvDZfBgCrdiHgi3GeI-buzeUarFl-/preview" },
+              { numero: 3, titulo: "Saltitão joga um bolão", video: "https://drive.google.com/file/d/1-aRzEmlegblAULGdETkjGO_RFJPjhEQg/preview" },
+              { numero: 4, titulo: "Dentro de casa", video: "https://drive.google.com/file/d/1-fOGcRxGgV6qBqPd3p2-KrVoSAiHrkQ5/preview" },
+              { numero: 5, titulo: "Boneco Sinistro", video: "https://drive.google.com/file/d/1-Zngg7-pUMRJAKWyeT1f6qq15NDq1Jrn/preview" },
+              { numero: 6, titulo: "Acampar pode ser legal", video: "https://drive.google.com/file/d/1-njxHNy2YlFdU4s_2Nzc3Ez3Vtwt7LOJ/preview" },
+              { numero: 7, titulo: "Rebotes e enterradas", video: "https://drive.google.com/file/d/1-dsvEj8tdlFA5Jz9Ss6k99pqj02o5tuy/preview" }, 
+              { numero: 8, titulo: "Bicicletas descoladas", video: "https://drive.google.com/file/d/1-rD4JcPyyzd7HfleGcAUcHgcvdwe-TtY/preview" },
+              { numero: 9, titulo: "Regras da casa", video: "https://drive.google.com/file/d/1-fdMM65AJG1eGsXvZlkc_o5Jtvi5CI5p/preview" },
+              { numero: 10, titulo: "Soltando o Rap", video: "https://drive.google.com/file/d/1-WMhXm8fpYcvtS-rMLrwqqeI_jTMD1Mk/preview" },
+              { numero: 11, titulo: "Dando um rolé no meu carango", video: " https://drive.google.com/file/d/100snkBd25sWOnjmP6Vs-vj7hbpPjlxOL/preview" },
+              { numero: 12, titulo: "Debaixo do capuz", video: "https://drive.google.com/file/d/10DXAkSfJe5GmOYtd8za5JR7Qc0Namxrp/preview" },
+              { numero: 13, titulo: "Fim de semana no benson", video: "https://drive.google.com/file/d/10CAsR4D6C5hmFbrG8UNijpUwXvsHxW8-/preview" },
+              { numero: 14, titulo: "Biscoito da sorte", video: "https://drive.google.com/file/d/10LBxCxfLWE_-NC9NqL4sdzuRIE0uOTay/preview" },
+              { numero: 15, titulo: "Pense Positivo", video: "https://drive.google.com/file/d/10K270q3REZj5ta38mdNL04UUj08CRcIi/preview" },
+              { numero: 16, titulo: "Saltitão contra tecnologia", video: "https://drive.google.com/file/d/10RQLvtURNywTBokDk0E63uqH70-U8NIX/preview" },
+              { numero: 17, titulo: "Discando de bumbum", video: "https://drive.google.com/file/d/10NM_DZ6qZ-PYN6l3tjoS6v9byM8thn0l/preview" },
+              { numero: 18, titulo: "Ovoselente", video: "https://drive.google.com/file/d/10SzZBo6b_CVZ8ymMy9IS-EySzW3a92Y5/preview" },
+              { numero: 19, titulo: "Modelo de barriga", video: "https://drive.google.com/file/d/10RTeKu_GJOEzlhb9cGh9AcBNiUUFnvlX/preview" },
+              { numero: 20, titulo: "Magos do vídeo game", video: "https://drive.google.com/file/d/10engY8wvqfKJNJPpEXVd1Sbb__klF25T/preview" },
+              { numero: 21, titulo: "O grande ganhador", video: "https://drive.google.com/file/d/10dIj_CVWWMGqwoKC7Q8LUda_euwRroHJ/preview" },
+              { numero: 22, titulo: "O melhor hamburguer do mundo", video: "https://drive.google.com/file/d/10qvyQNh5uYpoHXtpyNBf8S4ifqoxUOPb/preview" },
+              { numero: 23, titulo: "Substituido", video: "https://drive.google.com/file/d/10lioF3AfCQWlDrzQVKyWyxVkoE_pKi4V/preview" },
+              { numero: 24, titulo: "Canoa furada", video: "https://drive.google.com/file/d/111LHEhHVozqneGXi1Cvzz9uSnGXgS-ut/preview" },
+              { numero: 25, titulo: "Punhos da justiça", video: "https://drive.google.com/file/d/10rQgapLtrlPW33_MzPtGtYAtfWDnzf3_/preview" },
+              { numero: 26, titulo: "Sim, Claro, Sim", video: "https://drive.google.com/file/d/1134diJ3_awpkodzl1-Ky4EQ-Nkb7UFRz/preview" },
+              { numero: 27, titulo: "Carrinho detonado", video: "https://drive.google.com/file/d/111dcWry_O4Xd7y3Fp5tUbWnp2sKuGljq/preview" },
+              { numero: 28, titulo: "Morto as oito", video: "https://drive.google.com/file/d/119L472IL18bSSidC6jg1WUzgcbP1k7Wt/preview" },
+              { numero: 29, titulo: "Acesso Negado", video: "https://drive.google.com/file/d/116GJecaJcJIBwO7OZimzqcQlW1Lz2ad3/preview" },
+              { numero: 30, titulo: "Mentor Musculoso", video: "https://drive.google.com/file/d/119tyltk3hmTmJ-8US-O-ZHMTgilc9cDv/preview" },
+              //{ numero: 31, titulo: "", video: "" },
+              //{ numero: 32, titulo: "", video: "" },
+              //{ numero: 33, titulo: "", video: "" },
+              //{ numero: 34, titulo: "", video: "" },
+              //{ numero: 35, titulo: "", video: "" },
+              //{ numero: 36, titulo: "", video: "" },
+              //{ numero: 37, titulo: "", video: "" },
+              //{ numero: 38, titulo: "", video: "" },
+              //{ numero: 39, titulo: "", video: "" },
+              //{ numero: 40, titulo: "", video: "" },
             ],
           },
         ],
@@ -1753,6 +1798,19 @@ const dados = [
       {
         id: 47,
         tipo: "movie",
+        titulo: "Bird Box",
+        descricao:
+          "Bird Box mostra uma mãe e seus filhos tentando sobreviver vendados a criaturas que enlouquecem quem as vê.",
+        imagem: "imagens/bird-box.webp",
+        video:
+          "https://drive.google.com/file/d/1-66Xx8Gdp9vHl8yko0SGivucY92dnL2o/preview",
+        trailer: "https://www.youtube.com/embed/o2AsIXSh2xo",
+        generos: ["terror", "drama"],
+        //ano: 2018
+      },
+      {
+        id: 48,
+        tipo: "movie",
         titulo: "bob esponja: o incrivel resgate",
         descricao:
           "Bob Esponja embarca em uma missão épica com Patrick para resgatar Gary, seu caracol de estimação, que foi raptado.",
@@ -1764,7 +1822,7 @@ const dados = [
         //ano: 2020
       },
       {
-        id: 48,
+        id: 49,
         tipo: "movie",
         titulo: "Travis Scott: Voando Alto - Legendado",
         descricao:
@@ -1776,4 +1834,4 @@ const dados = [
         generos: ["documentário"],
         //ano: 2019
       },
-    ];
+    ]
