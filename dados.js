@@ -1694,18 +1694,31 @@ const dados = [
       {
         id: 39,
         tipo: "movie",
-        titulo: "Homem-Aranha",
+        titulo: "Homem-Aranha: De Volta ao Lar",
         descricao:
-          "Homem-Aranha é um filme de super-herói baseado no personagem da Marvel, onde um jovem ganha poderes aracnídeos e luta contra o crime em Nova York.",
-        imagem: "imagens/homem-aranha.webp",
+          "Homem-Aranha: De Volta ao Lar é um filme de super-herói onde Peter Parker, o Homem-Aranha, tenta equilibrar sua vida como adolescente e super-herói enquanto enfrenta o vilão Abutre.",
+        imagem: "imagens/homem-aranha-de-volta.webp",
         video:
-          "https://drive.google.com/file/d/12fVQTTsBcLfzD9sSfYwLt4K0637Kv_yQ/preview",
-        trailer: "http://www.youtube.com/embed/t06RUxPbp_c",
+          "https://drive.google.com/file/d/12ZkRQ1s31Ob9CwoKAPVGqQ2rHwC586nj/preview",
+        trailer: "http://www.youtube.com/embed/2x-2iYxgMFU",
         generos: ["ação", "aventura", "ficção científica"],
-        //ano: 2002
+        //ano: 2017
       },
       {
         id: 40,
+        tipo: "movie",
+        titulo: "Homem-Aranha no Aranhaverso",
+        descricao:
+          "Homem-Aranha no Aranhaverso é uma animação que segue Miles Morales, um adolescente que se torna o Homem-Aranha e descobre outras versões do herói em diferentes dimensões.",
+        imagem: "imagens/homem-aranha-aranhaverso.webp",
+        video:
+          "https://drive.google.com/file/d/12cV4IqAs08wxpqUqxpcv7GLJbpsdpMqu/preview",
+        trailer: "http://www.youtube.com/embed/SS6ABPkfmBE",
+        generos: ["animação", "aventura", "ação"],
+        //ano: 2018
+      },
+      {
+        id: 41,
         tipo: "movie",
         titulo: "Homem de Ferro",
         descricao:
@@ -1718,7 +1731,7 @@ const dados = [
         //ano: 2008
       },
       {
-        id: 41,
+        id: 42,
         tipo: "movie",
         titulo: "Homem de Ferro 2",
         descricao:
@@ -1731,7 +1744,7 @@ const dados = [
         //ano: 2010
       },
       {
-        id: 42,
+        id: 43,
         tipo: "movie",
         titulo: "Homem de Ferro 3",
         descricao:
@@ -1744,7 +1757,7 @@ const dados = [
         //ano: 2013
       },
       {
-        id: 43,
+        id: 44,
         tipo: "movie",
         titulo: "Thor",
         descricao:
@@ -1757,7 +1770,7 @@ const dados = [
         //ano: 2011
       },
       {
-        id: 44,
+        id: 45,
         tipo: "movie",
         titulo: "Thor 2: O Mundo das Trevas",
         descricao:
@@ -1770,7 +1783,7 @@ const dados = [
         //ano: 2013
       },
       {
-        id: 45,
+        id: 46,
         tipo: "movie",
         titulo: "Thor: Ragnarok",
         descricao:
@@ -1783,7 +1796,7 @@ const dados = [
         //ano: 2017
       },
       {
-        id: 46,
+        id: 47,
         tipo: "movie",
         titulo: "Thor: Amor e Trovão",
         descricao:
@@ -1796,7 +1809,72 @@ const dados = [
         //ano: 2022
       },
       {
-        id: 47,
+        id: 48,
+        tipo: "movie",
+        titulo: "Homem-Aranha",
+        descricao:
+          "Homem-Aranha é um filme de super-herói baseado no personagem da Marvel, onde um jovem ganha poderes aracnídeos e luta contra o crime em Nova York.",
+        imagem: "imagens/homem-aranha.webp",
+        video:
+          "https://drive.google.com/file/d/12fVQTTsBcLfzD9sSfYwLt4K0637Kv_yQ/preview",
+        trailer: "http://www.youtube.com/embed/t06RUxPbp_c",
+        generos: ["ação", "aventura", "ficção científica"],
+        //ano: 2002
+      },
+      {
+        id: 49,
+        tipo: "movie",
+        titulo: "Homem-Aranha 2",
+        descricao:
+          "Homem-Aranha 2 é um filme de super-herói onde Peter Parker enfrenta novos desafios enquanto tenta equilibrar sua vida pessoal e suas responsabilidades como herói.",
+        imagem: "imagens/homem-aranha2.webp",
+        video:
+          "https://drive.google.com/file/d/12WFn9_k5NXQ4EDQ1dabrcHvfp8apCQfR/preview",
+        trailer: "http://www.youtube.com/embed/1UAzz8ncM68",
+        generos: ["ação", "aventura", "ficção científica"],
+        //ano: 2004
+      },
+      {
+        id: 50,
+        tipo: "movie",
+        titulo: "Homem-Aranha 3",
+        descricao:
+          "Homem-Aranha 3 é um filme de super-herói onde Peter Parker enfrenta novos inimigos e dilemas pessoais, enquanto lida com a influência de um simbiótico alienígena.",
+        imagem: "imagens/homem-aranha3.webp",
+        video:
+          "https://drive.google.com/file/d/12Wzv397DAj_GZOSCK2umY8jVhq9yR4Uk/preview",
+        trailer: "http://www.youtube.com/embed/CJBJQl9X5R8",
+        generos: ["ação", "aventura", "ficção científica"],
+        //ano: 2007
+      },
+      {
+        id: 51,
+        tipo: "movie",
+        titulo: "O Espetacular Homem-Aranha",
+        descricao:
+          "O Espetacular Homem-Aranha é um reboot da franquia onde Peter Parker descobre seus poderes e enfrenta o Lagarto, enquanto busca entender seu passado e sua identidade.",
+        imagem: "imagens/o-homem-aranha.webp",
+        video:
+          "https://drive.google.com/file/d/12rZMiFG_BbQThF_j-JYg9fmQeHnKhU2J/preview",
+        trailer: "http://www.youtube.com/embed/6nzNdpJ3qMo",
+        generos: ["ação", "aventura", "ficção científica"],
+        //ano: 2012
+      },
+      {
+        id: 52,
+        tipo: "movie",
+        titulo: "O Espetacular Homem-Aranha 2",
+        descricao:
+          "O Espetacular Homem-Aranha 2 é um filme de super-herói onde Peter Parker enfrenta novos desafios e inimigos, enquanto tenta equilibrar sua vida pessoal e suas responsabilidades como herói.",
+        imagem: "imagens/o-homem-aranha2.webp",
+        video:
+          "https://drive.google.com/file/d/12qLYP5GGIBKaOyD9hzqVRAp-84LdnqaX/preview",
+        trailer: "http://www.youtube.com/embed/PfUDLzyC1cM",
+        generos: ["ação", "aventura", "ficção científica"],
+        //ano: 2014
+      },
+      {
+        id: 53,
         tipo: "movie",
         titulo: "Bird Box",
         descricao:
@@ -1809,7 +1887,7 @@ const dados = [
         //ano: 2018
       },
       {
-        id: 48,
+        id: 54,
         tipo: "movie",
         titulo: "Tropa de Elite",
         descricao:
@@ -1822,7 +1900,7 @@ const dados = [
         //ano: 2007
       },
       {
-        id: 49,
+        id: 55,
         tipo: "movie",
         titulo: "bob esponja: o incrivel resgate",
         descricao:
@@ -1835,7 +1913,7 @@ const dados = [
         //ano: 2020
       },
       {
-        id: 50,
+        id: 56,
         tipo: "movie",
         titulo: "Travis Scott: Voando Alto - Legendado",
         descricao:
