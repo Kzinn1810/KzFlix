@@ -1383,15 +1383,15 @@ const dados = [
       {
         id: 23,
         tipo: "movie",
-        titulo: "Tropa de Elite",
+        titulo: "Um Maluco No Golfe 2",
         descricao:
-          "Um capitão do BOPE enfrenta a violência do tráfico e os dilemas morais da guerra urbana no Rio de Janeiro.",
-        imagem: "imagens/tropa-de-elite.webp",
+          "Um Maluco No Golfe 2 é uma comédia onde o personagem principal, um golfista excêntrico, enfrenta desafios hilários enquanto tenta vencer um torneio de golfe.",
+        imagem: "imagens/mlc-no-golfe2.webp",
         video:
-          "https://drive.google.com/file/d/118bEax43b4FWj5MZ38zZbXF_1zozmLaF/preview",
-        trailer: "https://www.youtube.com/embed/uZBiNJQxtGw?si=-fO313EZbdesbqYG",
-        generos: ["ação", "drama"],
-        //ano: 2007
+          "https://drive.google.com/file/d/12SAW00ibXphdFJbZVdXP_C9mfuvP8uo9/preview",
+        trailer: "https://www.youtube.com/embed/qCks9ymO0Ro",
+        generos: ["comédia", "aventura"],
+        //ano: 2025
       },
       {
         id: 24,
@@ -1661,16 +1661,16 @@ const dados = [
               { numero: 28, titulo: "Morto as oito", video: "https://drive.google.com/file/d/119L472IL18bSSidC6jg1WUzgcbP1k7Wt/preview" },
               { numero: 29, titulo: "Acesso Negado", video: "https://drive.google.com/file/d/116GJecaJcJIBwO7OZimzqcQlW1Lz2ad3/preview" },
               { numero: 30, titulo: "Mentor Musculoso", video: "https://drive.google.com/file/d/119tyltk3hmTmJ-8US-O-ZHMTgilc9cDv/preview" },
-              //{ numero: 31, titulo: "", video: "" },
-              //{ numero: 32, titulo: "", video: "" },
-              //{ numero: 33, titulo: "", video: "" },
-              //{ numero: 34, titulo: "", video: "" },
-              //{ numero: 35, titulo: "", video: "" },
-              //{ numero: 36, titulo: "", video: "" },
-              //{ numero: 37, titulo: "", video: "" },
-              //{ numero: 38, titulo: "", video: "" },
-              //{ numero: 39, titulo: "", video: "" },
-              //{ numero: 40, titulo: "", video: "" },
+              { numero: 31, titulo: "O melhor caminhoneiro do mundo", video: "https://drive.google.com/file/d/11DDkSCsoqC1iUZvG_76w79aE6PI8sLEJ/preview" },
+              { numero: 32, titulo: "Fora de circulação", video: "https://drive.google.com/file/d/11RK_E0P-Gc57kVVtB2ZHk2GOLQFrNS3G/preview" },
+              { numero: 33, titulo: "Restaurante chique", video: "https://drive.google.com/file/d/11JRkI_orQqpRILhiOb_b5dLlzgyvZFGa/preview" },
+              { numero: 34, titulo: "O diário", video: "https://drive.google.com/file/d/11ll2cuWw3S2j_80eWgszFokJ-3EfyS0T/preview" },
+              { numero: 35, titulo: "O melhor vhs do mundo", video: "https://drive.google.com/file/d/11UN1YMtBF8cwdlXCyCcf75yDBys75-UL/preview" },
+              { numero: 36, titulo: "Sem pegadinhas", video: "https://drive.google.com/file/d/11pSrZQQhlLes4c49gZpVlqlreFpX9zlK/preview" },
+              { numero: 37, titulo: "O urso morta", video: "https://drive.google.com/file/d/11oCS2OhQjhRkF-W2nqhh1-GIVmHcJUtM/preview" },
+              { numero: 38, titulo: "Dados felpudos", video: "https://drive.google.com/file/d/11vDz9MFev4QrbVPcrxZz04U8MX694DOb/preview" },
+              { numero: 39, titulo: "Barato Doce", video: "https://drive.google.com/file/d/11saS9lIXf1km02ulAPVtBWk8Cy8lrakM/preview" },
+              { numero: 40, titulo: "Beijo Ruim", video: "https://drive.google.com/file/d/11y6uPeWvwdRJ1XcZudFGGehUTsTv09d8/preview" },
             ],
           },
         ],
@@ -1811,6 +1811,19 @@ const dados = [
       {
         id: 48,
         tipo: "movie",
+        titulo: "Tropa de Elite",
+        descricao:
+          "Um capitão do BOPE enfrenta a violência do tráfico e os dilemas morais da guerra urbana no Rio de Janeiro.",
+        imagem: "imagens/tropa-de-elite.webp",
+        video:
+          "https://drive.google.com/file/d/118bEax43b4FWj5MZ38zZbXF_1zozmLaF/preview",
+        trailer: "https://www.youtube.com/embed/uZBiNJQxtGw?si=-fO313EZbdesbqYG",
+        generos: ["ação", "drama"],
+        //ano: 2007
+      },
+      {
+        id: 49,
+        tipo: "movie",
         titulo: "bob esponja: o incrivel resgate",
         descricao:
           "Bob Esponja embarca em uma missão épica com Patrick para resgatar Gary, seu caracol de estimação, que foi raptado.",
@@ -1822,7 +1835,7 @@ const dados = [
         //ano: 2020
       },
       {
-        id: 49,
+        id: 50,
         tipo: "movie",
         titulo: "Travis Scott: Voando Alto - Legendado",
         descricao:
