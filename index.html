@@ -1006,7 +1006,8 @@ formLogin.onsubmit = (e) => {
     { nome: "jottameterebolando", senha: "peledosexo" },
     { nome: "jotaorugas", senha: "terrordoestado" },
     { nome: "Isabelly", senha: "1234" },
-    { nome: "Caroline Mendonça", senha: "carolLinda2007" }
+    { nome: "Caroline Mendonça", senha: "carolLinda2007" },
+    { nome: "Fael", senha: "Barbeiro" }
   ];
   const valido = loginsValidos.some(l => l.nome === nome && l.senha === senha);
   if (!valido) {
@@ -1027,6 +1028,8 @@ formLogin.onsubmit = (e) => {
     modalLogin.style.display = "none";
     document.body.classList.remove('modal-aberto');
   }, 3000);
+  localStorage.setItem('usuarioLogado', nome);
+  renderizarContinuarAssistindo();
 };
 
 // Mostrar/ocultar senha com SVG
@@ -1409,44 +1412,7 @@ toggleSenha.addEventListener('click', () => {
       // Exibe botão salvar ponto
       btnSalvarPonto.style.display = 'inline-block';
       btnSalvarPonto.onclick = function() {
-        // Pergunta minutos e segundos
-        let min = prompt('Minutos:');
-        if (min === null) return;
-        let seg = prompt('Segundos:');
-        if (seg === null) return;
-        min = parseInt(min, 10);
-        seg = parseInt(seg, 10);
-        if (isNaN(min)) min = 0;
-        if (isNaN(seg)) seg = 0;
-        const tempoTotal = min * 60 + seg;
-        // info para card
-        let info = {};
-        if (infoEpisodio && infoEpisodio.tipo === 'serie') {
-          info = {
-            titulo: infoEpisodio.serie.titulo + ` - T${infoEpisodio.temporada}E${infoEpisodio.episodio}`,
-            imagem: infoEpisodio.serie.imagem,
-            video: link,
-            tipo: 'serie',
-            ano: infoEpisodio.serie.ano,
-            descricao: infoEpisodio.serie.descricao
-          };
-        } else {
-          // Busca o filme nos dados para garantir a imagem correta
-          let filme = (typeof dados !== "undefined" ? dados : []).find(f => 
-  (f.video && (f.video === link || f.video.split('?')[0] === link.split('?')[0]))
-);
-          info = filme ? {
-            titulo: filme.titulo,
-            imagem: filme.imagem,
-            video: filme.video,
-            tipo: 'movie',
-            ano: filme.ano,
-            descricao: filme.descricao
-          } : { titulo: link, imagem: 'imagens/placeholder.webp', video: link, tipo: 'movie', ano: '', descricao: '' };
-        }
-        salvarTempoAssistido(usuario, idVideo, tempoTotal, info);
-        renderizarContinuarAssistindo();
-        alert('Ponto salvo!');
+        mostrarPopupSalvarTempo();
       };
     }
 
@@ -2017,174 +1983,27 @@ function abrirModalPlayer(link, infoEpisodio = null, tempoInicial = null) {
   }
 
   // Exibe botão salvar ponto
-    btnSalvarPonto.style.display = 'inline-block';
-    btnSalvarPonto.onclick = function() {
-      // Agora pergunta horas, minutos e segundos
-      let horas = prompt('Horas:');
-      if (horas === null) return;
-      let min = prompt('Minutos:');
-      if (min === null) return;
-      let seg = prompt('Segundos:');
-      if (seg === null) return;
-      horas = parseInt(horas, 10);
-      min = parseInt(min, 10);
-      seg = parseInt(seg, 10);
-      if (isNaN(horas)) horas = 0;
-      if (isNaN(min)) min = 0;
-      if (isNaN(seg)) seg = 0;
-      const tempoTotal = horas * 3600 + min * 60 + seg;
-      // info para card
-      let info = {};
-      // Detecta se é trailer
-      let isTrailer = false;
-      let filmeOuSerie = null;
-      if (link && link.includes("youtube.com")) {
-        // Procura o filme ou série correspondente ao trailer
-        filmeOuSerie = (typeof dados !== "undefined" ? dados : []).find(f =>
-          f.trailer && (f.trailer === link || f.trailer.split('?')[0] === link.split('?')[0])
-        );
-        isTrailer = true;
-      } else if (infoEpisodio && infoEpisodio.tipo === 'serie') {
-        filmeOuSerie = infoEpisodio.serie;
-      } else {
-        filmeOuSerie = (typeof dados !== "undefined" ? dados : []).find(f =>
-          f.video && (f.video === link || f.video.split('?')[0] === link.split('?')[0])
-        );
-      }
-
-      if (isTrailer && filmeOuSerie) {
-        info = {
-          titulo: `Trailer: ${filmeOuSerie.titulo}`,
-          imagem: filmeOuSerie.imagem,
-          video: link,
-          tipo: 'trailer',
-          ano: filmeOuSerie.ano || "",
-          descricao: filmeOuSerie.descricao || ""
-        };
-      } else if (infoEpisodio && infoEpisodio.tipo === 'serie') {
-        info = {
-          titulo: infoEpisodio.serie.titulo + ` - T${infoEpisodio.temporada}E${infoEpisodio.episodio}`,
-          imagem: infoEpisodio.serie.imagem,
-          video: link,
-          tipo: 'serie',
-          ano: infoEpisodio.serie.ano,
-          descricao: infoEpisodio.serie.descricao
-        };
-      } else if (filmeOuSerie) {
-        info = {
-          titulo: filmeOuSerie.titulo,
-          imagem: filmeOuSerie.imagem,
-          video: filmeOuSerie.video,
-          tipo: 'movie',
-          ano: filmeOuSerie.ano,
-          descricao: filmeOuSerie.descricao
-        };
-      } else {
-        info = { titulo: link, imagem: 'imagens/placeholder.webp', video: link, tipo: 'movie', ano: '', descricao: '' };
-      }
-      salvarTempoAssistido(usuario, idVideo, tempoTotal, info);
-      renderizarContinuarAssistindo();
-      alert('Ponto salvo!');
-    };
-  }
-
-// Ao fechar o player, esconde o botão salvar ponto
-function fecharModalPlayer() {
-  modalPlayer.classList.remove("show");
-  iframePlayer.src = "";
-  btnPularCapitulo.style.display = "none";
-  btnSalvarPonto.style.display = "none";
-  episodioAtualInfo = null;
-  // Libera rolagem e zoom
-  document.body.classList.remove('modal-aberto');
-  const metaViewport = document.getElementById('meta-viewport');
-  if (metaViewport) {
-    metaViewport.setAttribute('content', 'width=device-width, initial-scale=1');
-  }
+  btnSalvarPonto.style.display = 'inline-block';
+  btnSalvarPonto.onclick = function() {
+    mostrarPopupSalvarTempo();
+  };
 }
 
-// Ao logar, renderiza a lista de continuar assistindo do usuário
-formLogin.onsubmit = (e) => {
-  e.preventDefault();
-  const nome = loginNome.value.trim();
-  const senha = loginSenha.value.trim();
-  const msgBemVindo = document.getElementById('msg-bem-vindo');
-  if (!nome || !senha) {
-    loginErro.textContent = "Preencha todos os campos.";
-    loginErro.style.display = "block";
-    msgBemVindo.style.display = "none";
-    return;
-  }
-  // Só permite os logins específicos
-  const loginsValidos = [
-    { nome: "Kzinn", senha: "renatamachado" },
-    { nome: "Maxz", senha: "132607" },
-    { nome: "pedro lisboa", senha: "2008pll#" },
-    { nome: "simasturbo", senha: "01eles00nos" },
-    { nome: "nunes", senha: "30104422" },
-    { nome: "gtcbarbosa", senha: "081518" },
-    { nome: "cardoso", senha: "gozarindo" },
-    { nome: "Alan", senha: "12345" },
-    { nome: "Julia", senha: "2702" },
-    { nome: "jottameterebolando", senha: "peledosexo" },
-    { nome: "jotaorugas", senha: "terrordoestado" },
-    { nome: "Isabelly", senha: "1234" },
-    { nome: "Caroline Mendonça", senha: "carolLinda2007" },
-    { nome: "Fael", senha: "Barbeiro" }
-  ];
-  const valido = loginsValidos.some(l => l.nome === nome && l.senha === senha);
-  if (!valido) {
-    loginErro.textContent = "Login ou senha inválidos. Use um dos logins permitidos.";
-    loginErro.style.display = "block";
-    msgBemVindo.style.display = "none";
-    return;
-  }
-  loginErro.style.display = "none";
-  msgBemVindo.innerHTML = `<span style='font-size:1.5rem;vertical-align:middle;margin-right:6px;'>🎬</span>Bem-vindo, <b style='color:#1db954;'>${nome}</b>!`;
-  msgBemVindo.style.display = 'block';
-  msgBemVindo.style.opacity = '1';
-  msgBemVindo.style.animation = '';
-  // Delay de 3 segundos antes de liberar acesso
-  setTimeout(() => {
-    msgBemVindo.style.opacity = '0';
-    setTimeout(() => { msgBemVindo.style.display = 'none'; }, 700);
-    modalLogin.style.display = "none";
-    document.body.classList.remove('modal-aberto');
-  }, 3000);
-  localStorage.setItem('usuarioLogado', nome);
-  renderizarContinuarAssistindo();
-};
-
-// Também renderiza ao carregar a página (se já estiver logado)
-window.addEventListener('DOMContentLoaded', renderizarContinuarAssistindo);
-
-document.getElementById('btn-limpar-historico').onclick = function() {
-  if (!confirm('Tem certeza que deseja limpar todo o histórico de continuar assistindo?')) return;
-  const usuario = localStorage.getItem('usuarioLogado');
-  if (!usuario) return;
-  const prefix = `visto_${usuario}_`;
-  const chaves = [];
-  for (let i = 0; i < localStorage.length; i++) {
-    const k = localStorage.key(i);
-    if (k.startsWith(prefix)) chaves.push(k);
-  }
-  chaves.forEach(k => localStorage.removeItem(k));
-  renderizarContinuarAssistindo();
-};
-function mostrarPopupPix() {
+// Função para mostrar popup de salvar tempo
+function mostrarPopupSalvarTempo() {
   // Remove popup antigo se existir
-  let antigo = document.getElementById('popup-pix-kz');
+  let antigo = document.getElementById('popup-salvar-tempo');
   if (antigo) antigo.remove();
 
   // Cria o overlay
   const overlay = document.createElement('div');
-  overlay.id = 'popup-pix-kz';
+  overlay.id = 'popup-salvar-tempo';
   overlay.style.position = 'fixed';
   overlay.style.top = 0;
   overlay.style.left = 0;
   overlay.style.width = '100vw';
   overlay.style.height = '100vh';
-  overlay.style.background = 'rgba(0,0,0,0.65)';
+  overlay.style.background = 'rgba(0,0,0,0.45)';
   overlay.style.display = 'flex';
   overlay.style.alignItems = 'center';
   overlay.style.justifyContent = 'center';
@@ -2200,8 +2019,245 @@ function mostrarPopupPix() {
   box.style.textAlign = 'center';
   box.style.position = 'relative';
   box.style.maxWidth = '90vw';
-  box.style.minWidth = '280px';
+  box.style.minWidth = '260px';
+  box.innerHTML = `
+    <h2 style="margin-top:0;font-size:1.3rem;">💾 Salvar ponto</h2>
+    <div style="margin-bottom:14px;font-size:1rem;">Informe o tempo para continuar depois:</div>
+    <div style="display:flex;gap:8px;justify-content:center;margin-bottom:18px;">
+      <input id="input-horas" type="number" min="0" max="99" placeholder="Horas" style="width:60px;padding:8px;border-radius:8px;border:none;font-size:1rem;background:#111;color:#fff;">
+      <input id="input-minutos" type="number" min="0" max="59" placeholder="Min" style="width:60px;padding:8px;border-radius:8px;border:none;font-size:1rem;background:#111;color:#fff;">
+      <input id="input-segundos" type="number" min="0" max="59" placeholder="Seg" style="width:60px;padding:8px;border-radius:8px;border:none;font-size:1rem;background:#111;color:#fff;">
+    </div>
+    <button id="btn-confirmar-salvar-tempo" style="background:#1db954;color:#fff;border:none;padding:10px 22px;border-radius:8px;font-size:1rem;cursor:pointer;">Salvar</button>
+    <button id="btn-cancelar-salvar-tempo" style="margin-left:10px;background:#e50914;color:#fff;border:none;padding:10px 22px;border-radius:8px;font-size:1rem;cursor:pointer;">Cancelar</button>
+    <div id="msg-erro-tempo" style="color:#e50914;font-size:1rem;margin-top:10px;display:none;"></div>
+  `;
 
+  overlay.appendChild(box);
+  document.body.appendChild(overlay);
+
+  // Foco no primeiro campo
+  setTimeout(() => { document.getElementById('input-horas').focus(); }, 200);
+
+  // Cancelar
+  document.getElementById('btn-cancelar-salvar-tempo').onclick = function() {
+    overlay.remove();
+  };
+
+  // Fechar ao clicar fora do box
+  overlay.onclick = function(e) {
+    if (e.target === overlay) overlay.remove();
+  };
+
+  // Salvar
+  document.getElementById('btn-confirmar-salvar-tempo').onclick = function() {
+    let horas = parseInt(document.getElementById('input-horas').value, 10);
+    let min = parseInt(document.getElementById('input-minutos').value, 10);
+    let seg = parseInt(document.getElementById('input-segundos').value, 10);
+    if (isNaN(horas)) horas = 0;
+    if (isNaN(min)) min = 0;
+    if (isNaN(seg)) seg = 0;
+    if (horas < 0) horas = 0;
+    if (min < 0) min = 0;
+    if (seg < 0) seg = 0;
+    const tempoTotal = horas * 3600 + min * 60 + seg;
+    if (tempoTotal <= 0) {
+      document.getElementById('msg-erro-tempo').textContent = "Informe um tempo válido!";
+      document.getElementById('msg-erro-tempo').style.display = "block";
+      return;
+    }
+    // Chama o mesmo código do seu btnSalvarPonto original
+    btnSalvarPonto._salvarTempo(tempoTotal);
+    overlay.remove();
+  };
+}
+
+// Adicione este método ao botão para reaproveitar seu código original
+btnSalvarPonto._salvarTempo = function(tempoTotal) {
+  let usuario = localStorage.getItem('usuarioLogado');
+  let link = iframePlayer.src.split('?')[0];
+  let idVideo = link;
+  let info = {};
+  let infoEpisodio = window.episodioAtualInfo;
+  let isTrailer = false;
+  let filmeOuSerie = null;
+  if (link && link.includes("youtube.com")) {
+    filmeOuSerie = (typeof dados !== "undefined" ? dados : []).find(f =>
+      f.trailer && (f.trailer === link || f.trailer.split('?')[0] === link.split('?')[0])
+    );
+    isTrailer = true;
+  } else if (infoEpisodio && infoEpisodio.tipo === 'serie') {
+    filmeOuSerie = infoEpisodio.serie;
+  } else {
+    filmeOuSerie = (typeof dados !== "undefined" ? dados : []).find(f =>
+      f.video && (f.video === link || f.video.split('?')[0] === link.split('?')[0])
+    );
+  }
+  if (isTrailer && filmeOuSerie) {
+    info = {
+      titulo: `Trailer: ${filmeOuSerie.titulo}`,
+      imagem: filmeOuSerie.imagem,
+      video: link,
+      tipo: 'trailer',
+      ano: filmeOuSerie.ano || "",
+      descricao: filmeOuSerie.descricao || ""
+    };
+  } else if (infoEpisodio && infoEpisodio.tipo === 'serie') {
+    info = {
+      titulo: infoEpisodio.serie.titulo + ` - T${infoEpisodio.temporada}E${infoEpisodio.episodio}`,
+      imagem: infoEpisodio.serie.imagem,
+      video: link,
+      tipo: 'serie',
+      ano: infoEpisodio.serie.ano,
+      descricao: infoEpisodio.serie.descricao
+    };
+  } else if (filmeOuSerie) {
+    info = {
+      titulo: filmeOuSerie.titulo,
+      imagem: filmeOuSerie.imagem,
+      video: filmeOuSerie.video,
+      tipo: 'movie',
+      ano: filmeOuSerie.ano,
+      descricao: filmeOuSerie.descricao
+    };
+  } else {
+    info = { titulo: link, imagem: 'imagens/placeholder.webp', video: link, tipo: 'movie', ano: '', descricao: '' };
+  }
+  salvarTempoAssistido(usuario, idVideo, tempoTotal, info);
+  renderizarContinuarAssistindo();
+  // Popup de sucesso
+  let antigo = document.getElementById('popup-salvo-ponto');
+  if (antigo) antigo.remove();
+  const overlay = document.createElement('div');
+  overlay.id = 'popup-salvo-ponto';
+  overlay.style.position = 'fixed';
+  overlay.style.top = 0;
+  overlay.style.left = 0;
+  overlay.style.width = '100vw';
+  overlay.style.height = '100vh';
+  overlay.style.background = 'rgba(0,0,0,0.35)';
+  overlay.style.display = 'flex';
+  overlay.style.alignItems = 'center';
+  overlay.style.justifyContent = 'center';
+  overlay.style.zIndex = 999999;
+  const box = document.createElement('div');
+  box.style.background = '#222';
+  box.style.color = '#fff';
+  box.style.padding = '32px 24px 24px 24px';
+  box.style.borderRadius = '18px';
+  box.style.boxShadow = '0 8px 32px #000a';
+  box.style.textAlign = 'center';
+  box.style.position = 'relative';
+  box.style.maxWidth = '90vw';
+  box.style.minWidth = '240px';
+  box.innerHTML = `
+    <div style="font-size:2.2rem;margin-bottom:10px;">💾</div>
+    <h2 style="margin-top:0;font-size:1.3rem;">Ponto salvo com sucesso!</h2>
+    <div style="font-size:1rem;color:#1db954;margin-bottom:10px;">Você pode continuar de onde parou.</div>
+    <button id="btn-fechar-ponto" style="margin-top:10px;padding:8px 22px;font-size:1rem;border:none;border-radius:8px;background:#1db954;color:#fff;cursor:pointer;">OK</button>
+  `;
+  overlay.appendChild(box);
+  document.body.appendChild(overlay);
+  document.getElementById('btn-fechar-ponto').onclick = function() {
+    overlay.remove();
+  };
+  overlay.onclick = function(e) {
+    if (e.target === overlay) overlay.remove();
+  };
+};
+
+// Corrige o botão "Limpar Histórico"
+document.getElementById('btn-limpar-historico').onclick = function() {
+  mostrarPopupConfirmarLimparHistorico();
+};
+
+function mostrarPopupConfirmarLimparHistorico() {
+  let antigo = document.getElementById('popup-confirmar-limpar');
+  if (antigo) antigo.remove();
+
+  const overlay = document.createElement('div');
+  overlay.id = 'popup-confirmar-limpar';
+  overlay.style.position = 'fixed';
+  overlay.style.top = 0;
+  overlay.style.left = 0;
+  overlay.style.width = '100vw';
+  overlay.style.height = '100vh';
+  overlay.style.background = 'rgba(0,0,0,0.45)';
+  overlay.style.display = 'flex';
+  overlay.style.alignItems = 'center';
+  overlay.style.justifyContent = 'center';
+  overlay.style.zIndex = 999999;
+
+  const box = document.createElement('div');
+  box.style.background = '#222';
+  box.style.color = '#fff';
+  box.style.padding = '32px 24px 24px 24px';
+  box.style.borderRadius = '18px';
+  box.style.boxShadow = '0 8px 32px #000a';
+  box.style.textAlign = 'center';
+  box.style.position = 'relative';
+  box.style.maxWidth = '90vw';
+  box.style.minWidth = '260px';
+  box.innerHTML = `
+    <h2 style="margin-top:0;font-size:1.3rem;">Limpar histórico?</h2>
+    <div style="margin-bottom:14px;font-size:1rem;">Tem certeza que deseja apagar todo o histórico de continuar assistindo?</div>
+    <button id="btn-confirmar-limpar" style="background:#e50914;color:#fff;border:none;padding:10px 22px;border-radius:8px;font-size:1rem;cursor:pointer;">Sim, apagar</button>
+    <button id="btn-cancelar-limpar" style="margin-left:10px;background:#444;color:#fff;border:none;padding:10px 22px;border-radius:8px;font-size:1rem;cursor:pointer;">Cancelar</button>
+  `;
+
+  overlay.appendChild(box);
+  document.body.appendChild(overlay);
+
+  document.getElementById('btn-cancelar-limpar').onclick = function() {
+    overlay.remove();
+  };
+
+  document.getElementById('btn-confirmar-limpar').onclick = function() {
+    const usuario = localStorage.getItem('usuarioLogado');
+    if (!usuario) return;
+    const prefix = `visto_${usuario}_`;
+    const chavesParaRemover = [];
+    for (let i = 0; i < localStorage.length; i++) {
+      const k = localStorage.key(i);
+      if (k.startsWith(prefix)) chavesParaRemover.push(k);
+    }
+    chavesParaRemover.forEach(k => localStorage.removeItem(k));
+    renderizarContinuarAssistindo();
+    overlay.remove();
+  };
+
+  overlay.onclick = function(e) {
+    if (e.target === overlay) overlay.remove();
+  };
+}
+
+function mostrarPopupPix() {
+  let antigo = document.getElementById('popup-pix');
+  if (antigo) antigo.remove();
+
+  const overlay = document.createElement('div');
+  overlay.id = 'popup-pix';
+  overlay.style.position = 'fixed';
+  overlay.style.top = 0;
+  overlay.style.left = 0;
+  overlay.style.width = '100vw';
+  overlay.style.height = '100vh';
+  overlay.style.background = 'rgba(0,0,0,0.45)';
+  overlay.style.display = 'flex';
+  overlay.style.alignItems = 'center';
+  overlay.style.justifyContent = 'center';
+  overlay.style.zIndex = 999999;
+
+  const box = document.createElement('div');
+  box.style.background = '#222';
+  box.style.color = '#fff';
+  box.style.padding = '32px 24px 24px 24px';
+  box.style.borderRadius = '18px';
+  box.style.boxShadow = '0 8px 32px #000a';
+  box.style.textAlign = 'center';
+  box.style.position = 'relative';
+  box.style.maxWidth = '90vw';
+  box.style.minWidth = '260px';
   box.innerHTML = `
     <h2 style="margin-top:0;font-size:1.5rem;">💸 Apoie o KzFlix!</h2>
     <p style="font-size:1.1rem;margin-bottom:18px;">Chave PIX:</p>
@@ -2216,21 +2272,15 @@ function mostrarPopupPix() {
   overlay.appendChild(box);
   document.body.appendChild(overlay);
 
-  // Copiar chave PIX ao clicar
-  document.getElementById('btn-copiar-pix').onclick = function() {
-    const chave = document.getElementById('pix-chave').innerText;
-    navigator.clipboard.writeText(chave).then(() => {
-      this.textContent = 'Copiado!';
-      setTimeout(() => { this.textContent = 'Copiar'; }, 1500);
-    });
-  };
-
-  // Fechar popup
   document.getElementById('btn-fechar-pix').onclick = function() {
     overlay.remove();
   };
-
-  // Fechar ao clicar fora do box
+  document.getElementById('btn-copiar-pix').onclick = function() {
+    const chave = document.getElementById('pix-chave').textContent;
+    navigator.clipboard.writeText(chave);
+    this.textContent = 'Copiado!';
+    setTimeout(() => { this.textContent = 'Copiar'; }, 1500);
+  };
   overlay.onclick = function(e) {
     if (e.target === overlay) overlay.remove();
   };
