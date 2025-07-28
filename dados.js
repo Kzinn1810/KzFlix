@@ -1422,28 +1422,28 @@ const dados = [
       {
         id: 26,
         tipo: "movie",
-        titulo: "As Branquelas",
+        titulo: "A fonte da juventude",
         descricao:
-          "Dois agentes do FBI se disfarçam de socialites brancas para investigar um plano de sequestro na alta sociedade.",
-        imagem: "imagens/as-branquelas.webp",
+          "A Fonte da Juventude é uma comédia de ação onde dois agentes secretos se disfarçam como irmãos para recuperar um artefato lendário que concede a juventude eterna.",
+        imagem: "imagens/a-fonte.webp",
         video:
-          "https://drive.google.com/file/d/1-TBykD6eh9XpOSyGgA2HkhpefkbFHeQh/preview",
-        trailer: "http://www.youtube.com/embed/seoJIPLLWp0",
-        generos: ["comédia"],
-        //ano: 2000
+          "https://drive.google.com/file/d/1-Chg4J-ZBfwjybwGkyFFAryoA4ilb9dx/preview",
+        trailer: "http://www.youtube.com/embed/qUC2ZINsZcM",
+        generos: ["comédia", "aventura", "ação"],
+        //ano: 2025
       },
       {
         id: 27,
         tipo: "movie",
-        titulo: "Minha mãe é uma peça",
+        titulo: "Alerta Vermelha",
         descricao:
-          "Minha Mãe é uma Peça é uma comédia brasileira que retrata, de forma engraçada e carinhosa, o dia a dia e as confusões da mãe dona de casa Dona Hermínia.",
-        imagem: "imagens/minha_mae_e_uma_peca.webp",
+          "Alerta Vermelha é um filme de ação e comédia onde um agente do FBI se une a um ladrão de arte e uma ladra internacional para capturar uma criminosa procurada.",
+        imagem: "imagens/alerta-vermelho.webp",
         video:
-          "https://drive.google.com/file/d/1-blRUvTBLWueam__7R7dr1XlZ_PKMQMZ/preview",
-        trailer: "http://www.youtube.com/embed/HrST-4WLlbA",
-        generos: ["comédia"],
-        //ano: 2013
+          "https://drive.google.com/file/d/133twUmF76Y1zE-rsi5944NrdyUPCwtEe/preview",
+        trailer: "http://www.youtube.com/embed/5JQuYpBZar",
+        generos: ["ação", "aventura", "comédia"],
+        //ano: 2021
       },
       {
         id: 28,
@@ -1461,6 +1461,19 @@ const dados = [
       {
         id: 29,
         tipo: "movie",
+        titulo: "Invocação do mal 2",
+        descricao:
+          "Invocação do Mal 2 é um filme de terror que segue os investigadores paranormais Ed e Lorraine Warren enquanto enfrentam um caso sobrenatural envolvendo uma entidade maligna em Londres.",
+        imagem: "imagens/invocacao-do-mal2.webp",
+        video:
+          "https://drive.google.com/file/d/1-Ohx5UsrPw71Z0dTFLQpy00usKPfatur/preview",
+        trailer: "http://www.youtube.com/embed/l3LQgORbhu4",
+        generos: ["terror", "suspense", "drama"],
+        //ano: 2016
+      },
+      {
+        id: 30,
+        tipo: "movie",
         titulo: "Invocação do mal 3: A Ordem do Demônio",
         descricao:
           "Invocação do Mal 3 é um filme de terror que segue os investigadores paranormais Ed e Lorraine Warren enquanto enfrentam um caso sobrenatural envolvendo um jovem acusado de assassinato.",
@@ -1472,7 +1485,7 @@ const dados = [
         //ano: 2021
       },
       {
-        id: 30,
+        id: 31,
         tipo: "movie",
         titulo: "Velozes e Furiosos 7",
         descricao:
@@ -1485,7 +1498,20 @@ const dados = [
         //ano: 2015
       },
       {
-        id: 31,
+        id: 32,
+        tipo: "movie",
+        titulo: "Atentado em Paris",
+        descricao:
+          "Atentado em Paris é um thriller de ação que segue um ex-agente da CIA que deve proteger uma testemunha-chave enquanto enfrenta uma conspiração terrorista em Paris.",
+        imagem: "imagens/atentado-em-paris.webp",
+        video:
+          "https://drive.google.com/file/d/1-ODE_eZrQNi788nHgyZihUl3zCPIFCt8/preview",
+        trailer: "http://www.youtube.com/embed/U5R0bI8EJCQ",
+        generos: ["ação", "crime", "suspense"],
+        //ano: 2016
+      },
+      {
+        id: 33,
         tipo: "movie",
         titulo: "A barraca do beijo",
         descricao:
@@ -1498,7 +1524,7 @@ const dados = [
         //ano: 2018
       },
       {
-        id: 32,
+        id: 34,
         tipo: "movie",
         titulo: "Creed: Nascido para Lutar",
         descricao:
@@ -1511,7 +1537,7 @@ const dados = [
         //ano: 2015
       },
       {
-        id: 33,
+        id: 35,
         tipo: "movie",
         titulo: "Creed II",
         descricao:
@@ -1524,7 +1550,7 @@ const dados = [
         //ano: 2018
       },
       {
-        id: 34,
+        id: 36,
         tipo: "movie",
         titulo: "Creed III",
         descricao:
@@ -1537,7 +1563,7 @@ const dados = [
         //ano: 2023
       },
       {
-        id: 35,
+        id: 37,
         tipo: "movie",
         titulo: "Carros",
         descricao:
@@ -1550,7 +1576,7 @@ const dados = [
         //ano: 2006
       },
       {
-        id: 36,
+        id: 38,
         tipo: "series",
         titulo: "Neymar: O Caos Perfeito",
         descricao:
@@ -1571,7 +1597,20 @@ const dados = [
         //ano: 2022
       },
       {
-        id: 37,
+        id: 39,
+        tipo: "movie",
+        titulo: "Até o ultimo homem",
+        descricao:
+          "Até o Último Homem é um drama de guerra baseado em fatos reais, onde um médico do exército americano se recusa a portar armas e salva soldados feridos durante a Batalha de Okinawa na Segunda Guerra Mundial.",
+        imagem: "imagens/ate-o-ultimo-homem.webp",
+        video:
+          "https://drive.google.com/file/d/1-Jq17siE9GpeC0XhPE8wkkAncxOLvJRl/preview",
+        trailer: "http://www.youtube.com/embed/3d_DJngfp_s",
+        generos: ["ação", "drama", "guerra"],
+        //ano: 2016
+      },
+      {
+        id: 40,
         tipo: "series",
         titulo: "Apenas um Show",
         descricao:
@@ -1679,7 +1718,7 @@ const dados = [
         //ano: 2010
       },
       {
-        id: 38,
+        id: 41,
         tipo: "movie",
         titulo: "Venom",
         descricao:
@@ -1692,7 +1731,7 @@ const dados = [
         //ano: 2018
       },
       {
-        id: 39,
+        id: 42,
         tipo: "movie",
         titulo: "Homem-Aranha: De Volta ao Lar",
         descricao:
@@ -1705,7 +1744,7 @@ const dados = [
         //ano: 2017
       },
       {
-        id: 40,
+        id: 43,
         tipo: "movie",
         titulo: "Homem-Aranha no Aranhaverso",
         descricao:
@@ -1718,7 +1757,7 @@ const dados = [
         //ano: 2018
       },
       {
-        id: 41,
+        id: 44,
         tipo: "movie",
         titulo: "Homem de Ferro",
         descricao:
@@ -1731,7 +1770,7 @@ const dados = [
         //ano: 2008
       },
       {
-        id: 42,
+        id: 45,
         tipo: "movie",
         titulo: "Homem de Ferro 2",
         descricao:
@@ -1744,7 +1783,7 @@ const dados = [
         //ano: 2010
       },
       {
-        id: 43,
+        id: 46,
         tipo: "movie",
         titulo: "Homem de Ferro 3",
         descricao:
@@ -1757,7 +1796,7 @@ const dados = [
         //ano: 2013
       },
       {
-        id: 44,
+        id: 47,
         tipo: "movie",
         titulo: "Thor",
         descricao:
@@ -1770,7 +1809,7 @@ const dados = [
         //ano: 2011
       },
       {
-        id: 45,
+        id: 48,
         tipo: "movie",
         titulo: "Thor 2: O Mundo das Trevas",
         descricao:
@@ -1783,7 +1822,7 @@ const dados = [
         //ano: 2013
       },
       {
-        id: 46,
+        id: 49,
         tipo: "movie",
         titulo: "Thor: Ragnarok",
         descricao:
@@ -1796,7 +1835,7 @@ const dados = [
         //ano: 2017
       },
       {
-        id: 47,
+        id: 50,
         tipo: "movie",
         titulo: "Thor: Amor e Trovão",
         descricao:
@@ -1809,7 +1848,7 @@ const dados = [
         //ano: 2022
       },
       {
-        id: 48,
+        id: 51,
         tipo: "movie",
         titulo: "Homem-Aranha",
         descricao:
@@ -1822,7 +1861,7 @@ const dados = [
         //ano: 2002
       },
       {
-        id: 49,
+        id: 52,
         tipo: "movie",
         titulo: "Homem-Aranha 2",
         descricao:
@@ -1835,7 +1874,7 @@ const dados = [
         //ano: 2004
       },
       {
-        id: 50,
+        id: 53,
         tipo: "movie",
         titulo: "Homem-Aranha 3",
         descricao:
@@ -1848,7 +1887,7 @@ const dados = [
         //ano: 2007
       },
       {
-        id: 51,
+        id: 54,
         tipo: "movie",
         titulo: "O Espetacular Homem-Aranha",
         descricao:
@@ -1861,7 +1900,7 @@ const dados = [
         //ano: 2012
       },
       {
-        id: 52,
+        id: 55,
         tipo: "movie",
         titulo: "O Espetacular Homem-Aranha 2",
         descricao:
@@ -1874,7 +1913,7 @@ const dados = [
         //ano: 2014
       },
       {
-        id: 53,
+        id: 56,
         tipo: "movie",
         titulo: "Bird Box",
         descricao:
@@ -1887,7 +1926,33 @@ const dados = [
         //ano: 2018
       },
       {
-        id: 54,
+        id: 57,
+        tipo: "movie",
+        titulo: "Minha mãe é uma peça",
+        descricao:
+          "Minha Mãe é uma Peça é uma comédia brasileira que retrata, de forma engraçada e carinhosa, o dia a dia e as confusões da mãe dona de casa Dona Hermínia.",
+        imagem: "imagens/minha_mae_e_uma_peca.webp",
+        video:
+          "https://drive.google.com/file/d/1-blRUvTBLWueam__7R7dr1XlZ_PKMQMZ/preview",
+        trailer: "http://www.youtube.com/embed/HrST-4WLlbA",
+        generos: ["comédia"],
+        //ano: 2013
+      },
+      {
+        id: 58,
+        tipo: "movie",
+        titulo: "As Branquelas",
+        descricao:
+          "Dois agentes do FBI se disfarçam de socialites brancas para investigar um plano de sequestro na alta sociedade.",
+        imagem: "imagens/as-branquelas.webp",
+        video:
+          "https://drive.google.com/file/d/1-TBykD6eh9XpOSyGgA2HkhpefkbFHeQh/preview",
+        trailer: "http://www.youtube.com/embed/seoJIPLLWp0",
+        generos: ["comédia"],
+        //ano: 2000
+      },
+      {
+        id: 59,
         tipo: "movie",
         titulo: "Tropa de Elite",
         descricao:
@@ -1900,7 +1965,7 @@ const dados = [
         //ano: 2007
       },
       {
-        id: 55,
+        id: 60,
         tipo: "movie",
         titulo: "bob esponja: o incrivel resgate",
         descricao:
@@ -1913,7 +1978,7 @@ const dados = [
         //ano: 2020
       },
       {
-        id: 56,
+        id: 61,
         tipo: "movie",
         titulo: "Travis Scott: Voando Alto - Legendado",
         descricao:
