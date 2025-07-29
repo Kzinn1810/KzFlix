@@ -2134,14 +2134,14 @@ btnSalvarPonto._salvarTempo = function(tempoTotal) {
       let temporada = infoEpisodio.temporada || '';
       let episodio = infoEpisodio.episodio || '';
       info = {
-        titulo: titulo,
-        imagem: imagem,
+        titulo,
+        imagem,
         video: link,
-        tipo: 'series',
-        temporada: temporada,
-        episodio: episodio,
+        tipo: serieDados.tipo, // Salva o tipo real ('series' ou 'serie')
         ano: serieDados.ano || '',
-        descricao: serieDados.descricao || ''
+        descricao: serieDados.descricao || '',
+        temporada,
+        episodio
       };
     } else {
       // Não salva nada se não encontrar imagem válida
