@@ -1867,18 +1867,18 @@ function renderizarContinuarAssistindo() {
   }
   vistos.forEach(obj => {
     let imagem = obj.imagem;
-    // Só mostra placeholder se não for imagem válida
-    if (!imagem || !/\.(jpg|jpeg|png|webp)$/i.test(imagem)) {
-      imagem = 'imagens/placeholder.webp';
+    // Só exibe se imagem for válida
+    if (!imagem || !/^(imagens\/.*\.(jpg|jpeg|png|webp))$/i.test(imagem)) {
+      return;
     }
     if (obj.titulo) {
       const card = document.createElement('div');
       card.className = 'vitrine-card';
       card.style.cursor = 'pointer';
       let infoExtra = '';
-if ((obj.tipo === 'series' || obj.tipo === 'serie') && (obj.temporada || obj.episodio)) {
-  infoExtra = `<p style='font-size:13px;color:#ccc;margin:2px 0 6px 0;'>Temporada ${obj.temporada || ''} Episódio ${obj.episodio || ''}</p>`;
-}
+      if (obj.tipo === 'series' && (obj.temporada || obj.episodio)) {
+        infoExtra = `<p style='font-size:13px;color:#ccc;margin:2px 0 6px 0;'>Temporada ${obj.temporada || ''} Episódio ${obj.episodio || ''}</p>`;
+      }
       card.innerHTML = `
         <img src="${imagem}" alt="Capa de ${obj.titulo}">
         <div class="vitrine-info">
@@ -2093,6 +2093,23 @@ btnSalvarPonto._salvarTempo = function(tempoTotal) {
   let infoEpisodio = window.episodioAtualInfo;
   let isTrailer = false;
   let filmeOuSerie = null;
+  // Função para garantir título válido
+  function tituloValido(t) {
+    return t && !/^https?:\/+/.test(t);
+  }
+  // Função para garantir imagem válida
+  function imagemValida(img) {
+    // Aceita imagens .webp, .jpg, .jpeg, .png (case insensitive)
+    if (!img) return false;
+    // Remove possíveis espaços
+    img = img.trim();
+    // Aceita qualquer extensão suportada
+    return /^imagens\/.+\.(jpg|jpeg|png|webp)$/i.test(img);
+  }
+  // Função para normalizar string (remove acentos, caixa, espaços, pontuação)
+  function normalizar(s) {
+    return s ? s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^\w]/g, '').toLowerCase() : '';
+  }
   // Busca filme/série/trailer corretamente
   if (link && link.includes("youtube.com")) {
     filmeOuSerie = (typeof dados !== "undefined" ? dados : []).find(f =>
@@ -2100,68 +2117,77 @@ btnSalvarPonto._salvarTempo = function(tempoTotal) {
     );
     isTrailer = true;
   } else if (infoEpisodio && (infoEpisodio.tipo === 'series' || infoEpisodio.tipo === 'serie')) {
-    filmeOuSerie = infoEpisodio.serie;
+    // Busca a série pelo título normalizado e aceita tipo 'series' ou 'serie'
+    let serieTitulo = infoEpisodio.serie && infoEpisodio.serie.titulo ? infoEpisodio.serie.titulo : '';
+    let serieDados = null;
+    if (serieTitulo && typeof dados !== 'undefined') {
+      serieDados = dados.find(f => (f.tipo === 'series' || f.tipo === 'serie') && normalizar(f.titulo) === normalizar(serieTitulo));
+    }
+    // Se não achou, tenta buscar só pelo título normalizado
+    if (!serieDados && serieTitulo && typeof dados !== 'undefined') {
+      serieDados = dados.find(f => normalizar(f.titulo) === normalizar(serieTitulo));
+    }
+    // Só salva se encontrar imagem válida
+    if (serieDados && imagemValida(serieDados.imagem)) {
+      let imagem = serieDados.imagem;
+      let titulo = tituloValido(serieDados.titulo) ? serieDados.titulo : (serieTitulo || 'Série');
+      let temporada = infoEpisodio.temporada || '';
+      let episodio = infoEpisodio.episodio || '';
+      info = {
+        titulo: titulo,
+        imagem: imagem,
+        video: link,
+        tipo: 'series',
+        temporada: temporada,
+        episodio: episodio,
+        ano: serieDados.ano || '',
+        descricao: serieDados.descricao || ''
+      };
+    } else {
+      // Não salva nada se não encontrar imagem válida
+      return;
+    }
   } else {
     filmeOuSerie = (typeof dados !== "undefined" ? dados : []).find(f =>
       f.video && (f.video === link || f.video.split('?')[0] === link.split('?')[0])
     );
-  }
-  // Função para garantir título válido
-  function tituloValido(t) {
-    return t && !/^https?:\/\//.test(t);
-  }
-  // Função para garantir imagem válida
-  function imagemValida(img) {
-    return img && /\.(jpg|jpeg|png|webp)$/i.test(img) && !/^https?:\/\/(drive|docs)\\.google\\.com/.test(img);
-  }
-  // Função para normalizar string (remove acentos, caixa, espaços, pontuação)
-  function normalizar(s) {
-    return s ? s.normalize('NFD').replace(/[^\w\s]/gi, '').replace(/[\\u0300-\\u036f]/g, '').toLowerCase().replace(/\\s+/g, '') : '';
+    if (filmeOuSerie) {
+      // Só salva se imagem for válida
+      if (imagemValida(filmeOuSerie.imagem)) {
+        let imagem = filmeOuSerie.imagem;
+        let titulo = tituloValido(filmeOuSerie.titulo) ? filmeOuSerie.titulo : 'Filme';
+        info = {
+          titulo,
+          imagem,
+          video: link,
+          tipo: filmeOuSerie.tipo,
+          ano: filmeOuSerie.ano || "",
+          descricao: filmeOuSerie.descricao || ""
+        };
+      } else {
+        // Não salva nada se não encontrar imagem válida
+        return;
+      }
+    } else {
+      // Nunca salva se não encontrar imagem válida
+      return;
+    }
   }
   if (isTrailer && filmeOuSerie) {
-    info = {
-      titulo: tituloValido(filmeOuSerie.titulo) ? `Trailer: ${filmeOuSerie.titulo}` : 'Trailer',
-      imagem: imagemValida(filmeOuSerie.imagem) ? filmeOuSerie.imagem : 'imagens/placeholder.webp',
-      video: link,
-      tipo: 'trailer',
-      ano: filmeOuSerie.ano || "",
-      descricao: filmeOuSerie.descricao || ""
-    };
-  } else if (infoEpisodio && (infoEpisodio.tipo === 'series' || infoEpisodio.tipo === 'serie')) {
-    let serieTitulo = infoEpisodio.serie && infoEpisodio.serie.titulo ? infoEpisodio.serie.titulo : '';
-    let serieDados = null;
-    if (serieTitulo && typeof dados !== 'undefined') {
-      serieDados = dados.find(f => (f.tipo === 'series' || f.tipo === 'serie') && f.titulo === serieTitulo);
+    // Só salva se imagem for válida
+    if (imagemValida(filmeOuSerie.imagem)) {
+      info = {
+        titulo: tituloValido(filmeOuSerie.titulo) ? `Trailer: ${filmeOuSerie.titulo}` : 'Trailer',
+        imagem: filmeOuSerie.imagem,
+        video: link,
+        tipo: 'trailer',
+        ano: filmeOuSerie.ano || "",
+        descricao: filmeOuSerie.descricao || ""
+      };
+    } else {
+      // Não salva nada se não encontrar imagem válida
+      return;
     }
-    let imagem = (serieDados && imagemValida(serieDados.imagem)) ? serieDados.imagem : 'imagens/placeholder.webp';
-    let titulo = (serieDados && tituloValido(serieDados.titulo)) ? serieDados.titulo : (serieTitulo || 'Série');
-    let temporada = infoEpisodio.temporada || '';
-    let episodio = infoEpisodio.episodio || '';
-    info = {
-      titulo: titulo,
-      imagem: imagem,
-      video: link,
-      tipo: 'series',
-      temporada: temporada,
-      episodio: episodio,
-      ano: serieDados && serieDados.ano ? serieDados.ano : '',
-      descricao: serieDados && serieDados.descricao ? serieDados.descricao : ''
-    };
-  } else if (filmeOuSerie) {
-    let imagem = imagemValida(filmeOuSerie.imagem) ? filmeOuSerie.imagem : 'imagens/placeholder.webp';
-    let titulo = tituloValido(filmeOuSerie.titulo) ? filmeOuSerie.titulo : 'Filme';
-    info = {
-      titulo: titulo,
-      imagem: imagem,
-      video: filmeOuSerie.video,
-      tipo: filmeOuSerie.tipo === 'series' || filmeOuSerie.tipo === 'serie' ? 'series' : 'movie',
-      ano: filmeOuSerie.ano,
-      descricao: filmeOuSerie.descricao
-    };
-  } else {
-    // Nunca salva o link no campo titulo ou imagem
-    let tipo = (infoEpisodio && (infoEpisodio.tipo === 'series' || infoEpisodio.tipo === 'serie')) ? 'Série' : 'Filme';
-    info = { titulo: tipo, imagem: 'imagens/placeholder.webp', video: link, tipo: (infoEpisodio && (infoEpisodio.tipo === 'series' || infoEpisodio.tipo === 'serie')) ? 'series' : 'movie', ano: '', descricao: '' };
   }
   salvarTempoAssistido(usuario, idVideo, tempoTotal, info);
   renderizarContinuarAssistindo();
