@@ -918,8 +918,17 @@ const dados = [
         descricao:
           "Como Treinar o Seu Dragão é uma animação que conta a história de um jovem viking chamado Soluço, que se torna amigo de um dragão chamado Banguela, desafiando as tradições de sua tribo.",
         imagem: "imagens/como-treinar-seu-dragao.webp",
-        video:
-          "https://drive.google.com/file/d/12L_3Y_Pi7j-j5-xtXAQJqtbVVigPFxDb/preview",
+        temporadas: [
+          {
+            numero: 1,
+            episodios: [
+              { numero: 1, titulo: "Um Coração Batendo...", video: "https://drive.google.com/file/d/1n_KF_3IwhOSqJX4ZheoCLFCnaBv_NJP3/preview" },
+              { numero: 2, titulo: "Medo de Câmeras", video: "https://drive.google.com/file/d/1RE62jPRqBjrMVTarXa5t8rYDrfP5WPiE/preview" },
+              { numero: 3, titulo: "Co-piloto Mandão", video: "https://drive.google.com/file/d/1j7svKGuhtArHx5byYJ6EFDNKW7vhUd-c/preview" },
+              { numero: 4, titulo: "Me Chame de Vermelho", video: "https://drive.google.com/file/d/1T0K_pjCeVfqxCCjDyo5ksg0GiZx8tRe8/preview" },
+            ],
+          },
+        ],
         trailer: "https://www.youtube.com/embed/CWTy1ukPoYY",
         generos: ["aventura", "animação", "fantasia"],
         //ano: 2025
@@ -940,15 +949,15 @@ const dados = [
       {
         id: 13,
         tipo: "movie",
-        titulo: "Sorria",
+        titulo: "Dexter: Ressurreição",
         descricao:
-          "Após presenciar um evento traumático, uma terapeuta começa a vivenciar eventos assustadores.",
-        imagem: "imagens/sorria.webp",
+          "Dexter: Ressurreição é um filme de terror psicológico que segue Dexter Morgan, um analista forense que luta contra seus instintos assassinos enquanto tenta reconstruir sua vida após os eventos traumáticos do passado.",
+        imagem: "imagens/dexter-ressureicao.webp",
         video:
           "https://drive.google.com/file/d/1-YpwEhiJZBieq3DZom2PZFvLVW2LJd6N/preview",
-        trailer: "https://www.youtube.com/embed/BcDK7lkzzsU",
-        generos: ["terror", "drama"],
-        //ano: 2022
+        trailer: "https://www.youtube.com/embed/ngUBfp7yDeE",
+        generos: ["terror", "suspense", "drama"],
+        //ano: 2025
       },
     {
         id: 14,
@@ -1565,6 +1574,19 @@ const dados = [
       {
         id: 37,
         tipo: "movie",
+        titulo: "Sorria",
+        descricao:
+          "Após presenciar um evento traumático, uma terapeuta começa a vivenciar eventos assustadores.",
+        imagem: "imagens/sorria.webp",
+        video:
+          "https://drive.google.com/file/d/1-YpwEhiJZBieq3DZom2PZFvLVW2LJd6N/preview",
+        trailer: "https://www.youtube.com/embed/BcDK7lkzzsU",
+        generos: ["terror", "drama"],
+        //ano: 2022
+      },
+      {
+        id: 38,
+        tipo: "movie",
         titulo: "Carros",
         descricao:
           "Carros é uma animação que mostra um carro de corrida aprendendo sobre amizade e humildade em uma cidade do interior.",
@@ -1576,7 +1598,7 @@ const dados = [
         //ano: 2006
       },
       {
-        id: 38,
+        id: 39,
         tipo: "series",
         titulo: "Neymar: O Caos Perfeito",
         descricao:
@@ -1597,7 +1619,7 @@ const dados = [
         //ano: 2022
       },
       {
-        id: 39,
+        id: 40,
         tipo: "movie",
         titulo: "Até o ultimo homem",
         descricao:
@@ -1610,7 +1632,20 @@ const dados = [
         //ano: 2016
       },
       {
-        id: 40,
+        id: 41,
+        tipo: "movie",
+        titulo: "Exterminio: A Evolução",
+        descricao:
+          "Extermínio: A Evolução é um filme de ação e ficção científica onde um grupo de sobreviventes luta contra uma ameaça alienígena que evolui rapidamente, colocando em risco a humanidade.",
+        imagem: "imagens/exterminio-a-evolucao.webp",
+        video:
+          "https://drive.google.com/file/d/1P5N3Wkt96AJz2fdZKqf6t5ds9aDLWo54/preview",
+        trailer: "http://www.youtube.com/embed/VHyLdWMX8P4",
+        generos: ["ação", "ficção científica", "terror"],
+        //ano: 2025
+      },
+      {
+        id: 42,
         tipo: "series",
         titulo: "Apenas um Show",
         descricao:
@@ -1718,7 +1753,7 @@ const dados = [
         //ano: 2010
       },
       {
-        id: 41,
+        id: 43,
         tipo: "movie",
         titulo: "Venom",
         descricao:
@@ -1731,7 +1766,7 @@ const dados = [
         //ano: 2018
       },
       {
-        id: 42,
+        id: 44,
         tipo: "movie",
         titulo: "Homem-Aranha: De Volta ao Lar",
         descricao:
@@ -1744,7 +1779,7 @@ const dados = [
         //ano: 2017
       },
       {
-        id: 43,
+        id: 45,
         tipo: "movie",
         titulo: "Homem-Aranha no Aranhaverso",
         descricao:
@@ -1757,7 +1792,7 @@ const dados = [
         //ano: 2018
       },
       {
-        id: 44,
+        id: 46,
         tipo: "movie",
         titulo: "Homem de Ferro",
         descricao:
@@ -1770,7 +1805,7 @@ const dados = [
         //ano: 2008
       },
       {
-        id: 45,
+        id: 47,
         tipo: "movie",
         titulo: "Homem de Ferro 2",
         descricao:
@@ -1783,7 +1818,7 @@ const dados = [
         //ano: 2010
       },
       {
-        id: 46,
+        id: 48,
         tipo: "movie",
         titulo: "Homem de Ferro 3",
         descricao:
@@ -1796,7 +1831,7 @@ const dados = [
         //ano: 2013
       },
       {
-        id: 47,
+        id: 49,
         tipo: "movie",
         titulo: "Thor",
         descricao:
@@ -1809,7 +1844,7 @@ const dados = [
         //ano: 2011
       },
       {
-        id: 48,
+        id: 50,
         tipo: "movie",
         titulo: "Thor 2: O Mundo das Trevas",
         descricao:
@@ -1822,7 +1857,7 @@ const dados = [
         //ano: 2013
       },
       {
-        id: 49,
+        id: 51,
         tipo: "movie",
         titulo: "Thor: Ragnarok",
         descricao:
@@ -1835,7 +1870,7 @@ const dados = [
         //ano: 2017
       },
       {
-        id: 50,
+        id: 52,
         tipo: "movie",
         titulo: "Thor: Amor e Trovão",
         descricao:
@@ -1848,7 +1883,7 @@ const dados = [
         //ano: 2022
       },
       {
-        id: 51,
+        id: 53,
         tipo: "movie",
         titulo: "Homem-Aranha",
         descricao:
@@ -1861,7 +1896,7 @@ const dados = [
         //ano: 2002
       },
       {
-        id: 52,
+        id: 54,
         tipo: "movie",
         titulo: "Homem-Aranha 2",
         descricao:
@@ -1874,7 +1909,7 @@ const dados = [
         //ano: 2004
       },
       {
-        id: 53,
+        id: 55,
         tipo: "movie",
         titulo: "Homem-Aranha 3",
         descricao:
@@ -1887,7 +1922,7 @@ const dados = [
         //ano: 2007
       },
       {
-        id: 54,
+        id: 56,
         tipo: "movie",
         titulo: "O Espetacular Homem-Aranha",
         descricao:
@@ -1900,7 +1935,7 @@ const dados = [
         //ano: 2012
       },
       {
-        id: 55,
+        id: 57,
         tipo: "movie",
         titulo: "O Espetacular Homem-Aranha 2",
         descricao:
@@ -1913,7 +1948,7 @@ const dados = [
         //ano: 2014
       },
       {
-        id: 56,
+        id: 58,
         tipo: "movie",
         titulo: "Bird Box",
         descricao:
@@ -1926,7 +1961,7 @@ const dados = [
         //ano: 2018
       },
       {
-        id: 57,
+        id: 59,
         tipo: "movie",
         titulo: "Minha mãe é uma peça",
         descricao:
@@ -1939,7 +1974,7 @@ const dados = [
         //ano: 2013
       },
       {
-        id: 58,
+        id: 60,
         tipo: "movie",
         titulo: "As Branquelas",
         descricao:
@@ -1952,7 +1987,7 @@ const dados = [
         //ano: 2000
       },
       {
-        id: 59,
+        id: 61,
         tipo: "movie",
         titulo: "Tropa de Elite",
         descricao:
@@ -1965,7 +2000,7 @@ const dados = [
         //ano: 2007
       },
       {
-        id: 60,
+        id: 62,
         tipo: "movie",
         titulo: "bob esponja: o incrivel resgate",
         descricao:
@@ -1978,7 +2013,7 @@ const dados = [
         //ano: 2020
       },
       {
-        id: 61,
+        id: 63,
         tipo: "movie",
         titulo: "Travis Scott: Voando Alto - Legendado",
         descricao:
