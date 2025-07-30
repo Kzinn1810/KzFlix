@@ -918,17 +918,7 @@ const dados = [
         descricao:
           "Como Treinar o Seu Dragão é uma animação que conta a história de um jovem viking chamado Soluço, que se torna amigo de um dragão chamado Banguela, desafiando as tradições de sua tribo.",
         imagem: "imagens/como-treinar-seu-dragao.webp",
-        temporadas: [
-          {
-            numero: 1,
-            episodios: [
-              { numero: 1, titulo: "Um Coração Batendo...", video: "https://drive.google.com/file/d/1n_KF_3IwhOSqJX4ZheoCLFCnaBv_NJP3/preview" },
-              { numero: 2, titulo: "Medo de Câmeras", video: "https://drive.google.com/file/d/1RE62jPRqBjrMVTarXa5t8rYDrfP5WPiE/preview" },
-              { numero: 3, titulo: "Co-piloto Mandão", video: "https://drive.google.com/file/d/1j7svKGuhtArHx5byYJ6EFDNKW7vhUd-c/preview" },
-              { numero: 4, titulo: "Me Chame de Vermelho", video: "https://drive.google.com/file/d/1T0K_pjCeVfqxCCjDyo5ksg0GiZx8tRe8/preview" },
-            ],
-          },
-        ],
+        video: "https://drive.google.com/file/d/12L_3Y_Pi7j-j5-xtXAQJqtbVVigPFxDb/preview",
         trailer: "https://www.youtube.com/embed/CWTy1ukPoYY",
         generos: ["aventura", "animação", "fantasia"],
         //ano: 2025
@@ -948,13 +938,22 @@ const dados = [
       },
       {
         id: 13,
-        tipo: "movie",
+        tipo: "series",
         titulo: "Dexter: Ressurreição",
         descricao:
           "Dexter: Ressurreição é um filme de terror psicológico que segue Dexter Morgan, um analista forense que luta contra seus instintos assassinos enquanto tenta reconstruir sua vida após os eventos traumáticos do passado.",
         imagem: "imagens/dexter-ressureicao.webp",
-        video:
-          "https://drive.google.com/file/d/1-YpwEhiJZBieq3DZom2PZFvLVW2LJd6N/preview",
+        temporadas: [
+          {
+            numero: 1,
+            episodios: [
+              { numero: 1, titulo: "Um Coração Batendo...", video: "https://drive.google.com/file/d/1n_KF_3IwhOSqJX4ZheoCLFCnaBv_NJP3/preview" },
+              { numero: 2, titulo: "Medo de Câmeras", video: "https://drive.google.com/file/d/1RE62jPRqBjrMVTarXa5t8rYDrfP5WPiE/preview" },
+              { numero: 3, titulo: "Co-piloto Mandão", video: "https://drive.google.com/file/d/1j7svKGuhtArHx5byYJ6EFDNKW7vhUd-c/preview" },
+              { numero: 4, titulo: "Me Chame de Vermelho", video: "https://drive.google.com/file/d/1T0K_pjCeVfqxCCjDyo5ksg0GiZx8tRe8/preview" },
+            ],
+          },
+        ],
         trailer: "https://www.youtube.com/embed/ngUBfp7yDeE",
         generos: ["terror", "suspense", "drama"],
         //ano: 2025
