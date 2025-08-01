@@ -669,172 +669,42 @@ const dados = [
           {
             numero: 1,
             episodios: [
-              {
-                numero: 1,
-                titulo: "Segredos",
-                video:
-                  "https://drive.google.com/file/d/102SGUVg5piDjkOlpltoJSq-PPT_tKcrr/preview",
-              },
-              {
-                numero: 2,
-                titulo: "Mentirosos",
-                video:
-                  "https://drive.google.com/file/d/104eAEVzIUMs4xtDwaKDE35AYthP01pjt/preview",
-              },
-              {
-                numero: 3,
-                titulo: "Passado e Presente",
-                video:
-                  "https://drive.google.com/file/d/108LI4kH1oJVoplLU8vx5iVMXG2puMM_M/preview",
-              },
-              {
-                numero: 4,
-                titulo: "Duplo Viver",
-                video:
-                  "https://drive.google.com/file/d/10k_HhWtTJ1_nYXbpKmrhTR2mbyOToauH/preview",
-              },
-              {
-                numero: 5,
-                titulo: "A Verdade",
-                video:
-                  "https://drive.google.com/file/d/10nPKhRbXzqh_Kv7meNCslhNPITGc1zAI/preview",
-              },
-              {
-                numero: 6,
-                titulo: "Tudo é Agora",
-                video:
-                  "https://drive.google.com/file/d/10osbuXXwzZs8EYRFd6RwBzRtOOhjqsHv/preview",
-              },
-              {
-                numero: 7,
-                titulo: "Entre o Tempo",
-                video:
-                  "https://drive.google.com/file/d/10pDzGPRNOCb-uT53gYExJCRTUsFUXBrZ/preview",
-              },
-              {
-                numero: 8,
-                titulo: "O Que Se Semear, Se Colhe",
-                video:
-                  "https://drive.google.com/file/d/10yKIyqfod3BRWLVUX01LxhOoEc5cPiLr/preview",
-              },
-              {
-                numero: 9,
-                titulo: "Tudo se Repete",
-                video:
-                  "https://drive.google.com/file/d/112IqZoerm3kild7cycx8oETtsLc7PBqj/preview",
-              },
-              {
-                numero: 10,
-                titulo: "Alfa e Ômega",
-                video:
-                  "https://drive.google.com/file/d/116XWWWdSb0E7YiWtqXGyJPWFIFf10R74/preview",
-              },  
+              { numero: 1, titulo: "Segredos", video: "https://drive.google.com/file/d/102SGUVg5piDjkOlpltoJSq-PPT_tKcrr/preview" },
+              { numero: 2, titulo: "Mentirosos", video: "https://drive.google.com/file/d/104eAEVzIUMs4xtDwaKDE35AYthP01pjt/preview" },
+              { numero: 3, titulo: "Passado e Presente", video: "https://drive.google.com/file/d/108LI4kH1oJVoplLU8vx5iVMXG2puMM_M/preview" },
+              { numero: 4, titulo: "Duplo Viver", video: "https://drive.google.com/file/d/10k_HhWtTJ1_nYXbpKmrhTR2mbyOToauH/preview" },
+              { numero: 5, titulo: "A Verdade", video: "https://drive.google.com/file/d/10nPKhRbXzqh_Kv7meNCslhNPITGc1zAI/preview" },
+              { numero: 6, titulo: "Tudo é Agora", video: "https://drive.google.com/file/d/10osbuXXwzZs8EYRFd6RwBzRtOOhjqsHv/preview" },
+              { numero: 7, titulo: "Entre o Tempo", video: "https://drive.google.com/file/d/10pDzGPRNOCb-uT53gYExJCRTUsFUXBrZ/preview" },
+              { numero: 8, titulo: "O Que Se Semear, Se Colhe", video: "https://drive.google.com/file/d/10yKIyqfod3BRWLVUX01LxhOoEc5cPiLr/preview" },
+              { numero: 9, titulo: "Tudo se Repete", video: "https://drive.google.com/file/d/112IqZoerm3kild7cycx8oETtsLc7PBqj/preview" },
+              { numero: 10, titulo: "Alfa e Ômega", video: "https://drive.google.com/file/d/116XWWWdSb0E7YiWtqXGyJPWFIFf10R74/preview" },
             ],
           },
           {
             numero: 2,
             episodios: [
-              {
-                numero: 1,
-                titulo: "Inícios e Finais",
-                video:
-                  "https://drive.google.com/file/d/12GjEt9WnO_-EElEEUsNxOHh_jKMGzCw9/preview",
-              },
-              {
-                numero: 2,
-                titulo: "Matéria Escura",
-                video:
-                  "https://drive.google.com/file/d/12HKYJuLo5n_-yd6Fg1Za3wEoU8DZe2b7/preview",
-              },
-              {
-                numero: 3,
-                titulo: "Fantasmas",
-                video:
-                  "https://drive.google.com/file/d/12NDcmKioXYfZXiRkHNCIvZqEmbz9UbFR/preview",
-              },
-              {
-                numero: 4,
-                titulo: "Os Viajantes",
-                video:
-                  "https://drive.google.com/file/d/12RSAcGC5uevwS6ikbP3nEgRC9blvOBpf/previewk",
-              },
-              {
-                numero: 5,
-                titulo: "Achados e Perdidos",
-                video:
-                  "https://drive.google.com/file/d/12QBmx839BUZstX2iVDP_WNThA4j8_Kfw/preview",
-              },
-              {
-                numero: 6,
-                titulo: "Um Ciclo Sem Fim",
-                video:
-                  "https://drive.google.com/file/d/12ckZ65-wSsxLPFu_LPC-bs2km6WdeOgF/preview",
-              },
-              {
-                numero: 7,
-                titulo: "O Diabo Branco",
-                video:
-                  "https://drive.google.com/file/d/12a3xVaT2iJea0PZAFezebFK92RGuPaXI/preview",
-              },
-              {
-                numero: 8,
-                titulo: "Finais e Inícios",
-                video:
-                  "https://drive.google.com/file/d/12ccFTaTIQAI5g0YAi3gHgFAkhjyICpcD/preview",
-              },             
+              { numero: 1, titulo: "Inícios e Finais", video: "https://drive.google.com/file/d/12GjEt9WnO_-EElEEUsNxOHh_jKMGzCw9/preview" },
+              { numero: 2, titulo: "Matéria Escura", video: "https://drive.google.com/file/d/12HKYJuLo5n_-yd6Fg1Za3wEoU8DZe2b7/preview" },
+              { numero: 3, titulo: "Fantasmas", video: "https://drive.google.com/file/d/12NDcmKioXYfZXiRkHNCIvZqEmbz9UbFR/preview" },
+              { numero: 4, titulo: "Os Viajantes", video: "https://drive.google.com/file/d/12RSAcGC5uevwS6ikbP3nEgRC9blvOBpf/previewk" },
+              { numero: 5, titulo: "Achados e Perdidos", video: "https://drive.google.com/file/d/12QBmx839BUZstX2iVDP_WNThA4j8_Kfw/preview" },
+              { numero: 6, titulo: "Um Ciclo Sem Fim", video: "https://drive.google.com/file/d/12ckZ65-wSsxLPFu_LPC-bs2km6WdeOgF/preview" },
+              { numero: 7, titulo: "O Diabo Branco", video: "https://drive.google.com/file/d/12a3xVaT2iJea0PZAFezebFK92RGuPaXI/preview" },
+              { numero: 8, titulo: "Finais e Inícios", video: "https://drive.google.com/file/d/12ccFTaTIQAI5g0YAi3gHgFAkhjyICpcD/preview" },
             ],
           },
           {
             numero: 3,
             episodios: [
-              {
-                numero: 1,
-                titulo: "Deja-vu",
-                video:
-                  "https://drive.google.com/file/d/1-C6AvI4SBesH_47eVL4_G7Pl9ATY94Mh/preview",
-              },
-              {
-                numero: 2,
-                titulo: "Os Sobreviventes",
-                video:
-                  "https://drive.google.com/file/d/1-J8ffOln6uk10gyGzm_KXIPNd2MPQntQ/preview",
-              },
-              {
-                numero: 3,
-                titulo: "Adão e Eva",
-                video:
-                  "https://drive.google.com/file/d/1-K1JRMPOkxqVZ5ldNlQPO-bErCpqoxs8/preview",
-              },
-              {
-                numero: 4,
-                titulo: "A Origem",
-                video:
-                  "https://drive.google.com/file/d/1-HE4B9cVybxrS2lhTmcYCnX96aCe1WN-/preview",
-              },
-              {
-                numero: 5,
-                titulo: "Vida e Morte",
-                video:
-                  "https://drive.google.com/file/d/1-FpcvxoXMxho39i7NT0nR68pXQcFrD_x/preview",
-              },
-              {
-                numero: 6,
-                titulo: "Luz e Sombra",
-                video:
-                  "https://drive.google.com/file/d/1-UFyVqiTbZ0w61lvC2qigftrit3FQRCg/preview",
-              },
-              {
-                numero: 7,
-                titulo: "Entre o Tempo",
-                video:
-                  "https://drive.google.com/file/d/11EJjCC-iMSRValSQssQas4dqXVEBgree/preview",
-              },
-              {
-                numero: 8,
-                titulo: "O Paraíso",
-                video:
-                  "https://drive.google.com/file/d/1-RYxpvU_GHbt9sBMTMWvK-C7G_ruktiP/preview",
-              },             
+              { numero: 1, titulo: "Deja-vu", video: "https://drive.google.com/file/d/1-C6AvI4SBesH_47eVL4_G7Pl9ATY94Mh/preview" },
+              { numero: 2, titulo: "Os Sobreviventes", video: "https://drive.google.com/file/d/1-J8ffOln6uk10gyGzm_KXIPNd2MPQntQ/preview" },
+              { numero: 3, titulo: "Adão e Eva", video: "https://drive.google.com/file/d/1-K1JRMPOkxqVZ5ldNlQPO-bErCpqoxs8/preview" },
+              { numero: 4, titulo: "A Origem", video: "https://drive.google.com/file/d/1-HE4B9cVybxrS2lhTmcYCnX96aCe1WN-/preview" },
+              { numero: 5, titulo: "Vida e Morte", video: "https://drive.google.com/file/d/1-FpcvxoXMxho39i7NT0nR68pXQcFrD_x/preview" },
+              { numero: 6, titulo: "Luz e Sombra", video: "https://drive.google.com/file/d/1-UFyVqiTbZ0w61lvC2qigftrit3FQRCg/preview" },
+              { numero: 7, titulo: "Entre o Tempo", video: "https://drive.google.com/file/d/11EJjCC-iMSRValSQssQas4dqXVEBgree/preview" },
+              { numero: 8, titulo: "O Paraíso", video: "https://drive.google.com/file/d/1-RYxpvU_GHbt9sBMTMWvK-C7G_ruktiP/preview" },
             ],
           },
         ],
@@ -969,196 +839,46 @@ const dados = [
           {
             numero: 1,
             episodios: [
-              {
-                numero: 1,
-                titulo: "Episódio 1",
-                video:
-                  "https://drive.google.com/file/d/10ZIxNHqhSdbKp7mJFamiAWGkeNZl8p3s/preview",
-              },
-              {
-                numero: 2,
-                titulo: "Episódio 2",
-                video:
-                  "https://drive.google.com/file/d/10ciVj2-RbFI5xULfu_tQZaUc0w48Q1kP/preview",
-              },
-              {
-                numero: 3,
-                titulo: "Episódio 3",
-                video:
-                  "https://drive.google.com/file/d/10g70JssxI7WoejbCvGTOma7uu7kUnC1S/preview",
-              },
-              {
-                numero: 4,
-                titulo: "Episódio 4",
-                video:
-                  "https://drive.google.com/file/d/10k9oMnbiOhlbmLeQ9m_1ij1rtep6m2qi/preview",
-              },
-              {
-                numero: 5,
-                titulo: "Episódio 5",
-                video:
-                  "https://drive.google.com/file/d/10hW1dZWsPF1nnf9S4yt1EBonWyLe9vjo/preview",
-              },
-              {
-                numero: 6,
-                titulo: "Episódio 6",
-                video:
-                  "https://drive.google.com/file/d/10oajxjCmyfNEtU6t0FFalRms5-qVV-eX/preview",
-              },
-              {
-                numero: 7,
-                titulo: "Episódio 7",
-                video:
-                  "https://drive.google.com/file/d/10tyGsirAVWaSRMKLVs0thQWA0pbiYK5T/preview",
-              },
-              {
-                numero: 8,
-                titulo: "Episódio 8",
-                video:
-                  "https://drive.google.com/file/d/10v1ph-TFvxkJAtxNI2UY3mypRV18ZTWr/preview",
-              },
-              {
-                numero: 9,
-                titulo: "Episódio 9",
-                video:
-                  "https://drive.google.com/file/d/10xE37UnHbVdMmNlu2J_nhBStSF6hTpqf/preview",
-              },
-              {
-                numero: 10,
-                titulo: "Episódio 10",
-                video:
-                  "https://drive.google.com/file/d/10tW8ZfaTKH8UaCjd6_FxhSq6Mwx4ydO7/preview",
-              },
+              { numero: 1, titulo: "Episódio 1", video: "https://drive.google.com/file/d/10ZIxNHqhSdbKp7mJFamiAWGkeNZl8p3s/preview" },
+              { numero: 2, titulo: "Episódio 2", video: "https://drive.google.com/file/d/10ciVj2-RbFI5xULfu_tQZaUc0w48Q1kP/preview" },
+              { numero: 3, titulo: "Episódio 3", video: "https://drive.google.com/file/d/10g70JssxI7WoejbCvGTOma7uu7kUnC1S/preview" },
+              { numero: 4, titulo: "Episódio 4", video: "https://drive.google.com/file/d/10k9oMnbiOhlbmLeQ9m_1ij1rtep6m2qi/preview" },
+              { numero: 5, titulo: "Episódio 5", video: "https://drive.google.com/file/d/10hW1dZWsPF1nnf9S4yt1EBonWyLe9vjo/preview" },
+              { numero: 6, titulo: "Episódio 6", video: "https://drive.google.com/file/d/10oajxjCmyfNEtU6t0FFalRms5-qVV-eX/preview" },
+              { numero: 7, titulo: "Episódio 7", video: "https://drive.google.com/file/d/10tyGsirAVWaSRMKLVs0thQWA0pbiYK5T/preview" },
+              { numero: 8, titulo: "Episódio 8", video: "https://drive.google.com/file/d/10v1ph-TFvxkJAtxNI2UY3mypRV18ZTWr/preview" },
+              { numero: 9, titulo: "Episódio 9", video: "https://drive.google.com/file/d/10xE37UnHbVdMmNlu2J_nhBStSF6hTpqf/preview" },
+              { numero: 10, titulo: "Episódio 10", video: "https://drive.google.com/file/d/10tW8ZfaTKH8UaCjd6_FxhSq6Mwx4ydO7/preview" },
             ],
           },
           {
             numero: 2,
             episodios: [
-              {
-                numero: 1,
-                titulo: "Episódio 1",
-                video:
-                  "https://drive.google.com/file/d/111T8hjHpvuFuzl7FvcQzzpN_ADw9LqFR/preview",
-              },
-              {
-                numero: 2,
-                titulo: "Episódio 2",
-                video:
-                  "https://drive.google.com/file/d/11ATZNJwa6efdNl4tEJc8dJa27JKPS5S1/preview",
-              },
-              {
-                numero: 3,
-                titulo: "Episódio 3",
-                video:
-                  "https://drive.google.com/file/d/11BqdnXcDJh10_l_-w7cgEz6K6311xlOP/preview",
-              },
-              {
-                numero: 4,
-                titulo: "Episódio 4",
-                video:
-                  "https://drive.google.com/file/d/11GHs9sGPctcIx_gZOUB0kP--bPPH_R4t/preview",
-              },
-              {
-                numero: 5,
-                titulo: "Episódio 5",
-                video:
-                  "https://drive.google.com/file/d/11CzLm67dj0J_0ghpLWl2gxbFLBu176lp/preview",
-              },
-              {
-                numero: 6,
-                titulo: "Episódio 6",
-                video:
-                  "https://drive.google.com/file/d/11MirhSiVgzTuCvyN2DCOI-LL-UMi6-7U/preview",
-              },
-              {
-                numero: 7,
-                titulo: "Episódio 7",
-                video:
-                  "https://drive.google.com/file/d/11Icl9mCIG0sx_9tQf6zuhwdAr0n-jPg0/preview",
-              },
-              {
-                numero: 8,
-                titulo: "Episódio 8",
-                video:
-                  "https://drive.google.com/file/d/11W2eQ9DJKDc0Nv1TZ4wzrab-OhNV3j0Z/preview",
-              },
-              {
-                numero: 9,
-                titulo: "Episódio 9",
-                video:
-                  "https://drive.google.com/file/d/11NEeygSCvzXebhjV5_5_U6Pma9Q6kAhc/preview",
-              },
-              {
-                numero: 10,
-                titulo: "Episódio 10",
-                video:
-                  "https://drive.google.com/file/d/114w8HMsPWM-sMmaNyeWBKEhfC0R0JO-T/preview",
-              },
+              { numero: 1, titulo: "Episódio 1", video: "https://drive.google.com/file/d/111T8hjHpvuFuzl7FvcQzzpN_ADw9LqFR/preview" },
+              { numero: 2, titulo: "Episódio 2", video: "https://drive.google.com/file/d/11ATZNJwa6efdNl4tEJc8dJa27JKPS5S1/preview" },
+              { numero: 3, titulo: "Episódio 3", video: "https://drive.google.com/file/d/11BqdnXcDJh10_l_-w7cgEz6K6311xlOP/preview" },
+              { numero: 4, titulo: "Episódio 4", video: "https://drive.google.com/file/d/11GHs9sGPctcIx_gZOUB0kP--bPPH_R4t/preview" },
+              { numero: 5, titulo: "Episódio 5", video: "https://drive.google.com/file/d/11CzLm67dj0J_0ghpLWl2gxbFLBu176lp/preview" },
+              { numero: 6, titulo: "Episódio 6", video: "https://drive.google.com/file/d/11MirhSiVgzTuCvyN2DCOI-LL-UMi6-7U/preview" },
+              { numero: 7, titulo: "Episódio 7", video: "https://drive.google.com/file/d/11Icl9mCIG0sx_9tQf6zuhwdAr0n-jPg0/preview" },
+              { numero: 8, titulo: "Episódio 8", video: "https://drive.google.com/file/d/11W2eQ9DJKDc0Nv1TZ4wzrab-OhNV3j0Z/preview" },
+              { numero: 9, titulo: "Episódio 9", video: "https://drive.google.com/file/d/11NEeygSCvzXebhjV5_5_U6Pma9Q6kAhc/preview" },
+              { numero: 10, titulo: "Episódio 10", video: "https://drive.google.com/file/d/114w8HMsPWM-sMmaNyeWBKEhfC0R0JO-T/preview" },
             ],
           },
           {
             numero: 3,
             episodios: [
-              {
-                numero: 1,
-                titulo: "Episódio 1",
-                video:
-                  "https://drive.google.com/file/d/11rMhXME0AovuhPRWb4Fkn3FJF0iaJJek/preview",
-              },
-              {
-                numero: 2,
-                titulo: "Episódio 2",
-                video:
-                  "https://drive.google.com/file/d/12BIm4dn0j7zbH5UgEjUx8Kf7Y9Vm7s_X/preview",
-              },
-              {
-                numero: 3,
-                titulo: "Episódio 3",
-                video:
-                  "https://drive.google.com/file/d/11omMHTqCBRMdZnk5phvf1fRivHqTtx4l/preview",
-              },
-              {
-                numero: 4,
-                titulo: "Episódio 4",
-                video:
-                  "https://drive.google.com/file/d/11rZyvKKG2U9XeGTwm6K88RJrW20q89eX/preview",
-              },
-              {
-                numero: 5,
-                titulo: "Episódio 5",
-                video:
-                  "https://drive.google.com/file/d/11wBQ-OhG2sBe55-aMl-UbSE321tOkuLI/preview",
-              },
-              {
-                numero: 6,
-                titulo: "Episódio 6",
-                video:
-                  "https://drive.google.com/file/d/11xXsWxi5sZj2qhvx360pDZmlFN0dfcZX/preview",
-              },
-              {
-                numero: 7,
-                titulo: "Episódio 7",
-                video:
-                  "https://drive.google.com/file/d/121KPwJ0Rqwvd227OQHwutlJTwtGtYZJF/preview",
-              },
-              {
-                numero: 8,
-                titulo: "Episódio 8",
-                video:
-                  "https://drive.google.com/file/d/12BaZrWoYpwf97Q_TReS_0CbHNJiplvgT/preview",
-              },
-              {
-                numero: 9,
-                titulo: "Episódio 9",
-                video:
-                  "https://drive.google.com/file/d/12Dt8MnyYWK6rjfXRPhhTS_5EdpqCW0em/preview",
-              },
-              {
-                numero: 10,
-                titulo: "Episódio 10",
-                video:
-                  "https://drive.google.com/file/d/129QQq2tAFb7NHpAml-Co2hGum9oNkcu9/preview",
-              },
+              { numero: 1, titulo: "Episódio 1", video: "https://drive.google.com/file/d/11rMhXME0AovuhPRWb4Fkn3FJF0iaJJek/preview" },
+              { numero: 2, titulo: "Episódio 2", video: "https://drive.google.com/file/d/12BIm4dn0j7zbH5UgEjUx8Kf7Y9Vm7s_X/preview" },
+              { numero: 3, titulo: "Episódio 3", video: "https://drive.google.com/file/d/11omMHTqCBRMdZnk5phvf1fRivHqTtx4l/preview" },
+              { numero: 4, titulo: "Episódio 4", video: "https://drive.google.com/file/d/11rZyvKKG2U9XeGTwm6K88RJrW20q89eX/preview" },
+              { numero: 5, titulo: "Episódio 5", video: "https://drive.google.com/file/d/11wBQ-OhG2sBe55-aMl-UbSE321tOkuLI/preview" },
+              { numero: 6, titulo: "Episódio 6", video: "https://drive.google.com/file/d/11xXsWxi5sZj2qhvx360pDZmlFN0dfcZX/preview" },
+              { numero: 7, titulo: "Episódio 7", video: "https://drive.google.com/file/d/121KPwJ0Rqwvd227OQHwutlJTwtGtYZJF/preview" },
+              { numero: 8, titulo: "Episódio 8", video: "https://drive.google.com/file/d/12BaZrWoYpwf97Q_TReS_0CbHNJiplvgT/preview" },
+              { numero: 9, titulo: "Episódio 9", video: "https://drive.google.com/file/d/12Dt8MnyYWK6rjfXRPhhTS_5EdpqCW0em/preview" },
+              { numero: 10, titulo: "Episódio 10", video: "https://drive.google.com/file/d/129QQq2tAFb7NHpAml-Co2hGum9oNkcu9/preview" },
             ],
           },
         ],
