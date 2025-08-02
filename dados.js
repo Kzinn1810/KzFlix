@@ -728,58 +728,30 @@ const dados = [
       {
         id: 10,
         tipo: "series",
-        titulo: "Locke & Key",
+        titulo: "Outer Banks",
         descricao:
-          "Locke & Key é uma série de fantasia e mistério que segue os irmãos Locke, que descobrem chaves mágicas em sua casa ancestral, cada uma com poderes únicos, enquanto enfrentam forças sombrias.",
-        imagem: "imagens/locke-e-key.webp",
+          "Outer Banks é uma série de aventura e mistério que segue um grupo de adolescentes em busca de um tesouro perdido, enquanto enfrentam rivalidades e segredos na costa da Carolina do Norte.",
+        imagem: "imagens/outer-banks.webp",
         temporadas: [
           {
             numero: 1,
             episodios: [
-              { numero: 1, titulo: "Bem-vindos a Matheson", video: "https://drive.google.com/file/d/11pbwc8AO69R_zbH1-zmlQEHjal5IsIme/preview" },
-              { numero: 2, titulo: "Caçador", video: "https://drive.google.com/file/d/12WafZsQjK99sIkU5W64hXwyWP_JQzvQU/preview" },
-              { numero: 3, titulo: "Jogos Mentais", video: "https://drive.google.com/file/d/11zy11G7Et-uzZvFD4snKzfiLbC5KSvHs/preview" },
-              { numero: 4, titulo: "Os Guardiões das Chaves", video: "https://drive.google.com/file/d/122_OhnM5SyvElRvafiB7n5GHmJiMjXn0/preview" },
-              { numero: 5, titulo: "Árvore Genealógica", video: "https://drive.google.com/file/d/12FAweHn_ZJq3GjR8oUmOfeVD0jIONdTB/preview" },
-              { numero: 6, titulo: "A Porta Negra", video: "https://drive.google.com/file/d/12E-R3e5UTHr8_-EUBrq9T7J2w0lZiJgA/preview" },
-              { numero: 7, titulo: "Dissecação", video: "https://drive.google.com/file/d/12K2NvXrWuWo0F80s_QZ-57q8T7t81U7Y/preview" },
-              { numero: 8, titulo: "Um Raio de P*ta de Sol", video: "https://drive.google.com/file/d/12FVOAkTstJiSP2pvnSFVDHFCguMcIFwz/preview" },
-              { numero: 9, titulo: "Ecos", video: "https://drive.google.com/file/d/12WYIJ-wxoMjspAabzDYUEyTg89hRZHAN/preview" },
-              { numero: 10, titulo: "Coroa das Sombras", video: "https://drive.google.com/file/d/123mWm_v6d6iK4nnEsUDj7hnuMM1U7yy7/preview" },
-            ],
-          },
-          {
-            numero: 2,
-            episodios: [
-              { numero: 1, titulo: "O Cofre de Demônios", video: "https://drive.google.com/file/d/137VZvW0wejoVzKiOwB4xhVn9X31BD1h7/preview" },
-              { numero: 2, titulo: "A Cabeça e o Coração", video: "https://drive.google.com/file/d/13GAfMYr9gynBnlA2oBNIWn4D7RK6xsd9/preview" },
-              { numero: 3, titulo: "Esquecido", video: "https://drive.google.com/file/d/13IwltUTGPRELJAA-htrIZ_Wa-vpKjodE/preview" },
-              { numero: 4, titulo: "Mais Rápido do que a Luz", video: "https://drive.google.com/file/d/13Kk-MYQ2ZafOL7WUS-fWd83M6PnOhBAO/preview" },
-              { numero: 5, titulo: "Jogada Dupla", video: "https://drive.google.com/file/d/13Vtl4kD3-wrcFnGFGDTIpNLJt459UVxF/preview" },
-              { numero: 6, titulo: "A Chave da Mímica", video: "https://drive.google.com/file/d/13b5Yg8_lU-c0rRrKfm2jIZRXFk2ZPQz0/preview" },
-              { numero: 7, titulo: "Perfuração", video: "https://drive.google.com/file/d/13cFRYXPlqxsSwamqQ6UXOXmUAqlpMiO9/preview" },
-              { numero: 8, titulo: "Irmãos", video: "https://drive.google.com/file/d/1-ZcWQ9Q6yhWbOU04Mufa-OVTcvDxu1Zd/preview" },
-              { numero: 9, titulo: "Alfa e Ômega", video: "https://drive.google.com/file/d/13ubWdVVnI4vfcUfVUjqDVaNf6dbqJJ7T/preview" },
-              { numero: 10, titulo: "O Relicário", video: "https://drive.google.com/file/d/13DF6yYlHiM9x0uwusdeGLEQDjJsvmlHD/preview" },
-            ],
-          },
-          {
-            numero: 3,
-            episodios: [
-              { numero: 1, titulo: "A Invasão", video: "https://drive.google.com/file/d/10-MB-ddUpFC9KG6PQdq0DeL-CJvGg7wR/preview" },
-              { numero: 2, titulo: "As Cortes do Céu", video: "https://drive.google.com/file/d/1-eRPUV9rij4drBsuk9DPNbpAby95IPWa/preview" },
-              { numero: 3, titulo: "O Fim do Mundo", video: "https://drive.google.com/file/d/10DXK4JsuYV1CrH_pSgJDpN0W7jC75gOC/preview" },
-              { numero: 4, titulo: "A Chave da Memória", video: "https://drive.google.com/file/d/10H7BboiVMPwaOoEQz9gSVX1oldkT7JZL/preview" },
-              { numero: 5, titulo: "Corrente do Mal", video: "https://drive.google.com/file/d/10KVOT0FH1TRteGMcOw6hM2s7jC6APcQX/preview" },
-              { numero: 6, titulo: "Dança da Chave", video: "https://drive.google.com/file/d/10NBWEF_eT404tUQZRfWjGnlcoyR23TmA/preview" },
-              { numero: 7, titulo: "Eco", video: "https://drive.google.com/file/d/10QmQ9yEkoQydvZ_o5HBHYvbGkUuLDmxd/preview" },
-              { numero: 8, titulo: "A Chave do Abismo", video: "https://drive.google.com/file/d/10_9YfGy2Q_K0_oqtdwy_xD-10voR4UKo/preview" },
+              { numero: 1, titulo: "O Forte", video: "https://drive.google.com/file/d/1p6fJZt_R1c8Q8FwFvDaL5h8wJ5d7YnIc/preview" },
+              { numero: 2, titulo: "O Sortudo", video: "https://drive.google.com/file/d/14zvWLGd4wXTnhZbDavcGyTU--KzLU23p/preview" },
+              { numero: 3, titulo: "A Toca", video: "https://drive.google.com/file/d/1o457Xs20TG_Ob12PMuBcJR5y2ad_af7W/preview" },
+              { numero: 4, titulo: "Esqueletos", video: "https://drive.google.com/file/d/1lpKh1CNIg4Ex6t3OkkQeudz0iKOpWWxW/preview" },
+              { numero: 5, titulo: "O Sino", video: "https://drive.google.com/file/d/10pQfhnubEuGvRRMleEYR1PiPdLX0-RxY/preview" },
+              { numero: 6, titulo: "Parada obrigatória", video: "https://drive.google.com/file/d/1kZLAwg3HG7tef91oO-D34UmVVUmwwUYQ/preview" },
+              { numero: 7, titulo: "Praia livre", video: "https://drive.google.com/file/d/1tLVVpOk8jp_tQEdJo6fKJ2Rj5bFM1qdL/preview" },
+              { numero: 8, titulo: "O Fugitivo", video: "https://drive.google.com/file/d/1vW-pByZXosr_Sare4ZxP-4soNZdzz8at/preview" },
+              { numero: 9, titulo: "O Despertar", video: "https://drive.google.com/file/d/1ojWmH_FgE4z0Zn46zHHAoRpoz6s7Uy2t/preview" },
+              { numero: 10, titulo: "O Fantasma", video: "https://drive.google.com/file/d/1oXLutqi1O2zRy-8zoSUgULladHS0KgDj/preview" },
             ],
           },
         ],
-        trailer: "https://www.youtube.com/embed/U6mCkzv7WPM",
-        generos: ["fantasia", "mistério", "terror"],
-        //ano: 2021
+        trailer: "https://www.youtube.com/embed/uk_hFfUFXh4",
+        generos: ["aventura", "mistério", "drama"],
+        //ano: 2020
       },
       {
         id: 11,
@@ -1175,6 +1147,62 @@ const dados = [
       },
       {
         id: 28,
+        tipo: "series",
+        titulo: "Locke & Key",
+        descricao:
+          "Locke & Key é uma série de fantasia e mistério que segue os irmãos Locke, que descobrem chaves mágicas em sua casa ancestral, cada uma com poderes únicos, enquanto enfrentam forças sombrias.",
+        imagem: "imagens/locke-e-key.webp",
+        temporadas: [
+          {
+            numero: 1,
+            episodios: [
+              { numero: 1, titulo: "Bem-vindos a Matheson", video: "https://drive.google.com/file/d/11pbwc8AO69R_zbH1-zmlQEHjal5IsIme/preview" },
+              { numero: 2, titulo: "Caçador", video: "https://drive.google.com/file/d/12WafZsQjK99sIkU5W64hXwyWP_JQzvQU/preview" },
+              { numero: 3, titulo: "Jogos Mentais", video: "https://drive.google.com/file/d/11zy11G7Et-uzZvFD4snKzfiLbC5KSvHs/preview" },
+              { numero: 4, titulo: "Os Guardiões das Chaves", video: "https://drive.google.com/file/d/122_OhnM5SyvElRvafiB7n5GHmJiMjXn0/preview" },
+              { numero: 5, titulo: "Árvore Genealógica", video: "https://drive.google.com/file/d/12FAweHn_ZJq3GjR8oUmOfeVD0jIONdTB/preview" },
+              { numero: 6, titulo: "A Porta Negra", video: "https://drive.google.com/file/d/12E-R3e5UTHr8_-EUBrq9T7J2w0lZiJgA/preview" },
+              { numero: 7, titulo: "Dissecação", video: "https://drive.google.com/file/d/12K2NvXrWuWo0F80s_QZ-57q8T7t81U7Y/preview" },
+              { numero: 8, titulo: "Um Raio de P*ta de Sol", video: "https://drive.google.com/file/d/12FVOAkTstJiSP2pvnSFVDHFCguMcIFwz/preview" },
+              { numero: 9, titulo: "Ecos", video: "https://drive.google.com/file/d/12WYIJ-wxoMjspAabzDYUEyTg89hRZHAN/preview" },
+              { numero: 10, titulo: "Coroa das Sombras", video: "https://drive.google.com/file/d/123mWm_v6d6iK4nnEsUDj7hnuMM1U7yy7/preview" },
+            ],
+          },
+          {
+            numero: 2,
+            episodios: [
+              { numero: 1, titulo: "O Cofre de Demônios", video: "https://drive.google.com/file/d/137VZvW0wejoVzKiOwB4xhVn9X31BD1h7/preview" },
+              { numero: 2, titulo: "A Cabeça e o Coração", video: "https://drive.google.com/file/d/13GAfMYr9gynBnlA2oBNIWn4D7RK6xsd9/preview" },
+              { numero: 3, titulo: "Esquecido", video: "https://drive.google.com/file/d/13IwltUTGPRELJAA-htrIZ_Wa-vpKjodE/preview" },
+              { numero: 4, titulo: "Mais Rápido do que a Luz", video: "https://drive.google.com/file/d/13Kk-MYQ2ZafOL7WUS-fWd83M6PnOhBAO/preview" },
+              { numero: 5, titulo: "Jogada Dupla", video: "https://drive.google.com/file/d/13Vtl4kD3-wrcFnGFGDTIpNLJt459UVxF/preview" },
+              { numero: 6, titulo: "A Chave da Mímica", video: "https://drive.google.com/file/d/13b5Yg8_lU-c0rRrKfm2jIZRXFk2ZPQz0/preview" },
+              { numero: 7, titulo: "Perfuração", video: "https://drive.google.com/file/d/13cFRYXPlqxsSwamqQ6UXOXmUAqlpMiO9/preview" },
+              { numero: 8, titulo: "Irmãos", video: "https://drive.google.com/file/d/1-ZcWQ9Q6yhWbOU04Mufa-OVTcvDxu1Zd/preview" },
+              { numero: 9, titulo: "Alfa e Ômega", video: "https://drive.google.com/file/d/13ubWdVVnI4vfcUfVUjqDVaNf6dbqJJ7T/preview" },
+              { numero: 10, titulo: "O Relicário", video: "https://drive.google.com/file/d/13DF6yYlHiM9x0uwusdeGLEQDjJsvmlHD/preview" },
+            ],
+          },
+          {
+            numero: 3,
+            episodios: [
+              { numero: 1, titulo: "A Invasão", video: "https://drive.google.com/file/d/10-MB-ddUpFC9KG6PQdq0DeL-CJvGg7wR/preview" },
+              { numero: 2, titulo: "As Cortes do Céu", video: "https://drive.google.com/file/d/1-eRPUV9rij4drBsuk9DPNbpAby95IPWa/preview" },
+              { numero: 3, titulo: "O Fim do Mundo", video: "https://drive.google.com/file/d/10DXK4JsuYV1CrH_pSgJDpN0W7jC75gOC/preview" },
+              { numero: 4, titulo: "A Chave da Memória", video: "https://drive.google.com/file/d/10H7BboiVMPwaOoEQz9gSVX1oldkT7JZL/preview" },
+              { numero: 5, titulo: "Corrente do Mal", video: "https://drive.google.com/file/d/10KVOT0FH1TRteGMcOw6hM2s7jC6APcQX/preview" },
+              { numero: 6, titulo: "Dança da Chave", video: "https://drive.google.com/file/d/10NBWEF_eT404tUQZRfWjGnlcoyR23TmA/preview" },
+              { numero: 7, titulo: "Eco", video: "https://drive.google.com/file/d/10QmQ9yEkoQydvZ_o5HBHYvbGkUuLDmxd/preview" },
+              { numero: 8, titulo: "A Chave do Abismo", video: "https://drive.google.com/file/d/10_9YfGy2Q_K0_oqtdwy_xD-10voR4UKo/preview" },
+            ],
+          },
+        ],
+        trailer: "https://www.youtube.com/embed/U6mCkzv7WPM",
+        generos: ["fantasia", "mistério", "terror"],
+        //ano: 2021
+      },
+      {
+        id: 29,
         tipo: "movie",
         titulo: "Invocação do mal",
         descricao:
@@ -1187,7 +1215,7 @@ const dados = [
         //ano: 2013
       },
       {
-        id: 29,
+        id: 30,
         tipo: "movie",
         titulo: "Invocação do mal 2",
         descricao:
@@ -1200,7 +1228,7 @@ const dados = [
         //ano: 2016
       },
       {
-        id: 30,
+        id: 31,
         tipo: "movie",
         titulo: "Invocação do mal 3: A Ordem do Demônio",
         descricao:
@@ -1213,7 +1241,7 @@ const dados = [
         //ano: 2021
       },
       {
-        id: 31,
+        id: 32,
         tipo: "movie",
         titulo: "Velozes e Furiosos 7",
         descricao:
@@ -1226,7 +1254,7 @@ const dados = [
         //ano: 2015
       },
       {
-        id: 32,
+        id: 33,
         tipo: "movie",
         titulo: "Atentado em Paris",
         descricao:
@@ -1239,7 +1267,7 @@ const dados = [
         //ano: 2016
       },
       {
-        id: 33,
+        id: 34,
         tipo: "movie",
         titulo: "A barraca do beijo",
         descricao:
@@ -1252,7 +1280,7 @@ const dados = [
         //ano: 2018
       },
       {
-        id: 34,
+        id: 35,
         tipo: "movie",
         titulo: "Creed: Nascido para Lutar",
         descricao:
@@ -1265,7 +1293,7 @@ const dados = [
         //ano: 2015
       },
       {
-        id: 35,
+        id: 36,
         tipo: "movie",
         titulo: "Creed II",
         descricao:
@@ -1278,7 +1306,7 @@ const dados = [
         //ano: 2018
       },
       {
-        id: 36,
+        id: 37,
         tipo: "movie",
         titulo: "Creed III",
         descricao:
@@ -1291,7 +1319,7 @@ const dados = [
         //ano: 2023
       },
       {
-        id: 37,
+        id: 38,
         tipo: "movie",
         titulo: "Sorria 2",
         descricao:
@@ -1304,7 +1332,7 @@ const dados = [
         //ano: 2025
       },
       {
-        id: 38,
+        id: 39,
         tipo: "movie",
         titulo: "Carros",
         descricao:
@@ -1317,7 +1345,7 @@ const dados = [
         //ano: 2006
       },
       {
-        id: 39,
+        id: 40,
         tipo: "series",
         titulo: "Neymar: O Caos Perfeito",
         descricao:
@@ -1338,7 +1366,7 @@ const dados = [
         //ano: 2022
       },
       {
-        id: 40,
+        id: 41,
         tipo: "movie",
         titulo: "Até o ultimo homem",
         descricao:
@@ -1351,7 +1379,7 @@ const dados = [
         //ano: 2016
       },
       {
-        id: 41,
+        id: 42,
         tipo: "movie",
         titulo: "Exterminio: A Evolução",
         descricao:
@@ -1364,7 +1392,7 @@ const dados = [
         //ano: 2025
       },
       {
-        id: 42,
+        id: 43,
         tipo: "series",
         titulo: "Apenas um Show",
         descricao:
@@ -1472,7 +1500,7 @@ const dados = [
         //ano: 2010
       },
       {
-        id: 43,
+        id: 44,
         tipo: "movie",
         titulo: "Venom",
         descricao:
@@ -1485,7 +1513,7 @@ const dados = [
         //ano: 2018
       },
       {
-        id: 44,
+        id: 45,
         tipo: "movie",
         titulo: "Homem-Aranha: De Volta ao Lar",
         descricao:
@@ -1498,7 +1526,7 @@ const dados = [
         //ano: 2017
       },
       {
-        id: 45,
+        id: 46,
         tipo: "movie",
         titulo: "Homem-Aranha no Aranhaverso",
         descricao:
@@ -1511,7 +1539,7 @@ const dados = [
         //ano: 2018
       },
       {
-        id: 46,
+        id: 47,
         tipo: "movie",
         titulo: "Homem de Ferro",
         descricao:
@@ -1524,7 +1552,7 @@ const dados = [
         //ano: 2008
       },
       {
-        id: 47,
+        id: 48,
         tipo: "movie",
         titulo: "Homem de Ferro 2",
         descricao:
@@ -1537,7 +1565,7 @@ const dados = [
         //ano: 2010
       },
       {
-        id: 48,
+        id: 49,
         tipo: "movie",
         titulo: "Homem de Ferro 3",
         descricao:
@@ -1550,7 +1578,7 @@ const dados = [
         //ano: 2013
       },
       {
-        id: 49,
+        id: 50,
         tipo: "movie",
         titulo: "Thor",
         descricao:
@@ -1563,7 +1591,7 @@ const dados = [
         //ano: 2011
       },
       {
-        id: 50,
+        id: 51,
         tipo: "movie",
         titulo: "Thor 2: O Mundo das Trevas",
         descricao:
@@ -1576,7 +1604,7 @@ const dados = [
         //ano: 2013
       },
       {
-        id: 51,
+        id: 52,
         tipo: "movie",
         titulo: "Thor: Ragnarok",
         descricao:
@@ -1589,7 +1617,7 @@ const dados = [
         //ano: 2017
       },
       {
-        id: 52,
+        id: 53,
         tipo: "movie",
         titulo: "Thor: Amor e Trovão",
         descricao:
@@ -1602,7 +1630,7 @@ const dados = [
         //ano: 2022
       },
       {
-        id: 53,
+        id: 54,
         tipo: "movie",
         titulo: "Homem-Aranha",
         descricao:
@@ -1615,7 +1643,7 @@ const dados = [
         //ano: 2002
       },
       {
-        id: 54,
+        id: 55,
         tipo: "movie",
         titulo: "Homem-Aranha 2",
         descricao:
@@ -1628,7 +1656,7 @@ const dados = [
         //ano: 2004
       },
       {
-        id: 55,
+        id: 56,
         tipo: "movie",
         titulo: "Homem-Aranha 3",
         descricao:
@@ -1641,7 +1669,7 @@ const dados = [
         //ano: 2007
       },
       {
-        id: 56,
+        id: 57,
         tipo: "movie",
         titulo: "O Espetacular Homem-Aranha",
         descricao:
@@ -1654,7 +1682,7 @@ const dados = [
         //ano: 2012
       },
       {
-        id: 57,
+        id: 58,
         tipo: "movie",
         titulo: "O Espetacular Homem-Aranha 2",
         descricao:
@@ -1667,7 +1695,7 @@ const dados = [
         //ano: 2014
       },
       {
-        id: 58,
+        id: 59,
         tipo: "movie",
         titulo: "Sorria",
         descricao:
@@ -1680,7 +1708,7 @@ const dados = [
         //ano: 2022
       },
       {
-        id: 59,
+        id: 60,
         tipo: "movie",
         titulo: "Bird Box",
         descricao:
@@ -1693,7 +1721,7 @@ const dados = [
         //ano: 2018
       },
       {
-        id: 60,
+        id: 61,
         tipo: "movie",
         titulo: "Minha mãe é uma peça",
         descricao:
@@ -1706,7 +1734,7 @@ const dados = [
         //ano: 2013
       },
       {
-        id: 61,
+        id: 62,
         tipo: "movie",
         titulo: "As Branquelas",
         descricao:
@@ -1719,7 +1747,7 @@ const dados = [
         //ano: 2000
       },
       {
-        id: 62,
+        id: 63,
         tipo: "movie",
         titulo: "Tropa de Elite",
         descricao:
@@ -1732,7 +1760,7 @@ const dados = [
         //ano: 2007
       },
       {
-        id: 63,
+        id: 64,
         tipo: "movie",
         titulo: "bob esponja: o incrivel resgate",
         descricao:
@@ -1745,7 +1773,7 @@ const dados = [
         //ano: 2020
       },
       {
-        id: 64,
+        id: 65,
         tipo: "movie",
         titulo: "Travis Scott: Voando Alto - Legendado",
         descricao:
