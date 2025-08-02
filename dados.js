@@ -1293,15 +1293,15 @@ const dados = [
       {
         id: 37,
         tipo: "movie",
-        titulo: "Sorria",
+        titulo: "Sorria 2",
         descricao:
-          "Após presenciar um evento traumático, uma terapeuta começa a vivenciar eventos assustadores.",
-        imagem: "imagens/sorria.webp",
+          "Sorria 2 é um filme de terror psicológico onde uma jovem médica enfrenta uma entidade sobrenatural que se alimenta do medo, enquanto tenta desvendar os mistérios por trás de uma série de eventos perturbadores.",
+        imagem: "imagens/sorria-2.webp",
         video:
-          "https://drive.google.com/file/d/1-YpwEhiJZBieq3DZom2PZFvLVW2LJd6N/preview",
-        trailer: "https://www.youtube.com/embed/BcDK7lkzzsU",
+          "https://drive.google.com/file/d/1EnQDB4clHP2E_NpXzObNZYfTehUzClN9/preview",
+        trailer: "https://www.youtube.com/embed/_e-yvJV9NpM",
         generos: ["terror", "drama"],
-        //ano: 2022
+        //ano: 2025
       },
       {
         id: 38,
@@ -1669,6 +1669,19 @@ const dados = [
       {
         id: 58,
         tipo: "movie",
+        titulo: "Sorria",
+        descricao:
+          "Após presenciar um evento traumático, uma terapeuta começa a vivenciar eventos assustadores.",
+        imagem: "imagens/sorria.webp",
+        video:
+          "https://drive.google.com/file/d/1-YpwEhiJZBieq3DZom2PZFvLVW2LJd6N/preview",
+        trailer: "https://www.youtube.com/embed/BcDK7lkzzsU",
+        generos: ["terror", "drama"],
+        //ano: 2022
+      },
+      {
+        id: 59,
+        tipo: "movie",
         titulo: "Bird Box",
         descricao:
           "Bird Box mostra uma mãe e seus filhos tentando sobreviver vendados a criaturas que enlouquecem quem as vê.",
@@ -1680,7 +1693,7 @@ const dados = [
         //ano: 2018
       },
       {
-        id: 59,
+        id: 60,
         tipo: "movie",
         titulo: "Minha mãe é uma peça",
         descricao:
@@ -1693,7 +1706,7 @@ const dados = [
         //ano: 2013
       },
       {
-        id: 60,
+        id: 61,
         tipo: "movie",
         titulo: "As Branquelas",
         descricao:
@@ -1706,7 +1719,7 @@ const dados = [
         //ano: 2000
       },
       {
-        id: 61,
+        id: 62,
         tipo: "movie",
         titulo: "Tropa de Elite",
         descricao:
@@ -1719,7 +1732,7 @@ const dados = [
         //ano: 2007
       },
       {
-        id: 62,
+        id: 63,
         tipo: "movie",
         titulo: "bob esponja: o incrivel resgate",
         descricao:
@@ -1732,7 +1745,7 @@ const dados = [
         //ano: 2020
       },
       {
-        id: 63,
+        id: 64,
         tipo: "movie",
         titulo: "Travis Scott: Voando Alto - Legendado",
         descricao:
