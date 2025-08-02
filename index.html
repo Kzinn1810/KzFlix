@@ -754,16 +754,21 @@
   </section>
 
   <!-- Cria a seção "Continuar Assistindo" abaixo dos lançamentos -->
-  <section id="continuar-assistindo" style="margin: 40px 0; position: relative;">
-    <h2 class="secao-titulo" style="display: flex; align-items: center; justify-content: space-between;">
-      <span>⏳ Continuar Assistindo</span>
+  <section id="continuar-assistindo" style="margin: 40px 0; position: relative; background: linear-gradient(90deg,#181818 0%,#222 100%); border-radius: 18px; box-shadow: 0 4px 24px #0004; padding: 28px 18px 24px 18px;">
+    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px;">
+      <h2 style="font-size:1.5rem; color:#fff; margin:0; font-weight:bold; letter-spacing:1px; text-shadow:0 2px 8px #0008;">⏳ Continuar Assistindo</h2>
+      <button id="btn-limpar-historico" style="background:#e50914;color:#fff;border:none;padding:8px 18px;border-radius:24px;cursor:pointer;font-size:14px;display:none;box-shadow:0 2px 8px #0004;">🗑️ Limpar Histórico</button>
+    </div>
+    <div id="vitrine-continuar" class="vitrine-scroll" style="display:flex;gap:18px;overflow-x:auto;padding-bottom:8px;"></div>
+  </section>
+  <div class="vitrine-scroll" id="vitrine-continuar"></div>
       <button id="btn-limpar-historico"
         style="display:none; background:#e50914; color:#fff; border:none; border-radius:7px; padding:8px 18px; font-size:14px; font-weight:bold; cursor:pointer; margin-left:16px;"
         title="Limpar histórico de continuar assistindo">
         🗑️ Limpar Histórico
       </button>
     </h2>
-    <div class="vitrine-scroll" id="vitrine-continuar"></div>
+    
   </section>
 
   <main>
@@ -1839,7 +1844,7 @@ function obterTempoAssistido(usuario, idVideo) {
   if (!obj) return 0;
   try {
     return JSON.parse(obj).tempo || 0;
-  } catch {
+  } catch (e) {
     return 0;
   }
 }
@@ -1885,19 +1890,25 @@ function renderizarContinuarAssistindo() {
           </div>
         </div>
       `;
+      function getSerieCompleta(titulo) {
+        if (typeof dados !== 'undefined') {
+          return dados.find(f => (f.tipo === 'series' || f.tipo === 'serie') && f.titulo === titulo);
+        }
+        return { titulo };
+      }
       card.querySelector('.continuar-btn').onclick = (e) => {
         e.stopPropagation();
         abrirModalPlayer(obj.video, (obj.tipo === 'series' || obj.tipo === 'serie') ? {
-          tipo: obj.tipo,
-          serie: { titulo: obj.titulo },
+          tipo: 'serie',
+          serie: getSerieCompleta(obj.titulo),
           temporada: obj.temporada,
           episodio: obj.episodio
         } : null, obj.tempo);
       };
       card.onclick = () => {
         abrirModalPlayer(obj.video, (obj.tipo === 'series' || obj.tipo === 'serie') ? {
-          tipo: obj.tipo,
-          serie: { titulo: obj.titulo },
+          tipo: 'serie',
+          serie: getSerieCompleta(obj.titulo),
           temporada: obj.temporada,
           episodio: obj.episodio
         } : null, obj.tempo);
@@ -2123,7 +2134,6 @@ btnSalvarPonto._salvarTempo = function(tempoTotal) {
     if (!serieDados && serieTitulo && typeof dados !== 'undefined') {
       serieDados = dados.find(f => normalizar(f.titulo) === normalizar(serieTitulo));
     }
-    console.log('Salvar série:', { serieTitulo, serieDados });
     if (serieDados && imagemValida(serieDados.imagem)) {
       let imagem = serieDados.imagem;
       let titulo = tituloValido(serieDados.titulo) ? serieDados.titulo : (serieTitulo || 'Série');
@@ -2133,14 +2143,13 @@ btnSalvarPonto._salvarTempo = function(tempoTotal) {
         titulo,
         imagem,
         video: link,
-        tipo: serieDados.tipo,
+        tipo: 'serie',
         ano: serieDados.ano || '',
         descricao: serieDados.descricao || '',
         temporada,
         episodio
       };
     } else {
-      console.warn('Não encontrou imagem válida para série:', serieTitulo, serieDados);
       return;
     }
   } else {
@@ -2184,7 +2193,7 @@ btnSalvarPonto._salvarTempo = function(tempoTotal) {
   if (!info.titulo) info.titulo = 'Conteúdo';
   if (!info.imagem) info.imagem = imagem;
   if (!info.video) info.video = link;
-  if (!info.tipo) info.tipo = 'series';
+  if (!info.tipo) info.tipo = 'conteudo';
   salvarTempoAssistido(usuario, idVideo, tempoTotal, info);
   renderizarContinuarAssistindo();
   // Popup de sucesso
