@@ -1526,6 +1526,7 @@ toggleSenha.addEventListener('click', () => {
         // Reexibe botões ao sair do fullscreen
         btnFecharPlayer.style.display = '';
         btnFullscreenPlayer.style.display = 'block';
+        btnSalvarPonto.style.display = 'inline-block';
         if (episodioAtualInfo && episodioAtualInfo.tipo === 'serie') {
           btnPularCapitulo.style.display = 'inline-block';
         } else {
@@ -1740,6 +1741,7 @@ toggleSenha.addEventListener('click', () => {
     // Exibir lançamentos recentes (com base em alguns títulos)
     function exibirLancamentosRecentes() {
   const ordemDesejada = [
+    "Outer Banks",
     "Exterminio: A Evolução",
     "Dexter: Ressurreição",
     "A fonte da juventude",
@@ -1749,7 +1751,6 @@ toggleSenha.addEventListener('click', () => {
     "Ballerina - Do Universo de John Wick",
     "Round 6",
     "Pecadores",
-    "Um Filme Minecraft",
   ];
   const lancamentosRecentes = ordemDesejada
     .map(titulo => dados.find(item => item.titulo === titulo))
