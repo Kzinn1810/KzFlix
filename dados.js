@@ -748,6 +748,21 @@ const dados = [
               { numero: 10, titulo: "O Fantasma", video: "https://drive.google.com/file/d/1oXLutqi1O2zRy-8zoSUgULladHS0KgDj/preview" },
             ],
           },
+          {
+            numero: 2,
+            episodios: [
+              { numero: 1, titulo: "O Ouro", video: "https://drive.google.com/file/d/1kjA22jzWgojgibw9y2LozbLPTmRdipqh/preview" },
+              { numero: 2, titulo: "O Relógio", video: "https://drive.google.com/file/d/1gwisRjCjJPH0ufSbvobRkeKuhy8hws_e/preview" },
+              { numero: 3, titulo: "Prisioneiros", video: "https://drive.google.com/file/d/1YVQK4qFFJRgMVwJCB-Zq2MG-Thx8kv3u/preview" },
+              { numero: 4, titulo: "Casa", video: "https://drive.google.com/file/d/1fq0LotsmWUOIun1qoA64y9mSui0EFrnx/preview" },
+              { numero: 5, titulo: "A Trilha", video: "https://drive.google.com/file/d/1oph8EjanssPLAOlXm-hp_MkrkNIIByHe/preview" },
+              { numero: 6, titulo: "Minha Druthers", video: "https://drive.google.com/file/d/1eCfqq2lf03vxSFzHpOiul7tv8ITyu6zx/preview" },
+              { numero: 7, titulo: "O Paraíso na Terra", video: "https://drive.google.com/file/d/1mHK9pD_fNSf2kfOzy8z4wBSwcFnxTXgf/preview" },
+              { numero: 8, titulo: "O Desafio", video: "https://drive.google.com/file/d/1Hyn-vPWm8ZG5vrhFnCW77F8t82kmzNPd/preview" },
+              { numero: 9, titulo: "Trilha do Inferno", video: "https://drive.google.com/file/d/1JFlgfKjqwCBfGxp-UD2KsEie_UGAuPjL/preview" },
+              { numero: 10, titulo: "O Cofre", video: "https://drive.google.com/file/d/1NUe6JipeHfMizk-PK1dxmD38m0t7d4N9/preview" },
+            ],
+          },
         ],
         trailer: "https://www.youtube.com/embed/uk_hFfUFXh4",
         generos: ["aventura", "mistério", "drama"],
@@ -1047,6 +1062,26 @@ const dados = [
               { numero: 98, titulo: "O Aviso de Tsunade", video: "https://drive.google.com/file/d/14w44tQkraJEGYYFPJYhVMv1b0EmHCmAI/preview" },
               { numero: 99, titulo: "A Vontade de Fogo Ainda Queima", video: "https://drive.google.com/file/d/14w2U9g9pz-0ogqC_I8Htvi2eOtbuwF9c/preview" },
               { numero: 100, titulo: "Sensei e o Aluno: O Laço dos Shinobi!", video: "https://drive.google.com/file/d/150Kmft3eGXks9M2uTMWoCXgEde-IwRFk/preview" },
+              { numero: 101, titulo: "Você Precisa Ver! Você Precisa Conhecer! O Verdadeiro Rosto do Kakashi-Sensei!", video: "https://drive.google.com/file/d/1Tw7BZhMPxnZnzdGyx_nkYQJ1JOngw863/view" },
+              { numero: 102, titulo: "Missão: Ajudar um Velho Amigo do País do Chá!", video: "https://drive.google.com/file/d/1B8WMK_EU-ledsbQ9_rPoQf5DDhT8AbP7/view" },
+              { numero: 103, titulo: "A Corrida Começou! Problemas em Alto Mar!", video: "https://drive.google.com/file/d/1KZtx60uGKvRzDzu878jlD0ZlWcg9b5e8/view" },
+              { numero: 104, titulo: "Corre, Idate, Corre...", video: "https://drive.google.com/file/d/1ZgGehpBYzFs-0a8fWDbXzW3kzVNDymq6/view" },
+              { numero: 105, titulo: "Uma Batalha Feroz do Trovão Retumbante", video: "https://drive.google.com/file/d/1-nF4XSG6csmg7QY5gIj_ka1EECzO0BHd/view" },
+              { numero: 106, titulo: "O Último Arranco: O Ato Final de Desespero", video: "https://drive.google.com/file/d/1wvPWWJnQShXmzfiXgN_2U3jqndr5YgGb/view" },
+              { numero: 107, titulo: "A Batalha Começa: Naruto contra Sasuke!", video: "https://drive.google.com/file/d/17MiennZVoTt4NsV0MhYUxui4iewMvJTb/view" },
+              { numero: 108, titulo: "Rivais Amargos e Laços Desfeitos", video: "https://drive.google.com/file/d/1WReK0UIMhtusvlFfVtxrnMseal-Le1Wk/view" },
+              { numero: 109, titulo: "Convite da Vila do Som", video: "https://drive.google.com/file/d/1fu-boYONvhb1euvy6muFXQQU4H-eZcQ8/view" },
+              { numero: 110, titulo: "Formada a Equipe de Resgate do Sasuke!", video: "https://drive.google.com/file/d/17nF59YQFwQGaEAsjA6ziEQJaK61ugAwY/view" },
+              { numero: 111, titulo: "Som Contra Folha", video: "https://drive.google.com/file/d/1GodFa5NH3-aVD889PUPOQrus2LdqA_JR/view" },
+              { numero: 112, titulo: "Motim na Equipe: A União se Defaz", video: "https://drive.google.com/file/d/1LT8XrHVXl4Ixm3WPVgtGeDEcuFcH0LVU/view" },
+              { numero: 113, titulo: "Força Total! Chouji, arrasa!", video: "https://drive.google.com/file/d/1aLX9ywi2iWzZX7hoo8bqIiUWU8SplADn/view" },
+              { numero: 114, titulo: "Adeus Velho Amigo", video: "https://drive.google.com/file/d/1YDH-v9M7j6cDFqYB18gLuwIpraZ0sy0w/view" },
+              { numero: 115, titulo: "Seu Oponente Sou Eu!", video: "https://drive.google.com/file/d/1ASEWK82RIG9ipVi09QdvMOQb1OX3Irwj/view" },
+              { numero: 116, titulo: "360 Graus de Visão: O Ponto Cego do Byakugan!", video: "https://drive.google.com/file/d/1bjqr-uryaCOj3IjOYc7ynJf6IdflaFOJ/view" },
+              { numero: 117, titulo: "Perder Não é Uma Opção!", video: "https://drive.google.com/file/d/1t8kJp6_4fT2nPF850GO_m2a_wi98CnB-/view" },
+              { numero: 118, titulo: "O Hospedeiro Chega Tarde Demais!", video: "https://drive.google.com/file/d/1D5clIfzSM9rujHuLWpVdyVQ-6WKwdgh0/view" },
+              { numero: 119, titulo: "Erro de Cálculo: Um Novo Inimigo Aparece!", video: "https://drive.google.com/file/d/17u3ZhIRW7eL8bkuUHALmAz5GWxwD5eeU/view" },
+              { numero: 120, titulo: "Rugidos e Uivos! A Derradeira Equipe de Lutadores", video: "https://drive.google.com/file/d/1LG1RXV3nY8nmR9yI_qim5yvgMF1Uyq5U/view" },
             ],
           },
         ],
@@ -1109,15 +1144,15 @@ const dados = [
       {
         id: 25,
         tipo: "movie",
-        titulo: "Django Livre",
+        titulo: "Moana 2",
         descricao:
-          "Um ex-escravo se une a um caçador de recompensas para resgatar sua esposa das mãos de um cruel fazendeiro no sul dos EUA.",
-        imagem: "imagens/django-livre.webp",
+          "Moana 2 é uma animação de aventura onde Moana e seus amigos embarcam em uma nova jornada para salvar seu povo e descobrir novos horizontes.",
+        imagem: "imagens/moana2.webp",
         video:
-          "https://drive.google.com/file/d/1-3qCPO74VTnIKp6lVNmsiAo6kz3a_2Ye/preview",
-        trailer: "http://www.youtube.com/embed/tivv135aGbc",
-        generos: ["drama"],
-        //ano: 2012
+          "https://drive.google.com/file/d/16fCY_biwvJSj-fZmOVj4acDMGsbSpDbV/preview",
+        trailer: "http://www.youtube.com/embed/lqMJQa3JhZU",
+        generos: ["animação", "aventura", "fantasia"],
+        //ano: 2025
       },
       {
         id: 26,
@@ -1749,6 +1784,19 @@ const dados = [
       {
         id: 63,
         tipo: "movie",
+        titulo: "Django Livre",
+        descricao:
+          "Um ex-escravo se une a um caçador de recompensas para resgatar sua esposa das mãos de um cruel fazendeiro no sul dos EUA.",
+        imagem: "imagens/django-livre.webp",
+        video:
+          "https://drive.google.com/file/d/1-3qCPO74VTnIKp6lVNmsiAo6kz3a_2Ye/preview",
+        trailer: "http://www.youtube.com/embed/tivv135aGbc",
+        generos: ["drama"],
+        //ano: 2012
+      },
+      {
+        id: 64,
+        tipo: "movie",
         titulo: "Tropa de Elite",
         descricao:
           "Um capitão do BOPE enfrenta a violência do tráfico e os dilemas morais da guerra urbana no Rio de Janeiro.",
@@ -1760,7 +1808,7 @@ const dados = [
         //ano: 2007
       },
       {
-        id: 64,
+        id: 65,
         tipo: "movie",
         titulo: "bob esponja: o incrivel resgate",
         descricao:
@@ -1773,7 +1821,7 @@ const dados = [
         //ano: 2020
       },
       {
-        id: 65,
+        id: 66,
         tipo: "movie",
         titulo: "Travis Scott: Voando Alto - Legendado",
         descricao:
