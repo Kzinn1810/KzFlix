@@ -761,7 +761,6 @@
     </div>
     <div id="vitrine-continuar" class="vitrine-scroll" style="display:flex;gap:18px;overflow-x:auto;padding-bottom:8px;"></div>
   </section>
-  <div class="vitrine-scroll" id="vitrine-continuar"></div>
       <button id="btn-limpar-historico"
         style="display:none; background:#e50914; color:#fff; border:none; border-radius:7px; padding:8px 18px; font-size:14px; font-weight:bold; cursor:pointer; margin-left:16px;"
         title="Limpar histórico de continuar assistindo">
@@ -1100,9 +1099,7 @@ toggleSenha.addEventListener('click', () => {
     });
 
     // Variáveis para controle do episódio atual
-    let episodioAtualInfo = null;
-
-
+    window.episodioAtualInfo = null;
     let tipoFiltro = "all";
     let filtroGenero = "all";
     let serieAtual = null; // <-- Adiciona variável global para guardar a série aberta
@@ -1810,7 +1807,7 @@ exibirLancamentosRecentes();
 function salvarTempoAssistido(usuario, idVideo, tempoSegundos, info) {
   if (!usuario || !idVideo) return;
   const chave = `visto_${usuario}_${idVideo}`;
-  // Salva todos os campos relevantes do info, incluindo tempo
+  // Salva todos os campos do objeto info, não apenas tempo
   localStorage.setItem(chave, JSON.stringify({
     ...info,
     video: idVideo,
@@ -1885,6 +1882,8 @@ function renderizarContinuarAssistindo() {
         <div class="vitrine-info">
           <h3>${obj.titulo}</h3>
           ${infoExtra}
+
+
           <p>🕒 Último ponto: ${formatarTempo(obj.tempo)}</p>
           <div class="vitrine-botoes">
             <button class="continuar-btn" style="background:#1db954;color:#fff;border:none;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:13px;">Continuar</button>
@@ -2140,15 +2139,14 @@ btnSalvarPonto._salvarTempo = function(tempoTotal) {
       let titulo = tituloValido(serieDados.titulo) ? serieDados.titulo : (serieTitulo || 'Série');
       let temporada = infoEpisodio.temporada || '';
       let episodio = infoEpisodio.episodio || '';
+      // Garante que todos os campos necessários estão presentes
       info = {
-        titulo,
-        imagem,
-        video: link,
-        tipo: 'serie',
-        ano: serieDados.ano || '',
-        descricao: serieDados.descricao || '',
-        temporada,
-        episodio
+        tipo: 'series',
+        imagem: imagem || '',
+        titulo: titulo || '',
+        temporada: temporada || '',
+        episodio: episodio || '',
+        video: link
       };
     } else {
       return;
