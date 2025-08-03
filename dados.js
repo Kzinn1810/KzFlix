@@ -496,149 +496,39 @@ const dados = [
           {
             numero: 1,
             episodios: [
-              {
-                numero: 1,
-                titulo: "Luz Vermelha, Luz Verde",
-                video:
-                  "https://drive.google.com/file/d/1plAblGZJOYvfpaUkiOvZRS965JuDATPt/preview",
-              },
-              {
-                numero: 2,
-                titulo: "Inferno",
-                video:
-                  "https://drive.google.com/file/d/165hBLBc7qJetgp3d7NFquYSrdFKE4OL1/preview",
-              },
-              {
-                numero: 3,
-                titulo: "O Homem do Guarda-Chuva",
-                video:
-                  "https://drive.google.com/file/d/168-iztih5KB9JZzFyld_IWRe3iRmKqko/preview",
-              },
-              {
-                numero: 4,
-                titulo: "Permaneçam Juntos",
-                video:
-                  "https://drive.google.com/file/d/168Be9u375lh8o3d7BzHpbIBIxOIG0jnB/preview",
-              },
-              {
-                numero: 5,
-                titulo: "Um Mundo Justo",
-                video:
-                  "https://drive.google.com/file/d/16CT1-nbETzJOVLP-DeaMb34I_aG3Twwm/preview",
-              },
-              {
-                numero: 6,
-                titulo: "Bolinhas",
-                video:
-                  "https://drive.google.com/file/d/16GIMa-7v50JOtvtwwdzYrVeUh0WFHjcG/preview",
-              },
-              {
-                numero: 7,
-                titulo: "VIPs",
-                video:
-                  "https://drive.google.com/file/d/16LQCb7Xi71vHFMAy0M8XV3AkaH95vhL4/preview",
-              },
-              {
-                numero: 8,
-                titulo: "O Homem de Máscara",
-                video:
-                  "https://drive.google.com/file/d/16XTerbnW_3CfiGx-26wHHjc_iBnzTV5x/preview",
-              },
-              {
-                numero: 9,
-                titulo: "Um Dia de Sorte",
-                video:
-                  "https://drive.google.com/file/d/16_m0OF95EcGnL0d7f2lTPuJoNZe8VYaj/preview",
-              },
-            ],
+              { numero: 1, titulo: "Luz Vermelha, Luz Verde", video: "https://drive.google.com/file/d/1plAblGZJOYvfpaUkiOvZRS965JuDATPt/preview" },
+              { numero: 2, titulo: "Inferno", video: "https://drive.google.com/file/d/165hBLBc7qJetgp3d7NFquYSrdFKE4OL1/preview" },
+              { numero: 3, titulo: "O Homem do Guarda-Chuva", video: "https://drive.google.com/file/d/168-iztih5KB9JZzFyld_IWRe3iRmKqko/preview" },
+              { numero: 4, titulo: "Permaneçam Juntos", video: "https://drive.google.com/file/d/168Be9u375lh8o3d7BzHpbIBIxOIG0jnB/preview" },
+              { numero: 5, titulo: "Um Mundo Justo", video: "https://drive.google.com/file/d/16CT1-nbETzJOVLP-DeaMb34I_aG3Twwm/preview" },
+              { numero: 6, titulo: "Bolinhas", video: "https://drive.google.com/file/d/16GIMa-7v50JOtvtwwdzYrVeUh0WFHjcG/preview" },
+              { numero: 7, titulo: "VIPs", video: "https://drive.google.com/file/d/16LQCb7Xi71vHFMAy0M8XV3AkaH95vhL4/preview" },
+              { numero: 8, titulo: "O Homem de Máscara", video: "https://drive.google.com/file/d/16XTerbnW_3CfiGx-26wHHjc_iBnzTV5x/preview" },
+              { numero: 9, titulo: "Um Dia de Sorte", video: "https://drive.google.com/file/d/16_m0OF95EcGnL0d7f2lTPuJoNZe8VYaj/preview" }
+            ]
           },
           {
             numero: 2,
             episodios: [
-              {
-                numero: 1,
-                titulo: "Pão e loteria",
-                video:
-                  "https://drive.google.com/file/d/1-DEqWPiCH3Fa5huZ16NJkyImXIKn0mn3/preview",
-              },
-              {
-                numero: 2,
-                titulo: "Festa de Halloween",
-                video:
-                  "https://drive.google.com/file/d/1-DMqFIOWMjJ7clzxX9GIeh2bM6Ye5b_h/preview",
-              },
-              {
-                numero: 3,
-                titulo: "001",
-                video:
-                  "https://drive.google.com/file/d/1-EjrF5YGVmS-Zpf6cHALTaX0CfdfTX7Z/preview",
-              },
-              {
-                numero: 4,
-                titulo: "Seis pernas",
-                video:
-                  "https://drive.google.com/file/d/1-GAx5WoRSLbrRsWiinGQqsQX5EaZB4Gq/preview",
-              },
-              {
-                numero: 5,
-                titulo: "Mais um jogo",
-                video:
-                  "https://drive.google.com/file/d/1-HB2yLA2bLHVi4Xm2Gkg47o7Rxw3SlVj/preview",
-              },
-              {
-                numero: 6,
-                titulo: "0 X",
-                video:
-                  "https://drive.google.com/file/d/1-HSSIvXIpUCgRAHROjuevSwkur66OH0t/preview",
-              },
-              {
-                numero: 7,
-                titulo: "Amigos ou inimigos?",
-                video:
-                  "https://drive.google.com/file/d/1-JolDVAyIfwVmg3BJEgosKImdu8ByIi-/preview",
-              },
-            ],
+              { numero: 1, titulo: "Pão e loteria", video: "https://drive.google.com/file/d/1-DEqWPiCH3Fa5huZ16NJkyImXIKn0mn3/preview" },
+              { numero: 2, titulo: "Festa de Halloween", video: "https://drive.google.com/file/d/1-DMqFIOWMjJ7clzxX9GIeh2bM6Ye5b_h/preview" },
+              { numero: 3, titulo: "001", video: "https://drive.google.com/file/d/1-EjrF5YGVmS-Zpf6cHALTaX0CfdfTX7Z/preview" },
+              { numero: 4, titulo: "Seis pernas", video: "https://drive.google.com/file/d/1-GAx5WoRSLbrRsWiinGQqsQX5EaZB4Gq/preview" },
+              { numero: 5, titulo: "Mais um jogo", video: "https://drive.google.com/file/d/1-HB2yLA2bLHVi4Xm2Gkg47o7Rxw3SlVj/preview" },
+              { numero: 6, titulo: "0 X", video: "https://drive.google.com/file/d/1-HSSIvXIpUCgRAHROjuevSwkur66OH0t/preview" },
+              { numero: 7, titulo: "Amigos ou inimigos?", video: "https://drive.google.com/file/d/1-JolDVAyIfwVmg3BJEgosKImdu8ByIi-/preview" }
+            ]
           },
           {
             numero: 3,
             episodios: [
-              {
-                numero: 1,
-                titulo: "Chaves e facas",
-                video:
-                  "https://drive.google.com/file/d/1-MCw1KdTiRNvO8KB5n9-L7doK5WqWKCE/preview",
-              },
-              {
-                numero: 2,
-                titulo: "Noite estrelada",
-                video:
-                  "https://drive.google.com/file/d/1-N9vW1aFWCzFuOY5FQ7IeNCTAEhhNTwB/preview",
-              },
-              {
-                numero: 3,
-                titulo: "Não é culpa sua",
-                video:
-                  "https://drive.google.com/file/d/1-QF6s40AIBTBzt0AoQfoypii8bPw39Mp/preview",
-              },
-              {
-                numero: 4,
-                titulo: "222",
-                video:
-                  "https://drive.google.com/file/d/1-TJ3aoQt6OTHSpoUmTX_b0Nyc7gC3Sse/preview",
-              },
-              {
-                numero: 5,
-                titulo: "○△□",
-                video:
-                  "https://drive.google.com/file/d/1-TU3MzisTGl7C54Pr_iY0OSvlkZBDSyh/preview",
-              },
-              {
-                numero: 6,
-                titulo: "Humanos",
-                video:
-                  "https://drive.google.com/file/d/1-ajNJxcGW27vaOlSzSwnahqVo42fCIBK/preview",
-              },
-            ],
+              { numero: 1, titulo: "Chaves e facas", video: "https://drive.google.com/file/d/1-MCw1KdTiRNvO8KB5n9-L7doK5WqWKCE/preview" },
+              { numero: 2, titulo: "Noite estrelada", video: "https://drive.google.com/file/d/1-N9vW1aFWCzFuOY5FQ7IeNCTAEhhNTwB/preview" },
+              { numero: 3, titulo: "Não é culpa sua", video: "https://drive.google.com/file/d/1-QF6s40AIBTBzt0AoQfoypii8bPw39Mp/preview" },
+              { numero: 4, titulo: "222", video: "https://drive.google.com/file/d/1-TJ3aoQt6OTHSpoUmTX_b0Nyc7gC3Sse/preview" },
+              { numero: 5, titulo: "○△□", video: "https://drive.google.com/file/d/1-TU3MzisTGl7C54Pr_iY0OSvlkZBDSyh/preview" },
+              { numero: 6, titulo: "Humanos", video: "https://drive.google.com/file/d/1-ajNJxcGW27vaOlSzSwnahqVo42fCIBK/preview" }
+            ]
           },
         ],
         trailer: "https://www.youtube.com/embed/oqxAJKy0ii4",
@@ -701,9 +591,9 @@ const dados = [
               { numero: 2, titulo: "Os Sobreviventes", video: "https://drive.google.com/file/d/1-J8ffOln6uk10gyGzm_KXIPNd2MPQntQ/preview" },
               { numero: 3, titulo: "Adão e Eva", video: "https://drive.google.com/file/d/1-K1JRMPOkxqVZ5ldNlQPO-bErCpqoxs8/preview" },
               { numero: 4, titulo: "A Origem", video: "https://drive.google.com/file/d/1-HE4B9cVybxrS2lhTmcYCnX96aCe1WN-/preview" },
-              { numero: 5, titulo: "Vida e Morte", video: "https://drive.google.com/file/d/1-FpcvxoXMxho39i7NT0nR68pXQcFrD_x/preview" },
+              { numero: 5, titulo: "Vida e Morte", video: "https://drive.google.com/file/d/1mLnJPtzDwfs1SSLiUoLwjjWbMPEorL6-/preview" },
               { numero: 6, titulo: "Luz e Sombra", video: "https://drive.google.com/file/d/1-UFyVqiTbZ0w61lvC2qigftrit3FQRCg/preview" },
-              { numero: 7, titulo: "Entre o Tempo", video: "https://drive.google.com/file/d/11EJjCC-iMSRValSQssQas4dqXVEBgree/preview" },
+              { numero: 7, titulo: "Entre o Tempo", video: "https://drive.google.com/file/d/1ywPI8JgybfN8iRZqVDtnV3kPe9mmOn-D/preview" },
               { numero: 8, titulo: "O Paraíso", video: "https://drive.google.com/file/d/1-RYxpvU_GHbt9sBMTMWvK-C7G_ruktiP/preview" },
             ],
           },
