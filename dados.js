@@ -796,15 +796,15 @@ const dados = [
       {
         id: 15,
         tipo: "movie",
-        titulo: "Ballerina - Do Universo de John Wick",
+        titulo: "Oppenheimer",
         descricao:
-          "A trama segue uma assassina habilidosa, interpretada por Ana de Armas, que foi treinada nas tradições da organização Ruska Roma.",
-        imagem: "imagens/ballerina.webp",
+          "Oppenheimer é um drama biográfico que retrata a vida de J. Robert Oppenheimer, o físico teórico que liderou o Projeto Manhattan e ajudou a desenvolver a primeira bomba atômica durante a Segunda Guerra Mundial.",
+        imagem: "imagens/oppenheimer.webp",
         video:
-          "https://drive.google.com/file/d/11D9uDj3Scnc7vIYl1-gxsDHy1149-iUP/preview",
-        trailer: "https://www.youtube.com/embed/EPf9rNjbBpw",
-        generos: ["ação", "suspense"],
-        //ano: 2025
+          "https://drive.google.com/file/d/1KyLuCtH9nG4CUqUWEr9q5dGpo_GbNOMF/preview",
+        trailer: "https://www.youtube.com/embed/F3OxA9Cz17A",
+        generos: ["biografia", "drama", "história"],
+        //ano: 2023
       },
       {
         id: 16,
@@ -1587,6 +1587,19 @@ const dados = [
       {
         id: 54,
         tipo: "movie",
+        titulo: "Ballerina - Do Universo de John Wick",
+        descricao:
+          "A trama segue uma assassina habilidosa, interpretada por Ana de Armas, que foi treinada nas tradições da organização Ruska Roma.",
+        imagem: "imagens/ballerina.webp",
+        video:
+          "https://drive.google.com/file/d/11D9uDj3Scnc7vIYl1-gxsDHy1149-iUP/preview",
+        trailer: "https://www.youtube.com/embed/EPf9rNjbBpw",
+        generos: ["ação", "suspense"],
+        //ano: 2025
+      },
+      {
+        id: 55,
+        tipo: "movie",
         titulo: "Homem-Aranha",
         descricao:
           "Homem-Aranha é um filme de super-herói baseado no personagem da Marvel, onde um jovem ganha poderes aracnídeos e luta contra o crime em Nova York.",
@@ -1598,7 +1611,7 @@ const dados = [
         //ano: 2002
       },
       {
-        id: 55,
+        id: 56,
         tipo: "movie",
         titulo: "Homem-Aranha 2",
         descricao:
@@ -1611,7 +1624,7 @@ const dados = [
         //ano: 2004
       },
       {
-        id: 56,
+        id: 57,
         tipo: "movie",
         titulo: "Homem-Aranha 3",
         descricao:
@@ -1624,7 +1637,7 @@ const dados = [
         //ano: 2007
       },
       {
-        id: 57,
+        id: 58,
         tipo: "movie",
         titulo: "O Espetacular Homem-Aranha",
         descricao:
@@ -1637,7 +1650,7 @@ const dados = [
         //ano: 2012
       },
       {
-        id: 58,
+        id: 59,
         tipo: "movie",
         titulo: "O Espetacular Homem-Aranha 2",
         descricao:
@@ -1650,7 +1663,7 @@ const dados = [
         //ano: 2014
       },
       {
-        id: 59,
+        id: 60,
         tipo: "movie",
         titulo: "Sorria",
         descricao:
@@ -1663,7 +1676,7 @@ const dados = [
         //ano: 2022
       },
       {
-        id: 60,
+        id: 61,
         tipo: "movie",
         titulo: "Bird Box",
         descricao:
@@ -1676,7 +1689,7 @@ const dados = [
         //ano: 2018
       },
       {
-        id: 61,
+        id: 62,
         tipo: "movie",
         titulo: "Minha mãe é uma peça",
         descricao:
@@ -1689,7 +1702,7 @@ const dados = [
         //ano: 2013
       },
       {
-        id: 62,
+        id: 63,
         tipo: "movie",
         titulo: "As Branquelas",
         descricao:
@@ -1702,7 +1715,7 @@ const dados = [
         //ano: 2000
       },
       {
-        id: 63,
+        id: 64,
         tipo: "movie",
         titulo: "Django Livre",
         descricao:
@@ -1715,7 +1728,33 @@ const dados = [
         //ano: 2012
       },
       {
-        id: 64,
+        id: 65,
+        tipo: "movie",
+        titulo: "M3GAN",
+        descricao:
+          "Uma inteligência artificial projetada para ser a companheira perfeita de uma menina órfã começa a agir de forma autônoma e violenta.",
+        imagem: "imagens/megan.webp",
+        video:
+          "https://drive.google.com/file/d/1920vNpTEfny3yQvlGQKMvSEGAZAc9qde/preview",
+        trailer: "http://www.youtube.com/embed//BRb4U99OU8",
+        generos: ["terror", "suspense"],
+        //ano: 2023
+      },
+      {
+        id: 66,
+        tipo: "movie",
+        titulo: "M3GAN 2.0",
+        descricao:
+          "A sequência de M3GAN continua a história da inteligência artificial que se torna uma ameaça, explorando as consequências de sua criação e os desafios enfrentados por seus criadores.",
+        imagem: "imagens/megan-2.0.webp",
+        video:
+          "https://drive.google.com/file/d/1nOEyLAnMjZOqvW8hpO8rkkXWQeuD2-gm/preview",
+        trailer: "http://www.youtube.com/embed/kX8yjM09qLQ",
+        generos: ["terror", "suspense"],
+        //ano: 2025
+      },
+      {
+        id: 67,
         tipo: "movie",
         titulo: "Tropa de Elite",
         descricao:
@@ -1728,7 +1767,7 @@ const dados = [
         //ano: 2007
       },
       {
-        id: 65,
+        id: 68,
         tipo: "movie",
         titulo: "bob esponja: o incrivel resgate",
         descricao:
@@ -1741,7 +1780,7 @@ const dados = [
         //ano: 2020
       },
       {
-        id: 66,
+        id: 69,
         tipo: "movie",
         titulo: "Travis Scott: Voando Alto - Legendado",
         descricao:
