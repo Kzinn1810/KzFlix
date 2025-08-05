@@ -1457,6 +1457,19 @@ const dados = [
       {
         id: 44,
         tipo: "movie",
+        titulo: "Alien: Romulus",
+        descricao:
+          "Alien: Romulus é um filme de ficção científica e terror que explora a origem dos xenomorfos, criaturas alienígenas mortais, em um cenário sombrio e atmosférico.",
+        imagem: "imagens/alien.webp",
+        video:
+          "https://drive.google.com/file/d/1h5U3Kl9XrEwb0AEbd5DTKwgyV8a8LKIk/preview",
+        trailer: "http://www.youtube.com/embed/-Eu7XVppK6Q",
+        generos: ["ação", "aventura", "ficção científica"],
+        //ano: 2024
+      },
+      {
+        id: 45,
+        tipo: "movie",
         titulo: "Venom",
         descricao:
           "Venom é um filme de super-herói baseado no personagem da Marvel, onde um jornalista se torna hospedeiro de uma entidade alienígena que lhe concede habilidades sobre-humanas.",
@@ -1468,7 +1481,7 @@ const dados = [
         //ano: 2018
       },
       {
-        id: 45,
+        id: 46,
         tipo: "movie",
         titulo: "Homem-Aranha: De Volta ao Lar",
         descricao:
@@ -1481,7 +1494,7 @@ const dados = [
         //ano: 2017
       },
       {
-        id: 46,
+        id: 47,
         tipo: "movie",
         titulo: "Homem-Aranha no Aranhaverso",
         descricao:
@@ -1494,7 +1507,7 @@ const dados = [
         //ano: 2018
       },
       {
-        id: 47,
+        id: 48,
         tipo: "movie",
         titulo: "Homem de Ferro",
         descricao:
@@ -1507,7 +1520,7 @@ const dados = [
         //ano: 2008
       },
       {
-        id: 48,
+        id: 49,
         tipo: "movie",
         titulo: "Homem de Ferro 2",
         descricao:
@@ -1520,7 +1533,7 @@ const dados = [
         //ano: 2010
       },
       {
-        id: 49,
+        id: 50,
         tipo: "movie",
         titulo: "Homem de Ferro 3",
         descricao:
@@ -1533,7 +1546,7 @@ const dados = [
         //ano: 2013
       },
       {
-        id: 50,
+        id: 51,
         tipo: "movie",
         titulo: "Thor",
         descricao:
@@ -1546,7 +1559,7 @@ const dados = [
         //ano: 2011
       },
       {
-        id: 51,
+        id: 52,
         tipo: "movie",
         titulo: "Thor 2: O Mundo das Trevas",
         descricao:
@@ -1559,7 +1572,7 @@ const dados = [
         //ano: 2013
       },
       {
-        id: 52,
+        id: 53,
         tipo: "movie",
         titulo: "Thor: Ragnarok",
         descricao:
@@ -1572,7 +1585,7 @@ const dados = [
         //ano: 2017
       },
       {
-        id: 53,
+        id: 54,
         tipo: "movie",
         titulo: "Thor: Amor e Trovão",
         descricao:
@@ -1585,7 +1598,7 @@ const dados = [
         //ano: 2022
       },
       {
-        id: 54,
+        id: 55,
         tipo: "movie",
         titulo: "Ballerina - Do Universo de John Wick",
         descricao:
@@ -1598,7 +1611,20 @@ const dados = [
         //ano: 2025
       },
       {
-        id: 55,
+        id: 56,
+        tipo: "movie",
+        titulo: "Barbie",
+        descricao:
+          "Barbie é um filme que explora a vida de uma boneca icônica, mostrando sua jornada de autodescoberta e empoderamento em um mundo cheio de desafios e aventuras.",
+        imagem: "imagens/barbie.webp",
+        video:
+          "https://drive.google.com/file/d/1rLTXfato7uep6YyOhmz4vzbQvChWYa5G/preview",
+        trailer: "https://www.youtube.com/embed/Ujs1Ud7k49M",
+        generos: ["aventura", "comédia", "fantasia"],
+        //ano: 2023
+      },
+      {
+        id: 57,
         tipo: "movie",
         titulo: "Homem-Aranha",
         descricao:
@@ -1611,7 +1637,7 @@ const dados = [
         //ano: 2002
       },
       {
-        id: 56,
+        id: 58,
         tipo: "movie",
         titulo: "Homem-Aranha 2",
         descricao:
@@ -1624,7 +1650,7 @@ const dados = [
         //ano: 2004
       },
       {
-        id: 57,
+        id: 59,
         tipo: "movie",
         titulo: "Homem-Aranha 3",
         descricao:
@@ -1637,7 +1663,7 @@ const dados = [
         //ano: 2007
       },
       {
-        id: 58,
+        id: 60,
         tipo: "movie",
         titulo: "O Espetacular Homem-Aranha",
         descricao:
@@ -1650,7 +1676,7 @@ const dados = [
         //ano: 2012
       },
       {
-        id: 59,
+        id: 61,
         tipo: "movie",
         titulo: "O Espetacular Homem-Aranha 2",
         descricao:
@@ -1663,7 +1689,7 @@ const dados = [
         //ano: 2014
       },
       {
-        id: 60,
+        id: 62,
         tipo: "movie",
         titulo: "Sorria",
         descricao:
@@ -1676,7 +1702,7 @@ const dados = [
         //ano: 2022
       },
       {
-        id: 61,
+        id: 63,
         tipo: "movie",
         titulo: "Bird Box",
         descricao:
@@ -1689,7 +1715,7 @@ const dados = [
         //ano: 2018
       },
       {
-        id: 62,
+        id: 64,
         tipo: "movie",
         titulo: "Minha mãe é uma peça",
         descricao:
@@ -1702,7 +1728,7 @@ const dados = [
         //ano: 2013
       },
       {
-        id: 63,
+        id: 65,
         tipo: "movie",
         titulo: "As Branquelas",
         descricao:
@@ -1715,7 +1741,7 @@ const dados = [
         //ano: 2000
       },
       {
-        id: 64,
+        id: 66,
         tipo: "movie",
         titulo: "Django Livre",
         descricao:
@@ -1728,7 +1754,20 @@ const dados = [
         //ano: 2012
       },
       {
-        id: 65,
+        id: 67,
+        tipo: "movie",
+        titulo: "Bob Esponja: O Filme",
+        descricao:
+          "Bob Esponja e Patrick embarcam em uma aventura épica para recuperar a coroa roubada do Rei Netuno e salvar o restaurante Siri Cascudo.",
+        imagem: "imagens/bobesponja.webp",
+        video:
+          "https://drive.google.com/file/d/1jBREaCAJxwxjUuEtOcuOQdIvhttSMApt/preview",
+        trailer: "http://www.youtube.com/embed/MySk5QL3eWM",
+        generos: ["animação", "aventura", "comédia"],
+        //ano: 2004
+      },
+      {
+        id: 68,
         tipo: "movie",
         titulo: "M3GAN",
         descricao:
@@ -1736,12 +1775,12 @@ const dados = [
         imagem: "imagens/megan.webp",
         video:
           "https://drive.google.com/file/d/1920vNpTEfny3yQvlGQKMvSEGAZAc9qde/preview",
-        trailer: "http://www.youtube.com/embed//BRb4U99OU8",
+        trailer: "http://www.youtube.com/embed/BRb4U99OU8",
         generos: ["terror", "suspense"],
         //ano: 2023
       },
       {
-        id: 66,
+        id: 69,
         tipo: "movie",
         titulo: "M3GAN 2.0",
         descricao:
@@ -1754,7 +1793,46 @@ const dados = [
         //ano: 2025
       },
       {
-        id: 67,
+        id: 70,
+        tipo: "movie",
+        titulo: "Meu Malvado Favorito",
+        descricao:
+          "Gru, um vilão que planeja roubar a Lua, adota três órfãs e descobre o verdadeiro significado da família.",
+        imagem: "imagens/mmf.webp",
+        video:
+          "https://drive.google.com/file/d/1oOEH3mqdgS9NHKS8DQrGJG6naHXVca59/preview",
+        trailer: "https://www.youtube.com/embed/462RosJNAMw",
+        generos: ["animação", "aventura", "comédia"],
+        //ano: 2010
+      },
+      {
+        id: 71,
+        tipo: "movie",
+        titulo: "Meu Malvado Favorito 2",
+        descricao:
+          "Gru, agora um ex-vilão, é recrutado por uma organização secreta para ajudar a capturar um novo vilão que ameaça o mundo.",
+        imagem: "imagens/mmf2.webp",
+        video:
+          "https://drive.google.com/file/d/1WYm1IPqIBcmI8poXgMqvDsvWGzNwKEu1/preview",
+        trailer: "https://www.youtube.com/embed/gi2QWNZ9jms",
+        generos: ["animação", "aventura", "comédia"],
+        //ano: 2013
+      },
+      {
+        id: 72,
+        tipo: "movie",
+        titulo: "Meu Malvado Favorito 3",
+        descricao:
+          "Gru, agora um ex-vilão, enfrenta um novo inimigo e descobre que tem um irmão gêmeo perdido, enquanto tenta equilibrar sua vida familiar.",
+        imagem: "imagens/mmf3.webp",
+        video:
+          "https://drive.google.com/file/d/1K2ATqVoLsPPOXHXUnTW3Tb4qK_87n_XL/preview",
+        trailer: "https://www.youtube.com/embed/9XEHAP9UGfY",
+        generos: ["animação", "aventura", "comédia"],
+        //ano: 2017
+      },
+      {
+        id: 73,
         tipo: "movie",
         titulo: "Tropa de Elite",
         descricao:
@@ -1762,12 +1840,12 @@ const dados = [
         imagem: "imagens/tropa-de-elite.webp",
         video:
           "https://drive.google.com/file/d/118bEax43b4FWj5MZ38zZbXF_1zozmLaF/preview",
-        trailer: "https://www.youtube.com/embed/uZBiNJQxtGw?si=-fO313EZbdesbqYG",
+        trailer: "https://www.youtube.com/embed/uZBiNJQxtGw",
         generos: ["ação", "drama"],
         //ano: 2007
       },
       {
-        id: 68,
+        id: 74,
         tipo: "movie",
         titulo: "bob esponja: o incrivel resgate",
         descricao:
@@ -1780,7 +1858,7 @@ const dados = [
         //ano: 2020
       },
       {
-        id: 69,
+        id: 75,
         tipo: "movie",
         titulo: "Travis Scott: Voando Alto - Legendado",
         descricao:
