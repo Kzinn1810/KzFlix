@@ -1806,6 +1806,25 @@ exibirLancamentosRecentes();
 // Funções utilitárias para salvar e obter tempo
 function salvarTempoAssistido(usuario, idVideo, tempoSegundos, info) {
   if (!usuario || !idVideo) return;
+  // Se for série, remove todos os registros anteriores dessa série para o usuário
+  if (info && (info.tipo === 'serie' || info.tipo === 'series')) {
+    const prefix = `visto_${usuario}_`;
+    const serieTitulo = (info.serie && info.serie.titulo) ? info.serie.titulo : info.titulo;
+    for (let i = localStorage.length - 1; i >= 0; i--) {
+      const k = localStorage.key(i);
+      if (k.startsWith(prefix)) {
+        try {
+          const obj = JSON.parse(localStorage.getItem(k));
+          if (obj && (obj.tipo === 'serie' || obj.tipo === 'series')) {
+            const objSerieTitulo = (obj.serie && obj.serie.titulo) ? obj.serie.titulo : obj.titulo;
+            if (objSerieTitulo === serieTitulo) {
+              localStorage.removeItem(k);
+            }
+          }
+        } catch {}
+      }
+    }
+  }
   const chave = `visto_${usuario}_${idVideo}`;
   // Salva todos os campos do objeto info, não apenas tempo
   localStorage.setItem(chave, JSON.stringify({
@@ -1819,18 +1838,30 @@ function obterContinuarAssistindo(usuario) {
   if (!usuario) return [];
   const prefix = `visto_${usuario}_`;
   const vistos = [];
-  for (let i = 0; i < localStorage.length; i++) {
+  const seriesMap = {};
+  // Percorre do final para o início para pegar o último registro salvo de cada série
+  for (let i = localStorage.length - 1; i >= 0; i--) {
     const k = localStorage.key(i);
     if (k.startsWith(prefix)) {
       try {
         const obj = JSON.parse(localStorage.getItem(k));
-        // Só adiciona se tem imagem, título e vídeo válidos
         if (obj && obj.titulo && obj.video && obj.imagem && /^(imagens\/.*\.(jpg|jpeg|png|webp))$/i.test(obj.imagem)) {
-          vistos.push(obj);
+          if ((obj.tipo === 'series' || obj.tipo === 'serie')) {
+            // Para séries, identifica pelo serie.titulo ou titulo
+            const key = (obj.serie && obj.serie.titulo) ? obj.serie.titulo : obj.titulo;
+            if (!seriesMap[key]) {
+              seriesMap[key] = obj;
+            }
+          } else {
+            // Filmes e trailers adiciona normalmente
+            vistos.push(obj);
+          }
         }
       } catch {}
     }
   }
+  // Adiciona o último episódio salvo de cada série
+  Object.values(seriesMap).forEach(obj => vistos.push(obj));
   // Mais recentes primeiro
   return vistos.reverse();
 }
