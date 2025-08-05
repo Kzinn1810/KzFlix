@@ -1850,7 +1850,7 @@ const dados = [
         titulo: "Interstellar",
         descricao:
           "Uma equipe de exploradores viaja através de um buraco de minhoca em busca de um novo lar para a humanidade.",
-        imagem: "imagens/interstelar.webp",
+        imagem: "imagens/interestelar.webp",
         video:
           "https://drive.google.com/file/d/1OVY77iz5jiNuud8xOIQCbEkcAo1lP5Mj/preview",
         trailer: "https://www.youtube.com/embed/i6avfCqKcQo",
@@ -1897,3 +1897,4 @@ const dados = [
         //ano: 2019
       },
     ]
+
