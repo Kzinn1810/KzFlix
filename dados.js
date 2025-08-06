@@ -827,6 +827,15 @@ const dados = [
               { numero: 8, titulo: "Um Assassinato de Incrível Proporção", video: "https://drive.google.com/file/d/15eBzQQ6yDoQnOa53eCOecpkaZw29wpnC/preview" },
             ],
           },
+          {
+            numero: 1,
+            episodios: [
+              { numero: 1, titulo: "Mais desgosto", video: "https://drive.google.com/file/d/1QWoFfhVNp7pxn3ZIK5R991PNwUhcPpnY/preview" },
+              { numero: 2, titulo: "Confronto", video: "https://drive.google.com/file/d/1R4Bt7LaxVGnpRJr1wR9cfD9tKQz-aqGv/preview" },
+              { numero: 3, titulo: "Chamado da natureza", video: "https://drive.google.com/file/d/1m71ggGADQmsR47IZcGY3f5u_dn7_eFAt/preview" },
+              { numero: 4, titulo: "Se estas paredes falassem", video: "https://drive.google.com/file/d/1foq9X93SbeRQ2FX0iha48YV6TFoQcEqS/preview" },
+            ],
+          },
         ],
         trailer: "https://www.youtube.com/embed/4vi6ZWe_3Yc",
         generos: ["comédia", "fantasia", "mistério"],
