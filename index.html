@@ -1234,6 +1234,117 @@ toggleSenha.addEventListener('click', () => {
     const btnFullscreenPlayer = modalPlayer.querySelector(".fullscreen-player");
     const btnPularCapitulo = document.querySelector('.pular-capitulo-player-global');
 
+    // --- Controle de exibição do botão fullscreen no modo fullscreen ---
+    let fullscreenBtnTimeout = null;
+    let fullscreenBtnHidden = false;
+    function hideFullscreenBtn() {
+      if (modalPlayer.classList.contains('simulacao-fullscreen-mobile') || document.fullscreenElement) {
+        btnFullscreenPlayer.classList.add('fullscreen-btn-hide');
+        fullscreenBtnHidden = true;
+      }
+    }
+    function showFullscreenBtn() {
+      btnFullscreenPlayer.classList.remove('fullscreen-btn-hide');
+      fullscreenBtnHidden = false;
+      if (modalPlayer.classList.contains('simulacao-fullscreen-mobile') || document.fullscreenElement) {
+        if (fullscreenBtnTimeout) clearTimeout(fullscreenBtnTimeout);
+        fullscreenBtnTimeout = setTimeout(hideFullscreenBtn, 3000);
+      }
+    }
+    // Detecta movimento para reexibir
+    function setupFullscreenBtnAutoHide() {
+      const eventos = [
+        "mousemove", "pointermove", "touchstart", "touchmove", "keydown", "wheel"
+      ];
+      // Document (fora do player)
+      eventos.forEach(ev => {
+        document.addEventListener(ev, () => {
+          if (modalPlayer.classList.contains('simulacao-fullscreen-mobile') || document.fullscreenElement) {
+            showFullscreenBtn();
+          }
+        }, { passive: true });
+      });
+      // Modal player (dentro do player, exceto iframe)
+      eventos.forEach(ev => {
+        modalPlayer.addEventListener(ev, () => {
+          if (modalPlayer.classList.contains('simulacao-fullscreen-mobile') || document.fullscreenElement) {
+            showFullscreenBtn();
+          }
+        }, { passive: true });
+      });
+
+      // Overlay para capturar eventos sobre o iframe
+      let overlay = null;
+      function addOverlay() {
+        if (!overlay) {
+          overlay = document.createElement('div');
+          overlay.style.position = 'absolute';
+          overlay.style.top = 0;
+          overlay.style.left = 0;
+          overlay.style.width = '100%';
+          overlay.style.height = '100%';
+          overlay.style.zIndex = 10;
+          overlay.style.background = 'transparent';
+          overlay.style.pointerEvents = 'none';
+          overlay.style.display = 'none';
+          // Só ativa pointer-events quando o botão está oculto
+          ['mousemove','pointermove','touchmove'].forEach(ev => {
+            overlay.addEventListener(ev, () => {
+              if (modalPlayer.classList.contains('simulacao-fullscreen-mobile') || document.fullscreenElement) {
+                showFullscreenBtn();
+                overlay.style.pointerEvents = 'none'; // volta a não bloquear
+              }
+            }, { passive: true });
+          });
+          overlay.tabIndex = -1;
+          const modalDiv = modalPlayer.querySelector('div');
+          modalDiv.appendChild(overlay);
+        }
+        overlay.style.display = 'block';
+        // Se o botão está oculto, ativa pointer-events para capturar movimento
+        if (btnFullscreenPlayer.classList.contains('fullscreen-btn-hide')) {
+          overlay.style.pointerEvents = 'auto';
+        } else {
+          overlay.style.pointerEvents = 'none';
+        }
+      }
+      function removeOverlay() {
+        if (overlay) overlay.style.display = 'none';
+      }
+
+      // Sempre que o botão some, overlay ativa pointer-events
+      function monitorBtnState() {
+        const obsBtn = new MutationObserver(() => {
+          if (!overlay) return;
+          if (btnFullscreenPlayer.classList.contains('fullscreen-btn-hide')) {
+            overlay.style.pointerEvents = 'auto';
+          } else {
+            overlay.style.pointerEvents = 'none';
+          }
+        });
+        obsBtn.observe(btnFullscreenPlayer, { attributes: true, attributeFilter: ['class'] });
+      }
+      monitorBtnState();
+      // Ativa/desativa overlay conforme fullscreen
+      document.addEventListener('fullscreenchange', () => {
+        if (document.fullscreenElement || modalPlayer.classList.contains('simulacao-fullscreen-mobile')) {
+          addOverlay();
+        } else {
+          removeOverlay();
+        }
+      });
+      // Também observa simulação mobile
+      const obs = new MutationObserver(() => {
+        if (modalPlayer.classList.contains('simulacao-fullscreen-mobile')) {
+          addOverlay();
+        } else {
+          removeOverlay();
+        }
+      });
+      obs.observe(modalPlayer, { attributes: true, attributeFilter: ['class'] });
+    }
+    setupFullscreenBtnAutoHide();
+
     // Reposiciona o botão abaixo do modal player ao abrir
     function posicionarPularCapitulo() {
       // modalDiv já foi declarado acima
@@ -1682,14 +1793,35 @@ toggleSenha.addEventListener('click', () => {
         // Reexibe botões ao sair do fullscreen
         btnFecharPlayer.style.display = '';
         btnFullscreenPlayer.style.display = 'block';
+        btnFullscreenPlayer.classList.remove('fullscreen-btn-hide');
+        fullscreenBtnHidden = false;
+        if (fullscreenBtnTimeout) clearTimeout(fullscreenBtnTimeout);
         btnSalvarPonto.style.display = 'inline-block';
         if (episodioAtualInfo && episodioAtualInfo.tipo === 'serie') {
           btnPularCapitulo.style.display = 'inline-block';
         } else {
           btnPularCapitulo.style.display = 'none';
         }
+      } else {
+        // Entrou em fullscreen: inicia timer para esconder
+        showFullscreenBtn();
       }
     });
+    // Esconde botão fullscreen ao entrar em simulação mobile
+    const observer = new MutationObserver(() => {
+      if (modalPlayer.classList.contains('simulacao-fullscreen-mobile')) {
+        showFullscreenBtn();
+      } else {
+        btnFullscreenPlayer.classList.remove('fullscreen-btn-hide');
+        fullscreenBtnHidden = false;
+        if (fullscreenBtnTimeout) clearTimeout(fullscreenBtnTimeout);
+      }
+    });
+    observer.observe(modalPlayer, { attributes: true, attributeFilter: ['class'] });
+    // CSS para esconder o botão fullscreen suavemente
+    const style = document.createElement('style');
+    style.innerHTML = `.fullscreen-btn-hide { opacity: 0 !important; pointer-events: none !important; transition: opacity 0.4s; }`;
+    document.head.appendChild(style);
 
     btnFecharPlayer.onclick = async function() {
       let saiuDoFullscreen = false;
