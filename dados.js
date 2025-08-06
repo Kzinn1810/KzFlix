@@ -828,7 +828,7 @@ const dados = [
             ],
           },
           {
-            numero: 1,
+            numero: 2,
             episodios: [
               { numero: 1, titulo: "Mais desgosto", video: "https://drive.google.com/file/d/1QWoFfhVNp7pxn3ZIK5R991PNwUhcPpnY/preview" },
               { numero: 2, titulo: "Confronto", video: "https://drive.google.com/file/d/1R4Bt7LaxVGnpRJr1wR9cfD9tKQz-aqGv/preview" },
@@ -1932,3 +1932,4 @@ const dados = [
         //ano: 2019
       },
     ]
+
