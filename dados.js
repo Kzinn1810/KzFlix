@@ -926,15 +926,15 @@ const dados = [
       {
         id: 24,
         tipo: "movie",
-        titulo: "Tropa de Elite 2",
+        titulo: "A Forja: O Poder da Transformação",
         descricao:
-          "Agora como subsecretário de segurança, Nascimento enfrenta a corrupção sistêmica do Estado enquanto lida com conflitos pessoais e políticos.",
-        imagem: "imagens/tropa-de-elite-2.webp",
+          "A Forja: O Poder da Transformação é um filme de ação e drama onde um grupo de heróis improváveis se une para enfrentar uma ameaça que pode destruir o mundo, enquanto descobrem seus próprios poderes e aprendem a confiar uns nos outros.",
+        imagem: "imagens/a-forja.webp",
         video:
-          "https://drive.google.com/file/d/15xR0cVYbGhlvYrKsfqKBI0X9BwSvNT6G/preview",
-        trailer: "http://www.youtube.com/embed/O8YrtINB5oI",
-        generos: ["ação", "drama"],
-        //ano: 2012
+          "https://drive.google.com/file/d/1urojqb-5HXZ_cceoc4m1G9wM6G6bwKFN/preview",
+        trailer: "http://www.youtube.com/embed/ohQ1IZmce5w",
+        generos: ["ação", "aventura", "drama"],
+        //ano: 2025
       },
       {
         id: 25,
@@ -1073,6 +1073,19 @@ const dados = [
       {
         id: 32,
         tipo: "movie",
+        titulo: "A Substância",
+        descricao:
+          "A Substância é um filme de terror psicológico que segue uma jovem mulher que, após se mudar para uma nova cidade, começa a experimentar eventos sobrenaturais perturbadores relacionados a uma substância misteriosa.",
+        imagem: "imagens/a-substancia.webp",
+        video:
+          "https://drive.google.com/file/d/1GPQpT_nz6s5BTlNIvjP4jwjBVNwXIZI4/preview",
+        trailer: "http://www.youtube.com/embed/VtKyVTnH_Bk",
+        generos: ["terror", "suspense", "drama"],
+        //ano: 2024
+      },
+      {
+        id: 33,
+        tipo: "movie",
         titulo: "Velozes e Furiosos 7",
         descricao:
           "Dominic Toretto e sua equipe enfrentam um assassino implacável enquanto tentam proteger sua família e manter sua liberdade.",
@@ -1084,7 +1097,7 @@ const dados = [
         //ano: 2015
       },
       {
-        id: 33,
+        id: 34,
         tipo: "movie",
         titulo: "Atentado em Paris",
         descricao:
@@ -1097,7 +1110,7 @@ const dados = [
         //ano: 2016
       },
       {
-        id: 34,
+        id: 35,
         tipo: "movie",
         titulo: "A barraca do beijo",
         descricao:
@@ -1110,7 +1123,7 @@ const dados = [
         //ano: 2018
       },
       {
-        id: 35,
+        id: 36,
         tipo: "movie",
         titulo: "Creed: Nascido para Lutar",
         descricao:
@@ -1123,7 +1136,7 @@ const dados = [
         //ano: 2015
       },
       {
-        id: 36,
+        id: 37,
         tipo: "movie",
         titulo: "Creed II",
         descricao:
@@ -1136,7 +1149,7 @@ const dados = [
         //ano: 2018
       },
       {
-        id: 37,
+        id: 38,
         tipo: "movie",
         titulo: "Creed III",
         descricao:
@@ -1149,7 +1162,7 @@ const dados = [
         //ano: 2023
       },
       {
-        id: 38,
+        id: 39,
         tipo: "movie",
         titulo: "Sorria 2",
         descricao:
@@ -1162,7 +1175,7 @@ const dados = [
         //ano: 2025
       },
       {
-        id: 39,
+        id: 40,
         tipo: "movie",
         titulo: "Carros",
         descricao:
@@ -1175,7 +1188,7 @@ const dados = [
         //ano: 2006
       },
       {
-        id: 40,
+        id: 41,
         tipo: "series",
         titulo: "Neymar: O Caos Perfeito",
         descricao:
@@ -1196,7 +1209,7 @@ const dados = [
         //ano: 2022
       },
       {
-        id: 41,
+        id: 42,
         tipo: "movie",
         titulo: "Até o ultimo homem",
         descricao:
@@ -1209,7 +1222,7 @@ const dados = [
         //ano: 2016
       },
       {
-        id: 42,
+        id: 43,
         tipo: "movie",
         titulo: "Exterminio: A Evolução",
         descricao:
@@ -1222,7 +1235,7 @@ const dados = [
         //ano: 2025
       },
       {
-        id: 43,
+        id: 44,
         tipo: "series",
         titulo: "Apenas um Show",
         descricao:
@@ -1330,7 +1343,7 @@ const dados = [
         //ano: 2010
       },
       {
-        id: 44,
+        id: 45,
         tipo: "movie",
         titulo: "Alien: Romulus",
         descricao:
@@ -1343,7 +1356,7 @@ const dados = [
         //ano: 2024
       },
       {
-        id: 45,
+        id: 46,
         tipo: "movie",
         titulo: "Venom",
         descricao:
@@ -1356,7 +1369,7 @@ const dados = [
         //ano: 2018
       },
       {
-        id: 46,
+        id: 47,
         tipo: "movie",
         titulo: "Homem-Aranha: De Volta ao Lar",
         descricao:
@@ -1369,7 +1382,7 @@ const dados = [
         //ano: 2017
       },
       {
-        id: 47,
+        id: 48,
         tipo: "movie",
         titulo: "Homem-Aranha no Aranhaverso",
         descricao:
@@ -1382,7 +1395,7 @@ const dados = [
         //ano: 2018
       },
       {
-        id: 48,
+        id: 49,
         tipo: "movie",
         titulo: "Homem de Ferro",
         descricao:
@@ -1395,7 +1408,7 @@ const dados = [
         //ano: 2008
       },
       {
-        id: 49,
+        id: 50,
         tipo: "movie",
         titulo: "Homem de Ferro 2",
         descricao:
@@ -1408,7 +1421,7 @@ const dados = [
         //ano: 2010
       },
       {
-        id: 50,
+        id: 51,
         tipo: "movie",
         titulo: "Homem de Ferro 3",
         descricao:
@@ -1421,7 +1434,7 @@ const dados = [
         //ano: 2013
       },
       {
-        id: 51,
+        id: 52,
         tipo: "movie",
         titulo: "Thor",
         descricao:
@@ -1434,7 +1447,7 @@ const dados = [
         //ano: 2011
       },
       {
-        id: 52,
+        id: 53,
         tipo: "movie",
         titulo: "Thor 2: O Mundo das Trevas",
         descricao:
@@ -1447,7 +1460,7 @@ const dados = [
         //ano: 2013
       },
       {
-        id: 53,
+        id: 54,
         tipo: "movie",
         titulo: "Thor: Ragnarok",
         descricao:
@@ -1460,7 +1473,7 @@ const dados = [
         //ano: 2017
       },
       {
-        id: 54,
+        id: 55,
         tipo: "movie",
         titulo: "Thor: Amor e Trovão",
         descricao:
@@ -1473,7 +1486,7 @@ const dados = [
         //ano: 2022
       },
       {
-        id: 55,
+        id: 56,
         tipo: "movie",
         titulo: "Ballerina - Do Universo de John Wick",
         descricao:
@@ -1486,7 +1499,7 @@ const dados = [
         //ano: 2025
       },
       {
-        id: 56,
+        id: 57,
         tipo: "movie",
         titulo: "Barbie",
         descricao:
@@ -1499,7 +1512,7 @@ const dados = [
         //ano: 2023
       },
       {
-        id: 57,
+        id: 58,
         tipo: "movie",
         titulo: "Homem-Aranha",
         descricao:
@@ -1512,7 +1525,7 @@ const dados = [
         //ano: 2002
       },
       {
-        id: 58,
+        id: 59,
         tipo: "movie",
         titulo: "Homem-Aranha 2",
         descricao:
@@ -1525,7 +1538,7 @@ const dados = [
         //ano: 2004
       },
       {
-        id: 59,
+        id: 60,
         tipo: "movie",
         titulo: "Homem-Aranha 3",
         descricao:
@@ -1538,7 +1551,7 @@ const dados = [
         //ano: 2007
       },
       {
-        id: 60,
+        id: 61,
         tipo: "movie",
         titulo: "O Espetacular Homem-Aranha",
         descricao:
@@ -1551,7 +1564,7 @@ const dados = [
         //ano: 2012
       },
       {
-        id: 61,
+        id: 62,
         tipo: "movie",
         titulo: "O Espetacular Homem-Aranha 2",
         descricao:
@@ -1564,7 +1577,7 @@ const dados = [
         //ano: 2014
       },
       {
-        id: 62,
+        id: 63,
         tipo: "movie",
         titulo: "Sorria",
         descricao:
@@ -1577,7 +1590,7 @@ const dados = [
         //ano: 2022
       },
       {
-        id: 63,
+        id: 64,
         tipo: "movie",
         titulo: "Bird Box",
         descricao:
@@ -1590,7 +1603,7 @@ const dados = [
         //ano: 2018
       },
       {
-        id: 64,
+        id: 65,
         tipo: "movie",
         titulo: "Minha mãe é uma peça",
         descricao:
@@ -1603,7 +1616,7 @@ const dados = [
         //ano: 2013
       },
       {
-        id: 65,
+        id: 66,
         tipo: "movie",
         titulo: "As Branquelas",
         descricao:
@@ -1616,7 +1629,7 @@ const dados = [
         //ano: 2000
       },
       {
-        id: 66,
+        id: 67,
         tipo: "movie",
         titulo: "Django Livre",
         descricao:
@@ -1629,7 +1642,7 @@ const dados = [
         //ano: 2012
       },
       {
-        id: 67,
+        id: 68,
         tipo: "series",
         titulo: "Naruto",
         descricao:
@@ -1767,7 +1780,7 @@ const dados = [
         //ano: 2002
       },
       {
-        id: 68,
+        id: 69,
         tipo: "movie",
         titulo: "Bob Esponja: O Filme",
         descricao:
@@ -1780,7 +1793,7 @@ const dados = [
         //ano: 2004
       },
       {
-        id: 69,
+        id: 70,
         tipo: "movie",
         titulo: "M3GAN",
         descricao:
@@ -1793,7 +1806,7 @@ const dados = [
         //ano: 2023
       },
       {
-        id: 70,
+        id: 71,
         tipo: "movie",
         titulo: "M3GAN 2.0",
         descricao:
@@ -1806,7 +1819,7 @@ const dados = [
         //ano: 2025
       },
       {
-        id: 71,
+        id: 72,
         tipo: "movie",
         titulo: "Meu Malvado Favorito",
         descricao:
@@ -1819,7 +1832,7 @@ const dados = [
         //ano: 2010
       },
       {
-        id: 72,
+        id: 73,
         tipo: "movie",
         titulo: "Meu Malvado Favorito 2",
         descricao:
@@ -1832,7 +1845,7 @@ const dados = [
         //ano: 2013
       },
       {
-        id: 73,
+        id: 74,
         tipo: "movie",
         titulo: "Meu Malvado Favorito 3",
         descricao:
@@ -1845,7 +1858,7 @@ const dados = [
         //ano: 2017
       },
       {
-        id: 74,
+        id: 75,
         tipo: "movie",
         titulo: "Interstellar",
         descricao:
@@ -1858,7 +1871,7 @@ const dados = [
         //ano: 2014
       },
       {
-        id: 75,
+        id: 76,
         tipo: "movie",
         titulo: "Tropa de Elite",
         descricao:
@@ -1871,7 +1884,20 @@ const dados = [
         //ano: 2007
       },
       {
-        id: 76,
+        id: 77,
+        tipo: "movie",
+        titulo: "Tropa de Elite 2",
+        descricao:
+          "Agora como subsecretário de segurança, Nascimento enfrenta a corrupção sistêmica do Estado enquanto lida com conflitos pessoais e políticos.",
+        imagem: "imagens/tropa-de-elite-2.webp",
+        video:
+          "https://drive.google.com/file/d/15xR0cVYbGhlvYrKsfqKBI0X9BwSvNT6G/preview",
+        trailer: "http://www.youtube.com/embed/O8YrtINB5oI",
+        generos: ["ação", "drama"],
+        //ano: 2012
+      },
+      {
+        id: 78,
         tipo: "movie",
         titulo: "bob esponja: o incrivel resgate",
         descricao:
@@ -1884,7 +1910,7 @@ const dados = [
         //ano: 2020
       },
       {
-        id: 77,
+        id: 79,
         tipo: "movie",
         titulo: "Travis Scott: Voando Alto - Legendado",
         descricao:
@@ -1897,4 +1923,3 @@ const dados = [
         //ano: 2019
       },
     ]
-
