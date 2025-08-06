@@ -831,8 +831,8 @@ const dados = [
             numero: 2,
             episodios: [
               { numero: 1, titulo: "Mais desgosto", video: "https://drive.google.com/file/d/1gCYft21K4gX8vMT41aNbrUZj4jFQp4fA/preview" },
-              { numero: 2, titulo: "Confronto", video: "" },
-              { numero: 3, titulo: "Chamado da natureza", video: "" },
+              { numero: 2, titulo: "Confronto", video: "https://drive.google.com/file/d/1xhl85O4JYX9xzmhVGi1aiF5PVUxbViyn/preview" },
+              { numero: 3, titulo: "Chamado da natureza", video: "https://drive.google.com/file/d/1KNAPjwI_CCkhS8SxpRuyjfv6klaNa3Xj/preview" },
               { numero: 4, titulo: "Se estas paredes falassem", video: "https://drive.google.com/file/d/1kKMyEI9iEgiC2l7cyf2TuuBZpuXlYnpj/preview" },
             ],
           },
