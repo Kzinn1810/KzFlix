@@ -34,166 +34,41 @@ const dados = [
             numero: 2,
             episodios: [
               { numero: 1, titulo: "MADMAX", video: "https://drive.google.com/file/d/10eScNqZgMQPnMRecFgsFaKZeogd1zqve/preview" },
-              {
-                numero: 2,
-                titulo: "Gostosuras ou Travessuras, Esquisitão",
-                video:
-                  "https://drive.google.com/file/d/10eis8dY32cPg9bWkXx0A0KnMK9tBdrNn/preview",
-              },
-              {
-                numero: 3,
-                titulo: "O Girino",
-                video:
-                  "https://drive.google.com/file/d/12kJiUYeWA7B7xgnNFzn1lzDESZ38fs0u/preview",
-              },
-              {
-                numero: 4,
-                titulo: "Will, o Sábio",
-                video:
-                  "https://drive.google.com/file/d/12ko1gnjyN8p6-8Svwnvy4qrQx0yDX8y5/preview",
-              },
-              {
-                numero: 5,
-                titulo: "Dig Dug",
-                video:
-                  "https://drive.google.com/file/d/12lCcglwQwu4Gm4N-CUaBQC7ZICRowwHR/preview",
-              },
-              {
-                numero: 6,
-                titulo: "O Espião",
-                video:
-                  "https://drive.google.com/file/d/12rZJP9B-tfu7szFmXfQOHDGOlD-sYmfX/preview",
-              },
-              {
-                numero: 7,
-                titulo: "A Irmã Perdida",
-                video:
-                  "https://drive.google.com/file/d/12shE-9QYdWqfUV2scu_VUHbZeYHQnsDg/preview",
-              },
-              {
-                numero: 8,
-                titulo: "Devorador de Mentes",
-                video:
-                  "https://drive.google.com/file/d/12x1zwpzAHKi6zVG4INtPdOG6hzbBobF-/preview",
-              },
-              {
-                numero: 9,
-                titulo: "O Portal",
-                video:
-                  "https://drive.google.com/file/d/1-9bJDjKaFUuHhk8XtCPDn7hWsfwV3Sf7/preview",
-              },
+              { numero: 2, titulo: "Gostosuras ou Travessuras, Esquisitão", video: "https://drive.google.com/file/d/10eis8dY32cPg9bWkXx0A0KnMK9tBdrNn/preview" },
+              { numero: 3, titulo: "O Girino", video: "https://drive.google.com/file/d/12kJiUYeWA7B7xgnNFzn1lzDESZ38fs0u/preview" },
+              { numero: 4, titulo: "Will, o Sábio", video: "https://drive.google.com/file/d/12ko1gnjyN8p6-8Svwnvy4qrQx0yDX8y5/preview" },
+              { numero: 5, titulo: "Dig Dug", video: "https://drive.google.com/file/d/12lCcglwQwu4Gm4N-CUaBQC7ZICRowwHR/preview" },
+              { numero: 6, titulo: "O Espião", video: "https://drive.google.com/file/d/12rZJP9B-tfu7szFmXfQOHDGOlD-sYmfX/preview" },
+              { numero: 7, titulo: "A Irmã Perdida", video: "https://drive.google.com/file/d/12shE-9QYdWqfUV2scu_VUHbZeYHQnsDg/preview" },
+              { numero: 8, titulo: "Devorador de Mentes", video: "https://drive.google.com/file/d/12x1zwpzAHKi6zVG4INtPdOG6hzbBobF-/preview" },
+              { numero: 9, titulo: "O Portal", video: "https://drive.google.com/file/d/1-9bJDjKaFUuHhk8XtCPDn7hWsfwV3Sf7/preview" }
             ],
           },
           {
             numero: 3,
             episodios: [
-              {
-                numero: 1,
-                titulo: "Está me ouvindo, Suzie?",
-                video:
-                  "https://drive.google.com/file/d/1-pjTGDGnB3bIM_Q2YWBMnBEPhKs8QfMr/preview",
-              },
-              {
-                numero: 2,
-                titulo: "O caso dos ratos",
-                video:
-                  "https://drive.google.com/file/d/1-wk42grROqnHekZlISTehWyFwHc3H90O/preview",
-              },
-              {
-                numero: 3,
-                titulo: "A salva‑vidas desaparecida",
-                video:
-                  "https://drive.google.com/file/d/10-6Hs0iAkFLX9gBhFyKEkCrYsbII3sa5/preview",
-              },
-              {
-                numero: 4,
-                titulo: "A prova da sauna",
-                video:
-                  "https://drive.google.com/file/d/1-xic4jherQedP1oLLokl83O56wcwwY5C/preview",
-              },
-              {
-                numero: 5,
-                titulo: "Os devorados",
-                video:
-                  "https://drive.google.com/file/d/104zxQzMrmRjphMjN_aw8H1hJVyAYcuAo/preview",
-              },
-              {
-                numero: 6,
-                titulo: "mantido como E Pluribus Unum",
-                video:
-                  "https://drive.google.com/file/d/1064IMqsw6NYzTpz7d3MhILWTfELDegyT/preview",
-              },
-              {
-                numero: 7,
-                titulo: "A mordida",
-                video:
-                  "https://drive.google.com/file/d/10-yZZKOewJrTUEX6QuMYOSh4ys1m9laM/preview",
-              },
-              {
-                numero: 8,
-                titulo: "A batalha de Starcourt",
-                video:
-                  "https://drive.google.com/file/d/10-prdN69rpI8tHHAZ79QwEfmn9UBDlm0/preview",
-              },
+              { numero: 1, titulo: "Está me ouvindo, Suzie?", video: "https://drive.google.com/file/d/1-pjTGDGnB3bIM_Q2YWBMnBEPhKs8QfMr/preview" },
+              { numero: 2, titulo: "O caso dos ratos", video: "https://drive.google.com/file/d/1-wk42grROqnHekZlISTehWyFwHc3H90O/preview" },
+              { numero: 3, titulo: "A salva‑vidas desaparecida", video: "https://drive.google.com/file/d/10-6Hs0iAkFLX9gBhFyKEkCrYsbII3sa5/preview" },
+              { numero: 4, titulo: "A prova da sauna", video: "https://drive.google.com/file/d/1-xic4jherQedP1oLLokl83O56wcwwY5C/preview" },
+              { numero: 5, titulo: "Os devorados", video: "https://drive.google.com/file/d/104zxQzMrmRjphMjN_aw8H1hJVyAYcuAo/preview" },
+              { numero: 6, titulo: "mantido como E Pluribus Unum", video: "https://drive.google.com/file/d/1064IMqsw6NYzTpz7d3MhILWTfELDegyT/preview" },
+              { numero: 7, titulo: "A mordida", video: "https://drive.google.com/file/d/10-yZZKOewJrTUEX6QuMYOSh4ys1m9laM/preview" },
+              { numero: 8, titulo: "A batalha de Starcourt", video: "https://drive.google.com/file/d/10-prdN69rpI8tHHAZ79QwEfmn9UBDlm0/preview" }
             ],
           }, 
           {
             numero: 4,
             episodios: [
-              {
-                numero: 1,
-                titulo: "O Clube Hellfire",
-                video:
-                  "https://drive.google.com/file/d/10GsgJxBxJXxlmtDpL6feyvoaht7aL6X_/preview",
-              },
-              {
-                numero: 2,
-                titulo: "A Maldição de Vecna",
-                video:
-                  "https://drive.google.com/file/d/10JUsSPiBDd942kHbikDuwWX4Tb9Ds1p_/preview",
-              },
-              {
-                numero: 3,
-                titulo: "O Monstro e a Super-Heroína",
-                video:
-                  "https://drive.google.com/file/d/10VO9m9xEx4X6aJ0uYJkD8346K6vAaltI/preview",
-              },
-              {
-                numero: 4,
-                titulo: "Querido Billy",
-                video:
-                  "https://drive.google.com/file/d/10_ar8jf04qQYlFG1_6n5TzpYK5wXJezE/preview",
-              },
-              {
-                numero: 5,
-                titulo: "Projeto Nina",
-                video:
-                  "https://drive.google.com/file/d/10_j1FtWPTMRO3HJCk_-BfoGUr8Pw0z0w/preview",
-              },
-              {
-                numero: 6,
-                titulo: "Mergulho",
-                video:
-                  "https://drive.google.com/file/d/10_tplDZjiTfSLvB0U4BTc87aHW8b5zw1/preview",
-              },
-              {
-                numero: 7,
-                titulo: "O Massacre no Laboratório de Hawkins",
-                video:
-                  "https://drive.google.com/file/d/10j65quYuD73aD6LzTarqWhzCy5Arw3_F/preview",
-              },
-              {
-                numero: 8,
-                titulo: "Papai",
-                video:
-                  "https://drive.google.com/file/d/10mrcHoLLMCu9-FVLpA-qA5jPgNvUmRZX/preview",
-              },
-              {
-                numero: 9,
-                titulo: "O Plano de Onze",
-                video:
-                  "https://drive.google.com/file/d/10rJxdsh5qesA8Un3hEr6BPHE4MAIaiW9/preview",
-              },
+              { numero: 1, titulo: "O Clube Hellfire", video: "https://drive.google.com/file/d/10GsgJxBxJXxlmtDpL6feyvoaht7aL6X_/preview" },
+              { numero: 2, titulo: "A Maldição de Vecna", video: "https://drive.google.com/file/d/10JUsSPiBDd942kHbikDuwWX4Tb9Ds1p_/preview" },
+              { numero: 3, titulo: "O Monstro e a Super-Heroína", video: "https://drive.google.com/file/d/10VO9m9xEx4X6aJ0uYJkD8346K6vAaltI/preview" },
+              { numero: 4, titulo: "Querido Billy", video: "https://drive.google.com/file/d/10_ar8jf04qQYlFG1_6n5TzpYK5wXJezE/preview" },
+              { numero: 5, titulo: "Projeto Nina", video: "https://drive.google.com/file/d/10_j1FtWPTMRO3HJCk_-BfoGUr8Pw0z0w/preview" },
+              { numero: 6, titulo: "Mergulho", video: "https://drive.google.com/file/d/10_tplDZjiTfSLvB0U4BTc87aHW8b5zw1/preview" },
+              { numero: 7, titulo: "O Massacre no Laboratório de Hawkins", video: "https://drive.google.com/file/d/10j65quYuD73aD6LzTarqWhzCy5Arw3_F/preview" },
+              { numero: 8, titulo: "Papai", video: "https://drive.google.com/file/d/10mrcHoLLMCu9-FVLpA-qA5jPgNvUmRZX/preview" },
+              { numero: 9, titulo: "O Plano de Onze", video: "https://drive.google.com/file/d/10rJxdsh5qesA8Un3hEr6BPHE4MAIaiW9/preview" }
             ],
           },                                
         ],
@@ -225,197 +100,47 @@ const dados = [
           {
             numero: 1,
             episodios: [
-              {
-                numero: 1,
-                titulo: "O Degenerado Número Um",
-                video:
-                  "https://drive.google.com/file/d/11ejjutRFtMhwi-92GmPzp0e4eWA3NN5o/preview",
-              },
-              {
-                numero: 2,
-                titulo: "Ataque Primeiro",
-                video:
-                  "https://drive.google.com/file/d/11faAVg_jVJ2BgENFUrHIfwYiGJTn2qjm/preview",
-              },
-              {
-                numero: 3,
-                titulo: "Esqueleto",
-                video:
-                  "https://drive.google.com/file/d/12wpo9-WSp1ZnHpNVQIGqwZXgQ0FzPs4F/preview",
-              },
-              {
-                numero: 4,
-                titulo: "O Cobra Kai nunca morre",
-                video:
-                  "https://drive.google.com/file/d/12zzCm_pzr68L84q5FkifilcNTjtvA0d1/preview",
-              },
-              {
-                numero: 5,
-                titulo: "Contrapeso",
-                video:
-                  "https://drive.google.com/file/d/10H0a1Lg4DFR5W9enRVDpHfbJuC6Q2gvV/preview",
-              },
-              {
-                numero: 6,
-                titulo: "Grupo de cobras",
-                video:
-                  "https://drive.google.com/file/d/13BFYksJDpnTfS9H4v7y6fJGS0T7bR2dY/preview",
-              },
-              {
-                numero: 7,
-                titulo: "All Valley",
-                video:
-                  "https://drive.google.com/file/d/13KzpxjUfiveereT_QUKK86yhG8XSx-2N/preview",
-              },
-              {
-                numero: 8,
-                titulo: "Mudança de pele",
-                video:
-                  "https://drive.google.com/file/d/10wm8n0Q1_H-erKDbMz7BVC2j55k8sBOR/preview",
-              },
-              {
-                numero: 9,
-                titulo: "Diferentes mas iguais",
-                video:
-                  "https://drive.google.com/file/d/114Rtts9-MXi_Tx1wot4RxA67Pg0eLQWQ/preview",
-              },
-              {
-                numero: 10,
-                titulo: "Compaixão",
-                video:
-                  "https://drive.google.com/file/d/113ouzfKcE44wejHsNK3yXH_JefpF-_Ft/preview",
-              },
-            ],
+              { numero: 1, titulo: "O Degenerado Número Um", video: "https://drive.google.com/file/d/11ejjutRFtMhwi-92GmPzp0e4eWA3NN5o/preview" },
+              { numero: 2, titulo: "Ataque Primeiro", video: "https://drive.google.com/file/d/11faAVg_jVJ2BgENFUrHIfwYiGJTn2qjm/preview" },
+              { numero: 3, titulo: "Esqueleto", video: "https://drive.google.com/file/d/12wpo9-WSp1ZnHpNVQIGqwZXgQ0FzPs4F/preview" },
+              { numero: 4, titulo: "O Cobra Kai nunca morre", video: "https://drive.google.com/file/d/12zzCm_pzr68L84q5FkifilcNTjtvA0d1/preview" },
+              { numero: 5, titulo: "Contrapeso", video: "https://drive.google.com/file/d/10H0a1Lg4DFR5W9enRVDpHfbJuC6Q2gvV/preview" },
+              { numero: 6, titulo: "Grupo de cobras", video: "https://drive.google.com/file/d/13BFYksJDpnTfS9H4v7y6fJGS0T7bR2dY/preview" },
+              { numero: 7, titulo: "All Valley", video: "https://drive.google.com/file/d/13KzpxjUfiveereT_QUKK86yhG8XSx-2N/preview" },
+              { numero: 8, titulo: "Mudança de pele", video: "https://drive.google.com/file/d/10wm8n0Q1_H-erKDbMz7BVC2j55k8sBOR/preview" },
+              { numero: 9, titulo: "Diferentes mas iguais", video: "https://drive.google.com/file/d/114Rtts9-MXi_Tx1wot4RxA67Pg0eLQWQ/preview" },
+              { numero: 10, titulo: "Compaixão", video: "https://drive.google.com/file/d/113ouzfKcE44wejHsNK3yXH_JefpF-_Ft/preview" }
+            ]
           },
           {
             numero: 2,
             episodios: [
-              {
-                numero: 1,
-                titulo: "Compaixão – Parte II",
-                video:
-                  "https://drive.google.com/file/d/1-91_rzFP564Tzd6K35fBWJqdXNaJUU1i/preview",
-              },
-              {
-                numero: 2,
-                titulo: "De Volta ao Jogo",
-                video:
-                  "https://drive.google.com/file/d/1-I6zX8X5Wu9UDoYSiWX23DdzEsQXOE1A/preview",
-              },
-              {
-                numero: 3,
-                titulo: "Fogo e Gelo",
-                video:
-                  "https://drive.google.com/file/d/1-T0dR4B68ICSjNbrhvysKQ8yEEb1xBVJ/preview",
-              },
-              {
-                numero: 4,
-                titulo: "O Momento da Verdade",
-                video:
-                  "https://drive.google.com/file/d/1-JNABFoU0OIxFqb58-fM3V66jN7pyXEZ/preview",
-              },
-              {
-                numero: 5,
-                titulo: "Tudo ou Nada",
-                video:
-                  "https://drive.google.com/file/d/1-SpwVwd9-mti9wTH1FrBcp4lH4mQMSYc/preview",
-              },
-              {
-                numero: 6,
-                titulo: "Vire à Direita",
-                video:
-                  "https://drive.google.com/file/d/1-sOG-bZ84-8oVSipwzjMZeWozlr615ar/preview",
-              },
-              {
-                numero: 7,
-                titulo: "Intervalo",
-                video:
-                  "https://drive.google.com/file/d/1-TXhEM51H_HnhO8rVer_p7b1oTbTjv9N/preview",
-              },
-              {
-                numero: 8,
-                titulo: "Glória do Amor",
-                video:
-                  "https://drive.google.com/file/d/1-ad0JWBiuezx09YOdFMtHnM4NLz_tiZh/preview",
-              },
-              {
-                numero: 9,
-                titulo: "Polvo",
-                video:
-                  "https://drive.google.com/file/d/1-c_9aVkkdaTxQRy8rLT1_P676OpJL6ta/preview",
-              },
-              {
-                numero: 10,
-                titulo: "Sem Misericórdia",
-                video:
-                  "https://drive.google.com/file/d/1-Hlz_VAqvxTYDKi7Q0e1EKQy4zLnC2h9/preview",
-              },
-            ],
+              { numero: 1, titulo: "Compaixão – Parte II", video: "https://drive.google.com/file/d/1-91_rzFP564Tzd6K35fBWJqdXNaJUU1i/preview" },
+              { numero: 2, titulo: "De Volta ao Jogo", video: "https://drive.google.com/file/d/1-I6zX8X5Wu9UDoYSiWX23DdzEsQXOE1A/preview" },
+              { numero: 3, titulo: "Fogo e Gelo", video: "https://drive.google.com/file/d/1-T0dR4B68ICSjNbrhvysKQ8yEEb1xBVJ/preview" },
+              { numero: 4, titulo: "O Momento da Verdade", video: "https://drive.google.com/file/d/1-JNABFoU0OIxFqb58-fM3V66jN7pyXEZ/preview" },
+              { numero: 5, titulo: "Tudo ou Nada", video: "https://drive.google.com/file/d/1-SpwVwd9-mti9wTH1FrBcp4lH4mQMSYc/preview" },
+              { numero: 6, titulo: "Vire à Direita", video: "https://drive.google.com/file/d/1-sOG-bZ84-8oVSipwzjMZeWozlr615ar/preview" },
+              { numero: 7, titulo: "Intervalo", video: "https://drive.google.com/file/d/1-TXhEM51H_HnhO8rVer_p7b1oTbTjv9N/preview" },
+              { numero: 8, titulo: "Glória do Amor", video: "https://drive.google.com/file/d/1-ad0JWBiuezx09YOdFMtHnM4NLz_tiZh/preview" },
+              { numero: 9, titulo: "Polvo", video: "https://drive.google.com/file/d/1-c_9aVkkdaTxQRy8rLT1_P676OpJL6ta/preview" },
+              { numero: 10, titulo: "Sem Misericórdia", video: "https://drive.google.com/file/d/1-Hlz_VAqvxTYDKi7Q0e1EKQy4zLnC2h9/preview" }
+            ]
           },
-        {
+          {
             numero: 3,
             episodios: [
-              {
-                numero: 1,
-                titulo: "Depois da Tempestade",
-                video:
-                  "https://drive.google.com/file/d/1-t5GkKwrhfB6_LhhiA6uQXf1EfdinUDZ/preview",
-              },
-              {
-                numero: 2,
-                titulo: "Natureza em Repouso",
-                video:
-                  "https://drive.google.com/file/d/1-oG8MNyZm5pDacA8LblzeEG7TzJYdzyg/preview",
-              },
-              {
-                numero: 3,
-                titulo: "Agora Você Vai Pagar",
-                video:
-                  "https://drive.google.com/file/d/11563iHDWxsxV5u9yxaLBP21Rl4ybvDWI/preview",
-              },
-              {
-                numero: 4,
-                titulo: "O Direito do Rei",
-                video:
-                  "https://drive.google.com/file/d/11KMNpCtEFl2Xc32A6hLf2G7cyOY47fDl/preview",
-              },
-              {
-                numero: 5,
-                titulo: "Miyagi-Do",
-                video:
-                  "https://drive.google.com/file/d/11UmzntbTEIZAzwq3XgPNJO44ntlGTvh1/preview",
-              },
-              {
-                numero: 6,
-                titulo: "Rei Cobra",
-                video:
-                  "https://drive.google.com/file/d/11Ojor9xxBOCSogwxyDrF79Cby_nPIYJe/preview",
-              },
-              {
-                numero: 7,
-                titulo: "Obstáculos",
-                video:
-                  "https://drive.google.com/file/d/11UssQ3ASoaFIl8jgMNuJHnga5uPLm_yj/preview",
-              },
-              {
-                numero: 8,
-                titulo: "A Vítima",
-                video:
-                  "https://drive.google.com/file/d/11VmUHrIuigf-zuFM5wXD2qPgCRCsK-t3/preview",
-              },
-              {
-                numero: 9,
-                titulo: "Sentido",
-                video:
-                  "https://drive.google.com/file/d/11Vd8lSG_D2Ijun342cGPJW1-Cox8LjWH/preview",
-              },
-              {
-                numero: 10,
-                titulo: "19 de Dezembro",
-                video:
-                  "https://drive.google.com/file/d/11EzSxsBF4yXkonBPsQz0Z1llJJmQ6BX7/preview",
-              },
-            ],
+              { numero: 1, titulo: "Depois da Tempestade", video: "https://drive.google.com/file/d/1-t5GkKwrhfB6_LhhiA6uQXf1EfdinUDZ/preview" },
+              { numero: 2, titulo: "Natureza em Repouso", video: "https://drive.google.com/file/d/1-oG8MNyZm5pDacA8LblzeEG7TzJYdzyg/preview" },
+              { numero: 3, titulo: "Agora Você Vai Pagar", video: "https://drive.google.com/file/d/11563iHDWxsxV5u9yxaLBP21Rl4ybvDWI/preview" },
+              { numero: 4, titulo: "O Direito do Rei", video: "https://drive.google.com/file/d/11KMNpCtEFl2Xc32A6hLf2G7cyOY47fDl/preview" },
+              { numero: 5, titulo: "Miyagi-Do", video: "https://drive.google.com/file/d/11UmzntbTEIZAzwq3XgPNJO44ntlGTvh1/preview" },
+              { numero: 6, titulo: "Rei Cobra", video: "https://drive.google.com/file/d/11Ojor9xxBOCSogwxyDrF79Cby_nPIYJe/preview" },
+              { numero: 7, titulo: "Obstáculos", video: "https://drive.google.com/file/d/11UssQ3ASoaFIl8jgMNuJHnga5uPLm_yj/preview" },
+              { numero: 8, titulo: "A Vítima", video: "https://drive.google.com/file/d/11VmUHrIuigf-zuFM5wXD2qPgCRCsK-t3/preview" },
+              { numero: 9, titulo: "Sentido", video: "https://drive.google.com/file/d/11Vd8lSG_D2Ijun342cGPJW1-Cox8LjWH/preview" },
+              { numero: 10, titulo: "19 de Dezembro", video: "https://drive.google.com/file/d/11EzSxsBF4yXkonBPsQz0Z1llJJmQ6BX7/preview" }
+            ]
           },
           {
             numero: 4,
