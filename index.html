@@ -833,12 +833,24 @@
     }
 
       .vitrine-botoes button {
+        white-space: nowrap;
+        min-width: 110px;
         flex: 1;
         font-size: 12px;
         background: #1db954;
         border: none;
         color: white;
-        border-radius: 4px;
+        border-radius: 10px;
+        font-size: 0.91rem;
+        padding: 7px 0;
+        width: 46%;
+        min-width: 80px;
+        min-height: 34px;
+        margin-top: 4px;
+        margin-bottom: 2px;
+        justify-content: center;
+        display: inline-flex;
+        align-items: center;
         padding: 5px;
         cursor: pointer;
         transition: background 0.3s;
@@ -846,7 +858,21 @@
       }
 
       .vitrine-botoes button.trailer {
+        white-space: nowrap;
+        min-width: 90px;
         background: #555;
+        border-radius: 10px;
+        font-size: 0.91rem;
+        padding: 7px 0;
+        width: 46%;
+        min-width: 80px;
+        min-height: 34px;
+        margin-top: 4px;
+        margin-bottom: 2px;
+        justify-content: center;
+        display: inline-flex;
+        align-items: center;
+        touch-action: manipulation;
       }
 
       .vitrine-botoes button:hover {
@@ -864,18 +890,48 @@
     @media (max-width: 600px) {
       .vitrine-botoes button,
       .vitrine-botoes button.trailer {
-        font-size: 0.98rem;
+        font-size: 0.95rem;
         padding: 10px 0;
-        border-radius: 16px;
-        width: 100%;
-        min-width: 0;
-        min-height: 38px;
+        border-radius: 14px;
+        width: 48%;
+        min-width: 80px;
+        min-height: 36px;
         margin-top: 6px;
         margin-bottom: 2px;
         justify-content: center;
-        display: flex;
+        display: inline-flex;
         align-items: center;
         touch-action: manipulation;
+      }
+      .vitrine-botoes {
+        gap: 4%;
+      }
+      .continuar-btn {
+        font-size: 0.97rem;
+        padding: 7px 0;
+        border-radius: 10px;
+        width: 46%;
+        min-width: 80px;
+        min-height: 34px;
+        margin-top: 4px;
+        margin-bottom: 2px;
+        justify-content: center;
+        display: inline-flex;
+        align-items: center;
+        touch-action: manipulation;
+        background: linear-gradient(90deg, #1db954 0%, #17a944 100%);
+        color: #fff;
+        border: none;
+        box-shadow: 0 1px 6px #1db95433, 0 1px 2px #0001;
+        transition: background 0.22s, box-shadow 0.22s, transform 0.14s;
+        cursor: pointer;
+        gap: 8px;
+        outline: none;
+    }
+    .continuar-btn:focus-visible {
+        outline: 2px solid #1db954;
+        outline-offset: 2px;
+        box-shadow: 0 0 0 3px #1db95455;
       }
     }
 
@@ -1621,20 +1677,17 @@ toggleSenha.addEventListener('click', () => {
         cardBody.appendChild(ano);
         cardBody.appendChild(desc);
 
+        const botoesContainer = document.createElement("div");
+        botoesContainer.className = "vitrine-botoes";
+
         const btnAssistir = document.createElement("button");
         btnAssistir.className = "assistir-btn";
         btnAssistir.textContent = "▶️ Assistir";
         btnAssistir.setAttribute("aria-label", `Assistir ${item.titulo}`);
-
         btnAssistir.addEventListener("click", () => {
           if (item.tipo === "movie") abrirModalPlayer(item.video);
           else abrirModalEpisodios(item);
         });
-        const botoesContainer = document.createElement("div");
-        botoesContainer.style.display = "flex";
-        botoesContainer.style.flexWrap = "wrap";
-        botoesContainer.style.gap = "10px";
-        botoesContainer.style.marginTop = "10px";
         botoesContainer.appendChild(btnAssistir);
 
         if (item.trailer) {
@@ -2252,8 +2305,8 @@ function obterContinuarAssistindo(usuario) {
   }
   // Adiciona o último episódio salvo de cada série
   Object.values(seriesMap).forEach(obj => vistos.push(obj));
-  // Mais recentes primeiro
-  return vistos.reverse();
+  // Mantém ordem de salvamento (ordem de inserção no localStorage)
+  return vistos;
 }
 
 function obterTempoAssistido(usuario, idVideo) {
