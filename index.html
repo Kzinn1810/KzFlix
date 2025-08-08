@@ -207,8 +207,9 @@
           justify-content: space-between;
         }
         /* Ajuste apenas para os botões dos CARDS PRINCIPAIS (vitrine-lancamentos) */
-        .vitrine-scroll#vitrine-lancamentos .vitrine-botoes button,
-        .vitrine-scroll#vitrine-lancamentos .vitrine-botoes button.trailer {
+        /* Ajuste apenas para os botões dos CARDS PRINCIPAIS (.lista) em mobile */
+        .lista .vitrine-botoes button,
+        .lista .vitrine-botoes button.trailer {
           font-size: 1rem;
           padding: 12px 0;
           min-width: 120px;
@@ -226,7 +227,7 @@
           align-items: center;
           touch-action: manipulation;
         }
-        .vitrine-scroll#vitrine-lancamentos .vitrine-botoes > * {
+        .lista .vitrine-botoes > * {
           flex: 1 1 0;
           max-width: 100%;
         }
