@@ -1313,6 +1313,19 @@ const dados = [
       {
         id: 63,
         tipo: "movie",
+        titulo: "Jurassic World: Recomeço",
+        descricao:
+          "Jurassic World: Recomeço é um filme de aventura e ficção científica que se passa em um parque temático de dinossauros, onde cientistas tentam controlar as criaturas pré-históricas enquanto enfrentam novos desafios.",
+        imagem: "imagens/jurassic-world-recomeco.webp",
+        video:
+          "https://drive.google.com/file/d/1g_a8yZLKmhe6MQayFqvwZxie8oDcnEvI/preview",
+        trailer: "http://www.youtube.com/embed/ccuMLmZRd5g",
+        generos: ["aventura", "ficção científica", "ação"],
+        //ano: 2025
+      },
+      {
+        id: 64,
+        tipo: "movie",
         titulo: "Sorria",
         descricao:
           "Após presenciar um evento traumático, uma terapeuta começa a vivenciar eventos assustadores.",
@@ -1324,7 +1337,7 @@ const dados = [
         //ano: 2022
       },
       {
-        id: 64,
+        id: 65,
         tipo: "movie",
         titulo: "Bird Box",
         descricao:
@@ -1337,7 +1350,7 @@ const dados = [
         //ano: 2018
       },
       {
-        id: 65,
+        id: 66,
         tipo: "movie",
         titulo: "Minha mãe é uma peça",
         descricao:
@@ -1350,7 +1363,7 @@ const dados = [
         //ano: 2013
       },
       {
-        id: 66,
+        id: 67,
         tipo: "movie",
         titulo: "As Branquelas",
         descricao:
@@ -1363,7 +1376,7 @@ const dados = [
         //ano: 2000
       },
       {
-        id: 67,
+        id: 68,
         tipo: "movie",
         titulo: "Django Livre",
         descricao:
@@ -1376,7 +1389,7 @@ const dados = [
         //ano: 2012
       },
       {
-        id: 68,
+        id: 69,
         tipo: "series",
         titulo: "Naruto",
         descricao:
@@ -1514,7 +1527,7 @@ const dados = [
         //ano: 2002
       },
       {
-        id: 69,
+        id: 70,
         tipo: "movie",
         titulo: "Bob Esponja: O Filme",
         descricao:
@@ -1527,7 +1540,7 @@ const dados = [
         //ano: 2004
       },
       {
-        id: 70,
+        id: 71,
         tipo: "movie",
         titulo: "M3GAN",
         descricao:
@@ -1540,7 +1553,7 @@ const dados = [
         //ano: 2023
       },
       {
-        id: 71,
+        id: 72,
         tipo: "movie",
         titulo: "M3GAN 2.0",
         descricao:
@@ -1553,7 +1566,7 @@ const dados = [
         //ano: 2025
       },
       {
-        id: 72,
+        id: 73,
         tipo: "movie",
         titulo: "Meu Malvado Favorito",
         descricao:
@@ -1566,7 +1579,7 @@ const dados = [
         //ano: 2010
       },
       {
-        id: 73,
+        id: 74,
         tipo: "movie",
         titulo: "Meu Malvado Favorito 2",
         descricao:
@@ -1579,7 +1592,7 @@ const dados = [
         //ano: 2013
       },
       {
-        id: 74,
+        id: 75,
         tipo: "movie",
         titulo: "Meu Malvado Favorito 3",
         descricao:
@@ -1592,7 +1605,7 @@ const dados = [
         //ano: 2017
       },
       {
-        id: 75,
+        id: 76,
         tipo: "movie",
         titulo: "Interstellar",
         descricao:
@@ -1605,7 +1618,7 @@ const dados = [
         //ano: 2014
       },
       {
-        id: 76,
+        id: 77,
         tipo: "movie",
         titulo: "Tropa de Elite",
         descricao:
@@ -1618,7 +1631,7 @@ const dados = [
         //ano: 2007
       },
       {
-        id: 77,
+        id: 78,
         tipo: "movie",
         titulo: "Tropa de Elite 2",
         descricao:
@@ -1631,7 +1644,7 @@ const dados = [
         //ano: 2012
       },
       {
-        id: 78,
+        id: 79,
         tipo: "movie",
         titulo: "bob esponja: o incrivel resgate",
         descricao:
@@ -1644,7 +1657,7 @@ const dados = [
         //ano: 2020
       },
       {
-        id: 79,
+        id: 80,
         tipo: "movie",
         titulo: "Travis Scott: Voando Alto - Legendado",
         descricao:
