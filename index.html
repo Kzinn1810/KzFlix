@@ -829,20 +829,18 @@
         flex-wrap: nowrap;
         justify-content: space-between;
       }
-      .vitrine-botoes button,
-      .vitrine-botoes button.trailer,
-      .assistir-btn,
-      .continuar-btn {
-        font-size: 1rem;
-        padding: 12px 0;
-        min-width: 120px;
-        width: 100%;
+      .vitrine-scroll#vitrine-lancamentos .vitrine-botoes button,
+      .vitrine-scroll#vitrine-lancamentos .vitrine-botoes button.trailer {
+        font-size: 1.05rem;
+        padding: 12px 8px;
+        min-width: 130px;
+        width: 49%;
         box-sizing: border-box;
         white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        overflow: visible;
+        text-overflow: initial;
         border-radius: 16px;
-        min-height: 40px;
+        min-height: 44px;
         margin-top: 6px;
         margin-bottom: 2px;
         justify-content: center;
@@ -850,7 +848,7 @@
         align-items: center;
         touch-action: manipulation;
       }
-      .vitrine-botoes > * {
+      .vitrine-scroll#vitrine-lancamentos .vitrine-botoes > * {
         flex: 1 1 0;
         max-width: 50%;
       }
