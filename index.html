@@ -210,27 +210,26 @@
         /* Ajuste apenas para os botões dos CARDS PRINCIPAIS (.lista) em mobile */
         .lista .vitrine-botoes {
           display: flex;
-          flex-direction: row;
-          gap: 6px;
+          flex-direction: column;
+          gap: 8px;
           justify-content: center;
           align-items: center;
           width: 100%;
-          flex-wrap: nowrap;
         }
         .lista .vitrine-botoes button,
         .lista .vitrine-botoes button.trailer {
           font-size: 0.93rem;
           padding: 8px 0;
           min-width: 90px;
-          width: 48%;
+          width: 80%;
+          max-width: 240px;
           box-sizing: border-box;
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
           border-radius: 12px;
           min-height: 34px;
-          margin-top: 6px;
-          margin-bottom: 2px;
+          margin: 0 auto;
           justify-content: center;
           display: inline-flex;
           align-items: center;
