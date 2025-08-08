@@ -823,7 +823,7 @@
     }
     @media (max-width: 600px) {
       .vitrine-botoes {
-        gap: 4%;
+        gap: 6px;
         width: 100%;
         display: flex;
         flex-wrap: nowrap;
@@ -833,22 +833,26 @@
       .vitrine-botoes button.trailer,
       .assistir-btn,
       .continuar-btn {
-        font-size: 0.93rem;
-        padding: 11px 0;
-        min-width: 0;
-        width: 48%;
+        font-size: 1rem;
+        padding: 12px 0;
+        min-width: 120px;
+        width: 100%;
         box-sizing: border-box;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        border-radius: 14px;
-        min-height: 36px;
+        border-radius: 16px;
+        min-height: 40px;
         margin-top: 6px;
         margin-bottom: 2px;
         justify-content: center;
         display: inline-flex;
         align-items: center;
         touch-action: manipulation;
+      }
+      .vitrine-botoes > * {
+        flex: 1 1 0;
+        max-width: 50%;
       }
     }
 
