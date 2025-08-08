@@ -823,12 +823,32 @@
     }
     @media (max-width: 600px) {
       .vitrine-botoes {
-        gap: 6px;
+        gap: 4%;
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
       }
-      .assistir-btn, .continuar-btn, .vitrine-botoes button.trailer {
-        padding: 6px 10px;
-        font-size: 0.85rem;
-        border-radius: 16px;
+      .vitrine-botoes button,
+      .vitrine-botoes button.trailer,
+      .assistir-btn,
+      .continuar-btn {
+        font-size: 0.93rem;
+        padding: 11px 0;
+        min-width: 0;
+        width: 48%;
+        box-sizing: border-box;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        border-radius: 14px;
+        min-height: 36px;
+        margin-top: 6px;
+        margin-bottom: 2px;
+        justify-content: center;
+        display: inline-flex;
+        align-items: center;
+        touch-action: manipulation;
       }
     }
 
@@ -890,21 +910,23 @@
     @media (max-width: 600px) {
       .vitrine-botoes button,
       .vitrine-botoes button.trailer {
-        font-size: 0.95rem;
+        font-size: 0.93rem;
         padding: 11px 0;
-        min-width: 115px;
-        padding: 10px 0;
-        border-radius: 14px;
+        min-width: 0;
         width: 48%;
-        min-width: 80px;
-        min-height: 36px;
-        margin-top: 6px;
-        margin-bottom: 2px;
-        justify-content: center;
-        display: inline-flex;
-        align-items: center;
-        touch-action: manipulation;
+        box-sizing: border-box;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
+      .vitrine-botoes {
+        gap: 4%;
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+      }
+    }
       .vitrine-botoes {
         gap: 4%;
       }
@@ -935,7 +957,6 @@
         outline-offset: 2px;
         box-shadow: 0 0 0 3px #1db95455;
       }
-    }
 
       body.modo-claro .vitrine-card {
         background: #fff;
