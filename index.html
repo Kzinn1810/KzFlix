@@ -829,18 +829,19 @@
         flex-wrap: nowrap;
         justify-content: space-between;
       }
-      .vitrine-scroll#vitrine-lancamentos .vitrine-botoes button,
-      .vitrine-scroll#vitrine-lancamentos .vitrine-botoes button.trailer {
-        font-size: 1.05rem;
-        padding: 12px 8px;
-        min-width: 130px;
-        width: 49%;
+      /* Ajuste apenas para os botões dos cards principais (não "adicionados recentemente") */
+      .vitrine-scroll:not(#vitrine-lancamentos) .vitrine-botoes button,
+      .vitrine-scroll:not(#vitrine-lancamentos) .vitrine-botoes button.trailer {
+        font-size: 0.93rem;
+        padding: 11px 0;
+        min-width: 0;
+        width: 48%;
         box-sizing: border-box;
         white-space: nowrap;
-        overflow: visible;
-        text-overflow: initial;
-        border-radius: 16px;
-        min-height: 44px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        border-radius: 14px;
+        min-height: 36px;
         margin-top: 6px;
         margin-bottom: 2px;
         justify-content: center;
@@ -848,7 +849,7 @@
         align-items: center;
         touch-action: manipulation;
       }
-      .vitrine-scroll#vitrine-lancamentos .vitrine-botoes > * {
+      .vitrine-scroll:not(#vitrine-lancamentos) .vitrine-botoes > * {
         flex: 1 1 0;
         max-width: 50%;
       }
