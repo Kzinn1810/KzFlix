@@ -198,6 +198,39 @@
       gap: 8px;
     }
 
+      @media (max-width: 600px) {
+        .vitrine-botoes {
+          gap: 6px;
+          width: 100%;
+          display: flex;
+          flex-wrap: nowrap;
+          justify-content: space-between;
+        }
+        /* Ajuste apenas para os botões dos CARDS PRINCIPAIS (vitrine-lancamentos) */
+        .vitrine-scroll#vitrine-lancamentos .vitrine-botoes button,
+        .vitrine-scroll#vitrine-lancamentos .vitrine-botoes button.trailer {
+          font-size: 1rem;
+          padding: 12px 0;
+          min-width: 120px;
+          width: 100%;
+          box-sizing: border-box;
+          white-space: nowrap;
+          overflow: visible;
+          text-overflow: initial;
+          border-radius: 14px;
+          min-height: 40px;
+          margin-top: 6px;
+          margin-bottom: 2px;
+          justify-content: center;
+          display: inline-flex;
+          align-items: center;
+          touch-action: manipulation;
+        }
+        .vitrine-scroll#vitrine-lancamentos .vitrine-botoes > * {
+          flex: 1 1 0;
+          max-width: 100%;
+        }
+      }
     .card-title {
       font-size: 18px;
       margin: 0 0 10px;
@@ -866,7 +899,7 @@
         border-radius: 10px;
         font-size: 0.91rem;
         padding: 7px 0;
-        width: 46%;
+  width: 100%;
         min-width: 80px;
         min-height: 34px;
         margin-top: 4px;
