@@ -1620,6 +1620,19 @@ const dados = [
       {
         id: 77,
         tipo: "movie",
+        titulo: "17 outra vez",
+        descricao:
+          "Mike O'Donnell, um homem de 37 anos, tem a chance de reviver sua adolescência quando é magicamente transformado em seu eu de 17 anos.",
+        imagem: "imagens/17-outra-vez.webp",
+        video:
+          "https://drive.google.com/file/d/1B4UDujG__-zLOs3jeubcoIm1taG5qpe5/preview",
+        trailer: "https://www.youtube.com/embed/H66KX5xjtmc",
+        generos: ["comédia", "fantasia", "romance"],
+        //ano: 2009
+      },
+      {
+        id: 78,
+        tipo: "movie",
         titulo: "Tropa de Elite",
         descricao:
           "Um capitão do BOPE enfrenta a violência do tráfico e os dilemas morais da guerra urbana no Rio de Janeiro.",
@@ -1631,7 +1644,7 @@ const dados = [
         //ano: 2007
       },
       {
-        id: 78,
+        id: 79,
         tipo: "movie",
         titulo: "Tropa de Elite 2",
         descricao:
@@ -1644,7 +1657,7 @@ const dados = [
         //ano: 2012
       },
       {
-        id: 79,
+        id: 80,
         tipo: "movie",
         titulo: "bob esponja: o incrivel resgate",
         descricao:
@@ -1657,7 +1670,7 @@ const dados = [
         //ano: 2020
       },
       {
-        id: 80,
+        id: 81,
         tipo: "movie",
         titulo: "Travis Scott: Voando Alto - Legendado",
         descricao:
