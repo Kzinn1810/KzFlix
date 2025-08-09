@@ -1280,7 +1280,7 @@
       border-radius: 14px;
       cursor: pointer;
       font-weight: bold;
-      box-shadow: 0 0 18px #2228,0 2px 12px #4444;
+      box-shadow: 0 0 18px #2228, 0 2px 12px #4444;
       transition: background 0.3s,transform 0.2s,box-shadow 0.2s;
       letter-spacing: 2px;
       text-shadow: 0 2px 8px #222;
@@ -1289,7 +1289,7 @@
     .login-btn:hover {
       background: linear-gradient(90deg,#444 0%,#222 100%);
       transform: scale(1.04);
-      box-shadow: 0 0 24px #444a,0 2px 12px #2224;
+      box-shadow: 0 0 24px #444a, 0 2px 12px #2224;
     }
     .login-erro {
       display: none;
@@ -1330,6 +1330,96 @@
 <button class="pular-capitulo-player-global" aria-label="Pular capítulo" style="position:absolute;right:18px;bottom:18px;background:#1db954;border:none;color:#fff;font-size:14px;padding:8px 18px;border-radius:24px;cursor:pointer;z-index:20000;transition:background 0.3s;display:none;box-shadow:0 2px 8px rgba(0,0,0,0.3);">⏭️ Pular Capítulo</button>
     </div>
   </div>
+<style>
+/* --- CSS Skeleton --- */
+.skeleton-card {
+  background: #222;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 200px;
+  min-height: 370px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 8px 16px 0;
+  animation: skeleton-fade 1.2s infinite linear alternate;
+}
+.skeleton-img {
+  width: 100%;
+  height: 260px;
+  background: linear-gradient(90deg, #222 25%, #333 50%, #222 75%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.2s infinite linear;
+}
+.skeleton-text {
+  height: 18px;
+  width: 80%;
+  margin: 16px auto 8px auto;
+  border-radius: 6px;
+  background: #333;
+}
+.skeleton-btn {
+  height: 34px;
+  width: 80%;
+  margin: 12px auto 0 auto;
+  border-radius: 8px;
+  background: #292929;
+}
+@keyframes skeleton-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes skeleton-fade {
+  0% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+</style>
+
+<script>
+// Função para exibir skeletons na lista principal enquanto carrega
+function mostrarSkeletonsLista(qtd = 8) {
+  const lista = document.getElementById('lista');
+  if (!lista) return;
+  lista.innerHTML = '';
+  for (let i = 0; i < qtd; i++) {
+    const skeleton = document.createElement('div');
+    skeleton.className = 'skeleton-card';
+    skeleton.innerHTML = `
+      <div class="skeleton-img"></div>
+      <div class="skeleton-text"></div>
+      <div class="skeleton-text" style="width:60%;"></div>
+      <div class="skeleton-btn"></div>
+      <div class="skeleton-btn" style="width:60%;"></div>
+    `;
+    lista.appendChild(skeleton);
+  }
+}
+// Exemplo de uso: mostrarSkeletonsLista();
+// Chame mostrarSkeletonsLista() antes de buscar/carregar os dados reais
+// e depois substitua pelo conteúdo real normalmente.
+
+// Exibir skeletons ao iniciar
+window.addEventListener('DOMContentLoaded', () => {
+  mostrarSkeletonsLista();
+});
+
+// Exibir skeletons ao trocar filtro ou buscar
+botoes.forEach((botao) => {
+  botao.addEventListener('click', () => {
+    mostrarSkeletonsLista();
+    setTimeout(() => exibirLista(filtrarDados(), true), 400); // Simula carregamento
+  });
+});
+campoBusca.addEventListener('input', () => {
+  mostrarSkeletonsLista();
+  setTimeout(() => exibirLista(filtrarDados(), true), 400);
+});
+
+// Ao carregar mais (paginacao)
+document.getElementById("btn-carregar-mais").addEventListener("click", () => {
+  mostrarSkeletonsLista();
+  setTimeout(() => exibirLista(dadosFiltrados, false), 400);
+});
+</script>
 <script src="dados.js"></script>
 <script>
 // Login modal aprimorado
