@@ -276,56 +276,45 @@ const dados = [
       {
         id: 8,
         tipo: "series",
-        titulo: "Dark",
+        titulo: "Game of Thrones",
         descricao:
-          "Dark é uma série alemã de ficção científica e suspense que explora viagens no tempo e os segredos sombrios de quatro famílias interligadas.",
-        imagem: "imagens/dark.webp",
+          "Nobres famílias lutam pelo controle do Trono de Ferro e dos Sete Reinos de Westeros.",
+        imagem: "imagens/game-of-thrones.webp",
         temporadas: [
           {
             numero: 1,
             episodios: [
-              { numero: 1, titulo: "Segredos", video: "https://drive.google.com/file/d/102SGUVg5piDjkOlpltoJSq-PPT_tKcrr/preview" },
-              { numero: 2, titulo: "Mentirosos", video: "https://drive.google.com/file/d/104eAEVzIUMs4xtDwaKDE35AYthP01pjt/preview" },
-              { numero: 3, titulo: "Passado e Presente", video: "https://drive.google.com/file/d/108LI4kH1oJVoplLU8vx5iVMXG2puMM_M/preview" },
-              { numero: 4, titulo: "Duplo Viver", video: "https://drive.google.com/file/d/10k_HhWtTJ1_nYXbpKmrhTR2mbyOToauH/preview" },
-              { numero: 5, titulo: "A Verdade", video: "https://drive.google.com/file/d/10nPKhRbXzqh_Kv7meNCslhNPITGc1zAI/preview" },
-              { numero: 6, titulo: "Tudo é Agora", video: "https://drive.google.com/file/d/10osbuXXwzZs8EYRFd6RwBzRtOOhjqsHv/preview" },
-              { numero: 7, titulo: "Entre o Tempo", video: "https://drive.google.com/file/d/10pDzGPRNOCb-uT53gYExJCRTUsFUXBrZ/preview" },
-              { numero: 8, titulo: "O Que Se Semear, Se Colhe", video: "https://drive.google.com/file/d/10yKIyqfod3BRWLVUX01LxhOoEc5cPiLr/preview" },
-              { numero: 9, titulo: "Tudo se Repete", video: "https://drive.google.com/file/d/112IqZoerm3kild7cycx8oETtsLc7PBqj/preview" },
-              { numero: 10, titulo: "Alfa e Ômega", video: "https://drive.google.com/file/d/116XWWWdSb0E7YiWtqXGyJPWFIFf10R74/preview" },
+              { numero: 1, titulo: "O Inverno Está Chegando", video: "https://drive.google.com/file/d/1sGaVxyUJXiUqEy-u1r-XWtrE5fFv3kjk/preview" },
+              { numero: 2, titulo: "A Estrada do Rei", video: "https://drive.google.com/file/d/1t2Ky6cTxmtudYrnRU30IJojELxS6Wf3V/preview" },
+              { numero: 3, titulo: "Lorde Snow", video: "https://drive.google.com/file/d/16qwA1dsGaep5lEOON9gAaaXbI9H4LxNh/preview" },
+              { numero: 4, titulo: "Aleijados, Bastardos e Coisas Partidas", video: "https://drive.google.com/file/d/1xIIAsNSOayXDHiGOv35TgjFD7hs39fX-/preview" },
+              { numero: 5, titulo: "O Lobo e o Leão", video: "https://drive.google.com/file/d/1eXc6M19Pdz2HBVbTf4ZwWSXfU6M_uIv8/preview" },
+              { numero: 6, titulo: "Uma Coroa Dourada", video: "https://drive.google.com/file/d/1vgRlK7bOzNjI29eT_-yRdA8_gxUqkou4/preview" },
+              { numero: 7, titulo: "Vença ou Morra", video: "https://drive.google.com/file/d/17Fwhc4G92FYmrbAd2GoWCslWCpTyfEwc/preview" },
+              { numero: 8, titulo: "A Ponta Aguda", video: "https://drive.google.com/file/d/1RtnYSEr1sptkqXikOUVRzoFYdC3n7PM1/preview" },
+              { numero: 9, titulo: "Baelor", video: "https://drive.google.com/file/d/1oZ4OyakwjPbOJK7BeQW6b0V7KOTeksKf/preview" },
+              { numero: 10, titulo: "Fogo e Sangue", video: "https://drive.google.com/file/d/1S7HUTM32PDKJ6Umq0skAv3Mx1Y-E69Wo/preview" },
             ],
           },
           {
             numero: 2,
             episodios: [
-              { numero: 1, titulo: "Inícios e Finais", video: "https://drive.google.com/file/d/12GjEt9WnO_-EElEEUsNxOHh_jKMGzCw9/preview" },
-              { numero: 2, titulo: "Matéria Escura", video: "https://drive.google.com/file/d/12HKYJuLo5n_-yd6Fg1Za3wEoU8DZe2b7/preview" },
-              { numero: 3, titulo: "Fantasmas", video: "https://drive.google.com/file/d/12NDcmKioXYfZXiRkHNCIvZqEmbz9UbFR/preview" },
-              { numero: 4, titulo: "Os Viajantes", video: "https://drive.google.com/file/d/12RSAcGC5uevwS6ikbP3nEgRC9blvOBpf/previewk" },
-              { numero: 5, titulo: "Achados e Perdidos", video: "https://drive.google.com/file/d/12QBmx839BUZstX2iVDP_WNThA4j8_Kfw/preview" },
-              { numero: 6, titulo: "Um Ciclo Sem Fim", video: "https://drive.google.com/file/d/12ckZ65-wSsxLPFu_LPC-bs2km6WdeOgF/preview" },
-              { numero: 7, titulo: "O Diabo Branco", video: "https://drive.google.com/file/d/12a3xVaT2iJea0PZAFezebFK92RGuPaXI/preview" },
-              { numero: 8, titulo: "Finais e Inícios", video: "https://drive.google.com/file/d/12ccFTaTIQAI5g0YAi3gHgFAkhjyICpcD/preview" },
-            ],
-          },
-          {
-            numero: 3,
-            episodios: [
-              { numero: 1, titulo: "Deja-vu", video: "https://drive.google.com/file/d/1-C6AvI4SBesH_47eVL4_G7Pl9ATY94Mh/preview" },
-              { numero: 2, titulo: "Os Sobreviventes", video: "https://drive.google.com/file/d/1-J8ffOln6uk10gyGzm_KXIPNd2MPQntQ/preview" },
-              { numero: 3, titulo: "Adão e Eva", video: "https://drive.google.com/file/d/1-K1JRMPOkxqVZ5ldNlQPO-bErCpqoxs8/preview" },
-              { numero: 4, titulo: "A Origem", video: "https://drive.google.com/file/d/1-HE4B9cVybxrS2lhTmcYCnX96aCe1WN-/preview" },
-              { numero: 5, titulo: "Vida e Morte", video: "https://drive.google.com/file/d/1mLnJPtzDwfs1SSLiUoLwjjWbMPEorL6-/preview" },
-              { numero: 6, titulo: "Luz e Sombra", video: "https://drive.google.com/file/d/1-UFyVqiTbZ0w61lvC2qigftrit3FQRCg/preview" },
-              { numero: 7, titulo: "Entre o Tempo", video: "https://drive.google.com/file/d/1ywPI8JgybfN8iRZqVDtnV3kPe9mmOn-D/preview" },
-              { numero: 8, titulo: "O Paraíso", video: "https://drive.google.com/file/d/1-RYxpvU_GHbt9sBMTMWvK-C7G_ruktiP/preview" },
+              { numero: 1, titulo: "O Norte se Lembra", video: "https://drive.google.com/file/d/1A7ykSN5TTJ14P5WLSBsW76D0SSMpMXY5/preview" },
+              { numero: 2, titulo: "As Terras da Noite", video: "https://drive.google.com/file/d/1dAkd5UH6je-6HK6Xy4-qN-QHCjXNmHNm/preview" },
+              { numero: 3, titulo: "O que Está Morto Não Pode Morrer", video: "https://drive.google.com/file/d/156Up17fukxYmFdmapC3uzFi7dV4GbZ5b/preview" },
+              { numero: 4, titulo: "Jardim de Ossos", video: "https://drive.google.com/file/d/18Q6PoEZx_VRulq0PeZPBzQJPksid3ugA/preview" },
+              { numero: 5, titulo: "O Fantasma de Harrenhal", video: "https://drive.google.com/file/d/13zAKPfCi5gbQ9AI2zmPV3k0moeXG-Q5m/preview" },
+              { numero: 6, titulo: "Os Deuses Antigos e Novos", video: "https://drive.google.com/file/d/1dQqu_-jnVqISjR5rFaI4zWW39SU0R36-/preview" },
+              { numero: 7, titulo: "Um Homem sem Honra", video: "https://drive.google.com/file/d/11KHwduZgqhSR3hl60Co6EE45W5EOO7W3/preview" },
+              { numero: 8, titulo: "O Príncipe de Winterfell", video: "https://drive.google.com/file/d/1Wbw65-aTn157w9doahloX0WtWuz6Ogdb/preview" },
+              { numero: 9, titulo: "A Água Negra", video: "https://drive.google.com/file/d/186_smFnobEEmHVADrgHSWWdFeOzDNwL7/preview" },
+              { numero: 10, titulo: "Valar Morghulis", video: "https://drive.google.com/file/d/1FjJyPaAOeiak8jm3wLC3Gbur0KpG62yY/preview" },
             ],
           },
         ],
-        trailer: "https://www.youtube.com/embed/xCwwxNbtK6Y",
-        generos: ["ficção científica", "mistério", "drama", "suspense"],
-        //ano: 2017
+        trailer: "https://www.youtube.com/embed/bjqEWgDVPe0",
+        generos: ["ação", "aventura", "fantasia"],
+        //ano: 2011
       },
       {
         id: 9,
@@ -580,17 +569,58 @@ const dados = [
         //ano: 2024
       },
       {
-      id: 18,
-        tipo: "movie",
-        titulo: "Gente grande",
+        id: 18,
+        tipo: "series",
+        titulo: "Dark",
         descricao:
-          "Um grupo de amigos de infância se reencontra após muitos anos para reviver momentos divertidos e caóticos em um fim de semana juntos.",
-        imagem: "imagens/gente-grande.webp",
-        video:
-          "https://drive.google.com/file/d/12_JTNRo6Su0Q1V2VOMKnaMM1pkDIpHT8/preview",
-        trailer: "https://www.youtube.com/embed/HKVve_VSz58",
-        generos: ["comédia", "familia"],
-        //ano: 2010
+          "Dark é uma série alemã de ficção científica e suspense que explora viagens no tempo e os segredos sombrios de quatro famílias interligadas.",
+        imagem: "imagens/dark.webp",
+        temporadas: [
+          {
+            numero: 1,
+            episodios: [
+              { numero: 1, titulo: "Segredos", video: "https://drive.google.com/file/d/102SGUVg5piDjkOlpltoJSq-PPT_tKcrr/preview" },
+              { numero: 2, titulo: "Mentirosos", video: "https://drive.google.com/file/d/104eAEVzIUMs4xtDwaKDE35AYthP01pjt/preview" },
+              { numero: 3, titulo: "Passado e Presente", video: "https://drive.google.com/file/d/108LI4kH1oJVoplLU8vx5iVMXG2puMM_M/preview" },
+              { numero: 4, titulo: "Duplo Viver", video: "https://drive.google.com/file/d/10k_HhWtTJ1_nYXbpKmrhTR2mbyOToauH/preview" },
+              { numero: 5, titulo: "A Verdade", video: "https://drive.google.com/file/d/10nPKhRbXzqh_Kv7meNCslhNPITGc1zAI/preview" },
+              { numero: 6, titulo: "Tudo é Agora", video: "https://drive.google.com/file/d/10osbuXXwzZs8EYRFd6RwBzRtOOhjqsHv/preview" },
+              { numero: 7, titulo: "Entre o Tempo", video: "https://drive.google.com/file/d/10pDzGPRNOCb-uT53gYExJCRTUsFUXBrZ/preview" },
+              { numero: 8, titulo: "O Que Se Semear, Se Colhe", video: "https://drive.google.com/file/d/10yKIyqfod3BRWLVUX01LxhOoEc5cPiLr/preview" },
+              { numero: 9, titulo: "Tudo se Repete", video: "https://drive.google.com/file/d/112IqZoerm3kild7cycx8oETtsLc7PBqj/preview" },
+              { numero: 10, titulo: "Alfa e Ômega", video: "https://drive.google.com/file/d/116XWWWdSb0E7YiWtqXGyJPWFIFf10R74/preview" },
+            ],
+          },
+          {
+            numero: 2,
+            episodios: [
+              { numero: 1, titulo: "Inícios e Finais", video: "https://drive.google.com/file/d/12GjEt9WnO_-EElEEUsNxOHh_jKMGzCw9/preview" },
+              { numero: 2, titulo: "Matéria Escura", video: "https://drive.google.com/file/d/12HKYJuLo5n_-yd6Fg1Za3wEoU8DZe2b7/preview" },
+              { numero: 3, titulo: "Fantasmas", video: "https://drive.google.com/file/d/12NDcmKioXYfZXiRkHNCIvZqEmbz9UbFR/preview" },
+              { numero: 4, titulo: "Os Viajantes", video: "https://drive.google.com/file/d/12RSAcGC5uevwS6ikbP3nEgRC9blvOBpf/preview" },
+              { numero: 5, titulo: "Achados e Perdidos", video: "https://drive.google.com/file/d/12QBmx839BUZstX2iVDP_WNThA4j8_Kfw/preview" },
+              { numero: 6, titulo: "Um Ciclo Sem Fim", video: "https://drive.google.com/file/d/12ckZ65-wSsxLPFu_LPC-bs2km6WdeOgF/preview" },
+              { numero: 7, titulo: "O Diabo Branco", video: "https://drive.google.com/file/d/12a3xVaT2iJea0PZAFezebFK92RGuPaXI/preview" },
+              { numero: 8, titulo: "Finais e Inícios", video: "https://drive.google.com/file/d/12ccFTaTIQAI5g0YAi3gHgFAkhjyICpcD/preview" },
+            ],
+          },
+          {
+            numero: 3,
+            episodios: [
+              { numero: 1, titulo: "Deja-vu", video: "https://drive.google.com/file/d/1-C6AvI4SBesH_47eVL4_G7Pl9ATY94Mh/preview" },
+              { numero: 2, titulo: "Os Sobreviventes", video: "https://drive.google.com/file/d/1-J8ffOln6uk10gyGzm_KXIPNd2MPQntQ/preview" },
+              { numero: 3, titulo: "Adão e Eva", video: "https://drive.google.com/file/d/1-K1JRMPOkxqVZ5ldNlQPO-bErCpqoxs8/preview" },
+              { numero: 4, titulo: "A Origem", video: "https://drive.google.com/file/d/1-HE4B9cVybxrS2lhTmcYCnX96aCe1WN-/preview" },
+              { numero: 5, titulo: "Vida e Morte", video: "https://drive.google.com/file/d/1mLnJPtzDwfs1SSLiUoLwjjWbMPEorL6-/preview" },
+              { numero: 6, titulo: "Luz e Sombra", video: "https://drive.google.com/file/d/1-UFyVqiTbZ0w61lvC2qigftrit3FQRCg/preview" },
+              { numero: 7, titulo: "Entre o Tempo", video: "https://drive.google.com/file/d/1ywPI8JgybfN8iRZqVDtnV3kPe9mmOn-D/preview" },
+              { numero: 8, titulo: "O Paraíso", video: "https://drive.google.com/file/d/1-RYxpvU_GHbt9sBMTMWvK-C7G_ruktiP/preview" },
+            ],
+          },
+        ],
+        trailer: "https://www.youtube.com/embed/xCwwxNbtK6Y",
+        generos: ["ficção científica", "mistério", "drama", "suspense"],
+        //ano: 2017
       },
       {
         id: 19,
@@ -846,15 +876,15 @@ const dados = [
       {
         id: 35,
         tipo: "movie",
-        titulo: "A barraca do beijo",
+        titulo: "Gente grande",
         descricao:
-          "Um romance adolescente cheio de confusões, paixões e desafios entre amizade e amor.",
-        imagem: "imagens/barraca do beijo.webp",
+          "Um grupo de amigos de infância se reencontra após muitos anos para reviver momentos divertidos e caóticos em um fim de semana juntos.",
+        imagem: "imagens/gente-grande.webp",
         video:
-          "https://drive.google.com/file/d/10eof651eVsyyVcfEFQArNYG9wHwTTFqg/preview",
-        trailer: "http://www.youtube.com/embed/QIalE8-E990",
-        generos: ["romance", "comédia", "drama"],
-        //ano: 2018
+          "https://drive.google.com/file/d/12_JTNRo6Su0Q1V2VOMKnaMM1pkDIpHT8/preview",
+        trailer: "https://www.youtube.com/embed/HKVve_VSz58",
+        generos: ["comédia", "familia"],
+        //ano: 2010
       },
       {
         id: 36,
@@ -1633,6 +1663,19 @@ const dados = [
       {
         id: 78,
         tipo: "movie",
+        titulo: "A barraca do beijo",
+        descricao:
+          "Um romance adolescente cheio de confusões, paixões e desafios entre amizade e amor.",
+        imagem: "imagens/barraca do beijo.webp",
+        video:
+          "https://drive.google.com/file/d/10eof651eVsyyVcfEFQArNYG9wHwTTFqg/preview",
+        trailer: "http://www.youtube.com/embed/QIalE8-E990",
+        generos: ["romance", "comédia", "drama"],
+        //ano: 2018
+      },
+      {
+        id: 79,
+        tipo: "movie",
         titulo: "Tropa de Elite",
         descricao:
           "Um capitão do BOPE enfrenta a violência do tráfico e os dilemas morais da guerra urbana no Rio de Janeiro.",
@@ -1644,7 +1687,7 @@ const dados = [
         //ano: 2007
       },
       {
-        id: 79,
+        id: 80,
         tipo: "movie",
         titulo: "Tropa de Elite 2",
         descricao:
@@ -1657,7 +1700,7 @@ const dados = [
         //ano: 2012
       },
       {
-        id: 80,
+        id: 81,
         tipo: "movie",
         titulo: "bob esponja: o incrivel resgate",
         descricao:
@@ -1670,7 +1713,7 @@ const dados = [
         //ano: 2020
       },
       {
-        id: 81,
+        id: 82,
         tipo: "movie",
         titulo: "Travis Scott: Voando Alto - Legendado",
         descricao:
