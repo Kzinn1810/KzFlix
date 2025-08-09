@@ -1210,7 +1210,7 @@
       background: rgba(24,24,24,0.97);
       padding: 38px 32px 32px 32px;
       border-radius: 28px;
-      box-shadow: 0 8px 32px #2228,0 0 0 2px #4448;
+      box-shadow: 0 8px 32px #2228, 0 0 0 2px #4448;
       width: 100%;
       max-width: 370px;
       display: flex;
@@ -1726,6 +1726,7 @@ toggleSenha.addEventListener('click', () => {
         const img = document.createElement("img");
         img.src = item.imagem;
         img.alt = `Imagem do ${item.tipo === "movie" ? "filme" : "série"} ${item.titulo}`;
+        img.loading = "lazy";
 
         const anoOverlay = document.createElement("div");
         anoOverlay.className = "card-ano-overlay";
@@ -1831,6 +1832,7 @@ toggleSenha.addEventListener('click', () => {
     }
 
     btnAssistirEpisodio.onclick = () => {
+
       const numTemp = Number(selectTemporada.value);
       const numEpi = Number(selectEpisodio.value);
       if (!serieAtual) return;
@@ -1884,7 +1886,7 @@ toggleSenha.addEventListener('click', () => {
         const temProximaTemporada = proxTemp && proxTemp.episodios.length > 0;
 
         if (temProximoEpi) {
-          btnPularCapitulo.textContent = '⏭️ Pular Capítulo';
+          btnPularCapitulo.textContent = '⏭️ Pular Episódio';
           btnPularCapitulo.style.display = 'inline-block';
           btnPularCapitulo.disabled = false;
         } else if (ehUltimoEpi && temProximaTemporada) {
@@ -2279,6 +2281,7 @@ toggleSenha.addEventListener('click', () => {
     const img = document.createElement("img");
     img.src = item.imagem;
     img.alt = `Imagem do lançamento ${item.titulo}`;
+    img.loading = "lazy";
 
     const info = document.createElement("div");
     info.className = "vitrine-info";
@@ -2425,7 +2428,7 @@ function renderizarContinuarAssistindo() {
         infoExtra = `<p style='font-size:13px;color:#ccc;margin:2px 0 6px 0;'>Temporada ${obj.temporada || ''} Episódio ${obj.episodio || ''}</p>`;
       }
       card.innerHTML = `
-        <img src="${imagem}" alt="Capa de ${obj.titulo}">
+        <img src="${imagem}" loading="lazy" alt="Capa de ${obj.titulo}">
         <div class="vitrine-info">
           <h3>${obj.titulo}</h3>
           ${infoExtra}
