@@ -1637,6 +1637,19 @@ const dados = [
       {
         id: 76,
         tipo: "movie",
+        titulo: "Fragmentado",
+        descricao:
+          "Kevin, um homem com múltiplas personalidades, sequestra três adolescentes e revela sua intenção de libertar uma nova identidade chamada 'A Besta'.",
+        imagem: "imagens/fragmentado.webp",
+        video:
+          "https://drive.google.com/file/d/1CcMRRGDr4_gW9OyrrmVgJATf2hIZkSPb/preview",
+        trailer: "https://www.youtube.com/embed/vslbpge5r7M",
+        generos: ["terror", "suspense", "drama"],
+        //ano: 2016
+      },
+      {
+        id: 77,
+        tipo: "movie",
         titulo: "Interstellar",
         descricao:
           "Uma equipe de exploradores viaja através de um buraco de minhoca em busca de um novo lar para a humanidade.",
@@ -1648,7 +1661,7 @@ const dados = [
         //ano: 2014
       },
       {
-        id: 77,
+        id: 78,
         tipo: "movie",
         titulo: "17 outra vez",
         descricao:
@@ -1661,7 +1674,7 @@ const dados = [
         //ano: 2009
       },
       {
-        id: 78,
+        id: 79,
         tipo: "movie",
         titulo: "A barraca do beijo",
         descricao:
@@ -1674,7 +1687,7 @@ const dados = [
         //ano: 2018
       },
       {
-        id: 79,
+        id: 80,
         tipo: "movie",
         titulo: "Tropa de Elite",
         descricao:
@@ -1687,7 +1700,7 @@ const dados = [
         //ano: 2007
       },
       {
-        id: 80,
+        id: 81,
         tipo: "movie",
         titulo: "Tropa de Elite 2",
         descricao:
@@ -1700,7 +1713,7 @@ const dados = [
         //ano: 2012
       },
       {
-        id: 81,
+        id: 82,
         tipo: "movie",
         titulo: "bob esponja: o incrivel resgate",
         descricao:
@@ -1713,7 +1726,7 @@ const dados = [
         //ano: 2020
       },
       {
-        id: 82,
+        id: 83,
         tipo: "movie",
         titulo: "Travis Scott: Voando Alto - Legendado",
         descricao:
