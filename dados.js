@@ -1689,6 +1689,19 @@ const dados = [
       {
         id: 80,
         tipo: "movie",
+        titulo: "Quarteto Fantástico",
+        descricao:
+          "Após um experimento científico dar errado, quatro amigos ganham superpoderes e se tornam o Quarteto Fantástico, enfrentando ameaças cósmicas.",
+        imagem: "imagens/quarteto-fantastico.webp",
+        video:
+          "https://drive.google.com/file/d/13vA7RbGv0oRLrjemGECKktNmayRkap_h/preview",
+        trailer: "http://www.youtube.com/embed/_hlk7oEOMUg",
+        generos: ["ação", "aventura", "ficção científica"],
+        //ano: 2005
+      },
+      {
+        id: 81,
+        tipo: "movie",
         titulo: "Tropa de Elite",
         descricao:
           "Um capitão do BOPE enfrenta a violência do tráfico e os dilemas morais da guerra urbana no Rio de Janeiro.",
@@ -1700,7 +1713,7 @@ const dados = [
         //ano: 2007
       },
       {
-        id: 81,
+        id: 82,
         tipo: "movie",
         titulo: "Tropa de Elite 2",
         descricao:
@@ -1713,7 +1726,7 @@ const dados = [
         //ano: 2012
       },
       {
-        id: 82,
+        id: 83,
         tipo: "movie",
         titulo: "bob esponja: o incrivel resgate",
         descricao:
@@ -1726,7 +1739,7 @@ const dados = [
         //ano: 2020
       },
       {
-        id: 83,
+        id: 84,
         tipo: "movie",
         titulo: "Travis Scott: Voando Alto - Legendado",
         descricao:
