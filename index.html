@@ -1313,6 +1313,35 @@
         padding: 12px 0;
       }
     }
+    
+#vitrine-continuar .vitrine-card {
+  position: relative;
+}
+.btn-remover-card {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 10;
+  background: rgba(229,9,20,0.92);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #0006;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.18s;
+  opacity: 0.85;
+}
+.btn-remover-card:hover {
+  background: #e50914;
+  opacity: 1;
+}
   </style>
   <!-- Modal Player -->
   <div id="modal-player" role="dialog" aria-modal="true" tabindex="-1">
@@ -1330,6 +1359,8 @@
 <button class="pular-capitulo-player-global" aria-label="Pular capítulo" style="position:absolute;right:18px;bottom:18px;background:#1db954;border:none;color:#fff;font-size:14px;padding:8px 18px;border-radius:24px;cursor:pointer;z-index:20000;transition:background 0.3s;display:none;box-shadow:0 2px 8px rgba(0,0,0,0.3);">⏭️ Pular Capítulo</button>
     </div>
   </div>
+  <!-- Adicione este CSS dentro do <style> principal, de preferência após os estilos de .vitrine-card -->
+
 <script src="dados.js"></script>
 <script>
 // Login modal aprimorado
@@ -1411,7 +1442,7 @@ formLogin.onsubmit = (e) => {
   }
   loginErro.style.display = "none";
   msgBemVindo.innerHTML = `<span style='font-size:1.5rem;vertical-align:middle;margin-right:6px;'>🎬</span>Bem-vindo, <b style='color:#1db954;'>${nome}</b>!`;
-  msgBemVindo.style.display = 'block';
+  msgBemVindo.style.display = 'block'; 
   msgBemVindo.style.opacity = '1';
   msgBemVindo.style.animation = '';
   // Delay de 3 segundos antes de liberar acesso
@@ -2425,6 +2456,7 @@ function renderizarContinuarAssistindo() {
       const card = document.createElement('div');
       card.className = 'vitrine-card';
       card.style.cursor = 'pointer';
+      card.style.position = 'relative';
       let infoExtra = '';
       if ((obj.tipo === 'series' || obj.tipo === 'serie') && (obj.temporada || obj.episodio)) {
         infoExtra = `<p style='font-size:13px;color:#ccc;margin:2px 0 6px 0;'>Temporada ${obj.temporada || ''} Episódio ${obj.episodio || ''}</p>`;
@@ -2434,37 +2466,74 @@ function renderizarContinuarAssistindo() {
         <div class="vitrine-info">
           <h3>${obj.titulo}</h3>
           ${infoExtra}
-
-
           <p>🕒 Último ponto: ${formatarTempo(obj.tempo)}</p>
           <div class="vitrine-botoes">
             <button class="continuar-btn" style="background:#1db954;color:#fff;border:none;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:13px;">Continuar</button>
           </div>
         </div>
       `;
-      function getSerieCompleta(titulo) {
-        if (typeof dados !== 'undefined') {
-          return dados.find(f => (f.tipo === 'series' || f.tipo === 'serie') && f.titulo === titulo);
+      // Botão X para remover
+      const btnX = document.createElement('button');
+      btnX.className = 'btn-remover-card';
+      btnX.innerHTML = '&times;';
+      btnX.title = 'Remover este item do histórico';
+      btnX.onclick = function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        // Remove do localStorage
+        const usuario = localStorage.getItem('usuarioLogado');
+        if (!usuario) return;
+        const prefix = `visto_${usuario}_`;
+        // Remove apenas o item exato (filme ou episódio)
+        for (let i = localStorage.length - 1; i >= 0; i--) {
+          const k = localStorage.key(i);
+          if (k.startsWith(prefix)) {
+            try {
+              const objSalvo = JSON.parse(localStorage.getItem(k));
+              // Para séries, compara título, temporada e episódio
+              if ((obj.tipo === 'series' || obj.tipo === 'serie') && (objSalvo.tipo === 'series' || objSalvo.tipo === 'serie')) {
+                if (
+                  objSalvo.titulo === obj.titulo &&
+                  String(objSalvo.temporada) === String(obj.temporada) &&
+                  String(objSalvo.episodio) === String(obj.episodio)
+                ) {
+                  localStorage.removeItem(k);
+                  break;
+                }
+              } else if (objSalvo.titulo === obj.titulo && objSalvo.video === obj.video) {
+                localStorage.removeItem(k);
+                break;
+              }
+            } catch {}
+          }
         }
-        return { titulo };
-      }
+        renderizarContinuarAssistindo();
+      };
+      // Impede que clique na imagem abra o player
+      card.querySelector('img').onclick = function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+      };
+      // Botão continuar
       card.querySelector('.continuar-btn').onclick = (e) => {
         e.stopPropagation();
         abrirModalPlayer(obj.video, (obj.tipo === 'series' || obj.tipo === 'serie') ? {
           tipo: 'serie',
-          serie: getSerieCompleta(obj.titulo),
+          serie: (typeof dados !== 'undefined') ? dados.find(f => (f.tipo === 'series' || f.tipo === 'serie') && f.titulo === obj.titulo) : { titulo: obj.titulo },
           temporada: obj.temporada,
           episodio: obj.episodio
         } : null, obj.tempo);
       };
+      // Clique no card abre o player
       card.onclick = () => {
         abrirModalPlayer(obj.video, (obj.tipo === 'series' || obj.tipo === 'serie') ? {
           tipo: 'serie',
-          serie: getSerieCompleta(obj.titulo),
+          serie: (typeof dados !== 'undefined') ? dados.find(f => (f.tipo === 'series' || f.tipo === 'serie') && f.titulo === obj.titulo) : { titulo: obj.titulo },
           temporada: obj.temporada,
           episodio: obj.episodio
         } : null, obj.tempo);
       };
+      card.appendChild(btnX);
       container.appendChild(card);
     }
   });
