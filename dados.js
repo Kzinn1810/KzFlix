@@ -656,15 +656,15 @@ const dados = [
       {
         id: 20,
         tipo: "movie",
-        titulo: "Todos Menos Você",
+        titulo: "Superman",
         descricao:
-          "Todos Menos Você é uma animação de aventura e comédia onde um grupo de amigos improváveis embarca em uma jornada para salvar seu mundo de uma ameaça iminente.",
-        imagem: "imagens/Todos-Menos-Voce.webp",
+          "Superman é um filme de animação que segue as aventuras do icônico super-herói enquanto ele defende a Terra de ameaças intergalácticas e vilões poderosos.",
+        imagem: "imagens/superman.webp",
         video:
-          "https://drive.google.com/file/d/1w2jmZU0m9cZf9scnL9eO4aJcxeJHxUZn/preview",
-        trailer: "https://www.youtube.com/embed/nnD1W4XuNzQ",
-        generos: ["animação", "aventura", "comédia"],
-        //ano: 2023
+          "https://drive.google.com/file/d/1rdRUNE4LZBnuI5XIOHwYJ4FgfRRB0EGI/preview",
+        trailer: "https://www.youtube.com/embed/6HsfXtgcAE4",
+        generos: ["ação", "aventura", "ficção científica"],
+        //ano: 2025
       },
       {
         id: 21,
@@ -1616,6 +1616,19 @@ const dados = [
       {
         id: 73,
         tipo: "movie",
+        titulo: "Screamboat: Terror a bordo",
+        descricao:
+          "Uma jovem e sua amiga embarcam em um barco de cruzeiro, mas logo descobrem que estão sendo perseguidas por uma entidade sobrenatural.",
+        imagem: "imagens/screamboat.webp",
+        video:
+          "https://drive.google.com/file/d/1NurgD2PXETWXV0q-miMzCGNYpGkNzxQe/preview",
+        trailer: "http://www.youtube.com/embed/rn_uzCVWOrY",
+        generos: ["terror", "suspense", "aventura"],
+        //ano: 2025
+      },
+      {
+        id: 74,
+        tipo: "movie",
         titulo: "Meu Malvado Favorito",
         descricao:
           "Gru, um vilão que planeja roubar a Lua, adota três órfãs e descobre o verdadeiro significado da família.",
@@ -1627,7 +1640,7 @@ const dados = [
         //ano: 2010
       },
       {
-        id: 74,
+        id: 75,
         tipo: "movie",
         titulo: "Meu Malvado Favorito 2",
         descricao:
@@ -1640,7 +1653,7 @@ const dados = [
         //ano: 2013
       },
       {
-        id: 75,
+        id: 76,
         tipo: "movie",
         titulo: "Meu Malvado Favorito 3",
         descricao:
@@ -1653,7 +1666,7 @@ const dados = [
         //ano: 2017
       },
       {
-        id: 76,
+        id: 77,
         tipo: "movie",
         titulo: "Fragmentado",
         descricao:
@@ -1666,7 +1679,7 @@ const dados = [
         //ano: 2016
       },
       {
-        id: 77,
+        id: 78,
         tipo: "movie",
         titulo: "Interstellar",
         descricao:
@@ -1679,7 +1692,7 @@ const dados = [
         //ano: 2014
       },
       {
-        id: 78,
+        id: 79,
         tipo: "movie",
         titulo: "17 outra vez",
         descricao:
@@ -1692,7 +1705,7 @@ const dados = [
         //ano: 2009
       },
       {
-        id: 79,
+        id: 80,
         tipo: "movie",
         titulo: "A barraca do beijo",
         descricao:
@@ -1705,7 +1718,7 @@ const dados = [
         //ano: 2018
       },
       {
-        id: 80,
+        id: 81,
         tipo: "movie",
         titulo: "Quarteto Fantástico",
         descricao:
@@ -1718,7 +1731,7 @@ const dados = [
         //ano: 2005
       },
       {
-        id: 81,
+        id: 82,
         tipo: "movie",
         titulo: "Tropa de Elite",
         descricao:
@@ -1731,7 +1744,7 @@ const dados = [
         //ano: 2007
       },
       {
-        id: 82,
+        id: 83,
         tipo: "movie",
         titulo: "Tropa de Elite 2",
         descricao:
@@ -1744,7 +1757,20 @@ const dados = [
         //ano: 2012
       },
       {
-        id: 83,
+        id: 84,
+        tipo: "movie",
+        titulo: "Todos Menos Você",
+        descricao:
+          "Todos Menos Você é uma animação de aventura e comédia onde um grupo de amigos improváveis embarca em uma jornada para salvar seu mundo de uma ameaça iminente.",
+        imagem: "imagens/Todos-Menos-Voce.webp",
+        video:
+          "https://drive.google.com/file/d/1w2jmZU0m9cZf9scnL9eO4aJcxeJHxUZn/preview",
+        trailer: "https://www.youtube.com/embed/nnD1W4XuNzQ",
+        generos: ["animação", "aventura", "comédia"],
+        //ano: 2023
+      },
+      {
+        id: 85,
         tipo: "movie",
         titulo: "bob esponja: o incrivel resgate",
         descricao:
@@ -1757,7 +1783,7 @@ const dados = [
         //ano: 2020
       },
       {
-        id: 84,
+        id: 86,
         tipo: "movie",
         titulo: "Travis Scott: Voando Alto - Legendado",
         descricao:
