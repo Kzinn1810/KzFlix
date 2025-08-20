@@ -695,14 +695,14 @@ const dados = [
       {
         id: 23,
         tipo: "movie",
-        titulo: "Um Maluco No Golfe 2",
+        titulo: "Missão Impossível: O acerto final",
         descricao:
-          "Um Maluco No Golfe 2 é uma comédia onde o personagem principal, um golfista excêntrico, enfrenta desafios hilários enquanto tenta vencer um torneio de golfe.",
-        imagem: "imagens/mlc-no-golfe2.webp",
+          "Missão Impossível: O Último Acerto é um filme de ação e espionagem onde Ethan Hunt e sua equipe enfrentam uma nova ameaça global enquanto tentam recuperar um artefato roubado.",
+        imagem: "imagens/missao-impossivel-2025.webp",
         video:
-          "https://drive.google.com/file/d/12SAW00ibXphdFJbZVdXP_C9mfuvP8uo9/preview",
-        trailer: "https://www.youtube.com/embed/qCks9ymO0Ro",
-        generos: ["comédia", "aventura"],
+          "https://drive.google.com/file/d/1vXiJWVrfTmTB8i7NLHP6GfSnfAC938vl/preview",
+        trailer: "https://www.youtube.com/embed/uo1GEL7pVRk",
+        generos: ["ação", "aventura", "suspense"],
         //ano: 2025
       },
       {
@@ -1707,6 +1707,19 @@ const dados = [
       {
         id: 80,
         tipo: "movie",
+        titulo: "Ponte para Terabítia",
+        descricao:
+          "Jess, um garoto tímido, faz amizade com Leslie, uma nova aluna, e juntos criam um mundo mágico chamado Terabítia, onde enfrentam desafios e descobrem a importância da amizade.",
+        imagem: "imagens/ponte-para-terabitia.webp",
+        video:
+          "https://drive.google.com/file/d/1Ha_dBbUGWGbgeeBKueOFzWAuuXPDoh5d/preview",
+        trailer: "http://www.youtube.com/embed/K1gvmAA30I4",
+        generos: ["aventura", "fantasia", "drama"],
+        //ano: 2007
+      },
+      {
+        id: 81,
+        tipo: "movie",
         titulo: "A barraca do beijo",
         descricao:
           "Um romance adolescente cheio de confusões, paixões e desafios entre amizade e amor.",
@@ -1718,7 +1731,7 @@ const dados = [
         //ano: 2018
       },
       {
-        id: 81,
+        id: 82,
         tipo: "movie",
         titulo: "Quarteto Fantástico",
         descricao:
@@ -1731,7 +1744,7 @@ const dados = [
         //ano: 2005
       },
       {
-        id: 82,
+        id: 83,
         tipo: "movie",
         titulo: "Tropa de Elite",
         descricao:
@@ -1744,7 +1757,7 @@ const dados = [
         //ano: 2007
       },
       {
-        id: 83,
+        id: 84,
         tipo: "movie",
         titulo: "Tropa de Elite 2",
         descricao:
@@ -1757,7 +1770,20 @@ const dados = [
         //ano: 2012
       },
       {
-        id: 84,
+        id: 85,
+        tipo: "movie",
+        titulo: "Um Maluco No Golfe 2",
+        descricao:
+          "Um Maluco No Golfe 2 é uma comédia onde o personagem principal, um golfista excêntrico, enfrenta desafios hilários enquanto tenta vencer um torneio de golfe.",
+        imagem: "imagens/mlc-no-golfe2.webp",
+        video:
+          "https://drive.google.com/file/d/12SAW00ibXphdFJbZVdXP_C9mfuvP8uo9/preview",
+        trailer: "https://www.youtube.com/embed/qCks9ymO0Ro",
+        generos: ["comédia", "aventura"],
+        //ano: 2025
+      },
+      {
+        id: 86,
         tipo: "movie",
         titulo: "Todos Menos Você",
         descricao:
@@ -1770,7 +1796,7 @@ const dados = [
         //ano: 2023
       },
       {
-        id: 85,
+        id: 87,
         tipo: "movie",
         titulo: "bob esponja: o incrivel resgate",
         descricao:
@@ -1783,7 +1809,7 @@ const dados = [
         //ano: 2020
       },
       {
-        id: 86,
+        id: 88,
         tipo: "movie",
         titulo: "Travis Scott: Voando Alto - Legendado",
         descricao:
