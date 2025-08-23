@@ -467,63 +467,18 @@ const dados = [
         generos: ["terror", "suspense", "drama"],
         //ano: 2025
       },
-    {
+      {
         id: 14,
-        tipo: "series",
-        titulo: "Arcanjo Renegado",
+        tipo: "movie",
+        titulo: "Homem-Aranha: Sem Volta Pra Casa",
         descricao:
-          "Arcanjo Renegado é uma série policial brasileira que acompanha um justiceiro do Bope dividido entre a lei e a violência para combater o crime no Rio de Janeiro.",
-        imagem: "imagens/arcanjo-renegado.webp",
-        temporadas: [
-          {
-            numero: 1,
-            episodios: [
-              { numero: 1, titulo: "Episódio 1", video: "https://drive.google.com/file/d/10ZIxNHqhSdbKp7mJFamiAWGkeNZl8p3s/preview" },
-              { numero: 2, titulo: "Episódio 2", video: "https://drive.google.com/file/d/10ciVj2-RbFI5xULfu_tQZaUc0w48Q1kP/preview" },
-              { numero: 3, titulo: "Episódio 3", video: "https://drive.google.com/file/d/10g70JssxI7WoejbCvGTOma7uu7kUnC1S/preview" },
-              { numero: 4, titulo: "Episódio 4", video: "https://drive.google.com/file/d/10k9oMnbiOhlbmLeQ9m_1ij1rtep6m2qi/preview" },
-              { numero: 5, titulo: "Episódio 5", video: "https://drive.google.com/file/d/10hW1dZWsPF1nnf9S4yt1EBonWyLe9vjo/preview" },
-              { numero: 6, titulo: "Episódio 6", video: "https://drive.google.com/file/d/10oajxjCmyfNEtU6t0FFalRms5-qVV-eX/preview" },
-              { numero: 7, titulo: "Episódio 7", video: "https://drive.google.com/file/d/10tyGsirAVWaSRMKLVs0thQWA0pbiYK5T/preview" },
-              { numero: 8, titulo: "Episódio 8", video: "https://drive.google.com/file/d/10v1ph-TFvxkJAtxNI2UY3mypRV18ZTWr/preview" },
-              { numero: 9, titulo: "Episódio 9", video: "https://drive.google.com/file/d/10xE37UnHbVdMmNlu2J_nhBStSF6hTpqf/preview" },
-              { numero: 10, titulo: "Episódio 10", video: "https://drive.google.com/file/d/10tW8ZfaTKH8UaCjd6_FxhSq6Mwx4ydO7/preview" },
-            ],
-          },
-          {
-            numero: 2,
-            episodios: [
-              { numero: 1, titulo: "Episódio 1", video: "https://drive.google.com/file/d/111T8hjHpvuFuzl7FvcQzzpN_ADw9LqFR/preview" },
-              { numero: 2, titulo: "Episódio 2", video: "https://drive.google.com/file/d/11ATZNJwa6efdNl4tEJc8dJa27JKPS5S1/preview" },
-              { numero: 3, titulo: "Episódio 3", video: "https://drive.google.com/file/d/11BqdnXcDJh10_l_-w7cgEz6K6311xlOP/preview" },
-              { numero: 4, titulo: "Episódio 4", video: "https://drive.google.com/file/d/11GHs9sGPctcIx_gZOUB0kP--bPPH_R4t/preview" },
-              { numero: 5, titulo: "Episódio 5", video: "https://drive.google.com/file/d/11CzLm67dj0J_0ghpLWl2gxbFLBu176lp/preview" },
-              { numero: 6, titulo: "Episódio 6", video: "https://drive.google.com/file/d/11MirhSiVgzTuCvyN2DCOI-LL-UMi6-7U/preview" },
-              { numero: 7, titulo: "Episódio 7", video: "https://drive.google.com/file/d/11Icl9mCIG0sx_9tQf6zuhwdAr0n-jPg0/preview" },
-              { numero: 8, titulo: "Episódio 8", video: "https://drive.google.com/file/d/11W2eQ9DJKDc0Nv1TZ4wzrab-OhNV3j0Z/preview" },
-              { numero: 9, titulo: "Episódio 9", video: "https://drive.google.com/file/d/11NEeygSCvzXebhjV5_5_U6Pma9Q6kAhc/preview" },
-              { numero: 10, titulo: "Episódio 10", video: "https://drive.google.com/file/d/114w8HMsPWM-sMmaNyeWBKEhfC0R0JO-T/preview" },
-            ],
-          },
-          {
-            numero: 3,
-            episodios: [
-              { numero: 1, titulo: "Episódio 1", video: "https://drive.google.com/file/d/11rMhXME0AovuhPRWb4Fkn3FJF0iaJJek/preview" },
-              { numero: 2, titulo: "Episódio 2", video: "https://drive.google.com/file/d/12BIm4dn0j7zbH5UgEjUx8Kf7Y9Vm7s_X/preview" },
-              { numero: 3, titulo: "Episódio 3", video: "https://drive.google.com/file/d/11omMHTqCBRMdZnk5phvf1fRivHqTtx4l/preview" },
-              { numero: 4, titulo: "Episódio 4", video: "https://drive.google.com/file/d/11rZyvKKG2U9XeGTwm6K88RJrW20q89eX/preview" },
-              { numero: 5, titulo: "Episódio 5", video: "https://drive.google.com/file/d/11wBQ-OhG2sBe55-aMl-UbSE321tOkuLI/preview" },
-              { numero: 6, titulo: "Episódio 6", video: "https://drive.google.com/file/d/11xXsWxi5sZj2qhvx360pDZmlFN0dfcZX/preview" },
-              { numero: 7, titulo: "Episódio 7", video: "https://drive.google.com/file/d/121KPwJ0Rqwvd227OQHwutlJTwtGtYZJF/preview" },
-              { numero: 8, titulo: "Episódio 8", video: "https://drive.google.com/file/d/12BaZrWoYpwf97Q_TReS_0CbHNJiplvgT/preview" },
-              { numero: 9, titulo: "Episódio 9", video: "https://drive.google.com/file/d/12Dt8MnyYWK6rjfXRPhhTS_5EdpqCW0em/preview" },
-              { numero: 10, titulo: "Episódio 10", video: "https://drive.google.com/file/d/129QQq2tAFb7NHpAml-Co2hGum9oNkcu9/preview" },
-            ],
-          },
-        ],
-        trailer: "https://www.youtube.com/embed/FaEX2c6VW-E",
-        generos: ["drama", "suspense", "ação"],
-        //ano: 2020
+          "Homem-Aranha: Sem Volta Pra Casa é um filme de super-herói que segue Peter Parker enquanto ele lida com as consequências de sua identidade secreta ser revelada ao mundo, enfrentando vilões de diferentes universos.",
+        imagem: "imagens/homem-aranha-sem-volta-pra-casa.webp",
+        video:
+          "https://drive.google.com/file/d/1ULWgEAqgIafjMYtU-Tf1wA1GcI4iR2ck/preview",
+        trailer: "https://www.youtube.com/embed/FDNNHh7TRN0",
+        generos: ["ação", "aventura", "ficção científica"],
+        //ano: 2021
       },
       {
         id: 15,
@@ -535,7 +490,7 @@ const dados = [
         video:
           "https://drive.google.com/file/d/1KyLuCtH9nG4CUqUWEr9q5dGpo_GbNOMF/preview",
         trailer: "https://www.youtube.com/embed/F3OxA9Cz17A",
-        generos: ["biografia", "drama", "história"],
+        generos: ["drama", "história"],
         //ano: 2023
       },
       {
@@ -747,15 +702,15 @@ const dados = [
       {
         id: 27,
         tipo: "movie",
-        titulo: "Alerta Vermelha",
+        titulo: "Doutor Estranho no Multiverso da Loucura",
         descricao:
-          "Alerta Vermelha é um filme de ação e comédia onde um agente do FBI se une a um ladrão de arte e uma ladra internacional para capturar uma criminosa procurada.",
-        imagem: "imagens/alerta-vermelho.webp",
+          "Doutor Estranho no Multiverso da Loucura é um filme de super-herói que segue o Dr. Stephen Strange enquanto ele navega por realidades alternativas e enfrenta ameaças místicas para proteger o multiverso.",
+        imagem: "imagens/doutor-estranho-no-multiverso-da-loucura.webp",
         video:
-          "https://drive.google.com/file/d/133twUmF76Y1zE-rsi5944NrdyUPCwtEe/preview",
-        trailer: "http://www.youtube.com/embed/5JQuYpBZar",
-        generos: ["ação", "aventura", "comédia"],
-        //ano: 2021
+          "https://drive.google.com/file/d/1OzM3olZn43U4UeHMqiES_FSAAxuOCXNq/preview",
+        trailer: "http://www.youtube.com/embed/X23XCFgdh2M",
+        generos: ["ação", "aventura", "fantasia"],
+        //ano: 2022
       },
       {
         id: 28,
@@ -1745,6 +1700,64 @@ const dados = [
       },
       {
         id: 83,
+        tipo: "series",
+        titulo: "Arcanjo Renegado",
+        descricao:
+          "Arcanjo Renegado é uma série policial brasileira que acompanha um justiceiro do Bope dividido entre a lei e a violência para combater o crime no Rio de Janeiro.",
+        imagem: "imagens/arcanjo-renegado.webp",
+        temporadas: [
+          {
+            numero: 1,
+            episodios: [
+              { numero: 1, titulo: "Episódio 1", video: "https://drive.google.com/file/d/10ZIxNHqhSdbKp7mJFamiAWGkeNZl8p3s/preview" },
+              { numero: 2, titulo: "Episódio 2", video: "https://drive.google.com/file/d/10ciVj2-RbFI5xULfu_tQZaUc0w48Q1kP/preview" },
+              { numero: 3, titulo: "Episódio 3", video: "https://drive.google.com/file/d/10g70JssxI7WoejbCvGTOma7uu7kUnC1S/preview" },
+              { numero: 4, titulo: "Episódio 4", video: "https://drive.google.com/file/d/10k9oMnbiOhlbmLeQ9m_1ij1rtep6m2qi/preview" },
+              { numero: 5, titulo: "Episódio 5", video: "https://drive.google.com/file/d/10hW1dZWsPF1nnf9S4yt1EBonWyLe9vjo/preview" },
+              { numero: 6, titulo: "Episódio 6", video: "https://drive.google.com/file/d/10oajxjCmyfNEtU6t0FFalRms5-qVV-eX/preview" },
+              { numero: 7, titulo: "Episódio 7", video: "https://drive.google.com/file/d/10tyGsirAVWaSRMKLVs0thQWA0pbiYK5T/preview" },
+              { numero: 8, titulo: "Episódio 8", video: "https://drive.google.com/file/d/10v1ph-TFvxkJAtxNI2UY3mypRV18ZTWr/preview" },
+              { numero: 9, titulo: "Episódio 9", video: "https://drive.google.com/file/d/10xE37UnHbVdMmNlu2J_nhBStSF6hTpqf/preview" },
+              { numero: 10, titulo: "Episódio 10", video: "https://drive.google.com/file/d/10tW8ZfaTKH8UaCjd6_FxhSq6Mwx4ydO7/preview" },
+            ],
+          },
+          {
+            numero: 2,
+            episodios: [
+              { numero: 1, titulo: "Episódio 1", video: "https://drive.google.com/file/d/111T8hjHpvuFuzl7FvcQzzpN_ADw9LqFR/preview" },
+              { numero: 2, titulo: "Episódio 2", video: "https://drive.google.com/file/d/11ATZNJwa6efdNl4tEJc8dJa27JKPS5S1/preview" },
+              { numero: 3, titulo: "Episódio 3", video: "https://drive.google.com/file/d/11BqdnXcDJh10_l_-w7cgEz6K6311xlOP/preview" },
+              { numero: 4, titulo: "Episódio 4", video: "https://drive.google.com/file/d/11GHs9sGPctcIx_gZOUB0kP--bPPH_R4t/preview" },
+              { numero: 5, titulo: "Episódio 5", video: "https://drive.google.com/file/d/11CzLm67dj0J_0ghpLWl2gxbFLBu176lp/preview" },
+              { numero: 6, titulo: "Episódio 6", video: "https://drive.google.com/file/d/11MirhSiVgzTuCvyN2DCOI-LL-UMi6-7U/preview" },
+              { numero: 7, titulo: "Episódio 7", video: "https://drive.google.com/file/d/11Icl9mCIG0sx_9tQf6zuhwdAr0n-jPg0/preview" },
+              { numero: 8, titulo: "Episódio 8", video: "https://drive.google.com/file/d/11W2eQ9DJKDc0Nv1TZ4wzrab-OhNV3j0Z/preview" },
+              { numero: 9, titulo: "Episódio 9", video: "https://drive.google.com/file/d/11NEeygSCvzXebhjV5_5_U6Pma9Q6kAhc/preview" },
+              { numero: 10, titulo: "Episódio 10", video: "https://drive.google.com/file/d/114w8HMsPWM-sMmaNyeWBKEhfC0R0JO-T/preview" },
+            ],
+          },
+          {
+            numero: 3,
+            episodios: [
+              { numero: 1, titulo: "Episódio 1", video: "https://drive.google.com/file/d/11rMhXME0AovuhPRWb4Fkn3FJF0iaJJek/preview" },
+              { numero: 2, titulo: "Episódio 2", video: "https://drive.google.com/file/d/12BIm4dn0j7zbH5UgEjUx8Kf7Y9Vm7s_X/preview" },
+              { numero: 3, titulo: "Episódio 3", video: "https://drive.google.com/file/d/11omMHTqCBRMdZnk5phvf1fRivHqTtx4l/preview" },
+              { numero: 4, titulo: "Episódio 4", video: "https://drive.google.com/file/d/11rZyvKKG2U9XeGTwm6K88RJrW20q89eX/preview" },
+              { numero: 5, titulo: "Episódio 5", video: "https://drive.google.com/file/d/11wBQ-OhG2sBe55-aMl-UbSE321tOkuLI/preview" },
+              { numero: 6, titulo: "Episódio 6", video: "https://drive.google.com/file/d/11xXsWxi5sZj2qhvx360pDZmlFN0dfcZX/preview" },
+              { numero: 7, titulo: "Episódio 7", video: "https://drive.google.com/file/d/121KPwJ0Rqwvd227OQHwutlJTwtGtYZJF/preview" },
+              { numero: 8, titulo: "Episódio 8", video: "https://drive.google.com/file/d/12BaZrWoYpwf97Q_TReS_0CbHNJiplvgT/preview" },
+              { numero: 9, titulo: "Episódio 9", video: "https://drive.google.com/file/d/12Dt8MnyYWK6rjfXRPhhTS_5EdpqCW0em/preview" },
+              { numero: 10, titulo: "Episódio 10", video: "https://drive.google.com/file/d/129QQq2tAFb7NHpAml-Co2hGum9oNkcu9/preview" },
+            ],
+          },
+        ],
+        trailer: "https://www.youtube.com/embed/FaEX2c6VW-E",
+        generos: ["drama", "suspense", "ação"],
+        //ano: 2020
+      },
+      {
+        id: 84,
         tipo: "movie",
         titulo: "Tropa de Elite",
         descricao:
@@ -1757,7 +1770,7 @@ const dados = [
         //ano: 2007
       },
       {
-        id: 84,
+        id: 85,
         tipo: "movie",
         titulo: "Tropa de Elite 2",
         descricao:
@@ -1770,7 +1783,20 @@ const dados = [
         //ano: 2012
       },
       {
-        id: 85,
+        id: 86,
+        tipo: "movie",
+        titulo: "Alerta Vermelha",
+        descricao:
+          "Alerta Vermelha é um filme de ação e comédia onde um agente do FBI se une a um ladrão de arte e uma ladra internacional para capturar uma criminosa procurada.",
+        imagem: "imagens/alerta-vermelho.webp",
+        video:
+          "https://drive.google.com/file/d/133twUmF76Y1zE-rsi5944NrdyUPCwtEe/preview",
+        trailer: "http://www.youtube.com/embed/5JQuYpBZar",
+        generos: ["ação", "aventura", "comédia"],
+        //ano: 2021
+      },
+      {
+        id: 87,
         tipo: "movie",
         titulo: "Um Maluco No Golfe 2",
         descricao:
@@ -1783,7 +1809,7 @@ const dados = [
         //ano: 2025
       },
       {
-        id: 86,
+        id: 88,
         tipo: "movie",
         titulo: "Todos Menos Você",
         descricao:
@@ -1796,7 +1822,7 @@ const dados = [
         //ano: 2023
       },
       {
-        id: 87,
+        id: 89,
         tipo: "movie",
         titulo: "bob esponja: o incrivel resgate",
         descricao:
@@ -1809,7 +1835,7 @@ const dados = [
         //ano: 2020
       },
       {
-        id: 88,
+        id: 90,
         tipo: "movie",
         titulo: "Travis Scott: Voando Alto - Legendado",
         descricao:
