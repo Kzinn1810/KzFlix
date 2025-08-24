@@ -2290,6 +2290,7 @@ toggleSenha.addEventListener('click', () => {
     // Exibir lançamentos recentes (com base em alguns títulos)
     function exibirLancamentosRecentes() {
   const ordemDesejada = [
+    "F1 - O Filme",
     "Missão Impossível: O acerto final",
     "Superman",
     "Dexter: Ressurreição",
@@ -2299,7 +2300,6 @@ toggleSenha.addEventListener('click', () => {
     "Como Treinar o Seu Dragão",
     "Karatê Kid: Lendas",
     "Alien: Romulus",
-    "Screamboat: Terror a bordo",
   ];
   const lancamentosRecentes = ordemDesejada
     .map(titulo => dados.find(item => item.titulo === titulo))
