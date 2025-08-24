@@ -1134,15 +1134,15 @@ const dados = [
       {
         id: 49,
         tipo: "movie",
-        titulo: "Homem de Ferro",
+        titulo: "F1 - O Filme",
         descricao:
-          "Um bilionário genial constrói uma armadura tecnológica para combater o crime e se torna o super-herói Homem de Ferro.",
-        imagem: "imagens/homem-de-ferro.webp",
+          "F1: O Filme traz Brad Pitt como ex-piloto que retorna às pistas para salvar uma equipe em crise.",
+        imagem: "imagens/f1.webp",
         video:
-          "https://drive.google.com/file/d/114PKPFMzO3b60z5GYmP4gxFCpJEuBZU6/preview",
-        trailer: "http://www.youtube.com/embed/aKkud2sqd1o",
-        generos: ["ação", "ficção científica", "aventura"],
-        //ano: 2008
+          "https://drive.google.com/file/d/10mZsGmzx473YczHo-SWwGKnG3zNZXKNr/preview",
+        trailer: "http://www.youtube.com/embed/ZiDphkXCZsQ",
+        generos: ["aventura"],
+        //ano: 2025
       },
       {
         id: 50,
@@ -1522,6 +1522,21 @@ const dados = [
               { numero: 118, titulo: "O Hospedeiro Chega Tarde Demais!", video: "https://drive.google.com/file/d/1D5clIfzSM9rujHuLWpVdyVQ-6WKwdgh0/preview" },
               { numero: 119, titulo: "Erro de Cálculo: Um Novo Inimigo Aparece!", video: "https://drive.google.com/file/d/17u3ZhIRW7eL8bkuUHALmAz5GWxwD5eeU/preview" },
               { numero: 120, titulo: "Rugidos e Uivos! A Derradeira Equipe de Lutadores", video: "https://drive.google.com/file/d/1LG1RXV3nY8nmR9yI_qim5yvgMF1Uyq5U/preview" },
+              { numero: 121, titulo: "A Batalha de Cada Um", video: "https://drive.google.com/file/d/19EvWouVZxkshIBfhBQLAx4jR39PxEq3g/preview" },
+              { numero: 122, titulo: "A Distração: O Retorno de Shikamaru", video: "https://drive.google.com/file/d/15lOV_fAUYm2PIahNlAMLgrdWkAFOgQww/preview" },
+              { numero: 123, titulo: "O Demônio Bonitão da Aldeia da Folha!", video: "https://drive.google.com/file/d/1zQQ2eGHKNir6XBsrwddXOa5iupyFrHwo/preview" },
+              { numero: 124, titulo: "Possuído pela Besta", video: "https://drive.google.com/file/d/1vtwMSU_3LL6rHXmjGZqxIqM_xtoSuHzL/preview" },
+              { numero: 125, titulo: "Os Shinobi da Areia: Aliados da Folha", video: "https://drive.google.com/file/d/1GLfd3yu-eHaP_UpALiMyPLEDL_Aci_kd/preview" },
+              { numero: 126, titulo: "A Luta Final: Gaara contra Kimimaro", video: "https://drive.google.com/file/d/1Z-FPybTRGFyMk_8j3iOlc4Ir30336vaB/preview" },
+              { numero: 127, titulo: "Um Golpe Vingativo! A Dança da Samambaia!", video: "https://drive.google.com/file/d/1b5p_epQgnDr5reByRxtMuwaoVTeHrOsM/preview" },
+              { numero: 128, titulo: "Um Grito Para Ouvidos Surdos", video: "https://drive.google.com/file/d/17nBl_bCtHw41acBtiIbap8TPvrHQKnYa/preview" },
+              { numero: 129, titulo: "Irmãos: Distanciamento Entre os Uchiha", video: "https://drive.google.com/file/d/1BeLI9sCL4AFj5KWhhYP4OkdsgWL8u9yO/preview" },
+              { numero: 130, titulo: "Pai e Filho, o Emblema Partido", video: "https://drive.google.com/file/d/1q-89pVAG1pS07Evg1SfB7nNs_5N0pya_/preview" },
+              { numero: 131, titulo: "Os Segredos do Mangekyo Sharingan", video: "https://drive.google.com/file/d/1ncugoFNzvYPQdhNiUyT_wRjxhblFiEb1/preview" },
+              { numero: 132, titulo: "Por Um Amigo", video: "https://drive.google.com/file/d/1jAUvFjSedJ9B3etSx2-7mWIHybUEW_H3/preview" },
+              { numero: 133, titulo: "Apelo de um Amigo", video: "https://drive.google.com/file/d/1xjJROS6dYZI0XbaYFDB7MqYy3c8S506X/preview" },
+              { numero: 134, titulo: "O Fim das Lágrimas", video: "https://drive.google.com/file/d/1ZGqAtwuTMZANJ4PWu0amQbaGgPbU65zi/preview" },
+              { numero: 135, titulo: "A Promessa que Não Pode Ser Cumprida", video: "https://drive.google.com/file/d/1taEAqEJRFfq6IOnLlPc6uX5I3bDshiPi/preview" },
             ],
           },
         ],
@@ -1824,6 +1839,19 @@ const dados = [
       {
         id: 89,
         tipo: "movie",
+        titulo: "Homem de Ferro",
+        descricao:
+          "Um bilionário genial constrói uma armadura tecnológica para combater o crime e se torna o super-herói Homem de Ferro.",
+        imagem: "imagens/homem-de-ferro.webp",
+        video:
+          "https://drive.google.com/file/d/114PKPFMzO3b60z5GYmP4gxFCpJEuBZU6/preview",
+        trailer: "http://www.youtube.com/embed/aKkud2sqd1o",
+        generos: ["ação", "ficção científica", "aventura"],
+        //ano: 2008
+      },
+      {
+        id: 90,
+        tipo: "movie",
         titulo: "bob esponja: o incrivel resgate",
         descricao:
           "Bob Esponja embarca em uma missão épica com Patrick para resgatar Gary, seu caracol de estimação, que foi raptado.",
@@ -1835,7 +1863,7 @@ const dados = [
         //ano: 2020
       },
       {
-        id: 90,
+        id: 91,
         tipo: "movie",
         titulo: "Travis Scott: Voando Alto - Legendado",
         descricao:
