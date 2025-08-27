@@ -334,15 +334,15 @@ const dados = [
       {
         id: 9,
         tipo: "movie",
-        titulo: "Ainda estou aqui",
+        titulo: "Thunderbolts",
         descricao:
-          "Ainda Estou Aqui é um drama emocionante que retrata o luto, o amor e a luta de uma jovem para manter viva a memória do namorado após sua morte.",
-        imagem: "imagens/ainda-estou-aqui.webp",
+          "Thunderbolts é um filme de super-heróis baseado na equipe de anti-heróis da Marvel Comics, que se unem para realizar missões perigosas em troca de redenção.",
+        imagem: "imagens/thunderbolts.webp",
         video:
-          "https://drive.google.com/file/d/16g0QWKerQvxBJtnOTFppz9nA_3moLbDh/preview",
-        trailer: "http://www.youtube.com/embed/Inl8WuKkQfQ",
-        generos: ["drama", "romance"],
-        //ano: 2024
+          "https://drive.google.com/file/d/1HGBi5Hjois-T0Qy-nXB2FGbAHMRqp07O/preview",
+        trailer: "http://www.youtube.com/embed/MaLy0D2FTDc",
+        generos: ["ação", "aventura", "ficção científica"],
+        //ano: 2025
       },
       {
         id: 10,
@@ -1147,15 +1147,15 @@ const dados = [
       {
         id: 50,
         tipo: "movie",
-        titulo: "Homem de Ferro 2",
+        titulo: "Eu sei oque vocês fizeram no verão passado",
         descricao:
-          "Tony Stark enfrenta novos desafios enquanto lida com a revelação de sua identidade como Homem de Ferro e a ameaça de novos vilões.",
-        imagem: "imagens/homem-de-ferro2.webp",
+          "Eu Sei o Que Vocês Fizeram no Verão Passado é um filme de terror onde um grupo de amigos é perseguido por um assassino misterioso após um acidente fatal.",
+        imagem: "imagens/eu-sei-o-que-voces-fizeram-no-verao-passado.webp",
         video:
-          "https://drive.google.com/file/d/12OTkCl2voTyR2QlX8ahLEIX1JJWQu0B-/preview",
-        trailer: "http://www.youtube.com/embed/msxQMX9Nczk",
-        generos: ["ação", "ficção científica", "aventura"],
-        //ano: 2010
+          "https://drive.google.com/file/d/1fZEspkk3gABLRTJJoiGu2GOZYZ-zB2ev/preview",
+        trailer: "http://www.youtube.com/embed/eTVrRbIaFxs",
+        generos: ["terror", "suspense"],
+        //ano: 2025
       },
       {
         id: 51,
@@ -1690,6 +1690,19 @@ const dados = [
       {
         id: 81,
         tipo: "movie",
+        titulo: "Ainda estou aqui",
+        descricao:
+          "Ainda Estou Aqui é um drama emocionante que retrata o luto, o amor e a luta de uma jovem para manter viva a memória do namorado após sua morte.",
+        imagem: "imagens/ainda-estou-aqui.webp",
+        video:
+          "https://drive.google.com/file/d/16g0QWKerQvxBJtnOTFppz9nA_3moLbDh/preview",
+        trailer: "http://www.youtube.com/embed/Inl8WuKkQfQ",
+        generos: ["drama", "romance"],
+        //ano: 2024
+      },
+      {
+        id: 82,
+        tipo: "movie",
         titulo: "A barraca do beijo",
         descricao:
           "Um romance adolescente cheio de confusões, paixões e desafios entre amizade e amor.",
@@ -1701,7 +1714,7 @@ const dados = [
         //ano: 2018
       },
       {
-        id: 82,
+        id: 83,
         tipo: "movie",
         titulo: "Quarteto Fantástico",
         descricao:
@@ -1714,7 +1727,7 @@ const dados = [
         //ano: 2005
       },
       {
-        id: 83,
+        id: 84,
         tipo: "series",
         titulo: "Arcanjo Renegado",
         descricao:
@@ -1772,7 +1785,7 @@ const dados = [
         //ano: 2020
       },
       {
-        id: 84,
+        id: 85,
         tipo: "movie",
         titulo: "Tropa de Elite",
         descricao:
@@ -1785,7 +1798,7 @@ const dados = [
         //ano: 2007
       },
       {
-        id: 85,
+        id: 86,
         tipo: "movie",
         titulo: "Tropa de Elite 2",
         descricao:
@@ -1798,7 +1811,7 @@ const dados = [
         //ano: 2012
       },
       {
-        id: 86,
+        id: 87,
         tipo: "movie",
         titulo: "Alerta Vermelha",
         descricao:
@@ -1811,7 +1824,7 @@ const dados = [
         //ano: 2021
       },
       {
-        id: 87,
+        id: 88,
         tipo: "movie",
         titulo: "Um Maluco No Golfe 2",
         descricao:
@@ -1824,7 +1837,7 @@ const dados = [
         //ano: 2025
       },
       {
-        id: 88,
+        id: 89,
         tipo: "movie",
         titulo: "Todos Menos Você",
         descricao:
@@ -1837,7 +1850,7 @@ const dados = [
         //ano: 2023
       },
       {
-        id: 89,
+        id: 90,
         tipo: "movie",
         titulo: "Homem de Ferro",
         descricao:
@@ -1850,7 +1863,33 @@ const dados = [
         //ano: 2008
       },
       {
-        id: 90,
+        id: 91,
+        tipo: "movie",
+        titulo: "Homem de Ferro 2",
+        descricao:
+          "Tony Stark enfrenta novos desafios enquanto lida com a revelação de sua identidade como Homem de Ferro e a ameaça de novos vilões.",
+        imagem: "imagens/homem-de-ferro2.webp",
+        video:
+          "https://drive.google.com/file/d/12OTkCl2voTyR2QlX8ahLEIX1JJWQu0B-/preview",
+        trailer: "http://www.youtube.com/embed/msxQMX9Nczk",
+        generos: ["ação", "ficção científica", "aventura"],
+        //ano: 2010
+      },
+      {
+        id: 92,
+        tipo: "movie",
+        titulo: "Smurfs",
+        descricao:
+          "Os Smurfs são pequenas criaturas azuis que vivem em uma vila escondida na floresta. Quando o malvado feiticeiro Gargamel descobre sua existência, os Smurfs devem fugir para a cidade grande e encontrar uma maneira de voltar para casa.",
+        imagem: "imagens/smurfs.webp",
+        video:
+          "https://drive.google.com/file/d/1qFvJNz0IJ6jPAmu0YcJe8gXyQtKHEqcw/preview",
+        trailer: "https://www.youtube.com/embed/xL7IAuqDuiw",
+        generos: ["animação", "aventura", "comédia"],
+        //ano: 2025
+      },
+      {
+        id: 93,
         tipo: "movie",
         titulo: "bob esponja: o incrivel resgate",
         descricao:
@@ -1863,7 +1902,7 @@ const dados = [
         //ano: 2020
       },
       {
-        id: 91,
+        id: 94,
         tipo: "movie",
         titulo: "Travis Scott: Voando Alto - Legendado",
         descricao:
